@@ -1,0 +1,11 @@
+main: cz.lukynka.evcsh.Main
+name: EV_ChickenShootHelper
+version: '1.0'
+description: nevim lol
+load: POSTWORLD
+author: LukynkaCZE
+website: event-verse.fun
+prefix: EV_CSH
+commands:
+  test:
+    description: idklol
