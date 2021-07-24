@@ -1,0 +1,17 @@
+{
+  "name": "ev-tickety",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LukynkaCZE",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "discord-giveaways": "^4.2.1",
+    "discord.js": "^12.5.3",
+    "ms": "^2.1.2",
+    "quick.db": "^7.1.3"
+  }
+}
