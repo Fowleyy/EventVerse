@@ -1,0 +1,1648 @@
+function updateBigTimer():
+    bigTimerNumberMin("%{ctd::min}%")
+    bigTimerNumberSec("%{ctd::sec}%")
+    zero()
+
+
+function zero():
+    if {pogchampoiihgjkffgh} is not set:
+        set block at location 95, 85, 1 in world "hub" to air
+        set block at location 95, 85, 2 in world "hub" to quartz block
+        set block at location 95, 85, 3 in world "hub" to quartz block
+        set block at location 95, 85, 4 in world "hub" to quartz block
+        set block at location 95, 85, 5 in world "hub" to quartz block
+        set block at location 95, 85, 6 in world "hub" to air
+        #
+        set block at location 95, 86, 1 in world "hub" to quartz block
+        set block at location 95, 86, 2 in world "hub" to quartz block
+        set block at location 95, 86, 3 in world "hub" to quartz block
+        set block at location 95, 86, 4 in world "hub" to quartz block
+        set block at location 95, 86, 5 in world "hub" to quartz block
+        set block at location 95, 86, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 1 in world "hub" to quartz block
+        set block at location 95, 87, 2 in world "hub" to quartz block
+        set block at location 95, 87, 3 in world "hub" to air
+        set block at location 95, 87, 4 in world "hub" to air
+        set block at location 95, 87, 5 in world "hub" to quartz block
+        set block at location 95, 87, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 1 in world "hub" to quartz block
+        set block at location 95, 88, 2 in world "hub" to quartz block
+        set block at location 95, 88, 3 in world "hub" to air
+        set block at location 95, 88, 4 in world "hub" to air
+        set block at location 95, 88, 5 in world "hub" to quartz block
+        set block at location 95, 88, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 1 in world "hub" to quartz block
+        set block at location 95, 89, 2 in world "hub" to quartz block
+        set block at location 95, 89, 3 in world "hub" to air
+        set block at location 95, 89, 4 in world "hub" to air
+        set block at location 95, 89, 5 in world "hub" to quartz block
+        set block at location 95, 89, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 1 in world "hub" to quartz block
+        set block at location 95, 89, 2 in world "hub" to quartz block
+        set block at location 95, 89, 3 in world "hub" to air
+        set block at location 95, 89, 4 in world "hub" to air
+        set block at location 95, 89, 5 in world "hub" to quartz block
+        set block at location 95, 89, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 1 in world "hub" to quartz block
+        set block at location 95, 90, 2 in world "hub" to quartz block
+        set block at location 95, 90, 3 in world "hub" to air
+        set block at location 95, 90, 4 in world "hub" to air
+        set block at location 95, 90, 5 in world "hub" to quartz block
+        set block at location 95, 90, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 91, 1 in world "hub" to quartz block
+        set block at location 95, 91, 2 in world "hub" to quartz block
+        set block at location 95, 91, 3 in world "hub" to air
+        set block at location 95, 91, 4 in world "hub" to air
+        set block at location 95, 91, 5 in world "hub" to quartz block
+        set block at location 95, 91, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 1 in world "hub" to quartz block
+        set block at location 95, 92, 2 in world "hub" to quartz block
+        set block at location 95, 92, 3 in world "hub" to air
+        set block at location 95, 92, 4 in world "hub" to air
+        set block at location 95, 92, 5 in world "hub" to quartz block
+        set block at location 95, 92, 6 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 1 in world "hub" to quartz block
+        set block at location 95, 93, 2 in world "hub" to quartz block
+        set block at location 95, 93, 3 in world "hub" to quartz block
+        set block at location 95, 93, 4 in world "hub" to quartz block
+        set block at location 95, 93, 5 in world "hub" to quartz block
+        set block at location 95, 93, 6 in world "hub" to  quartz block
+        #
+        set block at location 95, 94, 1 in world "hub" to air
+        set block at location 95, 94, 2 in world "hub" to quartz block
+        set block at location 95, 94, 3 in world "hub" to quartz block
+        set block at location 95, 94, 4 in world "hub" to quartz block
+        set block at location 95, 94, 5 in world "hub" to quartz block
+        set block at location 95, 94, 6 in world "hub" to air
+
+
+function bigTimerNumberSec(t: text):
+    # ------------------ #
+    if {_t} is "59":
+        bigTimer1("5")
+        bigTimer2("9")
+    # ------------------ #
+    if {_t} is "58":
+        bigTimer1("5")
+        bigTimer2("8")
+    # ------------------ #
+    if {_t} is "57":
+        bigTimer1("5")
+        bigTimer2("7")
+    # ------------------ #
+    if {_t} is "56":
+        bigTimer1("5")
+        bigTimer2("6")
+    # ------------------ #
+    if {_t} is "55":
+        bigTimer1("5")
+        bigTimer2("5")
+    # ------------------ #
+    if {_t} is "54":
+        bigTimer1("5")
+        bigTimer2("4")
+    # ------------------ #
+    if {_t} is "53":
+        bigTimer1("5")
+        bigTimer2("3")
+    # ------------------ #
+    if {_t} is "52":
+        bigTimer1("5")
+        bigTimer2("2")
+    # ------------------ #
+    if {_t} is "51":
+        bigTimer1("5")
+        bigTimer2("1")
+    # ------------------ #
+    if {_t} is "50":
+        bigTimer1("5")
+        bigTimer2("0")
+    # ------------------ #
+    # NEVIM LOL          #
+    # ------------------ #
+    if {_t} is "49":
+        bigTimer1("4")
+        bigTimer2("9")
+    # ------------------ #
+    if {_t} is "48":
+        bigTimer1("4")
+        bigTimer2("8")
+    # ------------------ #
+    if {_t} is "47":
+        bigTimer1("4")
+        bigTimer2("7")
+    # ------------------ #
+    if {_t} is "46":
+        bigTimer1("4")
+        bigTimer2("6")
+    # ------------------ #
+    if {_t} is "45":
+        bigTimer1("4")
+        bigTimer2("5")
+    # ------------------ #
+    if {_t} is "44":
+        bigTimer1("4")
+        bigTimer2("4")
+    # ------------------ #
+    if {_t} is "43":
+        bigTimer1("4")
+        bigTimer2("3")
+    # ------------------ #
+    if {_t} is "42":
+        bigTimer1("4")
+        bigTimer2("2")
+    # ------------------ #
+    if {_t} is "41":
+        bigTimer1("4")
+        bigTimer2("1")
+    # ------------------ #
+    if {_t} is "40":
+        bigTimer1("4")
+        bigTimer2("0")
+    # ------------------ #
+    # NEVIM LOL          #
+    # ------------------ #
+    if {_t} is "39":
+        bigTimer1("3")
+        bigTimer2("9")
+    # ------------------ #
+    if {_t} is "38":
+        bigTimer1("3")
+        bigTimer2("8")
+    # ------------------ #
+    if {_t} is "37":
+        bigTimer1("3")
+        bigTimer2("7")
+    # ------------------ #
+    if {_t} is "36":
+        bigTimer1("3")
+        bigTimer2("6")
+    # ------------------ #
+    if {_t} is "35":
+        bigTimer1("3")
+        bigTimer2("5")
+    # ------------------ #
+    if {_t} is "34":
+        bigTimer1("3")
+        bigTimer2("4")
+    # ------------------ #
+    if {_t} is "33":
+        bigTimer1("3")
+        bigTimer2("3")
+    # ------------------ #
+    if {_t} is "32":
+        bigTimer1("3")
+        bigTimer2("2")
+    # ------------------ #
+    if {_t} is "31":
+        bigTimer1("3")
+        bigTimer2("1")
+    # ------------------ #
+    if {_t} is "30":
+        bigTimer1("3")
+        bigTimer2("0")
+    # ------------------ #
+    # NEVIM LOL          #
+    # ------------------ #
+    if {_t} is "29":
+        bigTimer1("2")
+        bigTimer2("9")
+    # ------------------ #
+    if {_t} is "28":
+        bigTimer1("2")
+        bigTimer2("8")
+    # ------------------ #
+    if {_t} is "27":
+        bigTimer1("2")
+        bigTimer2("7")
+    # ------------------ #
+    if {_t} is "26":
+        bigTimer1("2")
+        bigTimer2("6")
+    # ------------------ #
+    if {_t} is "25":
+        bigTimer1("2")
+        bigTimer2("5")
+    # ------------------ #
+    if {_t} is "24":
+        bigTimer1("2")
+        bigTimer2("4")
+    # ------------------ #
+    if {_t} is "23":
+        bigTimer1("2")
+        bigTimer2("3")
+    # ------------------ #
+    if {_t} is "22":
+        bigTimer1("2")
+        bigTimer2("2")
+    # ------------------ #
+    if {_t} is "21":
+        bigTimer1("2")
+        bigTimer2("1")
+    # ------------------ #
+    if {_t} is "20":
+        bigTimer1("2")
+        bigTimer2("0")
+    # ------------------ #
+    # NEVIM LOL          #
+    # ------------------ #
+    if {_t} is "19":
+        bigTimer1("1")
+        bigTimer2("9")
+    # ------------------ #
+    if {_t} is "18":
+        bigTimer1("1")
+        bigTimer2("8")
+    # ------------------ #
+    if {_t} is "17":
+        bigTimer1("1")
+        bigTimer2("7")
+    # ------------------ #
+    if {_t} is "16":
+        bigTimer1("1")
+        bigTimer2("6")
+    # ------------------ #
+    if {_t} is "15":
+        bigTimer1("1")
+        bigTimer2("5")
+    # ------------------ #
+    if {_t} is "14":
+        bigTimer1("1")
+        bigTimer2("4")
+    # ------------------ #
+    if {_t} is "13":
+        bigTimer1("1")
+        bigTimer2("3")
+    # ------------------ #
+    if {_t} is "12":
+        bigTimer1("1")
+        bigTimer2("2")
+    # ------------------ #
+    if {_t} is "11":
+        bigTimer1("1")
+        bigTimer2("1")
+    # ------------------ #
+    if {_t} is "10":
+        bigTimer1("1")
+        bigTimer2("0")
+    # ------------------ #
+    # NEVIM LOL          #
+    # ------------------ #
+    if {_t} is "9":
+        bigTimer1("0")
+        bigTimer2("9")
+    # ------------------ #
+    if {_t} is "8":
+        bigTimer1("0")
+        bigTimer2("8")
+    # ------------------ #
+    if {_t} is "7":
+        bigTimer1("0")
+        bigTimer2("7")
+    # ------------------ #
+    if {_t} is "6":
+        bigTimer1("0")
+        bigTimer2("6")
+    # ------------------ #
+    if {_t} is "5":
+        bigTimer1("0")
+        bigTimer2("5")
+    # ------------------ #
+    if {_t} is "4":
+        bigTimer1("0")
+        bigTimer2("4")
+    # ------------------ #
+    if {_t} is "3":
+        bigTimer1("0")
+        bigTimer2("3")
+    # ------------------ #
+    if {_t} is "2":
+        bigTimer1("0")
+        bigTimer2("2")
+    # ------------------ #
+    if {_t} is "1":
+        bigTimer1("0")
+        bigTimer2("1")
+    # ------------------ #
+    if {_t} is "0":
+        bigTimer1("0")
+        bigTimer2("0")
+        hubFireworksAnim()
+    # ------------------ #
+    # NEVIM LOL          #
+    # ------------------ #
+
+
+command /dev:dayToNightAnim:
+    trigger:
+        if {rank.%player%} is "admin":
+            dayToNightAnim()
+        else:
+            onlyAdmin(player)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function bigTimerNumberMin(t: text):
+    if {_t} is "1":
+        set block at location 95, 85, 9 in world "hub" to quartz block
+        set block at location 95, 85, 10 in world "hub" to quartz block
+        set block at location 95, 85, 11 in world "hub" to quartz block
+        set block at location 95, 85, 12 in world "hub" to quartz block
+        set block at location 95, 85, 13 in world "hub" to quartz block
+        set block at location 95, 85, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 86, 9 in world "hub" to quartz block
+        set block at location 95, 86, 10 in world "hub" to quartz block
+        set block at location 95, 86, 11 in world "hub" to quartz block
+        set block at location 95, 86, 12 in world "hub" to quartz block
+        set block at location 95, 86, 13 in world "hub" to quartz block
+        set block at location 95, 86, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 9 in world "hub" to air
+        set block at location 95, 87, 10 in world "hub" to air
+        set block at location 95, 87, 11 in world "hub" to quartz block
+        set block at location 95, 87, 12 in world "hub" to quartz block
+        set block at location 95, 87, 13 in world "hub" to air
+        set block at location 95, 87, 14 in world "hub" to air
+        #
+        set block at location 95, 88, 9 in world "hub" to air
+        set block at location 95, 88, 10 in world "hub" to air
+        set block at location 95, 88, 11 in world "hub" to quartz block
+        set block at location 95, 88, 12 in world "hub" to quartz block
+        set block at location 95, 88, 13 in world "hub" to air
+        set block at location 95, 88, 14 in world "hub" to air
+        #
+        set block at location 95, 89, 9 in world "hub" to air
+        set block at location 95, 89, 10 in world "hub" to air
+        set block at location 95, 89, 11 in world "hub" to quartz block
+        set block at location 95, 89, 12 in world "hub" to quartz block
+        set block at location 95, 89, 13 in world "hub" to air
+        set block at location 95, 89, 14 in world "hub" to air
+        #
+        set block at location 95, 90, 9 in world "hub" to air
+        set block at location 95, 90, 10 in world "hub" to air
+        set block at location 95, 90, 11 in world "hub" to quartz block
+        set block at location 95, 90, 12 in world "hub" to quartz block
+        set block at location 95, 90, 13 in world "hub" to air
+        set block at location 95, 90, 14 in world "hub" to air
+        #
+        set block at location 95, 91, 9 in world "hub" to air
+        set block at location 95, 91, 10 in world "hub" to air
+        set block at location 95, 91, 11 in world "hub" to quartz block
+        set block at location 95, 91, 12 in world "hub" to quartz block
+        set block at location 95, 91, 13 in world "hub" to air
+        set block at location 95, 91, 14 in world "hub" to air
+        #
+        set block at location 95, 92, 9 in world "hub" to air
+        set block at location 95, 92, 10 in world "hub" to air
+        set block at location 95, 92, 11 in world "hub" to quartz block
+        set block at location 95, 92, 12 in world "hub" to quartz block
+        set block at location 95, 92, 13 in world "hub" to air
+        set block at location 95, 92, 14 in world "hub" to air
+        #
+        set block at location 95, 93, 9 in world "hub" to quartz block
+        set block at location 95, 93, 10 in world "hub" to quartz block
+        set block at location 95, 93, 11 in world "hub" to quartz block
+        set block at location 95, 93, 12 in world "hub" to quartz block
+        set block at location 95, 93, 13 in world "hub" to air
+        set block at location 95, 93, 14 in world "hub" to air
+        #
+        set block at location 95, 94, 9 in world "hub" to air
+        set block at location 95, 94, 10 in world "hub" to quartz block
+        set block at location 95, 94, 11 in world "hub" to quartz block
+        set block at location 95, 94, 12 in world "hub" to quartz block
+        set block at location 95, 94, 13 in world "hub" to air
+        set block at location 95, 94, 14 in world "hub" to air
+    if {_t} is "0":
+        set block at location 95, 85, 9 in world "hub" to air
+        set block at location 95, 85, 10 in world "hub" to quartz block
+        set block at location 95, 85, 11 in world "hub" to quartz block
+        set block at location 95, 85, 12 in world "hub" to quartz block
+        set block at location 95, 85, 13 in world "hub" to quartz block
+        set block at location 95, 85, 14 in world "hub" to air
+        #
+        set block at location 95, 86, 9 in world "hub" to quartz block
+        set block at location 95, 86, 10 in world "hub" to quartz block
+        set block at location 95, 86, 11 in world "hub" to quartz block
+        set block at location 95, 86, 12 in world "hub" to quartz block
+        set block at location 95, 86, 13 in world "hub" to quartz block
+        set block at location 95, 86, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 9 in world "hub" to quartz block
+        set block at location 95, 87, 10 in world "hub" to quartz block
+        set block at location 95, 87, 11 in world "hub" to air
+        set block at location 95, 87, 12 in world "hub" to air
+        set block at location 95, 87, 13 in world "hub" to quartz block
+        set block at location 95, 87, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 9 in world "hub" to quartz block
+        set block at location 95, 88, 10 in world "hub" to quartz block
+        set block at location 95, 88, 11 in world "hub" to air
+        set block at location 95, 88, 12 in world "hub" to air
+        set block at location 95, 88, 13 in world "hub" to quartz block
+        set block at location 95, 88, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 9 in world "hub" to quartz block
+        set block at location 95, 89, 10 in world "hub" to quartz block
+        set block at location 95, 89, 11 in world "hub" to air
+        set block at location 95, 89, 12 in world "hub" to air
+        set block at location 95, 89, 13 in world "hub" to quartz block
+        set block at location 95, 89, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 9 in world "hub" to quartz block
+        set block at location 95, 90, 10 in world "hub" to quartz block
+        set block at location 95, 90, 11 in world "hub" to air
+        set block at location 95, 90, 12 in world "hub" to air
+        set block at location 95, 90, 13 in world "hub" to quartz block
+        set block at location 95, 90, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 91, 9 in world "hub" to quartz block
+        set block at location 95, 91, 10 in world "hub" to quartz block
+        set block at location 95, 91, 11 in world "hub" to air
+        set block at location 95, 91, 12 in world "hub" to air
+        set block at location 95, 91, 13 in world "hub" to quartz block
+        set block at location 95, 91, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 9 in world "hub" to quartz block
+        set block at location 95, 92, 10 in world "hub" to quartz block
+        set block at location 95, 92, 11 in world "hub" to air
+        set block at location 95, 92, 12 in world "hub" to air
+        set block at location 95, 92, 13 in world "hub" to quartz block
+        set block at location 95, 92, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 9 in world "hub" to quartz block
+        set block at location 95, 93, 10 in world "hub" to quartz block
+        set block at location 95, 93, 11 in world "hub" to quartz block
+        set block at location 95, 93, 12 in world "hub" to quartz block
+        set block at location 95, 93, 13 in world "hub" to quartz block
+        set block at location 95, 93, 14 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 9 in world "hub" to air
+        set block at location 95, 94, 10 in world "hub" to quartz block
+        set block at location 95, 94, 11 in world "hub" to quartz block
+        set block at location 95, 94, 12 in world "hub" to quartz block
+        set block at location 95, 94, 13 in world "hub" to quartz block
+        set block at location 95, 94, 14 in world "hub" to air
+        #
+        #
+        #
+        #
+        #
+
+
+
+
+
+
+
+
+function bigTimer1(t: text):
+    if {_t} is "5":
+        set block at location 95, 85, 20  in world "hub" to air
+        set block at location 95, 85, 21  in world "hub" to quartz block
+        set block at location 95, 85, 22  in world "hub" to quartz block
+        set block at location 95, 85, 23  in world "hub" to quartz block
+        set block at location 95, 85, 24  in world "hub" to quartz block
+        set block at location 95, 85, 25  in world "hub" to air
+        #
+        set block at location 95, 86, 20  in world "hub" to quartz block
+        set block at location 95, 86, 21  in world "hub" to quartz block
+        set block at location 95, 86, 22  in world "hub" to quartz block
+        set block at location 95, 86, 23  in world "hub" to quartz block
+        set block at location 95, 86, 24  in world "hub" to quartz block
+        set block at location 95, 86, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 87, 20  in world "hub" to quartz block
+        set block at location 95, 87, 21  in world "hub" to quartz block
+        set block at location 95, 87, 22  in world "hub" to air
+        set block at location 95, 87, 23  in world "hub" to air
+        set block at location 95, 87, 24  in world "hub" to quartz block
+        set block at location 95, 87, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 88, 20  in world "hub" to air
+        set block at location 95, 88, 21  in world "hub" to air
+        set block at location 95, 88, 22  in world "hub" to air
+        set block at location 95, 88, 23  in world "hub" to air
+        set block at location 95, 88, 24  in world "hub" to quartz block
+        set block at location 95, 88, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 89, 20  in world "hub" to air
+        set block at location 95, 89, 21  in world "hub" to quartz block
+        set block at location 95, 89, 22  in world "hub" to quartz block
+        set block at location 95, 89, 23  in world "hub" to quartz block
+        set block at location 95, 89, 24  in world "hub" to quartz block
+        set block at location 95, 89, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 90, 20  in world "hub" to quartz block
+        set block at location 95, 90, 21  in world "hub" to quartz block
+        set block at location 95, 90, 22  in world "hub" to quartz block
+        set block at location 95, 90, 23  in world "hub" to quartz block
+        set block at location 95, 90, 24  in world "hub" to quartz block
+        set block at location 95, 90, 25  in world "hub" to air
+        #
+        set block at location 95, 91, 20  in world "hub" to quartz block
+        set block at location 95, 91, 21  in world "hub" to quartz block
+        set block at location 95, 91, 22  in world "hub" to air
+        set block at location 95, 91, 23  in world "hub" to air
+        set block at location 95, 91, 24  in world "hub" to air
+        set block at location 95, 91, 25  in world "hub" to air
+        #
+        set block at location 95, 92, 20  in world "hub" to quartz block
+        set block at location 95, 92, 21  in world "hub" to quartz block
+        set block at location 95, 92, 22  in world "hub" to air
+        set block at location 95, 92, 23  in world "hub" to air
+        set block at location 95, 92, 24  in world "hub" to air
+        set block at location 95, 92, 25  in world "hub" to air
+        #
+        set block at location 95, 93, 20  in world "hub" to quartz block
+        set block at location 95, 93, 21  in world "hub" to quartz block
+        set block at location 95, 93, 22  in world "hub" to quartz block
+        set block at location 95, 93, 23  in world "hub" to quartz block
+        set block at location 95, 93, 24  in world "hub" to quartz block
+        set block at location 95, 93, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 94, 20 in world "hub" to quartz block
+        set block at location 95, 94, 21 in world "hub" to quartz block
+        set block at location 95, 94, 22 in world "hub" to quartz block
+        set block at location 95, 94, 23 in world "hub" to quartz block 
+        set block at location 95, 94, 24 in world "hub" to quartz block
+        set block at location 95, 94, 25 in world "hub" to quartz block
+    if {_t} is "4":
+        set block at location 95, 85, 20  in world "hub" to air
+        set block at location 95, 85, 21  in world "hub" to air
+        set block at location 95, 85, 22  in world "hub" to air
+        set block at location 95, 85, 23  in world "hub" to air
+        set block at location 95, 85, 24  in world "hub" to quartz block
+        set block at location 95, 85, 25  in world "hub" to air
+        #
+        set block at location 95, 86, 20  in world "hub" to air
+        set block at location 95, 86, 21  in world "hub" to air
+        set block at location 95, 86, 22  in world "hub" to air
+        set block at location 95, 86, 23  in world "hub" to air
+        set block at location 95, 86, 24  in world "hub" to quartz block
+        set block at location 95, 86, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 87, 20  in world "hub" to air
+        set block at location 95, 87, 21  in world "hub" to air
+        set block at location 95, 87, 22  in world "hub" to air
+        set block at location 95, 87, 23  in world "hub" to air
+        set block at location 95, 87, 24  in world "hub" to quartz block
+        set block at location 95, 87, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 88, 20  in world "hub" to air
+        set block at location 95, 88, 21  in world "hub" to air
+        set block at location 95, 88, 22  in world "hub" to air
+        set block at location 95, 88, 23  in world "hub" to air
+        set block at location 95, 88, 24  in world "hub" to quartz block
+        set block at location 95, 88, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 89, 20  in world "hub" to air
+        set block at location 95, 89, 21  in world "hub" to quartz block
+        set block at location 95, 89, 22  in world "hub" to quartz block
+        set block at location 95, 89, 23  in world "hub" to quartz block
+        set block at location 95, 89, 24  in world "hub" to quartz block
+        set block at location 95, 89, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 90, 20  in world "hub" to quartz block
+        set block at location 95, 90, 21  in world "hub" to quartz block
+        set block at location 95, 90, 22  in world "hub" to quartz block
+        set block at location 95, 90, 23  in world "hub" to quartz block
+        set block at location 95, 90, 24  in world "hub" to quartz block
+        set block at location 95, 90, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 91, 20  in world "hub" to quartz block
+        set block at location 95, 91, 21  in world "hub" to quartz block
+        set block at location 95, 91, 22  in world "hub" to air
+        set block at location 95, 91, 23  in world "hub" to air
+        set block at location 95, 91, 24  in world "hub" to quartz block
+        set block at location 95, 91, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 92, 20  in world "hub" to quartz block
+        set block at location 95, 92, 21  in world "hub" to quartz block
+        set block at location 95, 92, 22  in world "hub" to air
+        set block at location 95, 92, 23  in world "hub" to air
+        set block at location 95, 92, 24  in world "hub" to quartz block
+        set block at location 95, 92, 25  in world "hub" to air
+        #
+        set block at location 95, 93, 20  in world "hub" to quartz block
+        set block at location 95, 93, 21  in world "hub" to quartz block
+        set block at location 95, 93, 22  in world "hub" to air
+        set block at location 95, 93, 23  in world "hub" to air
+        set block at location 95, 93, 24  in world "hub" to air
+        set block at location 95, 93, 25  in world "hub" to air
+        #
+        set block at location 95, 94, 20 in world "hub" to air
+        set block at location 95, 94, 21 in world "hub" to quartz block
+        set block at location 95, 94, 22 in world "hub" to air
+        set block at location 95, 94, 23 in world "hub" to air
+        set block at location 95, 94, 24 in world "hub" to air
+        set block at location 95, 94, 25 in world "hub" to air
+    if {_t} is "3":
+        set block at location 95, 85, 20  in world "hub" to air
+        set block at location 95, 85, 21  in world "hub" to quartz block
+        set block at location 95, 85, 22  in world "hub" to quartz block
+        set block at location 95, 85, 23  in world "hub" to quartz block
+        set block at location 95, 85, 24  in world "hub" to quartz block
+        set block at location 95, 85, 25  in world "hub" to air
+        #
+        set block at location 95, 86, 20  in world "hub" to quartz block
+        set block at location 95, 86, 21  in world "hub" to quartz block
+        set block at location 95, 86, 22  in world "hub" to quartz block
+        set block at location 95, 86, 23  in world "hub" to quartz block
+        set block at location 95, 86, 24  in world "hub" to quartz block
+        set block at location 95, 86, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 87, 20  in world "hub" to quartz block
+        set block at location 95, 87, 21  in world "hub" to quartz block
+        set block at location 95, 87, 22  in world "hub" to air
+        set block at location 95, 87, 23  in world "hub" to air
+        set block at location 95, 87, 24  in world "hub" to quartz block
+        set block at location 95, 87, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 88, 20  in world "hub" to air
+        set block at location 95, 88, 21  in world "hub" to air
+        set block at location 95, 88, 22  in world "hub" to air
+        set block at location 95, 88, 23  in world "hub" to air
+        set block at location 95, 88, 24  in world "hub" to quartz block
+        set block at location 95, 88, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 89, 20  in world "hub" to air
+        set block at location 95, 89, 21  in world "hub" to air
+        set block at location 95, 89, 22  in world "hub" to quartz block
+        set block at location 95, 89, 23  in world "hub" to quartz block
+        set block at location 95, 89, 24  in world "hub" to quartz block
+        set block at location 95, 89, 25  in world "hub" to air
+        #
+        set block at location 95, 90, 20  in world "hub" to air
+        set block at location 95, 90, 21  in world "hub" to air
+        set block at location 95, 90, 22  in world "hub" to quartz block
+        set block at location 95, 90, 23  in world "hub" to quartz block
+        set block at location 95, 90, 24  in world "hub" to quartz block
+        set block at location 95, 90, 25  in world "hub" to air
+        #
+        set block at location 95, 91, 20  in world "hub" to air
+        set block at location 95, 91, 21  in world "hub" to air
+        set block at location 95, 91, 22  in world "hub" to air
+        set block at location 95, 91, 23  in world "hub" to air
+        set block at location 95, 91, 24  in world "hub" to quartz block
+        set block at location 95, 91, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 92, 20  in world "hub" to quartz block
+        set block at location 95, 92, 21  in world "hub" to quartz block
+        set block at location 95, 92, 22  in world "hub" to air
+        set block at location 95, 92, 23  in world "hub" to air
+        set block at location 95, 92, 24  in world "hub" to quartz block
+        set block at location 95, 92, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 93, 20  in world "hub" to quartz block
+        set block at location 95, 93, 21  in world "hub" to quartz block
+        set block at location 95, 93, 22  in world "hub" to quartz block
+        set block at location 95, 93, 23  in world "hub" to quartz block
+        set block at location 95, 93, 24  in world "hub" to quartz block
+        set block at location 95, 93, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 94, 20 in world "hub" to air
+        set block at location 95, 94, 21 in world "hub" to quartz block
+        set block at location 95, 94, 22 in world "hub" to quartz block
+        set block at location 95, 94, 23 in world "hub" to quartz block
+        set block at location 95, 94, 24 in world "hub" to quartz block
+        set block at location 95, 94, 25 in world "hub" to air
+    if {_t} is "2":
+        set block at location 95, 85, 20  in world "hub" to quartz block
+        set block at location 95, 85, 21  in world "hub" to quartz block
+        set block at location 95, 85, 22  in world "hub" to quartz block
+        set block at location 95, 85, 23  in world "hub" to quartz block
+        set block at location 95, 85, 24  in world "hub" to quartz block
+        set block at location 95, 85, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 86, 20  in world "hub" to quartz block
+        set block at location 95, 86, 21  in world "hub" to quartz block
+        set block at location 95, 86, 22  in world "hub" to quartz block
+        set block at location 95, 86, 23  in world "hub" to quartz block
+        set block at location 95, 86, 24  in world "hub" to quartz block
+        set block at location 95, 86, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 87, 20  in world "hub" to quartz block
+        set block at location 95, 87, 21  in world "hub" to quartz block
+        set block at location 95, 87, 22  in world "hub" to quartz block
+        set block at location 95, 87, 23  in world "hub" to air
+        set block at location 95, 87, 24  in world "hub" to air
+        set block at location 95, 87, 25  in world "hub" to air
+        #
+        set block at location 95, 88, 20  in world "hub" to air
+        set block at location 95, 88, 21  in world "hub" to quartz block
+        set block at location 95, 88, 22  in world "hub" to quartz block
+        set block at location 95, 88, 23  in world "hub" to quartz block
+        set block at location 95, 88, 24  in world "hub" to air
+        set block at location 95, 88, 25  in world "hub" to air
+        #
+        set block at location 95, 89, 20  in world "hub" to air
+        set block at location 95, 89, 21  in world "hub" to air
+        set block at location 95, 89, 22  in world "hub" to quartz block
+        set block at location 95, 89, 23  in world "hub" to quartz block
+        set block at location 95, 89, 24  in world "hub" to quartz block
+        set block at location 95, 89, 25  in world "hub" to air
+        #
+        set block at location 95, 90, 20  in world "hub" to air
+        set block at location 95, 90, 21  in world "hub" to air
+        set block at location 95, 90, 22  in world "hub" to air
+        set block at location 95, 90, 23  in world "hub" to quartz block
+        set block at location 95, 90, 24  in world "hub" to quartz block
+        set block at location 95, 90, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 91, 20  in world "hub" to air
+        set block at location 95, 91, 21  in world "hub" to air
+        set block at location 95, 91, 22  in world "hub" to air
+        set block at location 95, 91, 23  in world "hub" to air
+        set block at location 95, 91, 24  in world "hub" to quartz block
+        set block at location 95, 91, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 92, 20  in world "hub" to quartz block
+        set block at location 95, 92, 21  in world "hub" to quartz block
+        set block at location 95, 92, 22  in world "hub" to air
+        set block at location 95, 92, 23  in world "hub" to air
+        set block at location 95, 92, 24  in world "hub" to quartz block
+        set block at location 95, 92, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 93, 20  in world "hub" to quartz block
+        set block at location 95, 93, 21  in world "hub" to quartz block
+        set block at location 95, 93, 22  in world "hub" to quartz block
+        set block at location 95, 93, 23  in world "hub" to quartz block
+        set block at location 95, 93, 24  in world "hub" to quartz block
+        set block at location 95, 93, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 94, 20 in world "hub" to air
+        set block at location 95, 94, 21 in world "hub" to quartz block
+        set block at location 95, 94, 22 in world "hub" to quartz block
+        set block at location 95, 94, 23 in world "hub" to quartz block
+        set block at location 95, 94, 24 in world "hub" to quartz block
+        set block at location 95, 94, 25 in world "hub" to air
+    if {_t} is "1":
+        set block at location 95, 85, 20  in world "hub" to quartz block
+        set block at location 95, 85, 21  in world "hub" to quartz block
+        set block at location 95, 85, 22  in world "hub" to quartz block
+        set block at location 95, 85, 23  in world "hub" to quartz block
+        set block at location 95, 85, 24  in world "hub" to quartz block
+        set block at location 95, 85, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 86, 20  in world "hub" to quartz block
+        set block at location 95, 86, 21  in world "hub" to quartz block
+        set block at location 95, 86, 22  in world "hub" to quartz block
+        set block at location 95, 86, 23  in world "hub" to quartz block
+        set block at location 95, 86, 24  in world "hub" to quartz block
+        set block at location 95, 86, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 87, 20  in world "hub" to air
+        set block at location 95, 87, 21  in world "hub" to air
+        set block at location 95, 87, 22  in world "hub" to quartz block
+        set block at location 95, 87, 23  in world "hub" to quartz block
+        set block at location 95, 87, 24  in world "hub" to air
+        set block at location 95, 87, 25  in world "hub" to air
+        #
+        set block at location 95, 88, 20  in world "hub" to air
+        set block at location 95, 88, 21  in world "hub" to air
+        set block at location 95, 88, 22  in world "hub" to quartz block
+        set block at location 95, 88, 23  in world "hub" to quartz block
+        set block at location 95, 88, 24  in world "hub" to air
+        set block at location 95, 88, 25  in world "hub" to air
+        #
+        set block at location 95, 89, 20  in world "hub" to air
+        set block at location 95, 89, 21  in world "hub" to air
+        set block at location 95, 89, 22  in world "hub" to quartz block
+        set block at location 95, 89, 23  in world "hub" to quartz block
+        set block at location 95, 89, 24  in world "hub" to air
+        set block at location 95, 89, 25  in world "hub" to air
+        #
+        set block at location 95, 90, 20  in world "hub" to air
+        set block at location 95, 90, 21  in world "hub" to air
+        set block at location 95, 90, 22  in world "hub" to quartz block
+        set block at location 95, 90, 23  in world "hub" to quartz block
+        set block at location 95, 90, 24  in world "hub" to air
+        set block at location 95, 90, 25  in world "hub" to air
+        #
+        set block at location 95, 91, 20  in world "hub" to air
+        set block at location 95, 91, 21  in world "hub" to air
+        set block at location 95, 91, 22  in world "hub" to quartz block
+        set block at location 95, 91, 23  in world "hub" to quartz block
+        set block at location 95, 91, 24  in world "hub" to air
+        set block at location 95, 91, 25  in world "hub" to air
+        #
+        set block at location 95, 92, 20  in world "hub" to air
+        set block at location 95, 92, 21  in world "hub" to air
+        set block at location 95, 92, 22  in world "hub" to quartz block
+        set block at location 95, 92, 23  in world "hub" to quartz block
+        set block at location 95, 92, 24  in world "hub" to air
+        set block at location 95, 92, 25  in world "hub" to air
+        #
+        set block at location 95, 93, 20  in world "hub" to quartz block
+        set block at location 95, 93, 21  in world "hub" to quartz block
+        set block at location 95, 93, 22  in world "hub" to quartz block
+        set block at location 95, 93, 23  in world "hub" to quartz block
+        set block at location 95, 93, 24  in world "hub" to air
+        set block at location 95, 93, 25  in world "hub" to air
+        #
+        set block at location 95, 94, 20 in world "hub" to air
+        set block at location 95, 94, 21 in world "hub" to quartz block
+        set block at location 95, 94, 22 in world "hub" to quartz block
+        set block at location 95, 94, 23 in world "hub" to quartz block
+        set block at location 95, 94, 24 in world "hub" to air
+        set block at location 95, 94, 25 in world "hub" to air
+    if {_t} is "0":
+        set block at location 95, 85, 20  in world "hub" to air
+        set block at location 95, 85, 21  in world "hub" to quartz block
+        set block at location 95, 85, 22  in world "hub" to quartz block
+        set block at location 95, 85, 23  in world "hub" to quartz block
+        set block at location 95, 85, 24  in world "hub" to quartz block
+        set block at location 95, 85, 25  in world "hub" to air
+        #
+        set block at location 95, 86, 20  in world "hub" to quartz block
+        set block at location 95, 86, 21  in world "hub" to quartz block
+        set block at location 95, 86, 22  in world "hub" to quartz block
+        set block at location 95, 86, 23  in world "hub" to quartz block
+        set block at location 95, 86, 24  in world "hub" to quartz block
+        set block at location 95, 86, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 87, 20  in world "hub" to quartz block
+        set block at location 95, 87, 21  in world "hub" to quartz block
+        set block at location 95, 87, 22  in world "hub" to air
+        set block at location 95, 87, 23  in world "hub" to air
+        set block at location 95, 87, 24  in world "hub" to quartz block
+        set block at location 95, 87, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 88, 20  in world "hub" to quartz block
+        set block at location 95, 88, 21  in world "hub" to quartz block
+        set block at location 95, 88, 22  in world "hub" to air
+        set block at location 95, 88, 23  in world "hub" to air
+        set block at location 95, 88, 24  in world "hub" to quartz block
+        set block at location 95, 88, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 89, 20  in world "hub" to quartz block
+        set block at location 95, 89, 21  in world "hub" to quartz block
+        set block at location 95, 89, 22  in world "hub" to air
+        set block at location 95, 89, 23  in world "hub" to air
+        set block at location 95, 89, 24  in world "hub" to quartz block
+        set block at location 95, 89, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 90, 20  in world "hub" to quartz block
+        set block at location 95, 90, 21  in world "hub" to quartz block
+        set block at location 95, 90, 22  in world "hub" to air
+        set block at location 95, 90, 23  in world "hub" to air
+        set block at location 95, 90, 24  in world "hub" to quartz block
+        set block at location 95, 90, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 91, 20  in world "hub" to quartz block
+        set block at location 95, 91, 21  in world "hub" to quartz block
+        set block at location 95, 91, 22  in world "hub" to air
+        set block at location 95, 91, 23  in world "hub" to air
+        set block at location 95, 91, 24  in world "hub" to quartz block
+        set block at location 95, 91, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 92, 20  in world "hub" to quartz block
+        set block at location 95, 92, 21  in world "hub" to quartz block
+        set block at location 95, 92, 22  in world "hub" to air
+        set block at location 95, 92, 23  in world "hub" to air
+        set block at location 95, 92, 24  in world "hub" to quartz block
+        set block at location 95, 92, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 93, 20  in world "hub" to quartz block
+        set block at location 95, 93, 21  in world "hub" to quartz block
+        set block at location 95, 93, 22  in world "hub" to quartz block
+        set block at location 95, 93, 23  in world "hub" to quartz block
+        set block at location 95, 93, 24  in world "hub" to quartz block
+        set block at location 95, 93, 25  in world "hub" to quartz block
+        #
+        set block at location 95, 94, 20 in world "hub" to air
+        set block at location 95, 94, 21 in world "hub" to quartz block
+        set block at location 95, 94, 22 in world "hub" to quartz block
+        set block at location 95, 94, 23 in world "hub" to quartz block
+        set block at location 95, 94, 24 in world "hub" to quartz block
+        set block at location 95, 94, 25 in world "hub" to air
+
+
+function bigTimer2(t: text):
+    if {_t} is "9":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to quartz block
+        set block at location 95, 87, 29 in world "hub" to quartz block
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to air
+        set block at location 95, 88, 29 in world "hub" to air
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to air
+        set block at location 95, 89, 29 in world "hub" to quartz block
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 28 in world "hub" to quartz block
+        set block at location 95, 90, 29 in world "hub" to quartz block
+        set block at location 95, 90, 30 in world "hub" to quartz block
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 91, 28 in world "hub" to quartz block
+        set block at location 95, 91, 29 in world "hub" to quartz block
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to quartz block
+        set block at location 95, 91, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "8":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to quartz block
+        set block at location 95, 87, 29 in world "hub" to quartz block
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to quartz block
+        set block at location 95, 88, 29 in world "hub" to quartz block
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to quartz block
+        set block at location 95, 89, 29 in world "hub" to quartz block
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 28 in world "hub" to air
+        set block at location 95, 90, 29 in world "hub" to quartz block
+        set block at location 95, 90, 30 in world "hub" to quartz block
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to air
+        #
+        set block at location 95, 91, 28 in world "hub" to quartz block
+        set block at location 95, 91, 29 in world "hub" to quartz block
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to quartz block
+        set block at location 95, 91, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "7":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to air
+        set block at location 95, 85, 30 in world "hub" to air
+        set block at location 95, 85, 31 in world "hub" to air
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to air
+        set block at location 95, 86, 29 in world "hub" to air
+        set block at location 95, 86, 30 in world "hub" to air
+        set block at location 95, 86, 31 in world "hub" to air
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to air
+        set block at location 95, 87, 29 in world "hub" to air
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to air
+        set block at location 95, 88, 29 in world "hub" to air
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to air
+        set block at location 95, 89, 29 in world "hub" to air
+        set block at location 95, 89, 30 in world "hub" to air
+        set block at location 95, 89, 31 in world "hub" to air
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 28 in world "hub" to air
+        set block at location 95, 90, 29 in world "hub" to air
+        set block at location 95, 90, 30 in world "hub" to air
+        set block at location 95, 90, 31 in world "hub" to air
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 91, 28 in world "hub" to air
+        set block at location 95, 91, 29 in world "hub" to air
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to quartz block
+        set block at location 95, 91, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 28 in world "hub" to air
+        set block at location 95, 92, 29 in world "hub" to air
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "6":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to quartz block
+        set block at location 95, 87, 29 in world "hub" to quartz block
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to quartz block
+        set block at location 95, 88, 29 in world "hub" to quartz block
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to quartz block
+        set block at location 95, 89, 29 in world "hub" to quartz block
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 28 in world "hub" to quartz block
+        set block at location 95, 90, 29 in world "hub" to quartz block
+        set block at location 95, 90, 30 in world "hub" to quartz block
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to air
+        #
+        set block at location 95, 91, 28 in world "hub" to quartz block
+        set block at location 95, 91, 29 in world "hub" to quartz block
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to air
+        set block at location 95, 91, 33 in world "hub" to air
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "5":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to quartz block
+        set block at location 95, 87, 29 in world "hub" to quartz block
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to air
+        set block at location 95, 88, 29 in world "hub" to air
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to air
+        set block at location 95, 89, 29 in world "hub" to quartz block
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 28 in world "hub" to quartz block
+        set block at location 95, 90, 29 in world "hub" to quartz block
+        set block at location 95, 90, 30 in world "hub" to quartz block
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to air
+        #
+        set block at location 95, 91, 28 in world "hub" to quartz block
+        set block at location 95, 91, 29 in world "hub" to quartz block
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to air
+        set block at location 95, 91, 33 in world "hub" to air
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to air
+        set block at location 95, 92, 33 in world "hub" to air
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to quartz block
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to quartz block
+    if {_t} is "4":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to air
+        set block at location 95, 85, 30 in world "hub" to air
+        set block at location 95, 85, 31 in world "hub" to air
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to air
+        set block at location 95, 86, 29 in world "hub" to air
+        set block at location 95, 86, 30 in world "hub" to air
+        set block at location 95, 86, 31 in world "hub" to air
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to air
+        set block at location 95, 87, 29 in world "hub" to air
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to air
+        set block at location 95, 88, 29 in world "hub" to air
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to air
+        set block at location 95, 89, 29 in world "hub" to quartz block
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 28 in world "hub" to quartz block
+        set block at location 95, 90, 29 in world "hub" to quartz block
+        set block at location 95, 90, 30 in world "hub" to quartz block
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 91, 28 in world "hub" to quartz block
+        set block at location 95, 91, 29 in world "hub" to quartz block
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to quartz block
+        set block at location 95, 91, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to air
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to air
+        set block at location 95, 93, 31 in world "hub" to air
+        set block at location 95, 93, 32 in world "hub" to air
+        set block at location 95, 93, 33 in world "hub" to air
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to air
+        set block at location 95, 94, 31 in world "hub" to air
+        set block at location 95, 94, 32 in world "hub" to air
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "3":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to quartz block
+        set block at location 95, 87, 29 in world "hub" to quartz block
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to air
+        set block at location 95, 88, 29 in world "hub" to air
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to air
+        set block at location 95, 89, 29 in world "hub" to air
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to air
+        #
+        set block at location 95, 90, 28 in world "hub" to air
+        set block at location 95, 90, 29 in world "hub" to air
+        set block at location 95, 90, 30 in world "hub" to quartz block
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to air
+        #
+        set block at location 95, 91, 28 in world "hub" to air
+        set block at location 95, 91, 29 in world "hub" to air
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to quartz block
+        set block at location 95, 91, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "2":
+        set block at location 95, 85, 28 in world "hub" to quartz block
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to quartz block
+        set block at location 95, 87, 29 in world "hub" to quartz block
+        set block at location 95, 87, 30 in world "hub" to quartz block
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to air
+        set block at location 95, 87, 33 in world "hub" to air
+        #
+        set block at location 95, 88, 28 in world "hub" to air
+        set block at location 95, 88, 29 in world "hub" to quartz block
+        set block at location 95, 88, 30 in world "hub" to quartz block
+        set block at location 95, 88, 31 in world "hub" to quartz block
+        set block at location 95, 88, 32 in world "hub" to air
+        set block at location 95, 88, 33 in world "hub" to air
+        #
+        set block at location 95, 89, 28 in world "hub" to air
+        set block at location 95, 89, 29 in world "hub" to air
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to air
+        #
+        set block at location 95, 90, 28 in world "hub" to air
+        set block at location 95, 90, 29 in world "hub" to air
+        set block at location 95, 90, 30 in world "hub" to air
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 91, 28 in world "hub" to air
+        set block at location 95, 91, 29 in world "hub" to air
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to quartz block
+        set block at location 95, 91, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "1":
+        set block at location 95, 85, 28 in world "hub" to quartz block
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to air
+        set block at location 95, 87, 29 in world "hub" to air
+        set block at location 95, 87, 30 in world "hub" to quartz block
+        set block at location 95, 87, 31 in world "hub" to quartz block
+        set block at location 95, 87, 32 in world "hub" to air
+        set block at location 95, 87, 33 in world "hub" to air
+        #
+        set block at location 95, 88, 28 in world "hub" to air
+        set block at location 95, 88, 29 in world "hub" to air
+        set block at location 95, 88, 30 in world "hub" to quartz block
+        set block at location 95, 88, 31 in world "hub" to quartz block
+        set block at location 95, 88, 32 in world "hub" to air
+        set block at location 95, 88, 33 in world "hub" to air
+        #
+        set block at location 95, 89, 28 in world "hub" to air
+        set block at location 95, 89, 29 in world "hub" to air
+        set block at location 95, 89, 30 in world "hub" to quartz block
+        set block at location 95, 89, 31 in world "hub" to quartz block
+        set block at location 95, 89, 32 in world "hub" to air
+        set block at location 95, 89, 33 in world "hub" to air
+        #
+        set block at location 95, 90, 28 in world "hub" to air
+        set block at location 95, 90, 29 in world "hub" to air
+        set block at location 95, 90, 30 in world "hub" to quartz block
+        set block at location 95, 90, 31 in world "hub" to quartz block
+        set block at location 95, 90, 32 in world "hub" to air
+        set block at location 95, 90, 33 in world "hub" to air
+        #
+        set block at location 95, 91, 28 in world "hub" to air
+        set block at location 95, 91, 29 in world "hub" to air
+        set block at location 95, 91, 30 in world "hub" to quartz block
+        set block at location 95, 91, 31 in world "hub" to quartz block
+        set block at location 95, 91, 32 in world "hub" to air
+        set block at location 95, 91, 33 in world "hub" to air
+        #
+        set block at location 95, 92, 28 in world "hub" to air
+        set block at location 95, 92, 29 in world "hub" to air
+        set block at location 95, 92, 30 in world "hub" to quartz block
+        set block at location 95, 92, 31 in world "hub" to quartz block
+        set block at location 95, 92, 32 in world "hub" to air
+        set block at location 95, 92, 33 in world "hub" to air
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to air
+        set block at location 95, 93, 33 in world "hub" to air
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to air
+        set block at location 95, 94, 33 in world "hub" to air
+    if {_t} is "0":
+        set block at location 95, 85, 28 in world "hub" to air
+        set block at location 95, 85, 29 in world "hub" to quartz block
+        set block at location 95, 85, 30 in world "hub" to quartz block
+        set block at location 95, 85, 31 in world "hub" to quartz block
+        set block at location 95, 85, 32 in world "hub" to quartz block
+        set block at location 95, 85, 33 in world "hub" to air
+        #
+        set block at location 95, 86, 28 in world "hub" to quartz block
+        set block at location 95, 86, 29 in world "hub" to quartz block
+        set block at location 95, 86, 30 in world "hub" to quartz block
+        set block at location 95, 86, 31 in world "hub" to quartz block
+        set block at location 95, 86, 32 in world "hub" to quartz block
+        set block at location 95, 86, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 87, 28 in world "hub" to quartz block 
+        set block at location 95, 87, 29 in world "hub" to quartz block
+        set block at location 95, 87, 30 in world "hub" to air
+        set block at location 95, 87, 31 in world "hub" to air
+        set block at location 95, 87, 32 in world "hub" to quartz block
+        set block at location 95, 87, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 88, 28 in world "hub" to quartz block
+        set block at location 95, 88, 29 in world "hub" to quartz block
+        set block at location 95, 88, 30 in world "hub" to air
+        set block at location 95, 88, 31 in world "hub" to air
+        set block at location 95, 88, 32 in world "hub" to quartz block
+        set block at location 95, 88, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 89, 28 in world "hub" to quartz block 
+        set block at location 95, 89, 29 in world "hub" to quartz block
+        set block at location 95, 89, 30 in world "hub" to air
+        set block at location 95, 89, 31 in world "hub" to air
+        set block at location 95, 89, 32 in world "hub" to quartz block
+        set block at location 95, 89, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 90, 28 in world "hub" to quartz block
+        set block at location 95, 90, 29 in world "hub" to quartz block
+        set block at location 95, 90, 30 in world "hub" to air
+        set block at location 95, 90, 31 in world "hub" to air
+        set block at location 95, 90, 32 in world "hub" to quartz block
+        set block at location 95, 90, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 91, 28 in world "hub" to quartz block
+        set block at location 95, 91, 29 in world "hub" to quartz block
+        set block at location 95, 91, 30 in world "hub" to air
+        set block at location 95, 91, 31 in world "hub" to air
+        set block at location 95, 91, 32 in world "hub" to quartz block
+        set block at location 95, 91, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 92, 28 in world "hub" to quartz block
+        set block at location 95, 92, 29 in world "hub" to quartz block
+        set block at location 95, 92, 30 in world "hub" to air
+        set block at location 95, 92, 31 in world "hub" to air
+        set block at location 95, 92, 32 in world "hub" to quartz block
+        set block at location 95, 92, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 93, 28 in world "hub" to quartz block
+        set block at location 95, 93, 29 in world "hub" to quartz block
+        set block at location 95, 93, 30 in world "hub" to quartz block
+        set block at location 95, 93, 31 in world "hub" to quartz block
+        set block at location 95, 93, 32 in world "hub" to quartz block
+        set block at location 95, 93, 33 in world "hub" to quartz block
+        #
+        set block at location 95, 94, 28 in world "hub" to air
+        set block at location 95, 94, 29 in world "hub" to quartz block
+        set block at location 95, 94, 30 in world "hub" to quartz block
+        set block at location 95, 94, 31 in world "hub" to quartz block
+        set block at location 95, 94, 32 in world "hub" to quartz block
+        set block at location 95, 94, 33 in world "hub" to air

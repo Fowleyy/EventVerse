@@ -1,0 +1,292 @@
+on right click with book:
+    if name of player's held item is "&6&nAchievementy&r &7(Right Click)":
+        if player is in world "hub":
+            open chest with 6 rows named "&0&lAchievementy                   &dwww.event-verse.fun" to player
+            play "WOOD_CLICK" to player
+            wait 1 ticks
+            format slot 0 of player with black stained glass pane named "&r" to be unstealable
+            loop 9 times:
+                add 1 to {_slot}
+                format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+            loop 4 times:
+                format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+                add 1 to {_slot}
+                loop 7 times:
+                    format slot {_slot} of player with air to be unstealable
+                    add 1 to {_slot}
+                format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+                add 1 to {_slot}
+            loop 9 times:
+                format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+                add 1 to {_slot}
+                #
+            if {ach.drownissimo.%player%} is not set:
+                format slot 10 of player with gray dye named "&c&nDrownissimo" with lore "||&7&oPOMOOC, JÁ NEUMÍM PLAVAT!!!" to be unstealable
+            if {ach.drownissimo.%player%} is true:
+                format slot 10 of player with light green dye named "&a&nDrownissimo" with lore "||&7&oPOMOOC, JÁ NEUMÍM PLAVAT!!!" to be unstealable
+            
+            if {ach.sleepyboi.%player%} is not set:
+                format slot 11 of player with gray dye named "&c&nSleepy Boi" with lore "||&7&oNavštiv spicího Gonkise." to be unstealable
+            if {ach.sleepyboi.%player%} is true:
+                format slot 11 of player with light green dye named "&a&nSleepy Boi" with lore "||&7&oNavštiv spicího Gonkise." to be unstealable
+
+            if {ach.note.%player%} is not set:
+                format slot 12 of player with gray dye named "&c&nBude to hrát?" with lore "||&7&oNe, nebude." to be unstealable
+            if {ach.note.%player%} is true:
+                format slot 12 of player with light green dye named "&a&nBude to hrát?" with lore "||&7&oNe, nebude." to be unstealable
+
+            if {ach.fire.%player%} is not set:
+                format slot 13 of player with gray dye named "&c&nZAAVOOLEEJTEE HAASIIČEEEE!!!" with lore "||&7&oVejdi do ohně.. (Poznámka developera: proč wtf)" to be unstealable
+            if {ach.fire.%player%} is true:
+                format slot 13 of player with light green dye named "&a&nZAAVOOLEEJTEE HAASIIČEEEE!!!" with lore "||&7&oVejdi do ohně.. (Poznámka developera: proč wtf)" to be unstealable
+
+            if {ach.kbelik.%player%} is not set:
+                format slot 14 of player with gray dye named "&c&nKbelik_Vody" with lore "||&7&oMá rád kbelík vody." to be unstealable
+            if {ach.kbelik.%player%} is true:
+                format slot 14 of player with light green dye named "&a&nKbelik_Vody" with lore "||&7&oMá rád kbelík vody." to be unstealable
+
+            if {ach.soptik.%player%} is not set:
+                format slot 15 of player with gray dye named "&c&nOžralý S0ptik" with lore "||&7&oNavštiv.. *burp* ..ožralou sopku v baru. *burp*" to be unstealable
+            if {ach.soptik.%player%} is true:
+                format slot 15 of player with light green dye named "&a&nOžralý S0ptik" with lore "||&7&oNavštiv.. *burp* ..ožralou sopku v baru. *burp*" to be unstealable
+
+            if {ach.flaming.%player%} is not set:
+                format slot 16 of player with gray dye named "&c&nFlaming Parkour" with lore "||&7&o..doslova" to be unstealable
+            if {ach.flaming.%player%} is true:
+                format slot 16 of player with light green dye named "&a&nFlaming Parkour" with lore "||&7&o..doslova" to be unstealable
+
+            if {ach.69.%player%} is not set:
+                format slot 19 of player with gray dye named "&c&n69" with lore "||&7&ohahaha funni number!" to be unstealable
+            if {ach.69.%player%} is true:
+                format slot 19 of player with light green dye named "&a&n69" with lore "||&7&ohahaha funni number!" to be unstealable
+
+            if {ach.pk_juty.%player%} is not set:
+                format slot 20 of player with gray dye named "&c&nJutyho Jacuzzi" with lore "||&7&oNajdi jutyho jacuzzi na parkouru" to be unstealable
+            if {ach.pk_juty.%player%} is true:
+                format slot 20 of player with light green dye named "&a&nJutyho Jacuzzi" with lore "||&7&oNajdi jutyho jacuzzi na parkouru" to be unstealable # :knife: :knife: :knife: 
+
+            if {ach.sus.%player%} is not set:
+                format slot 21 of player with gray dye named "&c&nsus" with lore "||&7&oඞ amungus ඞ" to be unstealable
+            if {ach.sus.%player%} is true:
+                format slot 21 of player with light green dye named "&a&nsus" with lore "||&7&oඞ amungus ඞ" to be unstealable
+
+            if {ach.hitw_3pete.%player%} is not set:
+                format slot 22 of player with gray dye named "&c&n3PETE" with lore "||&7&o&kVyhraj 3x Hole in the Wall po sobě" to be unstealable
+            if {ach.hitw_3pete.%player%} is true:
+                format slot 22 of player with light green dye named "&a&n3PETE" with lore "||&7&oVyhraj 3x Hole in the Wall po sobě" to be unstealable
+
+            if {ach.hitw_fall.%player%} is not set:
+                format slot 23 of player with gray dye named "&c&nJsi neposlouchal/a co?" with lore "||&7&oSpadni v hole in the wall ještě před startem hry.." to be unstealable
+            if {ach.hitw_fall.%player%} is true:
+                format slot 23 of player with light green dye named "&a&nJsi neposlouchal/a co?" with lore "||&7&oSpadni v hole in the wall ještě před startem hry.." to be unstealable
+
+            if {ach.crafting.%player%} is not set:
+                format slot 24 of player with gray dye named "&c&nCrafting, Crafting, Crafting" with lore "||&7&oCrafting up all the things.." to be unstealable
+            if {ach.crafting.%player%} is true:
+                format slot 24 of player with light green dye named "&a&nCrafting, Crafting, Crafting" with lore "||&7&oCrafting up all the things.." to be unstealable
+
+            if {ach.anvil.%player%} is not set:
+                format slot 25 of player with gray dye named "&c&n<Vložte vtip of anvilkách sem>" with lore "||&7&ouh.. došly vtipy.. fakt nevim" to be unstealable
+            if {ach.anvil.%player%} is true:
+                format slot 25 of player with light green dye named "&a&n<Vložte vtip of anvilkách sem>" with lore "||&7&ouh.. došly vtipy.. fakt nevim" to be unstealable
+
+            if {ach.trapdoor.%player%} is not set:
+                format slot 28 of player with gray dye named "&c&nObechcávač" with lore "||&7&oPokus se otevřít trapdoor na parkour eventu." to be unstealable
+            if {ach.trapdoor.%player%} is true:
+                format slot 28 of player with light green dye named "&a&nObechcávač" with lore "||&7&oPokus se otevřít trapdoor na parkour eventu." to be unstealable
+
+            if {ach.hitw_fall2.%player%} is not set:
+                format slot 29 of player with gray dye named "&c&nKolikrát tam ještě spadneš? -.-" with lore "||&7&oTy prostě poslouchat nebudeš..." to be unstealable
+            if {ach.hitw_fall2.%player%} is true:
+                format slot 29 of player with light green dye named "&a&nKolikrát tam ještě spadneš? -.-" with lore "||&7&oTy prostě poslouchat nebudeš..." to be unstealable
+
+on right click on any anvil:
+    cancel event
+    if {ach.anvil.%player%} is not set:
+        set {ach.anvil.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &e<Vložte vtip of anvilkách sem>"
+        send "&7&ouh.. došly vtipy.. fakt nevim"
+        add 1 to {achievements::%player%}
+        add 2 to {shards::%player%}
+
+
+command /sus:
+    trigger:
+        play song file "plugins/songs/sus.nbs" to player
+        send player title "&bඞ" with subtitle "&r " for 3 seconds
+        if {ach.sus.%player%} is not set:
+            set {ach.sus.%player%} to true
+            play "LEVEL_UP" to player
+            send "&d&l» ACHIEVMENT ODEMČEN: &esus"
+            send "&7&oඞ amungus ඞ"
+            add 1 to {achievements::%player%}
+            add 5 to {shards::%player%}
+
+
+
+command /ach:delete:
+    trigger:
+        if {rank.%player%} is "admin":
+            send "&7[SECRET] &cResetován achievement &7NOTEBLOCK"
+            delete {ach.note.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7SLEEPY_BOI"
+            delete {ach.sleepyboi.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7KBELIK_VODY"
+            delete {ach.kbelik.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7FIRE"
+            delete {ach.fire.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7DROWNISSIMO"
+            delete {ach.drownissimo.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7S0PTIK"
+            delete {ach.soptik.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &769_LOL"
+            delete {ach.69.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7HITW_FALL"
+            delete {ach.hitw_fall.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7FLAMING_PARKOUR"
+            delete {ach.flaming.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7OPEN_CRAFTING"
+            delete {ach.crafting.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7AMUNGUS"
+            delete {ach.sus.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7JUTY"
+            delete {ach.pk_juty.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7CHEATER"
+            delete {ach.trapdoor.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7ANVIL"
+            delete {ach.anvil.%player%}
+            wait 1 tick
+            send "&7[SECRET] &cResetován achievement &7HITW_FALL_2"
+            delete {ach.hitw_fall2.%player%}
+            delete {achstats-hitw_fall::%player%}
+        else:
+            onlyAdmin(player)
+
+#on enter "frozensimmo":
+ #   set {_r} to "Pomoooooc!!! tady je zima!!!" or "HEEEEEEEEEEELP" or "POMOOOOOC!! NEMŮŽU SE HÝBAT A JE TU ZIMA!!!!!!" or "HEEEEEELP!!" or "VÁŽNĚ... JE TADY ZIMAA!!"
+  #  send "&b[NPC] Frozenssimo: &f%{_r}%"
+   # if {ach.frozenssimo.%player%} is not set:
+    #    set {ach.frozenssimo.%player%} to true
+     #   play "LEVEL_UP" to player
+      #  send "&d&l» ACHIEVMENT ODEMČEN: &eFrozenssimo"
+       # send "&7&opopomooc, tatadyy jee zzzimmaaaa..."
+
+on enter "ach_drownissimo":
+    set {_r} to "Pomoooooc, já neumím plavat!" or "HEEEEEEEEEEELP" or "POMOOOOOC!! JÁ SE DUSÍM A NEUMÍM PLAVAAT!!" or "HEEEEEELP!!" or "VÁŽNĚ... JÁ SE DUSÍM!!"
+    send "&e[NPC] Drownissimo: &f%{_r}%"
+    if {ach.drownissimo.%player%} is not set:
+        set {ach.drownissimo.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eDrownissimo"
+        send "&7&oPOMOOC, JÁ NEUMÍM PLAVAT!!!"
+        add 1 to {achievements::%player%}
+        add 1 to {shards::%player%}
+
+
+
+
+on enter "ach_sleepyboi":
+    if {ach.sleepyboi.%player%} is not set:
+        set {ach.sleepyboi.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eSleepy Boi"
+        send "&7&oNavštiv spícího Gonkise"
+        add 1 to {achievements::%player%}
+        add 1 to {shards::%player%}
+
+on right click on note block:
+    cancel event
+    if {ach.note.%player%} is not set:
+        set {ach.note.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eBude to hrát?"
+        send "&7&oNe, nebude"
+        add 1 to {achievements::%player%}
+        add 2 to {shards::%player%}
+
+
+on right click on crafting table:
+    gamemode of player is adventure or survival
+    cancel event
+    if {ach.crafting.%player%} is not set:
+        set {ach.crafting.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eCrafting, Crafting, Crafting"
+        send "&7&oCrafting up all the things.."
+        add 1 to {achievements::%player%}
+        add 2 to {shards::%player%}
+
+
+every second:
+    loop all players:
+        if block at loop-player is fire:
+            if {ach.fire.%loop-player%} is not set:
+                set {ach.fire.%loop-player%} to true
+                play "LEVEL_UP" to loop-player
+                send "&d&l» ACHIEVMENT ODEMČEN: &eZAAVOOLEEJTEE HAASIIČEEEE!!!" to loop-player
+                send "&7&oVejdi do ohně.. (Poznámka developera: proč wtf)" to loop-player
+                add 1 to {achievements::%loop-player%}
+                add 2 to {shards::%loop-player%}
+
+on enter "ach_kbelik":
+    if {ach.kbelik.%player%} is not set:
+        set {ach.kbelik.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eKbelik_Vody"
+        send "&7&oMá rád kbelík vody."
+        add 1 to {achievements::%player%}
+        add 1 to {shards::%player%}
+
+on enter "ach_soptik":
+    if {ach.soptik.%player%} is not seT:
+        set {ach.soptik.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eOžralý S0ptik"
+        send "&7&oNavštiv.. *burp* ..ožralou sopku v baru. *burp*"
+        add 1 to {achievements::%player%}
+        add 1 to {shards::%player%}
+
+
+on enter "ach_flamingpk":
+    if {ach.flaming.%player%} is not set:
+        set {ach.flaming.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eFlaming Parkour"
+        send "&7&o..doslova"
+        add 1 to {achievements::%player%}
+        add 5 to {shards::%player%}
+
+function callUpdateFallAchievment(p: player):
+    if {parkour-falls::%{_p}%} is more than 68:
+        if {ach.69.%{_p}%} is not set:
+            set {ach.69.%{_p}%} to true
+            play "LEVEL_UP" to {_p}
+            message "&d&l» ACHIEVMENT ODEMČEN: &e69" to {_p}
+            message "&7&ohahaha funni number!" to {_p}
+            add 1 to {achievements::%{_p}%}
+            add 5 to {shards::%{_p}%}
+
+function trapdoorParkourAchievement(p: player):
+    if {_p} is in world "parkour2":
+        if {ach.trapdoor.%{_p}%} is not set:
+            set {ach.trapdoor.%{_p}%} to true
+            play "LEVEL_UP" to {_p}
+            send "&d&l» ACHIEVMENT ODEMČEN: &eObechcávač" to {_p}
+            send "&7&oPokus se otevřít trapdoor na parkour eventu." to {_p}
+            add 1 to {achievements::%{_p}%}
+            add 3 to {shards::%{_p}%}
+

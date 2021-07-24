@@ -1,0 +1,942 @@
+
+on drop:
+    if player is in world "arcade_lights":
+        cancel event
+
+on any movement:
+    if {arcademinigame_redlight-greenlight.color} is "RED":
+        if player is in world "arcade_lights":
+            if gamemode of player is adventure:
+                teleport player to {arcademinigame_redlight-greenlight.loc_spawn}
+                set action bar of player to "&c&nPohnul/a ses."
+                play "ENDERMAN_TELEPORT" to player
+
+
+
+
+function lightsStage(t: text):
+    if {_t} is "GO":
+        set {arcademinigame_redlight-greenlight.color} to "GREEN"
+        set {arcademinigame_redlight-greenlight.scoreboard-title} to "&a&n&lGo, Slow, STOP!"
+        loop all players in world "arcade_lights":
+            send loop-player title "&r " with subtitle "&a&n&lGO" for 3 seconds
+            set slot 0 of loop-player to light green clay
+            set slot 1 of loop-player to light green clay
+            set slot 2 of loop-player to light green clay
+            set slot 3 of loop-player to light green clay
+            set slot 4 of loop-player to light green clay
+            set slot 5 of loop-player to light green clay
+            set slot 6 of loop-player to light green clay
+            set slot 7 of loop-player to light green clay
+            set slot 8 of loop-player to light green clay
+        play "CLICK" to all players
+        if {tohle.je.jenom.placeholder.variable.proroze.se.mi.nechce.vsechno.tabovat} is not set:
+            # code
+            set block at location at 14, 65, 33 in world "arcade_lights" to light green wool
+            set block at location at 14, 65, 34 in world "arcade_lights" to light green wool
+            set block at location at 14, 65, 35 in world "arcade_lights" to light green wool
+            #
+            set block at location at 20, 65, 28 in world "arcade_lights" to light green wool
+            set block at location at 20, 65, 27 in world "arcade_lights" to light green wool
+            set block at location at 20, 65, 26 in world "arcade_lights" to light green wool
+            #
+            set block at location at 14, 65, 21 in world "arcade_lights" to light green wool
+            set block at location at 14, 65, 20 in world "arcade_lights" to light green wool
+            set block at location at 14, 65, 19 in world "arcade_lights" to light green wool
+            #
+            set block at location at 20, 65, 16 in world "arcade_lights" to light green wool
+            set block at location at 20, 65, 15 in world "arcade_lights" to light green wool
+            set block at location at 20, 65, 14 in world "arcade_lights" to light green wool
+            #
+            set block at location at 25, 65, 5 in world "arcade_lights" to light green wool
+            set block at location at 26, 65, 5 in world "arcade_lights" to light green wool
+            set block at location at 27, 65, 5 in world "arcade_lights" to light green wool
+            #
+            set block at location at 37, 65, 10 in world "arcade_lights" to light green wool
+            set block at location at 38, 65, 10 in world "arcade_lights" to light green wool
+            set block at location at 39, 65, 10 in world "arcade_lights" to light green wool
+            #
+            set block at location at 49, 65, 5 in world "arcade_lights" to light green wool
+            set block at location at 50, 65, 5 in world "arcade_lights" to light green wool
+            set block at location at 51, 65, 5 in world "arcade_lights" to light green wool
+            #
+            set block at location at 52, 65, 23 in world "arcade_lights" to light green wool
+            set block at location at 52, 65, 24 in world "arcade_lights" to light green wool
+            set block at location at 52, 65, 25 in world "arcade_lights" to light green wool
+            #
+            set block at location at 61, 65, 30 in world "arcade_lights" to light green wool
+            set block at location at 62, 65, 30 in world "arcade_lights" to light green wool
+            set block at location at 63, 65, 30 in world "arcade_lights" to light green wool
+            #
+            set block at location at 69, 65, 24 in world "arcade_lights" to light green wool
+            set block at location at 70, 65, 24 in world "arcade_lights" to light green wool
+            set block at location at 71, 65, 24 in world "arcade_lights" to light green wool
+            #
+            set block at location at 78, 65, 27 in world "arcade_lights" to light green wool
+            set block at location at 78, 65, 26 in world "arcade_lights" to light green wool
+            set block at location at 78, 65, 25 in world "arcade_lights" to light green wool
+            #
+            set block at location at 73, 65, 15 in world "arcade_lights" to light green wool
+            set block at location at 73, 65, 16 in world "arcade_lights" to light green wool
+            set block at location at 73, 65, 17 in world "arcade_lights" to light green wool
+            #
+            set block at location at 78, 65, 6 in world "arcade_lights" to light green wool
+            set block at location at 78, 65, 7 in world "arcade_lights" to light green wool
+            set block at location at 78, 65, 8 in world "arcade_lights" to light green wool
+            #
+            set block at location at 73, 65, -1 in world "arcade_lights" to light green wool
+            set block at location at 73, 65, -2 in world "arcade_lights" to light green wool
+            set block at location at 73, 65, -3 in world "arcade_lights" to light green wool
+            #
+            set block at location at 76, 65, -18 in world "arcade_lights" to light green wool
+            set block at location at 76, 65, -19 in world "arcade_lights" to light green wool
+            set block at location at 76, 65, -20 in world "arcade_lights" to light green wool
+            #
+            set block at location at 69, 65, -30 in world "arcade_lights" to light green wool
+            set block at location at 68, 65, -30 in world "arcade_lights" to light green wool
+            set block at location at 67, 65, -30 in world "arcade_lights" to light green wool
+            #
+            set block at location at 55, 65, -30 in world "arcade_lights" to light green wool
+            set block at location at 55, 65, -31 in world "arcade_lights" to light green wool
+            set block at location at 55, 65, -32 in world "arcade_lights" to light green wool
+            #
+            set block at location at 58, 65, -52 in world "arcade_lights" to light green wool
+            set block at location at 58, 65, -51 in world "arcade_lights" to light green wool
+            set block at location at 58, 65, -50 in world "arcade_lights" to light green wool
+            #
+            set block at location at 52, 65, -64 in world "arcade_lights" to light green wool
+            set block at location at 52, 65, -65 in world "arcade_lights" to light green wool
+            set block at location at 52, 65, -66 in world "arcade_lights" to light green wool
+            #
+            set block at location at 57, 65, -77 in world "arcade_lights" to light green wool
+            set block at location at 57, 65, -78 in world "arcade_lights" to light green wool
+            set block at location at 57, 65, -79 in world "arcade_lights" to light green wool
+            #
+            set block at location at 55, 65, -91 in world "arcade_lights" to light green wool
+            set block at location at 55, 65, -92 in world "arcade_lights" to light green wool
+            set block at location at 55, 65, -93 in world "arcade_lights" to light green wool
+            #
+            set block at location at 67, 65, -103 in world "arcade_lights" to light green wool
+            set block at location at 66, 65, -103 in world "arcade_lights" to light green wool
+            set block at location at 65, 65, -103 in world "arcade_lights" to light green wool
+            #
+            set block at location at 77, 65, -98 in world "arcade_lights" to light green wool
+            set block at location at 78, 65, -98 in world "arcade_lights" to light green wool
+            set block at location at 79, 65, -98 in world "arcade_lights" to light green wool
+            #
+            set block at location at 90, 65, -102 in world "arcade_lights" to light green wool
+            set block at location at 89, 65, -102 in world "arcade_lights" to light green wool
+            set block at location at 88, 65, -102 in world "arcade_lights" to light green wool
+            #
+            set block at location at 55, 64, -95 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -96 in world "arcade_lights" to light green clay
+
+
+
+
+
+            set block at location at 17, 64, 31 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 32 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 33 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 34 in world "arcade_lights" to light green clay
+            #
+            set block at location at 17, 64, 22 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 23 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 24 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 25 in world "arcade_lights" to light green clay
+            #
+            set block at location at 17, 64, 13 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 14 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 15 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 16 in world "arcade_lights" to light green clay
+            #
+            set block at location at 17, 64, 10 in world "arcade_lights" to light green clay
+            set block at location at 17, 64, 9 in world "arcade_lights" to light green clay
+            set block at location at 18, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 19, 64, 8 in world "arcade_lights" to light green clay
+            #
+            set block at location at 22, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 23, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 24, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 25, 64, 8 in world "arcade_lights" to light green clay
+            #
+            set block at location at 31, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 32, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 33, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 34, 64, 8 in world "arcade_lights" to light green clay
+            #
+            set block at location at 40, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 41, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 42, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 43, 64, 8 in world "arcade_lights" to light green clay
+            #
+            set block at location at 47, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 48, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 49, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 50, 64, 8 in world "arcade_lights" to light green clay
+            #
+            set block at location at 53, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 54, 64, 8 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 9 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 10 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, 13 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 14 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 15 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 16 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, 20 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 21 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 22 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 23 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, 26 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, 27 in world "arcade_lights" to light green clay
+            set block at location at 56, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 57, 64, 28 in world "arcade_lights" to light green clay
+            #
+            set block at location at 60, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 61, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 62, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 63, 64, 28 in world "arcade_lights" to light green clay
+            #
+            set block at location at 68, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 69, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 70, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 71, 64, 28 in world "arcade_lights" to light green clay
+            #
+            set block at location at 74, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 75, 64, 28 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 27 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 26 in world "arcade_lights" to light green clay
+            #
+            set block at location at 76, 64, 23 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 22 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 21 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 20 in world "arcade_lights" to light green clay
+            #
+            set block at location at 76, 64, 13 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 12 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 11 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 10 in world "arcade_lights" to light green clay
+            #
+            set block at location at 76, 64, 4 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 3 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 2 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, 1 in world "arcade_lights" to light green clay
+            #
+            set block at location at 76, 64, -4 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -5 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -6 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -7 in world "arcade_lights" to light green clay
+            #
+            set block at location at 76, 64, -13 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -14 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -15 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -16 in world "arcade_lights" to light green clay
+            #
+            set block at location at 76, 64, -22 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -23 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -24 in world "arcade_lights" to light green clay
+            #
+            set block at location at 76, 64, -27 in world "arcade_lights" to light green clay
+            set block at location at 76, 64, -28 in world "arcade_lights" to light green clay
+            set block at location at 75, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 74, 64, -29 in world "arcade_lights" to light green clay
+            #
+            set block at location at 71, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 70, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 69, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 68, 64, -29 in world "arcade_lights" to light green clay
+            #
+            set block at location at 71, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 70, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 69, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 68, 64, -29 in world "arcade_lights" to light green clay
+            #
+            set block at location at 63, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 62, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 61, 64, -29 in world "arcade_lights" to light green clay
+            set block at location at 60, 64, -29 in world "arcade_lights" to light green clay
+            #
+            set block at location at 57, 64, -29 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -34 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -35 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -36 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -37 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -41 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -42 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -43 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -44 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -50 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -51 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -52 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -53 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -58 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -59 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -60 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -61 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -67 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -68 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -69 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -70 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -75 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -76 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -77 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -78 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -84 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -85 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -86 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -87 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -84 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -87 in world "arcade_lights" to light green clay
+            #
+            set block at location at 55, 64, -99 in world "arcade_lights" to light green clay
+            set block at location at 55, 64, -100 in world "arcade_lights" to light green clay
+            set block at location at 56, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 57, 64, -101 in world "arcade_lights" to light green clay
+            #
+            set block at location at 60, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 61, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 62, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 63, 64, -101 in world "arcade_lights" to light green clay
+            #
+            set block at location at 69, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 70, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 71, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 72, 64, -101 in world "arcade_lights" to light green clay
+            #
+            set block at location at 77, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 78, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 79, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 80, 64, -101 in world "arcade_lights" to light green clay
+            #
+            set block at location at 86, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 87, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 88, 64, -101 in world "arcade_lights" to light green clay
+            set block at location at 89, 64, -101 in world "arcade_lights" to light green clay
+    if {_t} is "SLOW":
+        set {arcademinigame_redlight-greenlight.color} to "YELLOW"
+        set {arcademinigame_redlight-greenlight.scoreboard-title} to "&e&n&lGo, Slow, STOP!"
+        loop all players in world "arcade_lights":
+            send loop-player title "&r " with subtitle "&e&n&lSLOW DOWN" for 4 seconds
+            set slot 0 of loop-player to yellow clay
+            set slot 1 of loop-player to yellow clay
+            set slot 2 of loop-player to yellow clay
+            set slot 3 of loop-player to yellow clay
+            set slot 4 of loop-player to yellow clay
+            set slot 5 of loop-player to yellow clay
+            set slot 6 of loop-player to yellow clay
+            set slot 7 of loop-player to yellow clay
+            set slot 8 of loop-player to yellow clay
+        play "CLICK" to all players
+        if {tohle.je.jenom.placeholder.variable.proroze.se.mi.nechce.vsechno.tabovat} is not set:
+            # code
+            set block at location at 14, 65, 33 in world "arcade_lights" to yellow wool
+            set block at location at 14, 65, 34 in world "arcade_lights" to yellow wool
+            set block at location at 14, 65, 35 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 20, 65, 28 in world "arcade_lights" to yellow wool
+            set block at location at 20, 65, 27 in world "arcade_lights" to yellow wool
+            set block at location at 20, 65, 26 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 14, 65, 21 in world "arcade_lights" to yellow wool
+            set block at location at 14, 65, 20 in world "arcade_lights" to yellow wool
+            set block at location at 14, 65, 19 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 20, 65, 16 in world "arcade_lights" to yellow wool
+            set block at location at 20, 65, 15 in world "arcade_lights" to yellow wool
+            set block at location at 20, 65, 14 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 25, 65, 5 in world "arcade_lights" to yellow wool
+            set block at location at 26, 65, 5 in world "arcade_lights" to yellow wool
+            set block at location at 27, 65, 5 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 37, 65, 10 in world "arcade_lights" to yellow wool
+            set block at location at 38, 65, 10 in world "arcade_lights" to yellow wool
+            set block at location at 39, 65, 10 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 49, 65, 5 in world "arcade_lights" to yellow wool
+            set block at location at 50, 65, 5 in world "arcade_lights" to yellow wool
+            set block at location at 51, 65, 5 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 52, 65, 23 in world "arcade_lights" to yellow wool
+            set block at location at 52, 65, 24 in world "arcade_lights" to yellow wool
+            set block at location at 52, 65, 25 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 61, 65, 30 in world "arcade_lights" to yellow wool
+            set block at location at 62, 65, 30 in world "arcade_lights" to yellow wool
+            set block at location at 63, 65, 30 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 69, 65, 24 in world "arcade_lights" to yellow wool
+            set block at location at 70, 65, 24 in world "arcade_lights" to yellow wool
+            set block at location at 71, 65, 24 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 78, 65, 27 in world "arcade_lights" to yellow wool
+            set block at location at 78, 65, 26 in world "arcade_lights" to yellow wool
+            set block at location at 78, 65, 25 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 73, 65, 15 in world "arcade_lights" to yellow wool
+            set block at location at 73, 65, 16 in world "arcade_lights" to yellow wool
+            set block at location at 73, 65, 17 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 78, 65, 6 in world "arcade_lights" to yellow wool
+            set block at location at 78, 65, 7 in world "arcade_lights" to yellow wool
+            set block at location at 78, 65, 8 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 73, 65, -1 in world "arcade_lights" to yellow wool
+            set block at location at 73, 65, -2 in world "arcade_lights" to yellow wool
+            set block at location at 73, 65, -3 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 76, 65, -18 in world "arcade_lights" to yellow wool
+            set block at location at 76, 65, -19 in world "arcade_lights" to yellow wool
+            set block at location at 76, 65, -20 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 69, 65, -30 in world "arcade_lights" to yellow wool
+            set block at location at 68, 65, -30 in world "arcade_lights" to yellow wool
+            set block at location at 67, 65, -30 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 55, 65, -30 in world "arcade_lights" to yellow wool
+            set block at location at 55, 65, -31 in world "arcade_lights" to yellow wool
+            set block at location at 55, 65, -32 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 58, 65, -52 in world "arcade_lights" to yellow wool
+            set block at location at 58, 65, -51 in world "arcade_lights" to yellow wool
+            set block at location at 58, 65, -50 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 52, 65, -64 in world "arcade_lights" to yellow wool
+            set block at location at 52, 65, -65 in world "arcade_lights" to yellow wool
+            set block at location at 52, 65, -66 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 57, 65, -77 in world "arcade_lights" to yellow wool
+            set block at location at 57, 65, -78 in world "arcade_lights" to yellow wool
+            set block at location at 57, 65, -79 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 55, 65, -91 in world "arcade_lights" to yellow wool
+            set block at location at 55, 65, -92 in world "arcade_lights" to yellow wool
+            set block at location at 55, 65, -93 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 67, 65, -103 in world "arcade_lights" to yellow wool
+            set block at location at 66, 65, -103 in world "arcade_lights" to yellow wool
+            set block at location at 65, 65, -103 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 77, 65, -98 in world "arcade_lights" to yellow wool
+            set block at location at 78, 65, -98 in world "arcade_lights" to yellow wool
+            set block at location at 79, 65, -98 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 90, 65, -102 in world "arcade_lights" to yellow wool
+            set block at location at 89, 65, -102 in world "arcade_lights" to yellow wool
+            set block at location at 88, 65, -102 in world "arcade_lights" to yellow wool
+            #
+            set block at location at 55, 64, -95 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -96 in world "arcade_lights" to yellow clay
+
+
+
+
+
+            set block at location at 17, 64, 31 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 32 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 33 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 34 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 17, 64, 22 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 23 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 24 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 25 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 17, 64, 13 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 14 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 15 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 16 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 17, 64, 10 in world "arcade_lights" to yellow clay
+            set block at location at 17, 64, 9 in world "arcade_lights" to yellow clay
+            set block at location at 18, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 19, 64, 8 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 22, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 23, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 24, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 25, 64, 8 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 31, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 32, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 33, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 34, 64, 8 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 40, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 41, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 42, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 43, 64, 8 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 47, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 48, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 49, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 50, 64, 8 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 53, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 54, 64, 8 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 9 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 10 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, 13 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 14 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 15 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 16 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, 20 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 21 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 22 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 23 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, 26 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, 27 in world "arcade_lights" to yellow clay
+            set block at location at 56, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 57, 64, 28 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 60, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 61, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 62, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 63, 64, 28 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 68, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 69, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 70, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 71, 64, 28 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 74, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 75, 64, 28 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 27 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 26 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 76, 64, 23 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 22 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 21 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 20 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 76, 64, 13 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 12 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 11 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 10 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 76, 64, 4 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 3 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 2 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, 1 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 76, 64, -4 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -5 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -6 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -7 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 76, 64, -13 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -14 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -15 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -16 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 76, 64, -22 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -23 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -24 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 76, 64, -27 in world "arcade_lights" to yellow clay
+            set block at location at 76, 64, -28 in world "arcade_lights" to yellow clay
+            set block at location at 75, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 74, 64, -29 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 71, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 70, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 69, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 68, 64, -29 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 71, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 70, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 69, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 68, 64, -29 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 63, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 62, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 61, 64, -29 in world "arcade_lights" to yellow clay
+            set block at location at 60, 64, -29 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 57, 64, -29 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -34 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -35 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -36 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -37 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -41 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -42 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -43 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -44 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -50 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -51 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -52 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -53 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -58 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -59 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -60 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -61 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -67 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -68 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -69 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -70 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -75 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -76 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -77 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -78 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -84 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -85 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -86 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -87 in world "arcade_lights" to yellow clay
+            #yellow clay
+            set block at location at 55, 64, -84 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -87 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 55, 64, -99 in world "arcade_lights" to yellow clay
+            set block at location at 55, 64, -100 in world "arcade_lights" to yellow clay
+            set block at location at 56, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 57, 64, -101 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 60, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 61, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 62, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 63, 64, -101 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 69, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 70, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 71, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 72, 64, -101 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 77, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 78, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 79, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 80, 64, -101 in world "arcade_lights" to yellow clay
+            #
+            set block at location at 86, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 87, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 88, 64, -101 in world "arcade_lights" to yellow clay
+            set block at location at 89, 64, -101 in world "arcade_lights" to yellow clay
+    if {_t} is "STOP":
+        set {arcademinigame_redlight-greenlight.color} to "RED"
+        set {arcademinigame_redlight-greenlight.scoreboard-title} to "&c&n&lGo, Slow, STOP!"
+        loop all players in world "arcade_lights":
+            send loop-player title "&r " with subtitle "&c&n&lSTOP!" for 3 seconds
+            set slot 0 of loop-player to red clay
+            set slot 1 of loop-player to red clay
+            set slot 2 of loop-player to red clay
+            set slot 3 of loop-player to red clay
+            set slot 4 of loop-player to red clay
+            set slot 5 of loop-player to red clay
+            set slot 6 of loop-player to red clay
+            set slot 7 of loop-player to red clay
+            set slot 8 of loop-player to red clay
+        play "CLICK" to all players
+        if {tohle.je.jenom.placeholder.variable.proroze.se.mi.nechce.vsechno.tabovat} is not set:
+            # code
+            set block at location at 14, 65, 33 in world "arcade_lights" to red wool
+            set block at location at 14, 65, 34 in world "arcade_lights" to red wool
+            set block at location at 14, 65, 35 in world "arcade_lights" to red wool
+            #
+            set block at location at 20, 65, 28 in world "arcade_lights" to red wool
+            set block at location at 20, 65, 27 in world "arcade_lights" to red wool
+            set block at location at 20, 65, 26 in world "arcade_lights" to red wool
+            #
+            set block at location at 14, 65, 21 in world "arcade_lights" to red wool
+            set block at location at 14, 65, 20 in world "arcade_lights" to red wool
+            set block at location at 14, 65, 19 in world "arcade_lights" to red wool
+            #
+            set block at location at 20, 65, 16 in world "arcade_lights" to red wool
+            set block at location at 20, 65, 15 in world "arcade_lights" to red wool
+            set block at location at 20, 65, 14 in world "arcade_lights" to red wool
+            #
+            set block at location at 25, 65, 5 in world "arcade_lights" to red wool
+            set block at location at 26, 65, 5 in world "arcade_lights" to red wool
+            set block at location at 27, 65, 5 in world "arcade_lights" to red wool
+            #
+            set block at location at 37, 65, 10 in world "arcade_lights" to red wool
+            set block at location at 38, 65, 10 in world "arcade_lights" to red wool
+            set block at location at 39, 65, 10 in world "arcade_lights" to red wool
+            #
+            set block at location at 49, 65, 5 in world "arcade_lights" to red wool
+            set block at location at 50, 65, 5 in world "arcade_lights" to red wool
+            set block at location at 51, 65, 5 in world "arcade_lights" to red wool
+            #
+            set block at location at 52, 65, 23 in world "arcade_lights" to red wool
+            set block at location at 52, 65, 24 in world "arcade_lights" to red wool
+            set block at location at 52, 65, 25 in world "arcade_lights" to red wool
+            #
+            set block at location at 61, 65, 30 in world "arcade_lights" to red wool
+            set block at location at 62, 65, 30 in world "arcade_lights" to red wool
+            set block at location at 63, 65, 30 in world "arcade_lights" to red wool
+            #
+            set block at location at 69, 65, 24 in world "arcade_lights" to red wool
+            set block at location at 70, 65, 24 in world "arcade_lights" to red wool
+            set block at location at 71, 65, 24 in world "arcade_lights" to red wool
+            #
+            set block at location at 78, 65, 27 in world "arcade_lights" to red wool
+            set block at location at 78, 65, 26 in world "arcade_lights" to red wool
+            set block at location at 78, 65, 25 in world "arcade_lights" to red wool
+            #
+            set block at location at 73, 65, 15 in world "arcade_lights" to red wool
+            set block at location at 73, 65, 16 in world "arcade_lights" to red wool
+            set block at location at 73, 65, 17 in world "arcade_lights" to red wool
+            #
+            set block at location at 78, 65, 6 in world "arcade_lights" to red wool
+            set block at location at 78, 65, 7 in world "arcade_lights" to red wool
+            set block at location at 78, 65, 8 in world "arcade_lights" to red wool
+            #
+            set block at location at 73, 65, -1 in world "arcade_lights" to red wool
+            set block at location at 73, 65, -2 in world "arcade_lights" to red wool
+            set block at location at 73, 65, -3 in world "arcade_lights" to red wool
+            #
+            set block at location at 76, 65, -18 in world "arcade_lights" to red wool
+            set block at location at 76, 65, -19 in world "arcade_lights" to red wool
+            set block at location at 76, 65, -20 in world "arcade_lights" to red wool
+            #
+            set block at location at 69, 65, -30 in world "arcade_lights" to red wool
+            set block at location at 68, 65, -30 in world "arcade_lights" to red wool
+            set block at location at 67, 65, -30 in world "arcade_lights" to red wool
+            #
+            set block at location at 55, 65, -30 in world "arcade_lights" to red wool
+            set block at location at 55, 65, -31 in world "arcade_lights" to red wool
+            set block at location at 55, 65, -32 in world "arcade_lights" to red wool
+            #
+            set block at location at 58, 65, -52 in world "arcade_lights" to red wool
+            set block at location at 58, 65, -51 in world "arcade_lights" to red wool
+            set block at location at 58, 65, -50 in world "arcade_lights" to red wool
+            #
+            set block at location at 52, 65, -64 in world "arcade_lights" to red wool
+            set block at location at 52, 65, -65 in world "arcade_lights" to red wool
+            set block at location at 52, 65, -66 in world "arcade_lights" to red wool
+            #
+            set block at location at 57, 65, -77 in world "arcade_lights" to red wool
+            set block at location at 57, 65, -78 in world "arcade_lights" to red wool
+            set block at location at 57, 65, -79 in world "arcade_lights" to red wool
+            #
+            set block at location at 55, 65, -91 in world "arcade_lights" to red wool
+            set block at location at 55, 65, -92 in world "arcade_lights" to red wool
+            set block at location at 55, 65, -93 in world "arcade_lights" to red wool
+            #
+            set block at location at 67, 65, -103 in world "arcade_lights" to red wool
+            set block at location at 66, 65, -103 in world "arcade_lights" to red wool
+            set block at location at 65, 65, -103 in world "arcade_lights" to red wool
+            #
+            set block at location at 77, 65, -98 in world "arcade_lights" to red wool
+            set block at location at 78, 65, -98 in world "arcade_lights" to red wool
+            set block at location at 79, 65, -98 in world "arcade_lights" to red wool
+            #
+            set block at location at 90, 65, -102 in world "arcade_lights" to red wool
+            set block at location at 89, 65, -102 in world "arcade_lights" to red wool
+            set block at location at 88, 65, -102 in world "arcade_lights" to red wool
+            #
+            set block at location at 55, 64, -95 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -96 in world "arcade_lights" to red clay
+
+
+
+
+
+
+            set block at location at 17, 64, 31 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 32 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 33 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 34 in world "arcade_lights" to red clay
+            #
+            set block at location at 17, 64, 22 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 23 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 24 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 25 in world "arcade_lights" to red clay
+            #
+            set block at location at 17, 64, 13 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 14 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 15 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 16 in world "arcade_lights" to red clay
+            #
+            set block at location at 17, 64, 10 in world "arcade_lights" to red clay
+            set block at location at 17, 64, 9 in world "arcade_lights" to red clay
+            set block at location at 18, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 19, 64, 8 in world "arcade_lights" to red clay
+            #
+            set block at location at 22, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 23, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 24, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 25, 64, 8 in world "arcade_lights" to red clay
+            #
+            set block at location at 31, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 32, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 33, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 34, 64, 8 in world "arcade_lights" to red clay
+            #
+            set block at location at 40, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 41, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 42, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 43, 64, 8 in world "arcade_lights" to red clay
+            #
+            set block at location at 47, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 48, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 49, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 50, 64, 8 in world "arcade_lights" to red clay
+            #
+            set block at location at 53, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 54, 64, 8 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 9 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 10 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, 13 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 14 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 15 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 16 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, 20 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 21 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 22 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 23 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, 26 in world "arcade_lights" to red clay
+            set block at location at 55, 64, 27 in world "arcade_lights" to red clay
+            set block at location at 56, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 57, 64, 28 in world "arcade_lights" to red clay
+            #
+            set block at location at 60, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 61, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 62, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 63, 64, 28 in world "arcade_lights" to red clay
+            #
+            set block at location at 68, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 69, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 70, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 71, 64, 28 in world "arcade_lights" to red clay
+            #
+            set block at location at 74, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 75, 64, 28 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 27 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 26 in world "arcade_lights" to red clay
+            #
+            set block at location at 76, 64, 23 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 22 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 21 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 20 in world "arcade_lights" to red clay
+            #
+            set block at location at 76, 64, 13 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 12 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 11 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 10 in world "arcade_lights" to red clay
+            #
+            set block at location at 76, 64, 4 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 3 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 2 in world "arcade_lights" to red clay
+            set block at location at 76, 64, 1 in world "arcade_lights" to red clay
+            #
+            set block at location at 76, 64, -4 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -5 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -6 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -7 in world "arcade_lights" to red clay
+            #
+            set block at location at 76, 64, -13 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -14 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -15 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -16 in world "arcade_lights" to red clay
+            #
+            set block at location at 76, 64, -22 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -23 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -24 in world "arcade_lights" to red clay
+            #
+            set block at location at 76, 64, -27 in world "arcade_lights" to red clay
+            set block at location at 76, 64, -28 in world "arcade_lights" to red clay
+            set block at location at 75, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 74, 64, -29 in world "arcade_lights" to red clay
+            #
+            set block at location at 71, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 70, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 69, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 68, 64, -29 in world "arcade_lights" to red clay
+            #
+            set block at location at 71, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 70, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 69, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 68, 64, -29 in world "arcade_lights" to red clay
+            #
+            set block at location at 63, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 62, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 61, 64, -29 in world "arcade_lights" to red clay
+            set block at location at 60, 64, -29 in world "arcade_lights" to red clay
+            #
+            set block at location at 57, 64, -29 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -34 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -35 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -36 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -37 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -41 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -42 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -43 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -44 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -50 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -51 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -52 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -53 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -58 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -59 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -60 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -61 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -67 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -68 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -69 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -70 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -75 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -76 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -77 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -78 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -84 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -85 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -86 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -87 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -84 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -87 in world "arcade_lights" to red clay
+            #
+            set block at location at 55, 64, -99 in world "arcade_lights" to red clay
+            set block at location at 55, 64, -100 in world "arcade_lights" to red clay
+            set block at location at 56, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 57, 64, -101 in world "arcade_lights" to red clay
+            #
+            set block at location at 60, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 61, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 62, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 63, 64, -101 in world "arcade_lights" to red clay
+            #
+            set block at location at 69, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 70, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 71, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 72, 64, -101 in world "arcade_lights" to red clay
+            #
+            set block at location at 77, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 78, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 79, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 80, 64, -101 in world "arcade_lights" to red clay
+            #
+            set block at location at 86, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 87, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 88, 64, -101 in world "arcade_lights" to red clay
+            set block at location at 89, 64, -101 in world "arcade_lights" to red clay

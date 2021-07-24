@@ -1,0 +1,180 @@
+on join:
+    preInit(player)
+    set gamemode of player to adventure
+    set {invstate.%player%} to "auth"
+    delete {loggedin.%player%}
+    set join message to ""
+    hide player from all players
+    debug("&7%player% &8se připojil/a")
+    teleport player to {ev_auth}
+    delete {ac.%player%}
+    wait 10 ticks
+    execute server command "effect %player% clear"
+    set {cosmetics.%player%.owned.trail.flame} to true
+    set {cosmetics.%player%.owned.trail.cherry_blossom} to true
+    set {cosmetics.%player%.owned.trail.love} to true
+    set {cosmetics.%player%.owned.trail.aqua} to true
+    set {cosmetics.%player%.owned.trail.wind} to true
+    set {cosmetics.%player%.owned.trail.easter_breeze} to true
+    set {cosmetics.%player%.owned.trail.ice} to true
+    set {cosmetics.%player%.owned.trail.pride} to true
+    set {cosmetics.%player%.owned.trail.summertime} to true
+    set {shards::%player%} to 99999
+
+
+on quit:
+    debug("&7%player% &8se odpojil/a")
+    if {loggedin.%player%} is not set:
+        set leave message to ""
+    else:
+        set leave message to "%{rankcolor.%player%}%&l%player% &7se odpojil/a"
+    delete {loggedin.%player%}
+
+
+
+on authme login:
+    set {loggedin.%player%} to true
+    loop 500 times:
+        send "&r "
+    wait 3 ticks
+    if player is "LukynkaCZE" or "Peterko_" or "Kbelik_Vody" or "S0ptik" or "The3Dolphin" or "JopGamer" or "TenViki":
+        wait 20 ticks
+        if {rank.%player%} is "donator":
+            if {donator.100reward.%player%} is not set:
+                add 100 to {shards::%player%}
+                send "&d+100&5✦ &7(Díky za podporu <3)"
+                run player command "/soundhandler_sound_orb_2" as op
+    else:
+        postLoginEvent(player)
+        wait 20 ticks
+        if {rank.%player%} is "donator":
+            if {donator.100reward.%player%} is not set:
+                add 100 to {shards::%player%}
+                send "&d+100&5✦ &7(Díky za podporu <3)"
+                run player command "/soundhandler_sound_orb_2" as op
+
+
+
+
+#on join:
+#   if {velikonoceskin.%player%} is not set:
+#      set {velikonoceskin.%player%} to true
+#     if {rank.%player%} is "admin" or "mcteam":
+#        set {_d} to "https://i.imgur.com/ScX2ioE.png"
+#   if {rank.%player%} is "dcteam":
+#      set {_d} to "https://i.imgur.com/90MLDkp.png"
+# if {rank.%player%} is "tester":
+#    set {_d} to "https://i.imgur.com/rUr6w0D.png"
+#        if {rank.%player%} is "donator":
+#           set {_d} to "https://i.imgur.com/cvPHzga.png"
+#      if {rank.%player%} is "komunita" or "verified":
+#         set {_d} to "https://i.imgur.com/FuCWYlp.png"
+#    if {rank.%player%} is "player":
+#       set {_d} to "https://i.imgur.com/XME3flO.png"
+#  execute server command "skin set %player% %{_d}%"
+# set {velc.%player%} to true
+
+
+
+
+function preInit(p: player):
+    if {rankcolor.%{_p}%} is not set:
+        if {rank.%{_p}%} is "admin":
+            set {rankcolor.%{_p}%} to "&c"
+        if {rank.%{_p}%} is "mcteam":
+            set {rankcolor.%{_p}%} to "&c"
+        if {rank.%{_p}%} is "dcteam":
+            set {rankcolor.%{_p}%} to "&6"
+        if {rank.%{_p}%} is "tester":
+            set {rankcolor.%{_p}%} to "&b"
+        if {rank.%{_p}%} is "spectator":
+            set {rankcolor.%{_p}%} to "&f"
+        if {rank.%{_p}%} is "donator":
+            set {rankcolor.%{_p}%} to "&d"
+        if {rank.%{_p}%} is "hostify":
+            set {rankcolor.%{_p}%} to "&9"
+        if {rank.%{_p}%} is "komunita":
+            set {rankcolor.%{_p}%} to "&a"
+        if {rank.%{_p}%} is "champion":
+            set {rankcolor.%{_p}%} to "&6"
+        if {rank.%{_p}%} is not set:
+            set {rank.%{_p}%} to "player"
+            set {rankcolor.%{_p}%} to "&e"
+    if {shards::%{_p}%} is not set:
+        set {shards::%{_p}%} to 0
+    if {coins::%{_p}%} is not set:
+        set {coins::%{_p}%} to 0
+    if {scoins::%{_p}%} is not set:
+        set {scoins::%{_p}%} to 0
+    if {cosmetics.%{_p}%.joinmsg} is not set:
+        set {cosmetics.%{_p}%.joinmsg} to "se připojil/a!"
+    
+    # old ranks
+
+    if {rank.%{_p}%} is "komunita" or "verified":
+        set {_oldrank} to "%{rank.%{_p}%}%"
+        set {rank.%{_p}%} to "player"
+        set {rankcolor.%{_p}%} to "&e"
+        execute server command "pr setrank %{_p}% player"
+        set {_newrank} to "%{rank.%{_p}%}%"
+        send "&cVypadá to že jsi měl/a starý rank který se už nepoužívá.." to {_p}
+        debug("&cHráč &4%{_p}%&c měl/a rank který se už nepoužívá! &8(&7%{_oldrank}% &b-> &f%{_newrank}%&8)")
+
+    if {rank.%{_p}%} is "booster":
+        set {_oldrank} to "%{rank.%{_p}%}%"
+        set {rank.%{_p}%} to "player"
+        set {rankcolor.%{_p}%} to "&e"
+        execute server command "pr setrank %{_p}% player"
+        set {_newrank} to "%{rank.%{_p}%}%"
+        send "&cVypadá to že jsi měl/a starý rank který se už nepoužívá.." to {_p}
+        debug("&cHráč &4%{_p}%&c měl/a rank který se už nepoužívá! &8(&7%{_oldrank}% &b-> &f%{_newrank}%&8)")
+
+    if {rank.%{_p}%} is "youtuber" or "streamer":
+        set {_oldrank} to "%{rank.%{_p}%}%"
+        set {rank.%{_p}%} to "media"
+        set {rankcolor.%{_p}%} to "&5"
+        execute server command "pr setrank %{_p}% media"
+        set {_newrank} to "%{rank.%{_p}%}%"
+        send "&cVypadá to že jsi měl/a starý rank který se už nepoužívá.." to {_p}
+        debug("&cHráč &4%{_p}%&c měl/a rank který se už nepoužívá! &8(&7%{_oldrank}% &b-> &f%{_newrank}%&8)")
+        
+
+
+
+
+
+
+function postLoginEvent(player: player):
+    loop 100 times:
+        send " " to {_player}
+    set {invstate.%{_player}%} to "hub"
+    broadcast coloured "%{rankcolor.%{_player}%}%&l%{_player}%&7 %{cosmetics.%{_player}%.joinmsg}%"
+    send "&5&m                                 " to {_player}
+    send "&r " to {_player}
+    send " &d&n&lVítej na EventVerse!" to {_player}
+    send "&r " to {_player}
+    send "&8&l» &7Event &e%{event.name}% &7začíná v &a%{event.time}%&7!" to {_player}
+    send "&8&l» &7Výhra: &6%{event.prize}%" to {_player}
+    send "&r " to {_player}
+    send "&e Doufáme že si užiješ event :D" to {_player}
+    send "&r " to {_player}
+    send "&5&m                                 "  to {_player}
+    send {_player} title "&d&lEventVerse" with subtitle "&eDoufáme že si event užiješ, %{_player}% &e:D" for 5 seconds
+    run {_player} command "/soundhandler_sound_levelup_0" as op
+    execute server command "effect %{_player}% clear"
+    teleport {_player} to {hub}
+    reveal {_player} from all players
+    wait 10 ticks
+    if {rank.%{_player}%} is "admin" or "mcteam":
+        set {debug.%{_player}%} to true
+
+
+on right click with red dye:
+    if name of player's held item is "&c&n&lNepamatuješ si heslo?":
+        send "&4&m                                        "
+        send "&r "
+        send " &c&n&lZapomenuté Heslo"
+        send "&r%nl%&7 Pokud jsi si zapomněl/a heslo, připoj se na náš%nl%&7 discord server a vytvoř si ticket pomocí příkazu &e!ticket&7!%nl%&r%nl%&8&l» &fDiscord: &b&nhttps://www.event-verse.fun/discord"
+        send "&r "
+        send "&4&m                                        "
+        play "WOOD_CLICK" to player

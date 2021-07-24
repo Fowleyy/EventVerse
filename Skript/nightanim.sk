@@ -1,0 +1,1662 @@
+function dayToNightAnim():
+    if {nbjuigfhpifghptuibf} is not set:
+        set time in world "hub" to 12:59
+        wait 2 ticks
+        set time in world "hub" to 12:58
+        wait 2 ticks
+        set time in world "hub" to 12:57
+        wait 2 ticks
+        set time in world "hub" to 12:56
+        wait 2 ticks
+        set time in world "hub" to 12:55
+        wait 2 ticks
+        set time in world "hub" to 12:54
+        wait 2 ticks
+        set time in world "hub" to 12:53
+        wait 2 ticks
+        set time in world "hub" to 12:52
+        wait 2 ticks
+        set time in world "hub" to 12:51
+        wait 2 ticks
+        set time in world "hub" to 12:50
+        wait 2 ticks
+        #s   |
+        set time in world "hub" to 12:49
+        wait 2 ticks
+        set time in world "hub" to 12:48
+        wait 2 ticks
+        set time in world "hub" to 12:47
+        wait 2 ticks
+        set time in world "hub" to 12:46
+        wait 2 ticks
+        set time in world "hub" to 12:45
+        wait 2 ticks
+        set time in world "hub" to 12:44
+        wait 2 ticks
+        set time in world "hub" to 12:43
+        wait 2 ticks
+        set time in world "hub" to 12:42
+        wait 2 ticks
+        set time in world "hub" to 12:41
+        wait 2 ticks
+        set time in world "hub" to 12:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 12:39
+        wait 2 ticks
+        set time in world "hub" to 12:38
+        wait 2 ticks
+        set time in world "hub" to 12:37
+        wait 2 ticks
+        set time in world "hub" to 12:36
+        wait 2 ticks
+        set time in world "hub" to 12:35
+        wait 2 ticks
+        set time in world "hub" to 12:34
+        wait 2 ticks
+        set time in world "hub" to 12:33
+        wait 2 ticks
+        set time in world "hub" to 12:32
+        wait 2 ticks
+        set time in world "hub" to 12:31
+        wait 2 ticks
+        set time in world "hub" to 12:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 12:29
+        wait 2 ticks
+        set time in world "hub" to 12:28
+        wait 2 ticks
+        set time in world "hub" to 12:27
+        wait 2 ticks
+        set time in world "hub" to 12:26
+        wait 2 ticks
+        set time in world "hub" to 12:25
+        wait 2 ticks
+        set time in world "hub" to 12:24
+        wait 2 ticks
+        set time in world "hub" to 12:23
+        wait 2 ticks
+        set time in world "hub" to 12:22
+        wait 2 ticks
+        set time in world "hub" to 12:21
+        wait 2 ticks
+        set time in world "hub" to 12:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 12:19
+        wait 2 ticks
+        set time in world "hub" to 12:18
+        wait 2 ticks
+        set time in world "hub" to 12:17
+        wait 2 ticks
+        set time in world "hub" to 12:16
+        wait 2 ticks
+        set time in world "hub" to 12:15
+        wait 2 ticks
+        set time in world "hub" to 12:14
+        wait 2 ticks
+        set time in world "hub" to 12:13
+        wait 2 ticks
+        set time in world "hub" to 12:12
+        wait 2 ticks
+        set time in world "hub" to 12:11
+        wait 2 ticks
+        set time in world "hub" to 12:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 12:09
+        wait 2 ticks
+        set time in world "hub" to 12:08
+        wait 2 ticks
+        set time in world "hub" to 12:07
+        wait 2 ticks
+        set time in world "hub" to 12:06
+        wait 2 ticks
+        set time in world "hub" to 12:05
+        wait 2 ticks
+        set time in world "hub" to 12:04
+        wait 2 ticks
+        set time in world "hub" to 12:03
+        wait 2 ticks
+        set time in world "hub" to 12:02
+        wait 2 ticks
+        set time in world "hub" to 12:01
+        wait 2 ticks
+        set time in world "hub" to 12:00
+        wait 2 ticks
+
+        # 11 h
+
+        set time in world "hub" to 11:59
+        wait 2 ticks
+        set time in world "hub" to 11:58
+        wait 2 ticks
+        set time in world "hub" to 11:57
+        wait 2 ticks
+        set time in world "hub" to 11:56
+        wait 2 ticks
+        set time in world "hub" to 11:55
+        wait 2 ticks
+        set time in world "hub" to 11:54
+        wait 2 ticks
+        set time in world "hub" to 11:53
+        wait 2 ticks
+        set time in world "hub" to 11:52
+        wait 2 ticks
+        set time in world "hub" to 11:51
+        wait 2 ticks
+        set time in world "hub" to 11:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 11:49
+        wait 2 ticks
+        set time in world "hub" to 11:48
+        wait 2 ticks
+        set time in world "hub" to 11:47
+        wait 2 ticks
+        set time in world "hub" to 11:46
+        wait 2 ticks
+        set time in world "hub" to 11:45
+        wait 2 ticks
+        set time in world "hub" to 11:44
+        wait 2 ticks
+        set time in world "hub" to 11:43
+        wait 2 ticks
+        set time in world "hub" to 11:42
+        wait 2 ticks
+        set time in world "hub" to 11:41
+        wait 2 ticks
+        set time in world "hub" to 11:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 11:39
+        wait 2 ticks
+        set time in world "hub" to 11:38
+        wait 2 ticks
+        set time in world "hub" to 11:37
+        wait 2 ticks
+        set time in world "hub" to 11:36
+        wait 2 ticks
+        set time in world "hub" to 11:35
+        wait 2 ticks
+        set time in world "hub" to 11:34
+        wait 2 ticks
+        set time in world "hub" to 11:33
+        wait 2 ticks
+        set time in world "hub" to 11:32
+        wait 2 ticks
+        set time in world "hub" to 11:31
+        wait 2 ticks
+        set time in world "hub" to 11:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 11:29
+        wait 2 ticks
+        set time in world "hub" to 11:28
+        wait 2 ticks
+        set time in world "hub" to 11:27
+        wait 2 ticks
+        set time in world "hub" to 11:26
+        wait 2 ticks
+        set time in world "hub" to 11:25
+        wait 2 ticks
+        set time in world "hub" to 11:24
+        wait 2 ticks
+        set time in world "hub" to 11:23
+        wait 2 ticks
+        set time in world "hub" to 11:22
+        wait 2 ticks
+        set time in world "hub" to 11:21
+        wait 2 ticks
+        set time in world "hub" to 11:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 11:19
+        wait 2 ticks
+        set time in world "hub" to 11:18
+        wait 2 ticks
+        set time in world "hub" to 11:17
+        wait 2 ticks
+        set time in world "hub" to 11:16
+        wait 2 ticks
+        set time in world "hub" to 11:15
+        wait 2 ticks
+        set time in world "hub" to 11:14
+        wait 2 ticks
+        set time in world "hub" to 11:13
+        set time in world "hub" to 11:12
+        wait 2 ticks
+        set time in world "hub" to 11:11
+        wait 2 ticks
+        set time in world "hub" to 11:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 11:09
+        wait 2 ticks
+        set time in world "hub" to 11:08
+        wait 2 ticks
+        set time in world "hub" to 11:07
+        wait 2 ticks
+        set time in world "hub" to 11:06
+        wait 2 ticks
+        set time in world "hub" to 11:05
+        wait 2 ticks
+        set time in world "hub" to 11:04
+        wait 2 ticks
+        set time in world "hub" to 11:03
+        wait 2 ticks
+        set time in world "hub" to 11:02
+        wait 2 ticks
+        set time in world "hub" to 11:01
+        wait 2 ticks
+        set time in world "hub" to 11:00
+        wait 2 ticks
+
+        # 10 h
+
+        set time in world "hub" to 10:59
+        wait 2 ticks
+        set time in world "hub" to 10:58
+        wait 2 ticks
+        set time in world "hub" to 10:57
+        wait 2 ticks
+        set time in world "hub" to 10:56
+        wait 2 ticks
+        set time in world "hub" to 10:55
+        wait 2 ticks
+        set time in world "hub" to 10:54
+        wait 2 ticks
+        set time in world "hub" to 10:53
+        wait 2 ticks
+        set time in world "hub" to 10:52
+        wait 2 ticks
+        set time in world "hub" to 10:51
+        wait 2 ticks
+        set time in world "hub" to 10:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 10:49
+        wait 2 ticks
+        set time in world "hub" to 10:48
+        wait 2 ticks
+        set time in world "hub" to 10:47
+        wait 2 ticks
+        set time in world "hub" to 10:46
+        wait 2 ticks
+        set time in world "hub" to 10:45
+        wait 2 ticks
+        set time in world "hub" to 10:44
+        wait 2 ticks
+        set time in world "hub" to 10:43
+        wait 2 ticks
+        set time in world "hub" to 10:42
+        wait 2 ticks
+        set time in world "hub" to 10:41
+        wait 2 ticks
+        set time in world "hub" to 10:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 10:39
+        wait 2 ticks
+        set time in world "hub" to 10:38
+        wait 2 ticks
+        set time in world "hub" to 10:37
+        wait 2 ticks
+        set time in world "hub" to 10:36
+        wait 2 ticks
+        set time in world "hub" to 10:35
+        wait 2 ticks
+        set time in world "hub" to 10:34
+        wait 2 ticks
+        set time in world "hub" to 10:33
+        wait 2 ticks
+        set time in world "hub" to 10:32
+        wait 2 ticks
+        set time in world "hub" to 10:31
+        wait 2 ticks
+        set time in world "hub" to 10:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 10:29
+        wait 2 ticks
+        set time in world "hub" to 10:28
+        wait 2 ticks
+        set time in world "hub" to 10:27
+        wait 2 ticks
+        set time in world "hub" to 10:26
+        wait 2 ticks
+        set time in world "hub" to 10:25
+        wait 2 ticks
+        set time in world "hub" to 10:24
+        wait 2 ticks
+        set time in world "hub" to 10:23
+        wait 2 ticks
+        set time in world "hub" to 10:22
+        wait 2 ticks
+        set time in world "hub" to 10:21
+        wait 2 ticks
+        set time in world "hub" to 10:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 10:19
+        wait 2 ticks
+        set time in world "hub" to 10:18
+        wait 2 ticks
+        set time in world "hub" to 10:17
+        wait 2 ticks
+        set time in world "hub" to 10:16
+        wait 2 ticks
+        set time in world "hub" to 10:15
+        wait 2 ticks
+        set time in world "hub" to 10:14
+        wait 2 ticks
+        set time in world "hub" to 10:13
+        wait 2 ticks
+        set time in world "hub" to 10:12
+        wait 2 ticks
+        set time in world "hub" to 10:11
+        wait 2 ticks
+        set time in world "hub" to 10:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 10:09
+        wait 2 ticks
+        set time in world "hub" to 10:08
+        wait 2 ticks
+        set time in world "hub" to 10:07
+        wait 2 ticks
+        set time in world "hub" to 10:06
+        wait 2 ticks
+        set time in world "hub" to 10:05
+        wait 2 ticks
+        set time in world "hub" to 10:04
+        wait 2 ticks
+        set time in world "hub" to 10:03
+        wait 2 ticks
+        set time in world "hub" to 10:02
+        wait 2 ticks
+        set time in world "hub" to 10:01
+        wait 2 ticks
+        set time in world "hub" to 10:00
+        wait 2 ticks
+
+        # 9 h
+
+        set time in world "hub" to 9:59
+        wait 2 ticks
+        set time in world "hub" to 9:58
+        wait 2 ticks
+        set time in world "hub" to 9:57
+        wait 2 ticks
+        set time in world "hub" to 9:56
+        wait 2 ticks
+        set time in world "hub" to 9:55
+        wait 2 ticks
+        set time in world "hub" to 9:54
+        wait 2 ticks
+        set time in world "hub" to 9:53
+        wait 2 ticks
+        set time in world "hub" to 9:52
+        wait 2 ticks
+        set time in world "hub" to 9:51
+        wait 2 ticks
+        set time in world "hub" to 9:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 9:49
+        wait 2 ticks
+        set time in world "hub" to 9:48
+        wait 2 ticks
+        set time in world "hub" to 9:47
+        wait 2 ticks
+        set time in world "hub" to 9:46
+        wait 2 ticks
+        set time in world "hub" to 9:45
+        wait 2 ticks
+        set time in world "hub" to 9:44
+        wait 2 ticks
+        set time in world "hub" to 9:43
+        wait 2 ticks
+        set time in world "hub" to 9:42
+        wait 2 ticks
+        set time in world "hub" to 9:41
+        wait 2 ticks
+        set time in world "hub" to 9:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 9:39
+        wait 2 ticks
+        set time in world "hub" to 9:38
+        wait 2 ticks
+        set time in world "hub" to 9:37
+        wait 2 ticks
+        set time in world "hub" to 9:36
+        wait 2 ticks
+        set time in world "hub" to 9:35
+        wait 2 ticks
+        set time in world "hub" to 9:34
+        wait 2 ticks
+        set time in world "hub" to 9:33
+        wait 2 ticks
+        set time in world "hub" to 9:32
+        wait 2 ticks
+        set time in world "hub" to 9:31
+        wait 2 ticks
+        set time in world "hub" to 9:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 9:29
+        wait 2 ticks
+        set time in world "hub" to 9:28
+        wait 2 ticks
+        set time in world "hub" to 9:27
+        wait 2 ticks
+        set time in world "hub" to 9:26
+        wait 2 ticks
+        set time in world "hub" to 9:25
+        wait 2 ticks
+        set time in world "hub" to 9:24
+        wait 2 ticks
+        set time in world "hub" to 9:23
+        wait 2 ticks
+        set time in world "hub" to 9:22
+        wait 2 ticks
+        set time in world "hub" to 9:21
+        wait 2 ticks
+        set time in world "hub" to 9:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 9:19
+        wait 2 ticks
+        set time in world "hub" to 9:18
+        wait 2 ticks
+        set time in world "hub" to 9:17
+        wait 2 ticks
+        set time in world "hub" to 9:16
+        wait 2 ticks
+        set time in world "hub" to 9:15
+        wait 2 ticks
+        set time in world "hub" to 9:14
+        wait 2 ticks
+        set time in world "hub" to 9:13
+        wait 2 ticks
+        set time in world "hub" to 9:12
+        wait 2 ticks
+        set time in world "hub" to 9:11
+        wait 2 ticks
+        set time in world "hub" to 9:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 9:09
+        wait 2 ticks
+        set time in world "hub" to 9:08
+        wait 2 ticks
+        set time in world "hub" to 9:07
+        wait 2 ticks
+        set time in world "hub" to 9:06
+        wait 2 ticks
+        set time in world "hub" to 9:05
+        wait 2 ticks
+        set time in world "hub" to 9:04
+        wait 2 ticks
+        set time in world "hub" to 9:03
+        wait 2 ticks
+        set time in world "hub" to 9:02
+        wait 2 ticks
+        wait 2 ticks
+        set time in world "hub" to 9:01
+        wait 2 ticks
+        set time in world "hub" to 9:00
+        wait 2 ticks
+
+        # 8 h
+
+        set time in world "hub" to 8:59
+        wait 2 ticks
+        set time in world "hub" to 8:58
+        wait 2 ticks
+        set time in world "hub" to 8:57
+        wait 2 ticks
+        set time in world "hub" to 8:56
+        wait 2 ticks
+        set time in world "hub" to 8:55
+        wait 2 ticks
+        set time in world "hub" to 8:54
+        wait 2 ticks
+        set time in world "hub" to 8:53
+        wait 2 ticks
+        set time in world "hub" to 8:52
+        wait 2 ticks
+        set time in world "hub" to 8:51
+        wait 2 ticks
+        set time in world "hub" to 8:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 8:49
+        wait 2 ticks
+        set time in world "hub" to 8:48
+        wait 2 ticks
+        set time in world "hub" to 8:47
+        wait 2 ticks
+        set time in world "hub" to 8:46
+        wait 2 ticks
+        set time in world "hub" to 8:45
+        wait 2 ticks
+        set time in world "hub" to 8:44
+        wait 2 ticks
+        set time in world "hub" to 8:43
+        wait 2 ticks
+        set time in world "hub" to 8:42
+        wait 2 ticks
+        set time in world "hub" to 8:41
+        wait 2 ticks
+        set time in world "hub" to 8:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 8:39
+        wait 2 ticks
+        set time in world "hub" to 8:38
+        wait 2 ticks
+        set time in world "hub" to 8:37
+        wait 2 ticks
+        set time in world "hub" to 8:36
+        wait 2 ticks
+        set time in world "hub" to 8:35
+        wait 2 ticks
+        set time in world "hub" to 8:34
+        wait 2 ticks
+        set time in world "hub" to 8:33
+        wait 2 ticks
+        set time in world "hub" to 8:32
+        wait 2 ticks
+        set time in world "hub" to 8:31
+        wait 2 ticks
+        set time in world "hub" to 8:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 8:29
+        wait 2 ticks
+        set time in world "hub" to 8:28
+        wait 2 ticks
+        set time in world "hub" to 8:27
+        wait 2 ticks
+        set time in world "hub" to 8:26
+        wait 2 ticks
+        set time in world "hub" to 8:25
+        wait 2 ticks
+        set time in world "hub" to 8:24
+        wait 2 ticks
+        set time in world "hub" to 8:23
+        wait 2 ticks
+        set time in world "hub" to 8:22
+        wait 2 ticks
+        set time in world "hub" to 8:21
+        wait 2 ticks
+        set time in world "hub" to 8:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 8:19
+        wait 2 ticks
+        set time in world "hub" to 8:18
+        wait 2 ticks
+        set time in world "hub" to 8:17
+        wait 2 ticks
+        set time in world "hub" to 8:16
+        wait 2 ticks
+        set time in world "hub" to 8:15
+        wait 2 ticks
+        set time in world "hub" to 8:14
+        wait 2 ticks
+        set time in world "hub" to 8:13
+        wait 2 ticks
+        set time in world "hub" to 8:12
+        wait 2 ticks
+        set time in world "hub" to 8:11
+        wait 2 ticks
+        set time in world "hub" to 8:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 8:09
+        wait 2 ticks
+        set time in world "hub" to 8:08
+        wait 2 ticks
+        set time in world "hub" to 8:07
+        wait 2 ticks
+        set time in world "hub" to 8:06
+        wait 2 ticks
+        set time in world "hub" to 8:05
+        wait 2 ticks
+        set time in world "hub" to 8:04
+        wait 2 ticks
+        set time in world "hub" to 8:03
+        wait 2 ticks
+        set time in world "hub" to 8:02
+        wait 2 ticks
+        set time in world "hub" to 8:01
+        wait 2 ticks
+        set time in world "hub" to 8:00
+        wait 2 ticks
+
+        # 7 h
+
+        set time in world "hub" to 7:59
+        wait 2 ticks
+        set time in world "hub" to 7:58
+        wait 2 ticks
+        set time in world "hub" to 7:57
+        wait 2 ticks
+        set time in world "hub" to 7:56
+        wait 2 ticks
+        set time in world "hub" to 7:55
+        wait 2 ticks
+        set time in world "hub" to 7:54
+        wait 2 ticks
+        set time in world "hub" to 7:53
+        wait 2 ticks
+        set time in world "hub" to 7:52
+        wait 2 ticks
+        set time in world "hub" to 7:51
+        wait 2 ticks
+        set time in world "hub" to 7:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 7:49
+        wait 2 ticks
+        set time in world "hub" to 7:48
+        wait 2 ticks
+        set time in world "hub" to 7:47
+        wait 2 ticks
+        set time in world "hub" to 7:46
+        wait 2 ticks
+        set time in world "hub" to 7:45
+        wait 2 ticks
+        set time in world "hub" to 7:44
+        wait 2 ticks
+        set time in world "hub" to 7:43
+        wait 2 ticks
+        set time in world "hub" to 7:42
+        wait 2 ticks
+        set time in world "hub" to 7:41
+        wait 2 ticks
+        set time in world "hub" to 7:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 7:39
+        wait 2 ticks
+        set time in world "hub" to 7:38
+        wait 2 ticks
+        set time in world "hub" to 7:37
+        wait 2 ticks
+        set time in world "hub" to 7:36
+        wait 2 ticks
+        set time in world "hub" to 7:35
+        wait 2 ticks
+        set time in world "hub" to 7:34
+        wait 2 ticks
+        set time in world "hub" to 7:33
+        wait 2 ticks
+        set time in world "hub" to 7:32
+        wait 2 ticks
+        set time in world "hub" to 7:31
+        wait 2 ticks
+        set time in world "hub" to 7:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 7:29
+        wait 2 ticks
+        set time in world "hub" to 7:28
+        wait 2 ticks
+        set time in world "hub" to 7:27
+        wait 2 ticks
+        set time in world "hub" to 7:26
+        wait 2 ticks
+        set time in world "hub" to 7:25
+        wait 2 ticks
+        set time in world "hub" to 7:24
+        wait 2 ticks
+        set time in world "hub" to 7:23
+        wait 2 ticks
+        set time in world "hub" to 7:22
+        wait 2 ticks
+        set time in world "hub" to 7:21
+        wait 2 ticks
+        set time in world "hub" to 7:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 7:19
+        wait 2 ticks
+        set time in world "hub" to 7:18
+        wait 2 ticks
+        set time in world "hub" to 7:17
+        wait 2 ticks
+        set time in world "hub" to 7:16
+        wait 2 ticks
+        set time in world "hub" to 7:15
+        wait 2 ticks
+        set time in world "hub" to 7:14
+        wait 2 ticks
+        set time in world "hub" to 7:13
+        wait 2 ticks
+        set time in world "hub" to 7:12
+        wait 2 ticks
+        set time in world "hub" to 7:11
+        wait 2 ticks
+        set time in world "hub" to 7:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 7:09
+        wait 2 ticks
+        set time in world "hub" to 7:08
+        wait 2 ticks
+        set time in world "hub" to 7:07
+        wait 2 ticks
+        set time in world "hub" to 7:06
+        wait 2 ticks
+        set time in world "hub" to 7:05
+        wait 2 ticks
+        set time in world "hub" to 7:04
+        wait 2 ticks
+        set time in world "hub" to 7:03
+        wait 2 ticks
+        set time in world "hub" to 7:02
+        wait 2 ticks
+        set time in world "hub" to 7:01
+        wait 2 ticks
+        set time in world "hub" to 7:00
+        wait 2 ticks
+
+        # 6 h
+
+        set time in world "hub" to 6:59
+        wait 2 ticks
+        set time in world "hub" to 6:58
+        wait 2 ticks
+        set time in world "hub" to 6:57
+        wait 2 ticks
+        set time in world "hub" to 6:56
+        wait 2 ticks
+        set time in world "hub" to 6:55
+        wait 2 ticks
+        set time in world "hub" to 6:54
+        wait 2 ticks
+        set time in world "hub" to 6:53
+        wait 2 ticks
+        set time in world "hub" to 6:52
+        wait 2 ticks
+        set time in world "hub" to 6:51
+        wait 2 ticks
+        set time in world "hub" to 6:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 6:49
+        wait 2 ticks
+        set time in world "hub" to 6:48
+        wait 2 ticks
+        set time in world "hub" to 6:47
+        wait 2 ticks
+        set time in world "hub" to 6:46
+        wait 2 ticks
+        set time in world "hub" to 6:45
+        wait 2 ticks
+        set time in world "hub" to 6:44
+        wait 2 ticks
+        set time in world "hub" to 6:43
+        wait 2 ticks
+        set time in world "hub" to 6:42
+        wait 2 ticks
+        set time in world "hub" to 6:41
+        wait 2 ticks
+        set time in world "hub" to 6:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 6:39
+        wait 2 ticks
+        set time in world "hub" to 6:38
+        wait 2 ticks
+        set time in world "hub" to 6:37
+        wait 2 ticks
+        set time in world "hub" to 6:36
+        wait 2 ticks
+        set time in world "hub" to 6:35
+        wait 2 ticks
+        set time in world "hub" to 6:34
+        wait 2 ticks
+        set time in world "hub" to 6:33
+        wait 2 ticks
+        set time in world "hub" to 6:32
+        wait 2 ticks
+        set time in world "hub" to 6:31
+        wait 2 ticks
+        set time in world "hub" to 6:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 6:29
+        wait 2 ticks
+        set time in world "hub" to 6:28
+        wait 2 ticks
+        set time in world "hub" to 6:27
+        wait 2 ticks
+        set time in world "hub" to 6:26
+        wait 2 ticks
+        set time in world "hub" to 6:25
+        wait 2 ticks
+        set time in world "hub" to 6:24
+        wait 2 ticks
+        set time in world "hub" to 6:23
+        wait 2 ticks
+        set time in world "hub" to 6:22
+        wait 2 ticks
+        set time in world "hub" to 6:21
+        wait 2 ticks
+        set time in world "hub" to 6:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 6:19
+        wait 2 ticks
+        set time in world "hub" to 6:18
+        wait 2 ticks
+        set time in world "hub" to 6:17
+        wait 2 ticks
+        set time in world "hub" to 6:16
+        wait 2 ticks
+        set time in world "hub" to 6:15
+        wait 2 ticks
+        set time in world "hub" to 6:14
+        wait 2 ticks
+        set time in world "hub" to 6:13
+        wait 2 ticks
+        set time in world "hub" to 6:12
+        wait 2 ticks
+        set time in world "hub" to 6:11
+        wait 2 ticks
+        set time in world "hub" to 6:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 6:09
+        wait 2 ticks
+        set time in world "hub" to 6:08
+        wait 2 ticks
+        set time in world "hub" to 6:07
+        wait 2 ticks
+        set time in world "hub" to 6:06
+        wait 2 ticks
+        set time in world "hub" to 6:05
+        wait 2 ticks
+        set time in world "hub" to 6:04
+        wait 2 ticks
+        set time in world "hub" to 6:03
+        wait 2 ticks
+        set time in world "hub" to 6:02
+        wait 2 ticks
+        set time in world "hub" to 6:01
+        wait 2 ticks
+        set time in world "hub" to 6:00
+        wait 2 ticks
+
+        # 5 h
+
+        set time in world "hub" to 5:59
+        wait 2 ticks
+        set time in world "hub" to 5:58
+        wait 2 ticks
+        set time in world "hub" to 5:57
+        wait 2 ticks
+        set time in world "hub" to 5:56
+        wait 2 ticks
+        set time in world "hub" to 5:55
+        wait 2 ticks
+        set time in world "hub" to 5:54
+        wait 2 ticks
+        set time in world "hub" to 5:53
+        wait 2 ticks
+        set time in world "hub" to 5:52
+        wait 2 ticks
+        set time in world "hub" to 5:51
+        wait 2 ticks
+        set time in world "hub" to 5:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 5:49
+        wait 2 ticks
+        set time in world "hub" to 5:48
+        wait 2 ticks
+        set time in world "hub" to 5:47
+        wait 2 ticks
+        set time in world "hub" to 5:46
+        wait 2 ticks
+        set time in world "hub" to 5:45
+        wait 2 ticks
+        set time in world "hub" to 5:44
+        wait 2 ticks
+        set time in world "hub" to 5:43
+        wait 2 ticks
+        set time in world "hub" to 5:42
+        wait 2 ticks
+        set time in world "hub" to 5:41
+        wait 2 ticks
+        set time in world "hub" to 5:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 5:39
+        wait 2 ticks
+        set time in world "hub" to 5:38
+        wait 2 ticks
+        set time in world "hub" to 5:37
+        wait 2 ticks
+        set time in world "hub" to 5:36
+        wait 2 ticks
+        set time in world "hub" to 5:35
+        wait 2 ticks
+        set time in world "hub" to 5:34
+        wait 2 ticks
+        set time in world "hub" to 5:33
+        wait 2 ticks
+        set time in world "hub" to 5:32
+        wait 2 ticks
+        set time in world "hub" to 5:31
+        wait 2 ticks
+        set time in world "hub" to 5:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 5:29
+        wait 2 ticks
+        set time in world "hub" to 5:28
+        wait 2 ticks
+        set time in world "hub" to 5:27
+        wait 2 ticks
+        set time in world "hub" to 5:26
+        wait 2 ticks
+        set time in world "hub" to 5:25
+        wait 2 ticks
+        set time in world "hub" to 5:24
+        wait 2 ticks
+        set time in world "hub" to 5:23
+        wait 2 ticks
+        set time in world "hub" to 5:22
+        wait 2 ticks
+        set time in world "hub" to 5:21
+        wait 2 ticks
+        set time in world "hub" to 5:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 5:19
+        wait 2 ticks
+        set time in world "hub" to 5:18
+        wait 2 ticks
+        set time in world "hub" to 5:17
+        wait 2 ticks
+        set time in world "hub" to 5:16
+        wait 2 ticks
+        set time in world "hub" to 5:15
+        wait 2 ticks
+        set time in world "hub" to 5:14
+        wait 2 ticks
+        set time in world "hub" to 5:13
+        wait 2 ticks
+        set time in world "hub" to 5:12
+        wait 2 ticks
+        set time in world "hub" to 5:11
+        wait 2 ticks
+        set time in world "hub" to 5:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 5:09
+        wait 2 ticks
+        set time in world "hub" to 5:08
+        wait 2 ticks
+        set time in world "hub" to 5:07
+        wait 2 ticks
+        set time in world "hub" to 5:06
+        wait 2 ticks
+        set time in world "hub" to 5:05
+        wait 2 ticks
+        set time in world "hub" to 5:04
+        wait 2 ticks
+        set time in world "hub" to 5:03
+        wait 2 ticks
+        set time in world "hub" to 5:02
+        wait 2 ticks
+        set time in world "hub" to 5:01
+        wait 2 ticks
+        set time in world "hub" to 5:00
+        wait 2 ticks
+
+        # 4 h
+
+        set time in world "hub" to 4:59
+        wait 2 ticks
+        set time in world "hub" to 4:58
+        wait 2 ticks
+        set time in world "hub" to 4:57
+        wait 2 ticks
+        set time in world "hub" to 4:56
+        wait 2 ticks
+        set time in world "hub" to 4:55
+        wait 2 ticks
+        set time in world "hub" to 4:54
+        wait 2 ticks
+        set time in world "hub" to 4:53
+        wait 2 ticks
+        set time in world "hub" to 4:52
+        wait 2 ticks
+        set time in world "hub" to 4:51
+        wait 2 ticks
+        set time in world "hub" to 4:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 4:49
+        wait 2 ticks
+        set time in world "hub" to 4:48
+        wait 2 ticks
+        set time in world "hub" to 4:47
+        wait 2 ticks
+        set time in world "hub" to 4:46
+        wait 2 ticks
+        set time in world "hub" to 4:45
+        wait 2 ticks
+        set time in world "hub" to 4:44
+        wait 2 ticks
+        set time in world "hub" to 4:43
+        wait 2 ticks
+        set time in world "hub" to 4:42
+        wait 2 ticks
+        set time in world "hub" to 4:41
+        wait 2 ticks
+        set time in world "hub" to 4:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 4:39
+        wait 2 ticks
+        set time in world "hub" to 4:38
+        wait 2 ticks
+        set time in world "hub" to 4:37
+        wait 2 ticks
+        set time in world "hub" to 4:36
+        wait 2 ticks
+        set time in world "hub" to 4:35
+        wait 2 ticks
+        set time in world "hub" to 4:34
+        wait 2 ticks
+        set time in world "hub" to 4:33
+        wait 2 ticks
+        set time in world "hub" to 4:32
+        wait 2 ticks
+        set time in world "hub" to 4:31
+        wait 2 ticks
+        set time in world "hub" to 4:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 4:29
+        wait 2 ticks
+        set time in world "hub" to 4:28
+        wait 2 ticks
+        set time in world "hub" to 4:27
+        wait 2 ticks
+        set time in world "hub" to 4:26
+        wait 2 ticks
+        set time in world "hub" to 4:25
+        wait 2 ticks
+        set time in world "hub" to 4:24
+        wait 2 ticks
+        set time in world "hub" to 4:23
+        wait 2 ticks
+        set time in world "hub" to 4:22
+        wait 2 ticks
+        set time in world "hub" to 4:21
+        wait 2 ticks
+        set time in world "hub" to 4:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 4:19
+        wait 2 ticks
+        set time in world "hub" to 4:18
+        wait 2 ticks
+        set time in world "hub" to 4:17
+        wait 2 ticks
+        set time in world "hub" to 4:16
+        wait 2 ticks
+        set time in world "hub" to 4:15
+        wait 2 ticks
+        set time in world "hub" to 4:14
+        wait 2 ticks
+        set time in world "hub" to 4:13
+        wait 2 ticks
+        set time in world "hub" to 4:12
+        wait 2 ticks
+        set time in world "hub" to 4:11
+        wait 2 ticks
+        set time in world "hub" to 4:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 4:09
+        wait 2 ticks
+        set time in world "hub" to 4:08
+        wait 2 ticks
+        set time in world "hub" to 4:07
+        wait 2 ticks
+        set time in world "hub" to 4:06
+        wait 2 ticks
+        set time in world "hub" to 4:05
+        wait 2 ticks
+        set time in world "hub" to 4:04
+        wait 2 ticks
+        set time in world "hub" to 4:03
+        wait 2 ticks
+        set time in world "hub" to 4:02
+        wait 2 ticks
+        set time in world "hub" to 4:01
+        wait 2 ticks
+        set time in world "hub" to 4:00
+        wait 2 ticks
+
+        # 3 h
+
+        set time in world "hub" to 3:59
+        wait 2 ticks
+        set time in world "hub" to 3:58
+        wait 2 ticks
+        set time in world "hub" to 3:57
+        wait 2 ticks
+        set time in world "hub" to 3:56
+        wait 2 ticks
+        set time in world "hub" to 3:55
+        wait 2 ticks
+        set time in world "hub" to 3:54
+        wait 2 ticks
+        set time in world "hub" to 3:53
+        wait 2 ticks
+        set time in world "hub" to 3:52
+        wait 2 ticks
+        set time in world "hub" to 3:51
+        wait 2 ticks
+        set time in world "hub" to 3:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 3:49
+        wait 2 ticks
+        set time in world "hub" to 3:48
+        wait 2 ticks
+        set time in world "hub" to 3:47
+        wait 2 ticks
+        set time in world "hub" to 3:46
+        wait 2 ticks
+        set time in world "hub" to 3:45
+        wait 2 ticks
+        set time in world "hub" to 3:44
+        wait 2 ticks
+        set time in world "hub" to 3:43
+        wait 2 ticks
+        set time in world "hub" to 3:42
+        wait 2 ticks
+        set time in world "hub" to 3:41
+        wait 2 ticks
+        set time in world "hub" to 3:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 3:39
+        wait 2 ticks
+        set time in world "hub" to 3:38
+        wait 2 ticks
+        set time in world "hub" to 3:37
+        wait 2 ticks
+        set time in world "hub" to 3:36
+        wait 2 ticks
+        set time in world "hub" to 3:35
+        wait 2 ticks
+        set time in world "hub" to 3:34
+        wait 2 ticks
+        set time in world "hub" to 3:33
+        wait 2 ticks
+        set time in world "hub" to 3:32
+        wait 2 ticks
+        set time in world "hub" to 3:31
+        wait 2 ticks
+        set time in world "hub" to 3:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 3:29
+        wait 2 ticks
+        set time in world "hub" to 3:28
+        wait 2 ticks
+        set time in world "hub" to 3:27
+        wait 2 ticks
+        set time in world "hub" to 3:26
+        wait 2 ticks
+        set time in world "hub" to 3:25
+        wait 2 ticks
+        set time in world "hub" to 3:24
+        wait 2 ticks
+        set time in world "hub" to 3:23
+        wait 2 ticks
+        set time in world "hub" to 3:22
+        wait 2 ticks
+        set time in world "hub" to 3:21
+        wait 2 ticks
+        set time in world "hub" to 3:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 3:19
+        wait 2 ticks
+        set time in world "hub" to 3:18
+        wait 2 ticks
+        set time in world "hub" to 3:17
+        wait 2 ticks
+        set time in world "hub" to 3:16
+        wait 2 ticks
+        set time in world "hub" to 3:15
+        wait 2 ticks
+        set time in world "hub" to 3:14
+        wait 2 ticks
+        set time in world "hub" to 3:13
+        wait 2 ticks
+        set time in world "hub" to 3:12
+        wait 2 ticks
+        set time in world "hub" to 3:11
+        wait 2 ticks
+        set time in world "hub" to 3:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 3:09
+        wait 2 ticks
+        set time in world "hub" to 3:08
+        wait 2 ticks
+        set time in world "hub" to 3:07
+        wait 2 ticks
+        set time in world "hub" to 3:06
+        wait 2 ticks
+        set time in world "hub" to 3:05
+        wait 2 ticks
+        set time in world "hub" to 3:04
+        wait 2 ticks
+        set time in world "hub" to 3:03
+        wait 2 ticks
+        set time in world "hub" to 3:02
+        wait 2 ticks
+        set time in world "hub" to 3:01
+        wait 2 ticks
+        set time in world "hub" to 3:00
+        wait 2 ticks
+
+        # 2 h
+
+        set time in world "hub" to 2:59
+        wait 2 ticks
+        set time in world "hub" to 2:58
+        wait 2 ticks
+        set time in world "hub" to 2:57
+        wait 2 ticks
+        set time in world "hub" to 2:56
+        wait 2 ticks
+        set time in world "hub" to 2:55
+        wait 2 ticks
+        set time in world "hub" to 2:54
+        wait 2 ticks
+        set time in world "hub" to 2:53
+        wait 2 ticks
+        set time in world "hub" to 2:52
+        wait 2 ticks
+        set time in world "hub" to 2:51
+        wait 2 ticks
+        set time in world "hub" to 2:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 2:49
+        wait 2 ticks
+        set time in world "hub" to 2:48
+        wait 2 ticks
+        set time in world "hub" to 2:47
+        wait 2 ticks
+        set time in world "hub" to 2:46
+        wait 2 ticks
+        set time in world "hub" to 2:45
+        wait 2 ticks
+        set time in world "hub" to 2:44
+        wait 2 ticks
+        set time in world "hub" to 2:43
+        wait 2 ticks
+        set time in world "hub" to 2:42
+        wait 2 ticks
+        set time in world "hub" to 2:41
+        wait 2 ticks
+        set time in world "hub" to 2:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 2:39
+        wait 2 ticks
+        set time in world "hub" to 2:38
+        wait 2 ticks
+        set time in world "hub" to 2:37
+        wait 2 ticks
+        set time in world "hub" to 2:36
+        wait 2 ticks
+        set time in world "hub" to 2:35
+        wait 2 ticks
+        set time in world "hub" to 2:34
+        wait 2 ticks
+        set time in world "hub" to 2:33
+        wait 2 ticks
+        set time in world "hub" to 2:32
+        wait 2 ticks
+        set time in world "hub" to 2:31
+        wait 2 ticks
+        set time in world "hub" to 2:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 2:29
+        wait 2 ticks
+        set time in world "hub" to 2:28
+        wait 2 ticks
+        set time in world "hub" to 2:27
+        wait 2 ticks
+        set time in world "hub" to 2:26
+        wait 2 ticks
+        set time in world "hub" to 2:25
+        wait 2 ticks
+        set time in world "hub" to 2:24
+        wait 2 ticks
+        set time in world "hub" to 2:23
+        wait 2 ticks
+        set time in world "hub" to 2:22
+        wait 2 ticks
+        set time in world "hub" to 2:21
+        wait 2 ticks
+        set time in world "hub" to 2:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 2:19
+        wait 2 ticks
+        set time in world "hub" to 2:18
+        wait 2 ticks
+        set time in world "hub" to 2:17
+        wait 2 ticks
+        set time in world "hub" to 2:16
+        wait 2 ticks
+        set time in world "hub" to 2:15
+        wait 2 ticks
+        set time in world "hub" to 2:14
+        wait 2 ticks
+        set time in world "hub" to 2:13
+        wait 2 ticks
+        set time in world "hub" to 2:12
+        wait 2 ticks
+        set time in world "hub" to 2:11
+        wait 2 ticks
+        set time in world "hub" to 2:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 2:09
+        wait 2 ticks
+        set time in world "hub" to 2:08
+        wait 2 ticks
+        set time in world "hub" to 2:07
+        wait 2 ticks
+        set time in world "hub" to 2:06
+        wait 2 ticks
+        set time in world "hub" to 2:05
+        wait 2 ticks
+        set time in world "hub" to 2:04
+        wait 2 ticks
+        set time in world "hub" to 2:03
+        wait 2 ticks
+        set time in world "hub" to 2:02
+        wait 2 ticks
+        set time in world "hub" to 2:01
+        wait 2 ticks
+        set time in world "hub" to 2:00
+        wait 2 ticks
+
+        # 0 h
+
+        set time in world "hub" to 1:59
+        wait 2 ticks
+        set time in world "hub" to 1:58
+        wait 2 ticks
+        set time in world "hub" to 1:57
+        wait 2 ticks
+        set time in world "hub" to 1:56
+        wait 2 ticks
+        set time in world "hub" to 1:55
+        wait 2 ticks
+        set time in world "hub" to 1:54
+        wait 2 ticks
+        set time in world "hub" to 1:53
+        wait 2 ticks
+        set time in world "hub" to 1:52
+        wait 2 ticks
+        set time in world "hub" to 1:51
+        wait 2 ticks
+        set time in world "hub" to 1:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 1:49
+        wait 2 ticks
+        set time in world "hub" to 1:48
+        wait 2 ticks
+        set time in world "hub" to 1:47
+        wait 2 ticks
+        set time in world "hub" to 1:46
+        wait 2 ticks
+        set time in world "hub" to 1:45
+        wait 2 ticks
+        set time in world "hub" to 1:44
+        wait 2 ticks
+        set time in world "hub" to 1:43
+        wait 2 ticks
+        set time in world "hub" to 1:42
+        wait 2 ticks
+        set time in world "hub" to 1:41
+        wait 2 ticks
+        set time in world "hub" to 1:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 1:39
+        wait 2 ticks
+        set time in world "hub" to 1:38
+        wait 2 ticks
+        set time in world "hub" to 1:37
+        wait 2 ticks
+        set time in world "hub" to 1:36
+        wait 2 ticks
+        set time in world "hub" to 1:35
+        wait 2 ticks
+        set time in world "hub" to 1:34
+        wait 2 ticks
+        set time in world "hub" to 1:33
+        wait 2 ticks
+        set time in world "hub" to 1:32
+        wait 2 ticks
+        set time in world "hub" to 1:31
+        wait 2 ticks
+        set time in world "hub" to 1:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 1:29
+        wait 2 ticks
+        set time in world "hub" to 1:28
+        wait 2 ticks
+        set time in world "hub" to 1:27
+        wait 2 ticks
+        set time in world "hub" to 1:26
+        wait 2 ticks
+        set time in world "hub" to 1:25
+        wait 2 ticks
+        set time in world "hub" to 1:24
+        wait 2 ticks
+        set time in world "hub" to 1:23
+        wait 2 ticks
+        set time in world "hub" to 1:22
+        wait 2 ticks
+        set time in world "hub" to 1:21
+        wait 2 ticks
+        set time in world "hub" to 1:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 1:19
+        wait 2 ticks
+        set time in world "hub" to 1:18
+        wait 2 ticks
+        set time in world "hub" to 1:17
+        wait 2 ticks
+        set time in world "hub" to 1:16
+        wait 2 ticks
+        set time in world "hub" to 1:15
+        wait 2 ticks
+        set time in world "hub" to 1:14
+        wait 2 ticks
+        set time in world "hub" to 1:13
+        wait 2 ticks
+        set time in world "hub" to 1:12
+        wait 2 ticks
+        set time in world "hub" to 1:11
+        wait 2 ticks
+        set time in world "hub" to 1:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 1:09
+        wait 2 ticks
+        set time in world "hub" to 1:08
+        wait 2 ticks
+        set time in world "hub" to 1:07
+        wait 2 ticks
+        set time in world "hub" to 1:06
+        wait 2 ticks
+        set time in world "hub" to 1:05
+        wait 2 ticks
+        set time in world "hub" to 1:04
+        wait 2 ticks
+        set time in world "hub" to 1:03
+        wait 2 ticks
+        set time in world "hub" to 1:02
+        wait 2 ticks
+        set time in world "hub" to 1:01
+        wait 2 ticks
+        set time in world "hub" to 1:00
+        wait 2 ticks
+
+        # 2 h
+
+        set time in world "hub" to 0:59
+        wait 2 ticks
+        set time in world "hub" to 0:58
+        wait 2 ticks
+        set time in world "hub" to 0:57
+        wait 2 ticks
+        set time in world "hub" to 0:56
+        wait 2 ticks
+        set time in world "hub" to 0:55
+        wait 2 ticks
+        set time in world "hub" to 0:54
+        wait 2 ticks
+        set time in world "hub" to 0:53
+        wait 2 ticks
+        set time in world "hub" to 0:52
+        wait 2 ticks
+        set time in world "hub" to 0:51
+        wait 2 ticks
+        set time in world "hub" to 0:50
+        wait 2 ticks
+        #s
+        set time in world "hub" to 0:49
+        wait 2 ticks
+        set time in world "hub" to 0:48
+        wait 2 ticks
+        set time in world "hub" to 0:47
+        wait 2 ticks
+        set time in world "hub" to 0:46
+        wait 2 ticks
+        set time in world "hub" to 0:45
+        wait 2 ticks
+        set time in world "hub" to 0:44
+        wait 2 ticks
+        set time in world "hub" to 0:43
+        wait 2 ticks
+        set time in world "hub" to 0:42
+        wait 2 ticks
+        set time in world "hub" to 0:41
+        wait 2 ticks
+        set time in world "hub" to 0:40
+        wait 2 ticks
+        #s
+        set time in world "hub" to 0:39
+        wait 2 ticks
+        set time in world "hub" to 0:38
+        wait 2 ticks
+        set time in world "hub" to 0:37
+        wait 2 ticks
+        set time in world "hub" to 0:36
+        wait 2 ticks
+        set time in world "hub" to 0:35
+        wait 2 ticks
+        set time in world "hub" to 0:34
+        wait 2 ticks
+        set time in world "hub" to 0:33
+        wait 2 ticks
+        set time in world "hub" to 0:32
+        wait 2 ticks
+        set time in world "hub" to 0:31
+        wait 2 ticks
+        set time in world "hub" to 0:30
+        wait 2 ticks
+        #s
+        set time in world "hub" to 0:29
+        wait 2 ticks
+        set time in world "hub" to 0:28
+        wait 2 ticks
+        set time in world "hub" to 0:27
+        wait 2 ticks
+        set time in world "hub" to 0:26
+        wait 2 ticks
+        set time in world "hub" to 0:25
+        wait 2 ticks
+        set time in world "hub" to 0:24
+        wait 2 ticks
+        set time in world "hub" to 0:23
+        wait 2 ticks
+        set time in world "hub" to 0:22
+        wait 2 ticks
+        set time in world "hub" to 0:21
+        wait 2 ticks
+        set time in world "hub" to 0:20
+        wait 2 ticks
+        #s
+        set time in world "hub" to 0:19
+        wait 2 ticks
+        set time in world "hub" to 0:18
+        wait 2 ticks
+        set time in world "hub" to 0:17
+        wait 2 ticks
+        set time in world "hub" to 0:16
+        wait 2 ticks
+        set time in world "hub" to 0:15
+        wait 2 ticks
+        set time in world "hub" to 0:14
+        wait 2 ticks
+        set time in world "hub" to 0:13
+        wait 2 ticks
+        set time in world "hub" to 0:12
+        wait 2 ticks
+        set time in world "hub" to 0:11
+        wait 2 ticks
+        set time in world "hub" to 0:10
+        wait 2 ticks
+        #s
+        set time in world "hub" to 0:09
+        wait 2 ticks
+        set time in world "hub" to 0:08
+        wait 2 ticks
+        set time in world "hub" to 0:07
+        wait 2 ticks
+        set time in world "hub" to 0:06
+        wait 2 ticks
+        set time in world "hub" to 0:05
+        wait 2 ticks
+        set time in world "hub" to 0:04
+        wait 2 ticks
+        set time in world "hub" to 0:03
+        wait 2 ticks
+        set time in world "hub" to 0:02
+        wait 2 ticks
+        set time in world "hub" to 0:01
+        wait 2 ticks
+        set time in world "hub" to 0:00

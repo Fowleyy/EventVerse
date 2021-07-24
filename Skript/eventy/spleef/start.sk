@@ -1,0 +1,29 @@
+command /spleef:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            teleport player to {spleef_resetmap}
+            execute player command "//schem load spleff"
+            wait 1 ticks
+            execute player command "//paste"
+            wait 1 seconds
+            eventStartSetup("SPLEEF")
+            execute player command "effect @a clear"
+            execute player command "worldborder center 21.5 -77.5"
+            execute player command "worldborder set 200 1" 
+            wait 3 seconds
+            eventStartTitle("Kbelik_Vody","Super Spleef")
+            apply potion of night vision of tier 1 to players for 10 days
+            wait 5 seconds
+            updateEventState("SPLEEF_INFO")
+            eventExplain("Super Spleef")
+            wait 30 seconds
+            delete {mutechat}
+            wait 3 seconds
+            boots()
+            spleefNewRound(1, player)
+            execute player command "worldborder set 52 1"
+            wait 5 seconds
+            loop all players:
+                newSpleefScoreboard(loop-player)
+        else:
+            onlyAdmin(player)

@@ -1,0 +1,174 @@
+command /dev:resetscoreboard:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                wipe loop-player's sidebar
+        else:
+            onlyAdmin(player)
+
+
+
+function resetScoreboard(p: player):
+    wipe {_p}'s sidebar
+
+command /dev:fetchPlayers:
+    trigger:
+        if {rank.%player%} is "mcteam" or "admin":
+            broadcast "&7Fetching all players online..."
+            fetchPlayers()
+            wait 3 seconds
+            broadcast "&b[FETCH] &3Players: &f%{all::players}%"
+        else:
+            onlyMcteam(player)
+
+
+command /dev:newHubScoreboard:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                newHubScoreboard(loop-player)
+        else:
+            onlyAdmin(player)
+
+command /dev:updateHubScoreboard:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                updateHubScoreboard(loop-player)
+        else:
+            onlyAdmin(player)
+
+
+function fetchEventState():
+    if {event.state} is "EVENT_INFO" or "EVENT_START":
+        set {event.state.sb} to "&d&lStart za:"
+    if {event.state} is "WALK_OF_FAME":
+        set {event.state.sb} to "Konec Eventu!"
+        set {ctd::text} to "Díky za hraní"
+    if {event.state} is "EVENT_OVER":
+        set {event.state.sb} to "Kick za:"
+    if {event.state} is "HUB":
+        set {ctd::text} to "&6Soon™"
+        set {event.state.sb} to "&d&lStart za:"
+    if {event.state} is "EVENT_OVER":
+        if {event::kick} is more than 9:
+            set {ctd::text} to "00:%{event::kick}%"
+        if {event::kick} is less than 10:
+            set {ctd::text} to "00:0%{event::kick}%"
+
+every 5 ticks:
+    fetchEventState()
+
+function fetchPlayers():
+    set {_p} to 0
+    loop all players:
+        if {rank.%loop-player%} is not "mcteam" or "admin":
+            add 1 to {_p}
+            wait 1 ticks
+    set {all::players} to {_p}
+
+
+every 5 seconds:
+    fetchPlayers()
+
+on authme login:
+    newHubScoreboard(player)
+
+on world change:
+    resetScoreboard(player)
+    wait 2 ticks
+    if player's world is "hub":
+        wait 1 ticks
+        newHubScoreboard(player)
+    if player's world is "development":
+        wait 1 ticks
+        newDevScoreboard(player)
+    if player's world is "hypixel":
+        wait 1 ticks
+        newHypixelScoreboard(player)
+
+
+command /dev:newHypixelScoreboard:
+    trigger:
+        if {rank.%player%} = "admin":
+            newHypixelScoreboard(player)
+        else:
+            onlyAdmin(player)
+
+function newHubScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&5&n&l%{event.name}%"
+    set score "&r        " in sidebar of {_p} to 10
+    set id score "&d&l%{event.state.sb}%" in sidebar of {_p} to 9 with id "hubsb-%{_p}%-sbstate"
+    if {event.state} is "EVENT_INFO" or "EVENT_START":
+        set id score "&f%{ctd::text}%" in sidebar of {_p} to 8 with id "hubsb-%{_p}%-timer"
+    if {event.state} is "HUB":
+        set id score "&6Soon™" in sidebar of {_p} to 8 with id "hubsb-%{_p}%-timer"
+    if {event.state} is "EVENT_OVER" or "WALK_OF_FAME":
+        set id score "&f%{ctd::text}%" in sidebar of {_p} to 8 with id "hubsb-%{_p}%-timer"
+    set score "&r     " in sidebar of {_p} to 7
+    set score "&d&lOnline hráči:" in sidebar of {_p} to 6
+    if {rank.%{_p}%} is "admin" or "mcteam" or "dcteam":
+        set id score "&e%{all::players}%/50 &7(%number of all players%/59)" in sidebar of {_p} to 5 with id "hubsb-%{_p}%-players"
+    else:
+        set id score "&e%{all::players}%/50" in sidebar of {_p} to 5 with id "hubsb-%{_p}%-players"
+    set score "&r    " in sidebar of {_p} to 4
+    set score "&d&lVýhra:" in sidebar of {_p} to 3
+    set id score "&b%{event.prize}%" in sidebar of {_p} to 2 with id "hubsb-%{_p}%-prize"
+    set score "&r   " in sidebar of {_p} to 1
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 0 with id "hubsb-%{_p}%-coins"
+    set id score "&fSeason Coiny: &e%{season%{event::season}%-coins::%{_p}%}%&6⛃" in sidebar of {_p} to -1 with id "hubsb-%{_p}%-scoins"
+    set id score "&fShardy: &d%{shards::%{_p}%}%&5✦" in sidebar of {_p} to -2 with id "hubsb-%{_p}%-shardy"
+    set score "&r " in sidebar of {_p} to -3
+    set score "&5www.event-verse.fun" in sidebar of {_p} to -4
+
+
+function updateHubScoreboard(p: player):
+  #  set id score "&fOnline hráči: &e%{all::players}%/50" in sidebar of {_p} to 6 with id "hubsb-%{_p}%-players"
+  #  set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 4 with id "hubsb-%{_p}%-coins"
+  #  set id score "&d&l%{event.state.sb}%" in sidebar of {_p} to 9 with id "hubsb-%{_p}%-sbstate"
+  #  set id score "&f%{event.timer.sb}%" in sidebar of {_p} to 8 with id "hubsb-%{_p}%-timer"
+  #  set id score "&fSeason coiny: &e%{season%{event::season}%-coins::%{_p}%}%&6⛃" in sidebar of {_p} to 3 with id "hubsb-%{_p}%-scoins"
+  #  set id score "&fShardy: &d%{shards::%{_p}%}%&5✦" in sidebar of {_p} to 2 with id "hubsb-%{_p}%-shardy"
+    if {rank.%{_p}%} is "admin" or "mcteam" or "dcteam":
+        update score id "hubsb-%{_p}%-players" to "&e%{all::players}%/50 &7(%number of all players%/59)" and 5
+    else:
+        update score id "hubsb-%{_p}%-players" to "&e%{all::players}%/50" and 5
+    update score id "hubsb-%{_p}%-coins" to "&fCoiny: &e%{coins::%{_p}%}%&6⛃" and 0
+    update score id "hubsb-%{_p}%-sbstate" to "&d&l%{event.state.sb}%" and 9
+    update score id "hubsb-%{_p}%-prize" to "&b%{event.prize}%" and 2
+    if {event.state} is "EVENT_INFO" or "EVENT_START":
+        update score id "hubsb-%{_p}%-timer" to "&f%{ctd::text}%" and 8
+    if {event.state} is "HUB":
+        update score id "hubsb-%{_p}%-timer" to "&6Soon™" and 8
+    if {event.state} is "EVENT_OVER" or "WALK_OF_FAME":
+        update score id "hubsb-%{_p}%-timer" to "&f%{ctd::text}%" and 8
+    update score id "hubsb-%{_p}%-scoins" to "&fSeason Coiny: &e%{season%{event::season}%-coins::%{_p}%}%&6⛃" and -1
+    update score id "hubsb-%{_p}%-shardy" to "&fShardy: &d%{shards::%{_p}%}%&5✦" and -2
+
+
+function updateHubTimerScoreboard(p: player):
+    update score id "hubsb-%{_p}%-sbstate" to "&d&l%{event.state.sb}%" and 9
+    update score id "hubsb-%{_p}%-timer" to "&f%{ctd::text}%" and 8
+
+
+function newHypixelScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&e&lSKYWARS"
+    set {_d} to now formatted human-readable with "dd/MM/yyyy"
+    set score "&7%{_d}%  &8m460V" in sidebar of {_p} to 10
+    set score "&r" in sidebar of {_p} to 9
+    set score "&fPlayers: &a%{all::players}%/50" in sidebar of {_p} to 8
+    set score "&r " in sidebar of {_p} to 7
+    set score "&fStarting in &aSoon" in sidebar of {_p} to 6
+    set score "&r  " in sidebar of {_p} to 5
+    set score "&fMap: &aMartian" in sidebar of {_p} to 4
+    set score "&fMode: &cInsane" in sidebar of {_p} to 3
+    set score "&r   " in sidebar of {_p} to 2
+    set score "&ewww.hypixel.net" in sidebar of {_p} to 1
+
+
+every 10 seconds:
+    loop all players:
+        if loop-player is in world "hub":
+            updateHubScoreboard(loop-player)

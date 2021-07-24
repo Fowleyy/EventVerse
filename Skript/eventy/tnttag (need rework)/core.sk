@@ -1,0 +1,134 @@
+#----------------------------------------------------------------------
+#
+# Tenhle skript je hodně old a vůbec se divím že funguje..
+#
+#----------------------------------------------------------------------
+
+command /tag:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {tnttag} to true
+            teleport all players to {tnttag_start}
+            loop all players:
+                set gamemode of loop-player to adventure
+                clear loop-player's inventory
+                if gamemode of loop-player is adventure:
+                    add loop-player to {_players::*}
+            set {_r} to random player out of {_players::*}
+            wait 5 seconds
+            set {tag.pvp} to false
+            firsttag({_r})
+        else:
+            onlyAdmin(player)
+
+
+command /tag:explode:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                if {tnttag.tagged} is loop-player:
+                    explode(loop-player)
+                    set {tag.pvp} to false
+        else:
+            onlyAdmin(player)
+
+
+
+function explode(p: player):
+    drawDot count 5, particle explosionhuge, speed 0.15, center location of {_p}, visibleRange 320
+    pkCheckpointFirework({_p})
+    set gamemode of {_p} to spectator
+    play "EXPLODE" to all players
+    set {_m} to "nebyl/a tak dobrý/á jako Kbelik_Vody" or "explodoval/a.. what a shame!" or "nedával/a pozor když simpil/a Lukynku.." or "byl/a rozdrcena spadlou skříní" or "dostal/a infarkt.. Přehnal/a to s energy drinkem." or "dosimpoval/a." or "napísal/a yg.." or "už neni." or "používal/a light mode.." or "byl/a zakousnutý/á shibou!" or "se utopil/a v sopce" or "byl/a až moc sus" or "nejspíš AFKoval/a" or "was ejected... %{tag::players}% impostors remaining" or "zapomněl/a dát follow @LukynkaCZe" or "už nechtěl/a žít.." or "si stěžoval/a že kopírujeme Noxcrew" or ".. to byl 100%% lag!" or "byl/a yeetnut/á!" or "pořád není připojen/á na discordu EventVerse!" or "zjistil/a že Dream není nejlepší hráč.." or "sledoval/a SirYakariho" or "nevyhrál/a 100 hráčů plní ůkoli!" or "se choval/a jako Aragon.. nechovej se jako Aragon a nedopadneš takhle!" or "byl/a přidán/a na list zlobivých dětí!" or "umřel/a.. clip it and ship it!" or ".. uhhh.. už fakt nemám nápady na death message.."
+    broadcast "&c✖ &8&l» %{rankcolor.%{_p}%}%%{_p}%&7 %{_m}%"
+    wait 1 tick
+    remove 1 from {tag::players}
+    loop all players:
+        if gamemode of loop-player is survival or adventure:
+            addCoins(loop-player,10,"Přežití")
+            addShards(loop-player, 0.2, "Přežití")
+            run loop-player command "/soundhandler_sound_orb_2" as op
+    wait 1 tick
+    loop all players in world "tnttag":
+        if gamemode of loop-player is adventure:
+            add loop-player to {_players::*}
+    if {tag::players} is more than 1:
+        wait 1 second
+        set {_r} to random player out of {_players::*}
+        tag({_r}, {_p})
+    if {tag::players} is less than 2:
+        loop all players:
+            if gamemode of loop-player is adventure:
+                broadcast "&6&m-----------------------------"
+                broadcast "&r "
+                broadcast "&f Výherce: &e&n%loop-player%"
+                broadcast "&r "
+                broadcast "&6&m-----------------------------"
+                set {tag.pvp} to false
+                delete {tnttag.play}
+
+on quit:
+    if {tnttag.play} is true:
+        remove 1 from {tag::players}
+
+on damage:
+    if victim is in world "tnttag":
+        if {tag.pvp} is true:
+            if attacker is player:
+                if attacker is {tnttag.tagged}:
+                    tag(victim, attacker)
+                    heal victim
+                    heal attacker
+            heal victim
+            heal attacker
+        else:
+            cancel event
+
+
+function firsttag(new: player):
+    set {tag.pvp} to true
+    set {tnttag.tagged} to {_new}
+    play "FIREWORK_BLAST" to {_new}
+    set {_new}'s helmet to tnt
+    run {_new} command "playsound mob.guardian.curse %{_new}% ~ ~ ~ 1 1" as op
+    send red tint to {_new}
+    send {_new} title "&4⚠ MÁŠ TNT ⚠" with subtitle "&cRychle ho předej někomu jinému!" for 5 seconds
+    wait 15 seconds
+    loop 5 times:
+        play "NOTE_PLING" to {_new}
+        wait 1 second
+    explode({tnttag.tagged})
+    
+
+function tag(new: player, old: player):
+    set {tag.pvp} to true
+    set {tnttag.tagged} to {_new}
+    set {_old}'s helmet to air
+    play "FIREWORK_BLAST" to {_new}
+    play "FIREWORK_BLAST" to {_old}
+    set {_new}'s helmet to tnt
+    run {_old} command "playsound mob.guardian.curse %{_new}% ~ ~ ~ 1 1" as op
+    send red tint to {_new}
+    remove red tint from {_old}
+    send {_new} title "&4⚠ MÁŠ TNT ⚠" with subtitle "&cRychle ho předej někomu jinému!" for 1 seconds
+    send {_old} title "&r " with subtitle "&r " for 1 seconds
+    broadcast "&c&lTNT TAG &8&l» %{rankcolor.%{_new}%}%%{_new}%&f má TNT!"
+    apply potion of speed of tier 2 to {_old} for 2 seconds
+    remove speed from {_new}
+    set {tag.ctd} to 20
+
+
+
+every second:
+    if {tag.pvp} is true:
+        remove 1 from {tag.ctd}
+        if {tag.ctd} is less than 6:
+            play "NOTE_PLING" to {_new}
+        if {tag.ctd} is 0:
+            explode({tnttag.tagged})
+
+
+
+every 2 ticks:
+    loop all players in world "tnttag":
+        heal loop-player

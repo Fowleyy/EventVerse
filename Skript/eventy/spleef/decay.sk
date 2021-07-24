@@ -1,0 +1,20 @@
+command /decay:
+    trigger:
+        {rank.%player%} is "admin"
+        set {_r} to location of player
+        player is in world "spleff1"
+        loop all players:
+            run loop-player command "playsound mob.guardian.curse %loop-player% ~ ~ ~ 0.2 1" as op
+            send loop-player title "&c" with subtitle "&4⚠ &cPlatforma se rozpadá &4⚠" for 2 seconds
+        loop 5 times:
+            loop all blocks in radius 8 of {_r}:
+                if loop-block is not air or barrier:
+                    set loop-block to redstone block
+            wait 10 ticks
+            loop all blocks in radius 8 of {_r}:
+                if loop-block is not air or barrier:
+                    set loop-block to quartz block
+            wait 10 ticks
+        loop all blocks in radius 8 of {_r}:
+            if loop-block is not air or barrier:
+                set loop-block to air

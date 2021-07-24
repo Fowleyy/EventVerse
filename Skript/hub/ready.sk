@@ -1,0 +1,82 @@
+
+command /reafycheck:
+    aliases: /readycheck
+    trigger:
+        if {rank.%player%} is "admin":
+            set {mutechat} to true
+            loop all players:
+                delete {readycheck.%loop-player%}
+                delete {readycheck::count}
+                delete {readycheck.check}
+                broadcast "&5&m                                                       "
+                broadcast "&r  "
+                broadcast "&r  "
+                broadcast "&r  &f&lJsou všichni hráči připraveni na"
+                broadcast "&r  &f&lstart eventu?"
+                broadcast "&r  "
+                broadcast "&r  &7Napiš &a/ano&7 pokud jsi připraven/a!"
+                broadcast "&r  "
+                broadcast "&r  "
+                broadcast "&5&m                                                       "
+                play "CHICKEN_EGG_POP" to all players
+            set {readycheck.check} to true
+        else:
+            onlyAdmin(player)
+
+
+command /ano:
+    trigger:
+        if {readycheck.check} is true:
+            if {readycheck.%player%} is not set:
+                set {readycheck.%player%} to true
+                run player command "soundhandler_sound_orb_2" as op
+                add 1 to {readycheck::count}
+                broadcast "&8&l» %{rankcolor.%player%}%%player%&a je připraven/a! &7(%{readycheck::count}%/%size of all players%)"
+                set {_players} to size of all players
+                if {readycheck::count} is {_players}:
+                    broadcast "&5&m                                                       "
+                    broadcast "&r  "
+                    broadcast "&r  "
+                    broadcast "&r  &a&lVšichni online hráči jsou připraveni na"
+                    broadcast "&r  &a&lstart eventu!"
+                    broadcast "&r  "
+                    broadcast "&r  &7Event začně za &e2 Minuty&7"
+                    broadcast "&r  "
+                    broadcast "&r  "
+                    broadcast "&5&m                                                       "
+                    play "CHICKEN_EGG_POP" to all players
+                    delete {mutechat}
+
+
+command /ne:
+    trigger:
+        if {readycheck.check} is true:
+            send "&cHahahaha.. fakt vtipný!"
+            wait 5 ticks
+            execute player command "/ano"
+
+
+command /možná:
+    trigger:
+        if {readycheck.check} is true:
+            send "&c????? Jak jako možná????"
+            wait 5 ticks
+            execute player command "/ano"
+
+command /mozna:
+    trigger:
+        if {readycheck.check} is true:
+            send "&cHahahaha.. fakt vtipný!"
+            wait 5 ticks
+            execute player command "/ano"
+
+
+
+command /dev:forcereadycheck:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                wait 2 ticks
+                run loop-player command "ano" as op
+        else:
+            onlyAdmin(player)

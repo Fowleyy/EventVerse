@@ -1,0 +1,300 @@
+command /evmenu:cosmetics:trails:
+    trigger:
+       # play "CLICK" to player
+        wait 2 ticks
+        set {menu.cosmetics.open.%player%} to true
+        open chest with 6 rows named "&0&lCosmetics &8[Trails]                   &dwww.event-verse.eu" to player #Otevřeme virtuální truhlu
+        wait 1 ticks
+        format slot 0 of player with black stained glass pane named "&r" to be unstealable
+        loop 53 times:
+            add 1 to {_slot}
+            format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+        format slot 0 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 9 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 18 of player with empty map named "&6&n&lJoin Messages" with lore "||&7Klikni pro vybrání||" to close then run [run player command "evmenu:cosmetics:joinmessages" as op]
+        format slot 27 of player with shiny blaze powder named "&6&n&lTrail Particly" with lore "||&7Klikni pro vybrání||" to close then run [run player command "evmenu:cosmetics:trails" as op]
+        format slot 36 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 45 of player with white glass pane named "&r" with lore "" to be unstealable
+        #
+        if {cosmetics.%player%.owned.trail.flame} is true:
+            if {cosmetics.%player%.equiped.trail} is "FLAME":
+                format slot 11 of player with blaze powder named "&6&lFlame &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 11 of player with blaze powder named "&6&lFlame &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail flame" as op]
+        else:
+            if {shards::%player%} is more than 29:
+                format slot 11 of player with blaze powder named "&6&lFlame &7Particle Trail" with lore "||&a&nKlikni pro zakoupení&r &7(30 Shardů)" to run [run player command "cosmetics:buy:trail flame" as op]
+            else:
+                format slot 11 of player with blaze powder named "&6&lFlame &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(30 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        
+        if {cosmetics.%player%.owned.trail.cherry_blossom} is true:
+            if {cosmetics.%player%.equiped.trail} is "CHERRY_BLOSSOM":
+                format slot 12 of player with rose bush named "&4&lCherry &c&lBlossom &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 12 of player with rose bush named "&4&lCherry &c&lBlossom &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail cherry_blossom" as op]
+        else:
+            if {shards::%player%} is more than 49:
+                format slot 12 of player with rose bush named "&4&lCherry &c&lBlossom &7Particle Trail" with lore "||&a&nKlikni pro zakoupení&r &7(50 Shardů)" to run [run player command "cosmetics:buy:trail cherry_blossom" as op]        
+            else:
+                format slot 12 of player with rose bush named "&4&lCherry &c&lBlossom &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(50 Shardů)" to run [play "ENDERMAN_TELEPORT" to player] 
+        
+        
+        
+        if {cosmetics.%player%.owned.trail.love} is true:
+            if {cosmetics.%player%.equiped.trail} is "LOVE":
+                format slot 13 of player with red dye named "&c&lLove &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 13 of player with red dye named "&c&lLove &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail love" as op]
+        else:
+            if {shards::%player%} is more than 59:
+                format slot 13 of player with red dye named "&c&lLove &7Particle Trail" with lore "||&a&nKlikni pro zakoupení&r &7(60 Shardů)" to run [run player command "cosmetics:buy:trail love" as op] 
+            else:
+                format slot 13 of player with red dye named "&c&lLove &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(60 Shardů)" to run [play "ENDERMAN_TELEPORT" to player] 
+
+        
+        
+        if {cosmetics.%player%.owned.trail.aqua} is true:
+            if {cosmetics.%player%.equiped.trail} is "AQUA":
+                format slot 14 of player with bucket of water named "&b&lAqua &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 14 of player with bucket of water named "&b&lAqua &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail aqua" as op]
+        else:
+            if {shards::%player%} is more than 59:
+                format slot 14 of player with bucket of water named "&b&lAqua &7Particle Trail" with lore "||&a&nKlikni pro zakoupení&r &7(60 Shardů)" to run [run player command "cosmetics:buy:trail aqua" as op] 
+            else:
+                format slot 14 of player with bucket of water named "&b&lAqua &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(60 Shardů)" to run [play "ENDERMAN_TELEPORT" to player] 
+        
+        
+        
+        if {cosmetics.%player%.owned.trail.wind} is true:
+            if {cosmetics.%player%.equiped.trail} is "WIND":
+                format slot 15 of player with azure bluet named "&f&lWind &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 15 of player with azure bluet named "&f&lWind &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail wind" as op]
+        else:   
+            if {shards::%player%} is more than 69:
+                format slot 15 of player with azure bluet named "&f&lWind &7Particle Trail" with lore "||&a&nKlikni pro zakoupení&r &7(70 Shardů)" to run [run player command "cosmetics:buy:trail wind" as op] 
+            else:
+                format slot 15 of player with azure bluet named "&f&lWind &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(70 Shardů)" to run [play "ENDERMAN_TELEPORT" to player] 
+        
+        
+        
+        if {cosmetics.%player%.owned.trail.easter_breeze} is true:
+            if {cosmetics.%player%.equiped.trail} is "EASTER_BREEZE":
+                format slot 16 of player with lilac named "&2&lEaster &a&lBreeze &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 16 of player with lilac named "&2&lEaster &a&lBreeze &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail easter_breeze" as op]
+        else:
+            format slot 16 of player with lilac named "&2&lEaster &a&lBreeze &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(Lze získat během velikonoc)" to be unstealable
+        
+        
+        
+        if {cosmetics.%player%.owned.trail.ice} is true:
+            if {cosmetics.%player%.equiped.trail} is "ICE":
+                format slot 20 of player with ice named "&b&lIce &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 20 of player with ice named "&b&lIce &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail ice" as op]
+        else:
+            format slot 20 of player with ice named "&b&lIce &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(Lze získat během zimní sezóny)" to be unstealable
+      
+        if {cosmetics.%player%.owned.trail.pride} is true:
+            if {cosmetics.%player%.equiped.trail} is "PRIDE":
+                format slot 21 of player with {item.pride} named "&c&lP&6&lR&E&LI&A&LD&B&LE &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 21 of player with {item.pride} named "&c&lP&6&lR&E&LI&A&LD&B&LE &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail pride" as op]
+        else:
+            format slot 21 of player with 51:8 named "&c&lP&6&lR&E&LI&A&LD&B&LE &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(Lze získat pouze v giveawayi během pride měsíce)" to be unstealable
+        
+        if {cosmetics.%player%.owned.trail.summertime} is true:
+            if {cosmetics.%player%.equiped.trail} is "SUMMERTIME":
+                format slot 22 of player with sand named "&e&lSummertime &7Particle Trail" with lore "||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 22 of player with sand named "&e&lSummertime &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail summertime" as op]
+        else:
+            format slot 22 of player with sand named "&e&lSummertime &7Particle Trail" with lore "||&c&mKlikni pro zakoupení&r &7(50 Shardů)" to be unstealable
+        
+
+        #
+        set {_slot} to 23
+        loop 3 times:
+            format slot {_slot} of player with air to be unstealable
+            add 1 to {_slot}
+        #
+        set {_slot} to 29
+        loop 6 times:
+            format slot {_slot} of player with air to be unstealable
+            add 1 to {_slot}
+        #
+        set {_slot} to 38
+        loop 6 times:
+            format slot {_slot} of player with air to be unstealable
+            add 1 to {_slot}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+command /cosmetics:buy:trail <text>:
+    trigger:
+        if arg-1 is "flame":
+            if {shards::%player%} is more than 29:
+                remove 30 from {shards::%player%}
+                set {cosmetics.%player%.owned.trail.flame} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eFlame trail&a!" to player
+                format slot 11 of player with blaze powder named "&6&lFlame &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail flame" as op]
+        
+        
+        
+        if arg-1 is "cherry_blossom":
+            if {shards::%player%} is more than 49:
+                remove 50 from {shards::%player%}
+                set {cosmetics.%player%.owned.trail.cherry_blossom} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eCherry Blossom trail&a!" to player
+                format slot 12 of player with rose bush named "&4&lCherry &c&lBlossom &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail cherry_blossom" as op]
+
+
+
+        if arg-1 is "love":
+            if {shards::%player%} is more than 59:
+                remove 60 from {shards::%player%}
+                set {cosmetics.%player%.owned.trail.love} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eLove trail&a!" to player
+                format slot 13 of player with red dye named "&c&lLove &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail love" as op]
+                
+
+
+        if arg-1 is "aqua":
+            if {shards::%player%} is more than 59:
+                remove 60 from {shards::%player%}
+                set {cosmetics.%player%.owned.trail.aqua} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eAqua trail&a!" to player
+                format slot 14 of player with water bucket named "&b&lAqua &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail aqua" as op]
+
+
+
+        if arg-1 is "wind":
+            if {shards::%player%} is more than 69:
+                remove 70 from {shards::%player%}
+                set {cosmetics.%player%.owned.trail.wind} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eWind trail&a!" to player
+                format slot 15 of player with azure bluet named "&f&lWind &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail wind" as op]
+
+        if arg-1 is "summertime":
+            if {shards::%player%} is more than 49:
+                remove 50 from {shards::%player%}
+                set {cosmetics.%player%.owned.trail.summertime} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eSummertime&a!" to player
+                format slot 22 of player with sand named "&e&lSummertime &7Particle Trail" with lore "||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:trail summertime" as op]
+
+
+
+
+command /cosmetics:equip:trail <text>:
+    trigger:
+        if arg-1 is "flame":
+            if {cosmetics.%player%.owned.trail.flame} is true:
+                set {cosmetics.%player%.equiped.trail} to "FLAME"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eFlame trail&a!"
+                set {trail.%player%} to "FLAME"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+        
+        
+        
+        if arg-1 is "cherry_blossom":
+            if {cosmetics.%player%.owned.trail.cherry_blossom} is true:
+                set {cosmetics.%player%.equiped.trail} to "CHERRY_BLOSSOM"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eCherry Blossom trail&a!"
+                set {trail.%player%} to "CHERRY_BLOSSOM"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+
+
+        
+        if arg-1 is "love":
+            if {cosmetics.%player%.owned.trail.love} is true:
+                set {cosmetics.%player%.equiped.trail} to "LOVE"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eLove trail&a!"
+                set {trail.%player%} to "HEART"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+
+
+        
+        if arg-1 is "aqua":
+            if {cosmetics.%player%.owned.trail.aqua} is true:
+                set {cosmetics.%player%.equiped.trail} to "AQUA"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eAqua trail&a!"
+                set {trail.%player%} to "AQUA"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+
+
+        
+        if arg-1 is "wind":
+            if {cosmetics.%player%.owned.trail.wind} is true:
+                set {cosmetics.%player%.equiped.trail} to "WIND"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eWind trail&a!"
+                set {trail.%player%} to "WIND"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+
+
+        
+        if arg-1 is "easter_breeze":
+            if {cosmetics.%player%.owned.trail.easter_breeze} is true:
+                set {cosmetics.%player%.equiped.trail} to "EASTER_BREEZE"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eEaster Breeze trail&a!"
+                set {trail.%player%} to "EASTER_BREEZE"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+
+
+        
+        if arg-1 is "ice":
+            if {cosmetics.%player%.owned.trail.ice} is true:
+                set {cosmetics.%player%.equiped.trail} to "ICE"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eIce trail&a!"
+                set {trail.%player%} to "ICEY_SEASON"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+
+        if arg-1 is "pride":
+            if {cosmetics.%player%.owned.trail.pride} is true:
+                set {cosmetics.%player%.equiped.trail} to "PRIDE"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &ePride trail&a!"
+                set {trail.%player%} to "PRIDE"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"
+
+        if arg-1 is "summertime":
+            if {cosmetics.%player%.owned.trail.summertime} is true:
+                set {cosmetics.%player%.equiped.trail} to "SUMMERTIME"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eSummertime&a!"
+                set {trail.%player%} to "SUMMERTIME"
+                close player's inventory
+                execute player command "evmenu:cosmetics:trails"

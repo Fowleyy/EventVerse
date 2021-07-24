@@ -1,0 +1,53 @@
+command /evmenu:socialmedia:
+    trigger:
+        player is in world "hub"
+       # play "CLICK" to player
+        open chest with 3 rows named "&0&lSocial Media &8                         &dwww.eventverse.eu" to player #Otevřeme virtuální truhlu
+        wait 1 ticks
+        format slot 0 of player with black stained glass pane named "&r" to be unstealable
+        loop 26 times:
+            add 1 to {_slot}
+            format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+        wait 4 ticks
+        format slot 10 of player with {item.yt} named "&c&l&nYoutube&7 (Aktuálně nedostupné)" with lore "||&e&mwww.eventverse.fun/youtube||" to be unstealable
+        play "WOOD_CLICK" to player
+        wait 4 ticks
+        format slot 13 of player with {item.twt} named "&b&l&nTwitter" with lore "||&e&ntwitter.com/EventVerse_||"  to be unstealable
+        play "WOOD_CLICK" to player
+        wait 4 ticks
+        format slot 16 of player with {item.discord} named "&9&l&nDiscord" with lore "||&e&nwww.eventverse.eu||"  to be unstealable
+        play "WOOD_CLICK" to player
+
+command /evmenu:ateam:
+    trigger:
+        player is in world "hub"
+        teleport player to {hub_at}
+        play "ENDERMAN_TELEPORT" to player
+
+command /evmenu:info:
+    trigger:
+        player is in world "hub"
+       # play "CLICK" to player
+        open chest with 3 rows named "&0&lInformace &8                           &dwww.eventverse.eu" to player #Otevřeme virtuální truhlu
+        wait 1 ticks
+        format slot 0 of player with black stained glass pane named "&r" to be unstealable
+        loop 26 times:
+            add 1 to {_slot}
+            format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+        wait 1 ticks
+        format slot 10 of player with nether star named "&d&l&nEventVerse" with lore "|| &7&oKdo jsme?||&fJsme tým, který se zabývá tvorbou kvalitních||&fminecraft eventů na naší scéně.|||| &7&oSezóny (Jak to funguje)||&fJedna sezóna trvá &e3 měsíce&f. Během 3 měsíců se||&fodehraje &e30 eventů&f, ve kterém musíte nasbírat co||&fnejvíce &eseason coinů&f. Na konci sezóny se vybere||&f6 hráčů s nejvyšším počtem &eseason coinů &fa následně||&fbudou proti sobě hrát turnaj.|||| &7&oShardy (K čemu slouží)||&eShardy &fjsou ""měnou"" EventVerse. Lze získat vyhráváním||&feventů, plněním questů, přežíváním kol na mini block party,||&fdokončení parkouru atd. Slouží převážně k nákupu cosmetics||&fa nakupování předmětů v baru." to be unstealable
+        format slot 13 of player with red dye named "&c&l&nEventVerse Team" with lore "|| &7&oMinecraft Team||&c&lADMIN &8&l︳ &fLukynkaCZE||&c&lADMIN &8&l︳ &fKbelik_Vody||&c&lADMIN &8&l︳ &fTenViki||&c&lMC TEAM &8&l︳ &fPeterko_||&c&lMC TEAM &8&l︳ &fS0ptik||&c&lMC TEAM &8&l︳ &fTh3Dolphin|||| &7&oDiscord Team||&6&lDC TEAM &8&l︳ &fJopGamer|||| &7&oTester Team||&b&lTESTER &8&l︳ &fAlien584||&b&lTESTER &8&l︳ &fSyMin1142||&b&lTESTER &8&l︳ &fyq__||&b&lTESTER &8&l︳ &fSamo_259||&b&lTESTER &8&l︳ &fSweatyyKubo" to be unstealable
+        format slot 16 of player with {item.discord} named "&9&l&nVíce informací..." with lore "||&fNaleznete na našem discord serveru.||&e&nwww.eventverse.eu" to be unstealable
+
+command /evmenu:donate:
+    trigger:
+        player is in world "hub"
+       # play "CLICK" to player
+        open chest with 3 rows named "&0&lDonate &8                                &dwww.eventverse.eu                               &5&oBoop!" to player #Otevřeme virtuální truhlu
+        wait 1 ticks
+        format slot 0 of player with black stained glass pane named "&r" to be unstealable
+        loop 26 times:
+            add 1 to {_slot}
+            format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+        wait 1 ticks
+        format slot 13 of player with shiny gold ingot named "&e&l&nDonate" with lore "|| &7&oDonate||&fVážíme si každé podpory a donatu!||&fPro tyto lidi máme připravených spousta výhod!||||&fJako donate přijímáme &evýhra do giveawaye&f,||&evýhra do eventu&f, &efinanční částka&e, která slouží||&fk udržování serveru a placení vyšších pozic||&fv Teamu. Jako donate naopak nepřijímáme to, že pro||&fnáš server uděláte &ebota&f, navrhnete &edobrý nápad &fatp.|||| &7&oVýhody||&f» &eRank &d&lDONATOR||&f» &eNPC mezi Donatory na lobby||&f» &ePurpurové boty na eventech||&f» &eMožnost psát do chatu během mutechatu|| &7&o(To neznamená, že nemůžete dostat mute)||&f» &eRole &9@&c❤ &9| Donator &ena Discordu|||| &7&mVšechny výhody najdeš na &f&mwww.eventverse.fun/vyhody||" to be unstealable        

@@ -1,0 +1,154 @@
+function bpNewRound(n: number):
+    delete {bp.play}
+    set {bp.hard} to "easy"
+    set {bp.difficulty} to coloured "&aLehká"
+    set {bp.speed} to "7 seconds" parsed as time span
+    set {bp.ctd.speed} to 7
+    set {bp.round} to {_n}
+    set {bp::players} to 0
+    wait 1 tick
+    bpNewFloor()
+    loop all players:
+        set gamemode of loop-player to adventure
+        teleport loop-player to {bp_platform1} or {bp_platform2} or {bp_platform3} or {bp_platform4} or {bp_platform5} or {bp_platform6}
+        spectator(loop-player)
+        if gamemode of loop-player is adventure:
+            wait 1 ticks
+            add 1 to {bp::players}
+    loop all players:
+        execute server command "effect %loop-player% clear"
+        send loop-player title "&a&l%{_n}%. KOLO &7(%{_n}%/3)" with subtitle "&ePřiprav se.." for 5 seconds
+    wait 2 seconds
+    sendTitle("COUNTDOWN")
+    wait 5 seconds
+    loop all players:
+        newBpScoreboard(loop-player)
+    boots()
+    set {bp.play} to true
+    wait 5 seconds
+    bpGenerateFloor()
+
+function newBpScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to " &d&n&lBlock Party"
+    set score "&r           " in sidebar of {_p} to 11
+    set score "&f&lMapa:" in sidebar of {_p} to 10
+    set score "  &eDisco" in sidebar of {_p} to 9
+    set score "  &7&oby LukynkaCZE" in sidebar of {_p} to 8
+    set score "&r        " in sidebar of {_p} to 7
+    set id score "Hráči na živu: &a%{bp::players}%" in sidebar of {_p} to 6 with id "bpsb-%{_p}%-players"
+    set id score "Obtížnost: &b%{bp.difficulty}%" in sidebar of {_p} to 5 with id "bpsb-%{_p}%-difficulty"
+    set id score "Čas na přemístění: &b%{bp.speed}%" in sidebar of {_p} to 4 with id "bpsb-%{_p}%-speed"
+    set score "&r   " in sidebar of {_p} to 3 
+    set id score "Coiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "bpsb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&ewww.eventverse.eu" in sidebar of {_p} to 0
+
+function updateBpScoreboard(p: player): 
+    loop all players:
+        update score id "bpsb-%loop-player%-players" to "Hráči na živu: &a%{bp::players}%" and 6
+        update score id "bpsb-%loop-player%-difficulty" to "Obtížnost: &b%{bp.difficulty}%" and 5
+        update score id "bpsb-%loop-player%-speed" to "Čas na přemístění: &b%{bp.speed}%" and 4
+        update score id "bpsb-%loop-player%-coins" to "Coiny: &e%{coins::%{_p}%}%&6⛃" and 2
+
+function bpDead(p: player):
+    pkCheckpointFirework({_p})
+    set gamemode of {_p} to spectator
+    teleport {_p} to {bp.spectate}
+    remove 1 from {bp::players}
+    loop all players:
+        updateBpScoreboard(loop-player)
+    loop all players:
+        if gamemode of loop-player is survival or adventure:
+            addCoins(loop-player,15,"Přežití")
+            addShards(loop-player, 0.2, "Přežití")
+            run loop-player command "/soundhandler_sound_orb_2" as op
+    set {_m} to "nebyl/a tak dobrý/á jako Kbelik_Vody" or "spadnul/a.. what a shame!" or "nedával/a pozor když simpil/a Lukynku.." or "uhořel/a." or "si chtěl/a zaplavat v oranžové vodě.. uh oh" or "byl/a rozdrcena spadlou skříní" or "dostal/a infarkt.. Přehnal/a to s energy drinkem." or "dosimpoval/a." or "napísal/a yg.." or "už neni." or "používal/a light mode.." or "byl/a zakousnutý/á shibou!" or "se utopil/a v sopce" or "byl/a až moc sus" or "nejspíš AFKoval/a" or "was ejected... %{bp::players}% impostors remaining" or "už nechtěl/a žít.." or ".. to byl 100%% lag!" or "byl/a yeetnut/á!" or "pořád není připojen/á na discordu EventVerse!" or "zjistil/a že Dream není nejlepší hráč.." or "sledoval/a SirYakariho" or "nevyhrál/a 100 hráčů plní ůkoli!" or "se choval/a jako Aragon.. nechovej se jako Aragon a nedopadneš takhle!" or "byl/a přidán/a na list zlobivých dětí!" or "umřel/a.. clip it and ship it!" or ".. uhhh.. už fakt nemám nápady na death message.." or "se chce stát hot tub streamerem/kou."
+    if {_p} is "NeoriginalniKari":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si myslel že vyhraje.. bohužel tohle není parkour"
+    if {_p} is "yq__":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "pořád neví, jestli je to ""yq"" nebo ""yg"".."
+    if {_p} is "Alien584":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to ", jako správný mimozemšťan, odletěl na jinou planetu.."
+    if {_p} is "RiillyCZ" or "RizzRikCz":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "je tu jenom pro výhru.. zaprodanec smh"
+    if {_p} is "Th3Dolphin":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl zaplavat s delfínama.. uh oh"
+    if {_p} is "Kbelik_Vody":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "se vylil.. teď je to Kbelik_Prazdny"
+    broadcast "&c✖ &8&l» %{rankcolor.%{_p}%}%%{_p}%&7 %{_m}%"
+    if {bp::players} is less than 2:
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                bpEndRound(loop-player)
+    wait 5 ticks
+    if {bp.round} is less than 3:
+        if {bp::players} is more than 1:
+            send {_p} title "&c&nNEODPOJUJ SE!" with subtitle "&eDalší kolo začne za chvíli" for 7 seconds
+
+function bpEndRound(p: player):
+    delete {bp.play}
+    loop all players:
+        set gamemode of loop-player to spectator
+        clear loop-player's inventory
+        send loop-player title "&r " with subtitle "&r "
+    sendTitle("ROUND_OVER")
+    announceRoundWinner({_p}, {bp.round})
+    addCoins({_p},100,"Výhra kola")
+    addShards({_p}, 3, "Výhra kola")
+    run {_p} command "/soundhandler_sound_orb_2" as op
+    loop all players:
+        resetScoreboard(loop-player)
+
+every second:
+    if {bp.ctd} is more than 0:
+        remove 1 from {bp.ctd}
+        if {bp.ctd} is less than 4:
+            play "NOTE_PLING" to all players
+
+
+
+
+
+
+
+
+
+
+
+on enter "bpdead":
+    if gamemode of player is adventure:
+        bpDead(player)
+        loop all players:
+            updateBpScoreboard(loop-player)
+    else:
+        teleport player to {bp.spectate}
+
+on quit:
+    if gamemode of player is adventure:
+        remove 1 from {bp::players}
+        loop all players:
+            updateBpScoreboard(loop-player)
+
+on damage:
+    if victim is in world "color":
+        cancel event
+
+command /bp:newround <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            bpNewRound(arg-1)
+        else:
+            onlyAdmin(player)

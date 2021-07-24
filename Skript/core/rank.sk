@@ -1,0 +1,80 @@
+command /rank <offline player> <text> [<text>]:
+    usage: /rank <player> <rank>
+    trigger:
+        if player is "LukynkaCZE":
+            if {rank.%arg 1%} is not set:
+                set {rank.%arg 1%} to "player"
+            set {_lr} to "%{rank.%arg 1%}%"
+            set {_lc} to "%{rankcolor.%arg 1%}%"
+            if arg-2 is "player":
+                set {rank.%arg 1%} to "player"
+                set {rankcolor.%arg 1%} to coloured "&e"
+                execute server command "pr setrank %arg 1% player"
+            if arg-2 is "komunita":
+                set {rank.%arg 1%} to "komunita"
+                set {rankcolor.%arg 1%} to coloured "&a"
+                execute server command "pr setrank %arg 1% verified"
+            if arg-2 is "donator":
+                set {rank.%arg 1%} to "donator"
+                set {rankcolor.%arg 1%} to coloured "&d"
+                execute server command "pr setrank %arg 1% donator"
+            if arg-2 is "tester":
+                set {rank.%arg 1%} to "tester"
+                set {rankcolor.%arg 1%} to coloured "&b"
+                execute server command "pr setrank %arg 1% tester"
+            if arg-2 is "mcteam":
+                set {rank.%arg 1%} to "mcteam"
+                set {rankcolor.%arg 1%} to coloured "&c"
+                execute server command "pr setrank %arg 1% mcteam"
+            if arg-2 is "admin":
+                set {rank.%arg 1%} to "admin"
+                set {rankcolor.%arg 1%} to coloured "&4"
+                execute server command "pr setrank %arg 1% admin"
+            if arg-2 is "dcteam":
+                set {rank.%arg 1%} to "dcteam"
+                set {rankcolor.%arg 1%} to coloured "&6"
+                execute server command "pr setrank %arg 1% dcteam"
+            if arg-2 is "champion":
+                set {rank.%arg 1%} to "champion"
+                set {rankcolor.%arg 1%} to coloured "&e"
+                execute server command "pr setrank %arg 1% champion"
+            if arg-2 is "spectator":
+                set {rank.%arg 1%} to "spectator"
+                set {rankcolor.%arg 1%} to coloured "&f"
+                execute server command "pr setrank %arg 1% spectator"
+            if arg-2 is "media":
+                set {rank.%arg 1%} to "media"
+                set {rankcolor.%arg 1%} to coloured "&5"
+                execute server command "pr setrank %arg 1% media"
+            if arg-2 is "hostify":
+                set {rank.%arg 1%} to "hostify"
+                set {rankcolor.%arg 1%} to coloured "&3"
+                execute server command "pr setrank %arg 1% hostify"
+            #
+            # custom ranky
+            #
+
+            if arg-2 is "lexi":
+                set {rank.%arg 1%} to "tester"
+                set {rankcolor.%arg 1%} to coloured "&6"
+                execute server command "pr setrank %arg 1% lexi"
+            if arg-2 is "sus":
+                set {rank.%arg 1%} to "tester"
+                set {rankcolor.%arg 1%} to coloured "&d"
+                execute server command "pr setrank %arg 1% sus"
+
+            #
+            # Dev
+            #
+
+            if arg-2 is "$custom":
+                if arg-3 is set:
+                    set {rank.%arg 1%} to "%arg 3%"
+                    set {rankcolor.%arg 1%} to "&c&m"
+
+
+            loop all players:
+                if loop-player have permission "pog.champ":
+                    send "&7[DEV] %{rankcolor.%player%}%%player%&f set rank of %{_lc}%%arg 1%&f to ""%{rankcolor.%arg 1%}%%arg 2%&f""" to loop-player
+        else:
+            onlyAdmin(player)

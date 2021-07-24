@@ -1,0 +1,283 @@
+function parkour2_ResetGate():
+
+    set block at location -27, 136, -1 in world "parkour3" to oak fence
+    set block at location -27, 136, -2 in world "parkour3" to oak fence
+    set block at location -27, 136, -3 in world "parkour3" to oak fence
+    set block at location -27, 136, -4 in world "parkour3" to oak fence
+    set block at location -27, 136, -5 in world "parkour3" to oak fence
+    
+    set block at location -27, 135, -1 in world "parkour3" to oak fence
+    set block at location -27, 135, -2 in world "parkour3" to oak fence
+    set block at location -27, 135, -3 in world "parkour3" to oak fence
+    set block at location -27, 135, -4 in world "parkour3" to oak fence
+    set block at location -27, 135, -5 in world "parkour3" to oak fence
+    
+    set block at location -27, 134, -1 in world "parkour3" to oak fence
+    set block at location -27, 134, -2 in world "parkour3" to oak fence
+    set block at location -27, 134, -3 in world "parkour3" to oak fence
+    set block at location -27, 134, -4 in world "parkour3" to oak fence
+    set block at location -27, 134, -5 in world "parkour3" to oak fence
+    
+    set block at location -27, 133, -1 in world "parkour3" to spruce fence
+    set block at location -27, 133, -2 in world "parkour3" to spruce fence
+    set block at location -27, 133, -3 in world "parkour3" to spruce fence
+    set block at location -27, 133, -4 in world "parkour3" to spruce fence
+    set block at location -27, 133, -5 in world "parkour3" to spruce fence
+
+
+
+function parkour2_OpenGate():
+
+    play "ZOMBIE_WOOD" to all players
+
+    set block at location -27, 136, -1 in world "parkour3" to oak fence
+    set block at location -27, 136, -2 in world "parkour3" to oak fence
+    set block at location -27, 136, -3 in world "parkour3" to oak fence
+    set block at location -27, 136, -4 in world "parkour3" to oak fence
+    set block at location -27, 136, -5 in world "parkour3" to oak fence
+    
+    set block at location -27, 135, -1 in world "parkour3" to oak fence
+    set block at location -27, 135, -2 in world "parkour3" to oak fence
+    set block at location -27, 135, -3 in world "parkour3" to oak fence
+    set block at location -27, 135, -4 in world "parkour3" to oak fence
+    set block at location -27, 135, -5 in world "parkour3" to oak fence
+    
+    set block at location -27, 134, -1 in world "parkour3" to spruce fence
+    set block at location -27, 134, -2 in world "parkour3" to spruce fence
+    set block at location -27, 134, -3 in world "parkour3" to spruce fence
+    set block at location -27, 134, -4 in world "parkour3" to spruce fence
+    set block at location -27, 134, -5 in world "parkour3" to spruce fence
+    
+    set block at location -27, 133, -1 in world "parkour3" to air
+    set block at location -27, 133, -2 in world "parkour3" to air
+    set block at location -27, 133, -3 in world "parkour3" to air
+    set block at location -27, 133, -4 in world "parkour3" to air
+    set block at location -27, 133, -5 in world "parkour3" to air
+
+    wait 1 second
+
+    play "ZOMBIE_WOOD" to all players
+
+    set block at location -27, 136, -1 in world "parkour3" to oak fence
+    set block at location -27, 136, -2 in world "parkour3" to oak fence
+    set block at location -27, 136, -3 in world "parkour3" to oak fence
+    set block at location -27, 136, -4 in world "parkour3" to oak fence
+    set block at location -27, 136, -5 in world "parkour3" to oak fence
+    
+    set block at location -27, 135, -1 in world "parkour3" to spruce fence
+    set block at location -27, 135, -2 in world "parkour3" to spruce fence
+    set block at location -27, 135, -3 in world "parkour3" to spruce fence
+    set block at location -27, 135, -4 in world "parkour3" to spruce fence
+    set block at location -27, 135, -5 in world "parkour3" to spruce fence
+    
+    set block at location -27, 134, -1 in world "parkour3" to air    
+    set block at location -27, 134, -2 in world "parkour3" to air
+    set block at location -27, 134, -3 in world "parkour3" to air
+    set block at location -27, 134, -4 in world "parkour3" to air
+    set block at location -27, 134, -5 in world "parkour3" to air
+
+    wait 1 second
+
+    play "ZOMBIE_WOODBREAK" to all players
+
+    set block at location -27, 136, -1 in world "parkour3" to spruce fence
+    set block at location -27, 136, -2 in world "parkour3" to spruce fence
+    set block at location -27, 136, -3 in world "parkour3" to spruce fence
+    set block at location -27, 136, -4 in world "parkour3" to spruce fence
+    set block at location -27, 136, -5 in world "parkour3" to spruce fence
+    
+    set block at location -27, 135, -1 in world "parkour3" to air
+    set block at location -27, 135, -2 in world "parkour3" to air
+    set block at location -27, 135, -3 in world "parkour3" to air
+    set block at location -27, 135, -4 in world "parkour3" to air
+    set block at location -27, 135, -5 in world "parkour3" to air
+
+function parkour2_removeGateBarrier():
+    set {_y} to 133
+    loop 4 times:
+        set block at location -26, {_y}, -1 in world "parkour3" to air
+        set block at location -26, {_y}, -2 in world "parkour3" to air
+        set block at location -26, {_y}, -3 in world "parkour3" to air
+        set block at location -26, {_y}, -4 in world "parkour3" to air
+        set block at location -26, {_y}, -5 in world "parkour3" to air
+        add 1 to {_y}
+
+function parkour2_GateBarrier():
+    set {_y} to 133
+    loop 4 times:
+        set block at location -26, {_y}, -1 in world "parkour3" to barrier
+        set block at location -26, {_y}, -2 in world "parkour3" to barrier
+        set block at location -26, {_y}, -3 in world "parkour3" to barrier
+        set block at location -26, {_y}, -4 in world "parkour3" to barrier
+        set block at location -26, {_y}, -5 in world "parkour3" to barrier
+        add 1 to {_y}
+
+command /pk2:opengate:
+    trigger:
+        if {rank.%player%} is "admin":
+            parkour2_OpenGate()
+            wait 2 seconds
+            parkour2_removeGateBarrier()
+        else:
+            onlyAdmin(player)
+
+command /pk2:resetgate:
+    trigger:
+        if {rank.%player%} is "admin":
+            play "ENDERMAN_TELEPORT" to all players
+            parkour2_ResetGate()
+            parkour2_GateBarrier()
+        else:
+            onlyAdmin(player)
+
+function callUpdateFallAchievment(p: player):
+    if {parkour-falls::%{_p}%} is more than 68:
+        if {ach.69.%{_p}%} is not set:
+            set {ach.69.%{_p}%} to true
+            play "LEVEL_UP" to {_p}
+            message "&d&l» ACHIEVMENT ODEMČEN: &e69" to {_p}
+            message "&7&ohahaha funni number!" to {_p}
+            add 1 to {achievements::%{_p}%}
+            add 5 to {shards::%{_p}%}
+
+function newParkourScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&d&n&lParkour"
+    set score "&r        " in sidebar of {_p} to 14
+    set score "&f&lMapa:" in sidebar of {_p} to 13
+    if {_p} is in world "parkour2":
+        set score "  &ePletau" in sidebar of {_p} to 12
+    if {_p} is in world "parkour3":
+        set score "  &eSpruce Forest" in sidebar of {_p} to 12
+    set score "  &7&oby Peterko_" in sidebar of {_p} to 11
+    set score "&r  " in sidebar of {_p} to 10
+    set id score "&6&l1. &f%{parkour.first}%" in sidebar of {_p} to 9 with id "pksb-%{_p}%-first"
+    set id score "&f&l2. &f%{parkour.second}%" in sidebar of {_p} to 8 with id "pksb-%{_p}%-second"
+    set id score "&7&l3. &f%{parkour.third}%" in sidebar of {_p} to 7 with id "pksb-%{_p}%-third"
+    set score "&r   " in sidebar of {_p} to 6
+    set id score "&fStage: %{parkour.stage.%{_p}%}%" in sidebar of {_p} to 5 with id "pksb-%{_p}%-stage"
+    set id score "&fSpadnutí: &c%{parkour-falls::%{_p}%}%" in sidebar of {_p} to 4 with id "pksb-%{_p}%-falls"
+    set score "&r          " in sidebar of {_p} to 3
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "pksb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&ewww.eventverse.eu" in sidebar of {_p} to 0
+
+function updateParkourScoreboard(p: player):
+    update score id "pksb-%{_p}%-first" to "&6&l1. &f%{parkour.first}%" and 9
+    update score id "pksb-%{_p}%-second" to "&f&l2. &f%{parkour.second}%" and 8
+    update score id "pksb-%{_p}%-third" to "&7&l3. &f%{parkour.third}%" and 7
+
+    update score id "pksb-%{_p}%-stage" to "&fStage: %{parkour.stage.%{_p}%}%" and 5
+    update score id "pksb-%{_p}%-falls" to "&fSpadnutí: &c%{parkour-falls::%{_p}%}%" and 4
+
+    update score id "pksb-%{_p}%-coins" to "&fCoiny: &e%{coins::%{_p}%}%&6⛃" and 2
+
+function parkourGateClose():
+    set {_x} to -4
+    loop 7 times:
+        set block at location {_x}, 101, -13 in world "parkour2" to iron_bar
+        set block at location {_x}, 102, -13 in world "parkour2" to iron_bar
+        set block at location {_x}, 103, -13 in world "parkour2" to iron_bar
+        set block at location {_x}, 104, -13 in world "parkour2" to iron_bar
+        add 1 to {_x}
+
+function parkourGateOpen():
+    set {_y} to 101
+    loop 4 times:
+        set {_x} to -4
+        play "ZOMBIE_WOOD" to all players
+        loop 7 times:
+            set block at location {_x}, {_y}, -13 in world "parkour2" to air
+            add 1 to {_x}
+        wait 1 second
+        add 1 to {_y}
+
+function pkCheckpointFirework(p: player):
+    if {rank.%{_p}%} is "player":
+        run {_p} command "summon FireworksRocketEntity ~ ~1 ~ {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[14602026],FadeColors:[14602026]}],Flight:1}}}}" as op
+    if {rank.%{_p}%} is "admin" or "mcteam":
+        run {_p} command "summon FireworksRocketEntity ~ ~1 ~ {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[11743532],FadeColors:[11743532]}],Flight:1}}}}" as op
+    if {rank.%{_p}%} is "dcteam":
+        run {_p} command "summon FireworksRocketEntity ~ ~1 ~ {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[15435844],FadeColors:[15435844]}],Flight:1}}}}" as op
+    if {rank.%{_p}%} is "tester":
+        run {_p} command "summon FireworksRocketEntity ~ ~1 ~ {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[6719955],FadeColors:[6719955]}],Flight:1}}}}" as op
+    if {rank.%{_p}%} is "donator":
+        run {_p} command "summon FireworksRocketEntity ~ ~1 ~ {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[12801229],FadeColors:[12801229]}],Flight:1}}}}" as op
+
+function exe(c: text):
+    execute server command "%{_c}%"
+
+
+function pkSetWinnerNpc1(p: player):
+    if {_p} is in world "parkour2":
+        exe("npc sel 50")
+        exe("npc spawn 50")
+        exe("npc rename %{_p}%")
+        exe("npc skin %{_p}%")
+
+function pkSetWinnerNpc2(p: player):
+    if {_p} is in world "parkour2":
+        exe("npc sel 51")
+        exe("npc spawn 51")
+        exe("npc rename %{_p}%")
+        exe("npc skin %{_p}%")
+
+function pkSetWinnerNpc3(p: player):
+    if {_p} is in world "parkour2":
+        exe("npc sel 52")
+        exe("npc spawn 52")
+        exe("npc rename %{_p}%")
+        exe("npc skin %{_p}%")
+
+function pkResetWinners():
+    exe("npc despawn 50")
+    exe("npc despawn 51")
+    exe("npc despawn 52")
+
+
+
+function parkourDeleteStages():
+    loop all players:
+
+        # [ PARKOUR 1 (PLETAU) ]
+
+        delete {pk.stage1.%loop-player%}
+        delete {pk.stage2.%loop-player%}
+        delete {pk.stage3.%loop-player%}
+        delete {pk.stage4.%loop-player%}
+        delete {pk.stage5.%loop-player%}
+        delete {pk.stage6.%loop-player%}
+        delete {pk.stage7.%loop-player%}
+        delete {pk.stage8.%loop-player%}
+        delete {pk.stage9.%loop-player%}
+        delete {pk.stage10.%loop-player%}
+        delete {pk.stage11.%loop-player%}
+        delete {pk.finish.%loop-player%}
+        delete {pk.finish}
+        set {parkour-falls::%loop-player%} to 0
+
+        # [ PARKOUR 2 (SPRUCE FOREST) ]
+
+        # -
+
+
+
+function parkourEventSetup(p: player):
+    execute {_p} command "effect @a clear"
+    if {_p} is in world "parkour2":
+        execute {_p} command "worldborder center 0 0"
+        execute {_p} command "worldborder set 26"
+        loop all players:
+            set {parkour.stage.%loop-player%} to coloured "&70/11"
+    if {_p} is in world "parkour3":
+        execute {_p} command "worldborder center -18 -4"
+        execute {_p} command "worldborder set 19"
+    set {parkour.first} to coloured "&kFIRST-"
+    set {parkour.second} to coloured "&kSECOND"
+    set {parkour.third} to coloured "&kTHIRD-"
+    parkourDeleteStages()
+
+function parkour2EventSetup(p: player):
+    execute {_p} command "effect @a clear"
+    execute {_p} command "worldborder center -18 -4"
+    execute {_p} command "worldborder set 19"

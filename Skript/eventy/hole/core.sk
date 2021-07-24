@@ -1,0 +1,512 @@
+#
+
+# HOLE IN THE WALL - BY S0PTIK
+
+#
+
+command /dev:hole-revive <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if gamemode of arg-1 is spectator:
+                play "ZOMBIE_REMEDY" to all players
+                broadcast "&r "
+                broadcast "&a&lHITW &8&l» &aAdmin &c%player%&a oživil/a hráče &e%arg 1%&a!"
+                broadcast "&r "
+                add 1 to {hitw::players}
+                teleport arg-1 to player
+                set gamemode of arg-1 to adventure
+                send arg-1 title "&a&nREVIVE" with subtitle "&eAdmin &c%player%&e tě oživil/a" for 5 seconds
+                loop all players:
+                    updateHitwScoreboard()
+
+command /dev:hole-kill <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if gamemode of arg-1 is survival or adventure:
+                play "ZOMBIE_REMEDY" to all players
+                broadcast "&r "
+                broadcast "&a&lHITW &8&l» &aAdmin &c%player%&a zabil/a hráče &e%arg 1%&a!"
+                broadcast "&r "
+                hitwDead(arg-1)
+                loop all players:
+                    updateHitwScoreboard()
+
+
+
+
+
+every 2 ticks:
+    loop all players:
+        if loop-player is in world "hole":
+            if gamemode of loop-player is adventure or survival:
+                if block at loop-player is water:
+                    if {wall.canpush} is true:
+                        hitwDead(loop-player)
+                    else:
+                        teleport loop-player to {hitw_spawn1}
+                        send "&cByl/a jsi teleportován/a zpátky na platformu protože hra ještě nezačala.. příště si dávej větší pozor!" to loop-player
+                        add 1 to {achstats-hitw_fall::%loop-player%}
+                        if {ach.hitw_fall.%loop-player%} is not set:
+                            set {ach.hitw_fall.%loop-player%} to true
+                            play "LEVEL_UP" to loop-player
+                            send "&d&l» ACHIEVMENT ODEMČEN: &eJsi neposlouchal/a co?" to loop-player
+                            send "&7&oSpadni v Hole in the Wall ještě před startem hry.." to loop-player
+                            add 1 to {achievements::%loop-player%}
+                            add 1 to {shards::%loop-player%} 
+                        if {achstats-hitw_fall::%loop-player%} is 10:
+                            if {ach.hitw_fall2.%loop-player%} is not set:
+                                set {ach.hitw_fall2.%loop-player%} to true
+                                play "LEVEL_UP" to loop-player
+                                send "&d&l» ACHIEVMENT ODEMČEN: &eKolikrát tam ještě spadneš? -.-" to loop-player
+                                send "&7&oTy prostě poslouchat nebudeš..." to loop-player
+                                add 1 to {achievements::%loop-player%}
+                                add 5 to {shards::%loop-player%} 
+
+on damage:
+    if victim is in world "hole":
+        cancel event
+
+
+
+
+
+function applyHitwEffect():
+    if {hitw::effectcount} is higher than 5:
+        set {_r} to "PUMPKIN" or "BLIND" or "SPEED" or "DRUNK" or "FIRE" or "SLOW" or "SLIME" or "HMM" or "STICKY" or "GONE" or "STORM"
+        play "WOOD_CLICK" to all players
+        broadcast "&a&lHole in the Wall &8&l» &fVybírám náhodný efekt..."
+        set {hitw::effectcount} to 0
+        if {wall.canpush} is true:
+            wait 3 seconds
+            hitwEffect("%{_r}%")
+
+command /newwall [<text>]:
+    trigger:
+        if executor have permission "pog.champ":
+            add 1 to {hitw::effectcount}
+            if arg-1 is not set:
+                set {_d} to "EAST" or "SOUTH" or "WEST" or "NORTH"
+            if arg-1 is set:
+                set {_d} to "%arg 1%"
+            if {_d} is "EAST" or "SOUTH" or "WEST" or "NORTH":
+                set {_r} to random integer between 1 and 13
+                if {wall.hard} is "normal":
+                    if {_r} is 11 or 12:
+                        set {_r} to 1
+                if {wall.hard} is "hard":
+                    if {_r} is 4:
+                        set {_r} to 1
+                if {_d} is "SOUTH":
+                    if {wall.hard} is "easy":
+                        newEasySouthWall({_r})
+                    if {wall.hard} is "normal":
+                        newNormalSouthWall({_r})
+                    if {wall.hard} is "hard":
+                        newHardSouthWall({_r})
+                    execute server command "pushwall2"
+                    applyHitwEffect()
+                    stop
+                if {_d} is "EAST":
+                    if {wall.hard} is "easy":
+                        newEasyEastWall({_r})
+                    if {wall.hard} is "normal":
+                        newNormalEastWall({_r})
+                    if {wall.hard} is "hard":
+                        newHardEastWall({_r})
+                    execute server command "pushwall4"
+                    applyHitwEffect()
+                    stop
+                if {_d} is "WEST":
+                    if {wall.hard} is "easy":
+                        newEasyWestWall({_r})
+                    if {wall.hard} is "normal":
+                        newNormalWestWall({_r})
+                    if {wall.hard} is "hard":
+                        newHardWestWall({_r})
+                    execute server command "pushwall"
+                    applyHitwEffect()
+                    stop
+                if {_d} is "NORTH":
+                    if {wall.hard} is "easy":
+                        newEasyNorthWall({_r})
+                    if {wall.hard} is "normal":
+                        newNormalNorthWall({_r})
+                    if {wall.hard} is "hard":
+                        newHardNorthWall({_r})
+                    execute server command "pushwall3"
+                    applyHitwEffect()
+                    stop
+        else:
+            onlyAdmin(executor)
+    
+
+function announceRoundWinner(p: player, r: number):
+    loop all players:
+        message centered "&5&m                                  " to loop-player
+        message centered "&r " to loop-player
+        message centered "&e  ⬛  ⬛  ⬛" to loop-player
+        message centered "&e⬛⬛⬛⬛⬛" to loop-player
+        message center "&r " to loop-player
+        message centered "&6%{_p}%&7 vyhrál/a kolo &f%{_r}%" to loop-player
+        message centered "&r " to loop-player
+        message centered "&5&m                                  " to loop-player
+
+
+
+function hitwEndRound(p: player):
+    delete {wall.canpush}
+    loop all players:
+        set gamemode of loop-player to spectator
+        clear loop-player's inventory
+        send loop-player title "&r " with subtitle "&r "
+    sendTitle("ROUND_OVER")
+    announceRoundWinner({_p}, {hitw.round})
+    addCoins({_p},100,"Výhra kola")
+    add 1 to {3peteach::%{_p}%}
+    addShards({_p}, 3, "Výhra kola")
+    run {_p} command "/soundhandler_sound_orb_2" as op
+    if {3peteach::%{_p}%} is 3:
+        if {ach.hitw_3pete.%{_p}%} is not set:
+            set {ach.hitw_3pete.%{_p}%} to true
+            play "LEVEL_UP" to {_p}
+            message "&d&l» ACHIEVMENT ODEMČEN: &e3PETE" to {_p}
+            message "&7&oVyhraj 3x Hole in the Wall po sobě" to {_p}
+            add 1 to {achievements::%{_p}%}
+            add 25 to {shards::%{_p}%} 
+    loop all players:
+        resetScoreboard(loop-player)
+
+on death:
+    clear drops
+
+
+function hitwDead(p: player):
+    pkCheckpointFirework({_p})
+    teleport {_p} to {hitw.spectate}
+    set gamemode of {_p} to spectator
+    remove 1 from {hitw::players}
+    updateHitwScoreboard()
+    loop all players:
+        if gamemode of loop-player is survival or adventure:
+            addCoins(loop-player,10,"Přežití")
+            addShards(loop-player, 0.2, "Přežití")
+            run loop-player command "/soundhandler_sound_orb_2" as op
+    set {_m} to "nebyl/a tak dobrý/á jako Kbelik_Vody" or "spadnul/a.. what a shame!" or "nedával/a pozor když simpil/a Lukynku.." or "se utopil/a" or "si myslel/a že je lepší než PeteZahHutt.. welp" or "si chtěl/a zaplavat.. uh oh" or "byl/a rozdrcena spadlou skříní" or "dostal/a infarkt.. Přehnal/a to s energy drinkem." or "dosimpoval/a." or "napísal/a yg.." or "už neni." or "používal/a light mode.." or "byl/a zakousnutý/á shibou!" or "se utopil/a v sopce" or "byl/a až moc sus" or "nejspíš AFKoval/a" or "was ejected... %{hitw::players}% impostors remaining" or "zapomněl/a dát follow @LukynkaCZe" or "už nechtěl/a žít.." or "si stěžoval/a že kopírujeme Noxcrew" or ".. to byl 100%% lag!" or "byl/a yeetnut/á!" or "pořád není připojen/á na discordu EventVerse!" or "zjistil/a že Dream není nejlepší hráč.." or "sledoval/a SirYakariho" or "nevyhrál/a 100 hráčů plní ůkoli!" or "se choval/a jako Aragon.. nechovej se jako Aragon a nedopadneš takhle!" or "byl/a přidán/a na list zlobivých dětí!" or "umřel/a.. clip it and ship it!" or ".. uhhh.. už fakt nemám nápady na death message.." or "zapomněl/a že tohle není water drop!"
+    if {_p} is "NeoriginalniKari":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si myslel že vyhraje.. bohužel tohle není parkour"
+    if {_p} is "yq__":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "pořád neví jestli je to ""yq"" nebo ""yg"".."
+    if {_p} is "Alien584":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to " orjako správný mimozemšťan, odletěl na jinou planetu.."
+    if {_p} is "RiillyCZ" or "RizzRikCz":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "je tu jenom pro výhru.. zaprodanec smh"
+    if {_p} is "Danicekk" or "S0ptik":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl/a zaplavat.. jako správný žralok!"
+    if {_p} is "Th3Dolphin":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl zaplavat s delfínama.. uh oh"
+    if {_p} is "Kbelik_Vody":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "se vylil.. teď je to Kbelik_Prazdny"
+    broadcast "&c✖ &8&l» %{rankcolor.%{_p}%}%%{_p}%&7 %{_m}%"
+    if {hitw::players} is 1:
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                hitwEndRound(loop-player)
+    wait 5 ticks
+    if {hitw.round} is less than 3:
+        if {hitw::players} is more than 1:
+            send {_p} title "&c&nNEODPOJUJ SE!" with subtitle "&eDalší kolo začne za chvíli" for 7 seconds
+
+
+command /hole:winner <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            hitwEndRound(arg-1)
+        else:
+            onlyAdmin(player)
+
+
+command /hole:newround <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            hitNewRound(arg-1, player)
+        else:
+            onlyAdmin(player)
+
+
+function clearHitwPlatform(p: player):
+    if {_p} is in world "hole":
+        run {_p} command "/fill -26 78 16 3 84 -9 air" as op
+    else:
+        message "&7[DEV] &4HITW Platforma nemohla být vyčištěna protože nejsi ve světe &c""hole""&4!" to {_p}
+
+
+function hitNewRound(n: number, p: player):
+   # run {_p} command "/fill -26 78 16 3 84 -9 air" as op
+    clearHitwPlatform({_p})
+    set {hitw.round} to {_n}
+    set {hitw::players} to 0
+    set {wall.hard} to "easy"
+    loop all players:
+        set gamemode of loop-player to adventure
+        teleport loop-player to {hitw_spawn}
+        spectator(loop-player)
+        if gamemode of loop-player is adventure or survival or creative:
+            wait 1 ticks
+            add 1 to {hitw::players}
+    if {_n} is less than 100:
+        loop all players:
+            teleport loop-players to {hitw_spawn}
+            set loop-player's gamemode to adventure
+        loop all players:
+            execute server command "effect %loop-player% clear"
+            send loop-player title "&a&l%{_n}%. KOLO &7(%{_n}%/3)" with subtitle "&ePřiprav se.." for 5 seconds
+            teleport loop-player to {hitw_spawn1} or {hitw_spawn2} or {hitw_spawn3} or {hitw_spawn4} or {hitw_spawn5} or {hitw_spawn6} or {hitw_spawn7} or {hitw_spawn8}
+        wait 2 seconds
+        sendTitle("COUNTDOWN")
+        wait 5 seconds
+        execute server command "effect @a minecraft:invisibility 9999 1 true"
+        loop all players:
+            newHitwScoreboard(loop-player)
+      #  execute player command "worldborder center 0 0"
+        set {wall.canpush} to true
+        set {walltime} to "10 ticks" parsed as a time span
+        boots()
+        set {wall.canpush} to true
+        execute server command "newwall"
+
+
+on quit:
+    if player's world is "hole":
+        if gamemode of player is adventure or creative or survival:
+            remove 1 from {hitw::players}
+            updateHitwScoreboard()
+
+
+command /wallspeed <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {walltime.old} to "%{walltime}%"
+            set {walltime} to "%arg-1% ticks" parsed as a time span
+            broadcast "&a&lHole in the Wall &8&l» &fRychlost stěn se zvýšila! &7(%{walltime.old}%&7 ➜ %{walltime}%&7)"
+            execute player command "playsound mob.guardian.curse @a ~ ~ ~ 1 1"
+            loop all players:
+                send loop-player title " " with subtitle "&4&l⚠ &c&nRychlost stěn zvýšena&r &4&l⚠" for 3 seconds
+            updateHitwScoreboard()
+        else:
+            onlyAdmin(player)
+
+
+command /wallhard <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-1 is "H" or "h" or "hard" or "HARD":
+                set {wall.hard} to "hard"
+                broadcast "&a&lHole in the Wall &8&l» &c&lObtížnost stěn se zvýšila!"
+                execute player command "playsound mob.guardian.curse @a ~ ~ ~ 50 0"
+                loop all players:
+                    send loop-player title " " with subtitle "&4&l⚠ &c&nObtížnost stěn zvýšena&r &4&l⚠" for 3 seconds   
+            if arg-1 is "N" or "n" or "normal" or "NORMAL":
+                set {wall.hard} to "normal"
+                broadcast "&a&lHole in the Wall &8&l» &c&lObtížnost stěn se zvýšila!"
+                execute player command "playsound mob.guardian.curse @a ~ ~ ~ 50 0"
+                loop all players:
+                    send loop-player title " " with subtitle "&4&l⚠ &c&nObtížnost stěn zvýšena&r &4&l⚠" for 3 seconds   
+            if arg-1 is "E" or "e" or "easy" or "EASY":
+                set {wall.hard} to "easy"
+                broadcast "&a&lHole in the Wall &8&l» &c&lObtížnost stěn se zvýšila!"
+                execute player command "playsound mob.guardian.curse @a ~ ~ ~ 50 0"
+                loop all players:
+                    send loop-player title " " with subtitle "&4&l⚠ &c&nObtížnost stěn zvýšena&r &4&l⚠" for 3 seconds   
+        else:
+            onlyAdmin(player)
+
+
+function hitwEffect(t: text):
+    if {_t} is "PUMPKIN":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                set loop-player's helmet to pumpkin named "&fWe're no strangers to love" with lore "&fYou know the rules and so do I||&fA full commitment's what I'm thinking of||&fYou wouldn't get this from any other guy||&f&r||&fI just wanna tell you how I'm feeling||&fGotta make you understand||&f&r||&fNever gonna give you up||&fNever gonna let you down||&fNever gonna run around and desert you||&fNever gonna make you cry||&fNever gonna say goodbye||&fNever gonna tell a lie and hurt you"
+            send loop-player title "&6&lPUMPKINIFICATION!" with subtitle "&7Pumpkin na hlavně na 10s" for 5 seconds
+        wait 10 seconds
+        loop all players:
+            set loop-player's helmet to air
+    if {_t} is "BLIND":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                apply potion of blindness of tier 1 to loop-player for 10 seconds
+            send loop-player title "&f&lMOJE OČI!!" with subtitle "&7Říkali jsme ti že nemáš zapínat light mode na discordu.." for 5 seconds
+    if {_t} is "SPEED":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                apply potion of speed of tier 3 to loop-player for 6 seconds
+            send loop-player title "&b&lSUPER SONIC SPEEEEED!" with subtitle "&7Speed III na 5s" for 3 seconds
+    if {_t} is "DRUNK":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                apply potion of nausea of tier 3 to loop-player for 20 seconds
+            send loop-player title "&6&lDRUNK!" with subtitle "&7Nausea na 20s" for 5 seconds
+    if {_t} is "FIRE":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                ignite loop-player
+            send loop-player title "&C&lFIREEEE!!!" with subtitle "&7ZAVOLEEJTE HAASIIČEEE!!!!" for 5 seconds
+            hitwCircleBlocks("FIRE")
+    if {_t} is "SLOW":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                apply potion of slowness of tier 2 to loop-player for 10 seconds
+            send loop-player title "&3&lSLOW BOI!" with subtitle "&7Slowness II na 10s" for 3 seconds
+    if {_t} is "SLIME":
+        loop all players:
+            send loop-player title "&a&lPOMSTAA!!" with subtitle "&7Slimové vrácí úder!" for 3 seconds
+        loop 15 times:
+            wait 1 ticks
+            set {_r} to random integer between 1 and 8
+            spawn slime at {hitw_spawn%{_r}%}
+        wait 5 seconds
+        kill all slimes in world "hole"
+    if {_t} is "HMM" or "HM":
+        loop all players:
+            send loop-player title "&d&lHMMM.." with subtitle "&7Hmmm?" for 3 seconds
+        loop all players:
+            wait 1 ticks
+            set {_m} to "hmm" or "hmmm" or "hmm?" or "hmm!" or "hmm." or "HMM!!" or "hm"
+            make loop-player say "%{_m}%"
+        loop 15 times:
+            wait 1 ticks
+            set {_r} to random integer between 1 and 8
+            spawn villager at {hitw_spawn%{_r}%}
+        wait 10 seconds
+        kill all villagers in world "hole"
+    if {_t} is "STICKY":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                ignite loop-player
+            send loop-player title "&f&lSTICKY SHOES" with subtitle "&7Pozor na pavučiny :)" for 5 seconds
+            hitwCircleBlocks("WEB")
+    if {_t} is "GONE":
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                ignite loop-player
+            send loop-player title "&a&lSLIME-B-GONE" with subtitle "&7huh kam ta stěna zmizela?" for 3 seconds
+        loop 2 times:
+            wait 2 ticks
+            loop all blocks in radius 10 of {hitw.service.center}:
+                if loop-block is any stained glass or slime_block or any slab or any fence or light green stained glass or {item.slime.begone}:
+                    set loop-block to air
+    if {_t} is "STORM":
+        loop all players:
+            run loop-player command "hitweffects-rainenable" as op
+            send loop-player title "&9&lSTORM!!!" with subtitle "&7Pozor na blesky!" for 5 seconds
+        wait 15 ticks
+        loop 15 times:
+            wait 15 ticks
+            set {_r} to random element out of blocks in radius 10 of {hitw.service.center}
+            strike lightning effect at {_r}
+            loop all players in radius 5 of {_r}:
+                send "&3⚡ &bByl/a jsi zasáhnut/a bleskem! &3⚡" to loop-player
+                apply potion of slowness of tier 10 to loop-player for 2 seconds
+
+        loop all players:
+            run loop-player command "hitweffects-raindisable" as op
+            execute server command "effect @a clear"
+            execute server command "effect @a minecraft:invisibility 9999 1 true"
+
+function hitwCircleBlocks(t: text):
+    if {_t} is "FIRE":
+        set {_b} to fire
+    if {_t} is "WEB":
+        set {_b} to cobweb
+    if {_t} is "LAVA":
+        set {_b} to lava
+    loop all blocks in radius 10 of {hitw.service.center}:
+        if loop-block is obsidian:
+            if block above loop-block is air:
+                set block above loop-block to {_b}
+    wait 5 seconds
+    loop all blocks in radius 10 of {hitw.service.center}:
+        if loop-block is {_b}:
+            set loop-block to air
+
+
+
+command /dev:clearHitwPlatform:
+    trigger:
+        if {rank.%player%} is "admin":
+            clearHitwPlatform(player)
+        else:
+            onlyAdmin(player)
+
+
+on inventory click:
+    if clicked item is pumpkin:
+        if player is in world "hole":
+            cancel event
+            send "&6&oGet Rickrolled :)"
+            send "&6&o- Lukynka"
+
+
+command /dev:holeeffect [<text>]:
+    trigger:
+        if executor have permission "pog.champ":
+            set {hitw::effectcount} to 0
+            if arg-1 is not set:
+                set {_r} to "HM" or "SLIME" or "SLOW" or "FIRE" or "DRUNK" or "SPEED" or "BLIND" or "PUMPKIN"
+                hitwEffect("%{_r}%")
+            if arg-1 is set:
+                hitwEffect("%arg 1%")
+        else:
+            onlyAdmin(player)
+
+
+command /dev:newHitwScoreboard:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                if loop-player is in world "hole":
+                    newHitwScoreboard(loop-player)
+        else:
+            onlyAdmin(player)
+
+
+
+function updateHitwScoreboard():
+    loop all players:
+        if loop-player is in world "hole":
+            update score id "hitwsb-%loop-player%-players" to "Hráči na živu: &a%{hitw::players}%" and 5
+            update score id "hitwsb-%loop-player%-coins" to "&fCoiny: &e%{coins::%loop-player%}%&6⛃" and 2
+            update score id "hitwsb-%loop-player%-speed" to "Rychlost stěn: &b%{walltime}%" and 4
+
+
+
+function newHitwScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&d&n&lHole in the Wall"
+    set score "&r           " in sidebar of {_p} to 10
+    set score "&f&lMapa:" in sidebar of {_p} to 9
+    set score "  &eFlowers" in sidebar of {_p} to 8
+    set score "  &7&oby S0ptik" in sidebar of {_p} to 7
+    set score "&r        " in sidebar of {_p} to 6
+    set id score "Hráči na živu: &a%{hitw::players}%" in sidebar of {_p} to 5 with id "hitwsb-%{_p}%-players"
+    set id score "Rychlost stěn: &b%{walltime}%" in sidebar of {_p} to 4 with id "hitwsb-%{_p}%-speed"
+    set score "&r   " in sidebar of {_p} to 3
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "hitwsb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&ewww.eventverse.eu" in sidebar of {_p} to 0
+
+
+

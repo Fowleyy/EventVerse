@@ -1,0 +1,321 @@
+on right click with nether star:
+    if name of player's held item is "&d&nKosmetiky&r &7(Right Click)":
+    # play "CLICK" to player
+        open chest with 6 rows named "&0&lKosmetiky &8                            &dwww.eventv-erse.fun" to player #Otevřeme virtuální truhlu
+        wait 1 ticks
+        play "WOOD_CLICK" to player
+        format slot 0 of player with black stained glass pane named "&r" to be unstealable
+        loop 53 times:
+            add 1 to {_slot}
+            format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+        format slot 0 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 9 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 18 of player with empty map named "&6&n&lJoin Messages" with lore "||&7Klikni pro vybrání||" to close then run [run player command "evmenu:cosmetics:joinmessages" as op]
+        format slot 27 of player with blaze powder named "&6&n&lTrail Particly" with lore "||&7Klikni pro vybrání||" to close then run [run player command "evmenu:cosmetics:trails" as op]
+        format slot 36 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 45 of player with white glass pane named "&r" with lore "" to be unstealable
+
+command /evmenu:cosmetics:joinmessages:
+    trigger:
+        wait 2 ticks
+        open chest with 6 rows named "&0&lCosmetics &8[Join Messages]        &dwww.eventverse.eu" to player #Otevřeme virtuální truhlu
+        wait 1 ticks
+        format slot 0 of player with black stained glass pane named "&r" to be unstealable
+        loop 53 times:
+            add 1 to {_slot}
+            format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+        format slot 0 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 9 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 18 of player with shiny empty map named "&6&n&lJoin Messages" with lore "||&7Klikni pro vybrání||" to close then run [run player command "evmenu:cosmetics:joinmessages" as op]
+        format slot 27 of player with blaze powder named "&6&n&lTrail Particly" with lore "||&7Klikni pro vybrání||" to close then run [run player command "evmenu:cosmetics:trails" as op]
+        format slot 36 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 45 of player with white glass pane named "&r" with lore "" to be unstealable
+        format slot 23 of player with air to be unstealable
+        format slot 24 of player with air to be unstealable
+        format slot 25 of player with air to be unstealable
+        set {_slot} to 29
+        loop 6 times:
+            format slot {_slot} of player with air to be unstealable
+            add 1 to {_slot}
+        set {_slot} to 38
+        loop 6 times:
+            format slot {_slot} of player with air to be unstealable
+            add 1 to {_slot}
+        if {cosmetics.%player%.owned.joinmsg.minecart} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "minecart":
+                format slot 11 of player with minecart item named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7přijel/a v minecartu!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 11 of player with minecart item named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7přijel/a v minecartu!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg minecart" as op]
+        else:
+            if {shards::%player%} is more than 49:
+                format slot 11 of player with minecart item named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7přijel/a v minecartu!||&r||&a&nKlikni pro zakoupení&r &7(50 Shardů)" to run [run player command "cosmetics:buy:joinmsg minecart" as op]
+            else:
+                format slot 11 of player with minecart item named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7přijel/a v minecartu!||&r||&c&mKlikni pro zakoupení&r &7(50 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.vyhra} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "vyhra":
+                format slot 12 of player with gold ingot named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7si přišel/šla pro výhru!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 12 of player with gold ingot named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7si přišel/šla pro výhru!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg vyhra" as op]
+        else:
+            if {shards::%player%} is more than 49:
+                format slot 12 of player with gold ingot named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7si přišel/šla pro výhru!||&r||&a&nKlikni pro zakoupení&r &7(50 Shardů)" to run [run player command "cosmetics:buy:joinmsg vyhra" as op]
+            else:
+                format slot 12 of player with gold ingot named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7si přišel/šla pro výhru!||&r||&c&mKlikni pro zakoupení&r &7(50 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.Uganda} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "Uganda":
+                format slot 13 of player with brown dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7, welcome to Uganda!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 13 of player with brown dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7, welcome to Uganda!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg Uganda" as op]
+        else:
+            if {shards::%player%} is more than 99:
+                format slot 13 of player with brown dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7, welcome to Uganda!||&r||&a&nKlikni pro zakoupení&r &7(100 Shardů)" to run [run player command "cosmetics:buy:joinmsg Uganda" as op]
+            else:
+                format slot 13 of player with brown dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7, welcome to Uganda!||&r||&c&mKlikni pro zakoupení&r &7(100 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.simp} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "simp":
+                format slot 14 of player with diamond named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla simpit!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 14 of player with diamond named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla simpit!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg simp" as op]
+        else:
+            if {shards::%player%} is more than 24:
+                format slot 14 of player with diamond named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla simpit!||&r||&a&nKlikni pro zakoupení&r &7(25 Shardů)" to run [run player command "cosmetics:buy:joinmsg simp" as op]
+            else:
+                format slot 14 of player with diamond named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla simpit!||&r||&c&mKlikni pro zakoupení&r &7(25 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.trapak} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "trapak":
+                format slot 15 of player with stick named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla otravovat!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 15 of player with stick named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla otravovat!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg trapak" as op]
+        else:
+            if {shards::%player%} is more than 9:
+                format slot 15 of player with stick named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla otravovat!||&r||&a&nKlikni pro zakoupení&r &7(10 Shardů)" to run [run player command "cosmetics:buy:joinmsg trapak" as op]
+            else:
+                format slot 15 of player with stick named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla otravovat!||&r||&c&mKlikni pro zakoupení&r &7(10 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.shiba} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "shiba":
+                format slot 16 of player with 383:95 named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přijel/a na shibě!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 16 of player with 383:95 named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přijel/a na shibě!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg shiba" as op]
+        else:
+            if {shards::%player%} is more than 24:
+                format slot 16 of player with 383:95 named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přijel/a na shibě!||&r||&a&nKlikni pro zakoupení&r &7(25 Shardů)" to run [run player command "cosmetics:buy:joinmsg shiba" as op]
+            else:
+                format slot 16 of player with 383:95 named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přijel/a na shibě!||&r||&c&mKlikni pro zakoupení&r &7(25 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.yq} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "yq":
+                format slot 20 of player with {item.skull.yq} named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla zjistit, jestli je to yg nebo yq.||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 20 of player with {item.skull.yq} named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla zjistit, jestli je to yg nebo yq.||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg yq" as op]
+        else:
+            if {shards::%player%} is more than 49:
+                format slot 20 of player with {item.skull.yq} named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla zjistit, jestli je to yg nebo yq.||&r||&a&nKlikni pro zakoupení&r &7(50 Shardů)" to run [run player command "cosmetics:buy:joinmsg yq" as op]
+            else:
+                format slot 20 of player with {item.skull.yq} named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla zjistit, jestli je to yg nebo yq.||&r||&c&mKlikni pro zakoupení&r &7(50 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.anime} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "anime":
+                format slot 21 of player with pink dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla sledovat anime!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 21 of player with pink dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla sledovat anime!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg anime" as op]
+        else:
+            if {shards::%player%} is more than 59:
+                format slot 21 of player with pink dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla sledovat anime!||&r||&a&nKlikni pro zakoupení&r &7(60 Shardů)" to run [run player command "cosmetics:buy:joinmsg anime" as op]
+            else:
+                format slot 21 of player with pink dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla sledovat anime!||&r||&c&mKlikni pro zakoupení&r &7(60 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.skill} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "skill":
+                format slot 22 of player with iron sword named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 se přišel/šla pochlubit se svými skilly!||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 22 of player with iron sword named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 se přišel/šla pochlubit se svými skilly!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg skill" as op]
+        else:
+            if {shards::%player%} is more than 49:
+                format slot 22 of player with iron sword named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 se přišel/šla pochlubit se svými skilly!||&r||&a&nKlikni pro zakoupení&r &7(50 Shardů)" to run [run player command "cosmetics:buy:joinmsg skill" as op]
+            else:
+                format slot 22 of player with iron sword named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 se přišel/šla pochlubit se svými skilly!||&r||&c&mKlikni pro zakoupení&r &7(50 Shardů)" to run [play "ENDERMAN_TELEPORT" to player]
+        if {cosmetics.%player%.owned.joinmsg.easter} is true:
+            if {cosmetics.%player%.equiped.joinmsg} is "easter":
+                format slot 23 of player with egg named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla hledat velikonoční vajíčka.||&r||&2&nEquipnuto&r &7(ZAKOUPENO)" to be unstealable
+            else:
+                format slot 23 of player with egg named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla hledat velikonoční vajíčka.||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg easter" as op]
+        else:
+            format slot 23 of player with egg named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla hledat velikonoční vajíčka.||&r||&c&mKlikni pro zakoupení&r &7(Lze získat během velikonoc)" to run [play "ENDERMAN_TELEPORT" to player]
+
+
+command /dev:unlockspecials <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {cosmetics.%arg 1%.owned.joinmsg.easter} to true
+            set {cosmetics.%arg 1%.owned.trail.ice} to true
+            set {cosmetics.%arg 1%.owned.trail.easter_breeze} to true
+            send "&aAdmin &c%player%&a ti odemknul/a všechny speciální kosmetiky!"
+            play "LEVEL_UP" to arg-1
+
+
+command /dev:setjoinmsg <player> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {cosmetics.%arg 1%.joinmsg} to "%arg 2%"
+            if arg-1 is player:
+                send "&aNastavil/a jsi si vlastní join msg na &b%arg 2%&a!"
+            else:
+                send "&aNastavil/a jsi join msg hráče &e%arg 1%&a na &b%arg 2%&a!" to player
+                send "&aAdmin &c%player%&a ti nastavil/a join msg na &b%arg 2%&a!" to arg-1
+        else:
+            onlyAdmin(player)
+
+
+command /cosmetics:equip:joinmsg <text>:
+    trigger:
+        if arg-1 is "minecart":
+            if {cosmetics.%player%.owned.joinmsg.minecart} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "minecart"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eMinecart join message&a!"
+                set {cosmetics.%player%.joinmsg} to "přijel/a v minecartu!"
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "vyhra":
+            if {cosmetics.%player%.owned.joinmsg.vyhra} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "vyhra"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eVýhra join message&a!"
+                set {cosmetics.%player%.joinmsg} to "si přišel/šla pro výhru!"
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "Uganda":
+            if {cosmetics.%player%.owned.joinmsg.Uganda} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "Uganda"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eUganda join message&a!"
+                set {cosmetics.%player%.joinmsg} to "welcome to Uganda!"
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "simp":
+            if {cosmetics.%player%.owned.joinmsg.simp} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "simp"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eSimp join message&a!"
+                set {cosmetics.%player%.joinmsg} to "přišel/šla simpit!"
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "trapak":
+            if {cosmetics.%player%.owned.joinmsg.trapak} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "trapak"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eOtravák join message&a!"
+                set {cosmetics.%player%.joinmsg} to "přišel/šla otravovat."
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "shiba":
+            if {cosmetics.%player%.owned.joinmsg.shiba} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "shiba"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eShiba join message&a!"
+                set {cosmetics.%player%.joinmsg} to "přijel/a na shibě!"
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "yq":
+            if {cosmetics.%player%.owned.joinmsg.yq} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "yq"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eYq/Yg join message&a!"
+                set {cosmetics.%player%.joinmsg} to "přišel/šla zjistit, jestli je to yq nebo yg."
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "anime":
+            if {cosmetics.%player%.owned.joinmsg.anime} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "anime"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eAnime join message&a!"
+                set {cosmetics.%player%.joinmsg} to "přišel/šla sledovat anime!"
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "skill":
+            if {cosmetics.%player%.owned.joinmsg.skill} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "skill"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eSkill join message&a!"
+                set {cosmetics.%player%.joinmsg} to "se přišel/šla pochlubit se svými skilly!"
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+        if arg-1 is "easter":
+            if {cosmetics.%player%.owned.joinmsg.easter} is true:
+                set {cosmetics.%player%.equiped.joinmsg} to "easter"
+                run player command "soundhandler_sound_orb_2" as op
+                send "&a&l» &aEquipnutý cosmetic: &eEaster join message&a!"
+                set {cosmetics.%player%.joinmsg} to "přišel/šla hledat velikonoční vajíčka."
+                close player's inventory
+                execute player command "evmenu:cosmetics:joinmessages"
+
+command /cosmetics:buy:joinmsg <text>:
+    trigger:
+        if arg-1 is "minecart":
+            if {shards::%player%} is more than 49:
+                remove 50 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.minecart} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eMinecart join message&a!" to player
+                format slot 11 of player with minecart item named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7přijel/a v minecartu!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg minecart" as op]
+        if arg-1 is "vyhra":
+            if {shards::%player%} is more than 49:
+                remove 50 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.vyhra} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eVýhra join message&a!" to player
+                format slot 12 of player with gold ingot named "&r" with lore "||%{rankcolor.%player%}%&l%player% &7si přišel/šla pro výhru!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg vyhra" as op]
+        if arg-1 is "Uganda":
+            if {shards::%player%} is more than 99:
+                remove 100 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.Uganda} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eUganda join message&a!" to player
+                format slot 13 of player with brown dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7, welcome to Uganda!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg Uganda" as op]
+        
+        if arg-1 is "simp":
+            if {shards::%player%} is more than 24:
+                remove 25 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.simp} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eSimp join message&a!" to player
+                format slot 14 of player with diamond named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla simpit!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg simp" as op]
+        if arg-1 is "trapak":
+            if {shards::%player%} is more than 9:
+                remove 10 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.trapak} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eTrapák join message&a!" to player
+                format slot 15 of player with stick named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla otravovat!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg trapak" as op]
+        if arg-1 is "shiba":
+            if {shards::%player%} is more than 24:
+                remove 25 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.shiba} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eShiba join message&a!" to player
+                format slot 16 of player with 383:95 named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přijel/a na shibě!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg shiba" as op]
+        if arg-1 is "yq":
+            if {shards::%player%} is more than 24:
+                remove 25 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.yq} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eYq/Yg join message&a!" to player
+                format slot 20 of player with {item.skull.yq} named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla zjistit, jestli je to yq nebo yg.||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg yq" as op]
+        if arg-1 is "anime":
+            if {shards::%player%} is more than 59:
+                remove 60 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.anime} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eAnime join message&a!" to player
+                format slot 21 of player with pink dye named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 přišel/šla sledovat anime!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg anime" as op]
+        if arg-1 is "skill":
+            if {shards::%player%} is more than 49:
+                remove 50 from {shards::%player%}
+                set {cosmetics.%player%.owned.joinmsg.skill} to true
+                run player command "soundhandler_sound_levelup_2" as op
+                send "&a&l» Zakoupen Cosmetic: &eSkill join message&a!" to player
+                format slot 22 of player with iron sword named "&r" with lore "||%{rankcolor.%player%}%&l%player%&7 se přišel/šla pochlubit se svými skilly!||&r||&6&nKlikni pro equipnutí&r &7(ZAKOUPENO)" to run [run player command "cosmetics:equip:joinmsg skill" as op]
+
+command /deletevariable <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            delete {%arg-1%}
+        else:
+            onlyAdmin(player)

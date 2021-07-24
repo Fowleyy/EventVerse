@@ -1,0 +1,131 @@
+on walk on sand:
+    if player is in world "tntrun":
+        if {tntrun.play} is true:
+            if gamemode of player is adventure:
+                wait 8 ticks
+                set event-block to air
+                set block under event-block to air
+
+on walk on redsand:
+    if player is in world "tntrun":
+        if {tntrun.play} is true:
+            if gamemode of player is adventure:
+                wait 8 ticks
+                set event-block to air
+                set block under event-block to air
+
+on walk on gravel:
+    if player is in world "tntrun":
+        if {tntrun.play} is true:
+            if gamemode of player is adventure:
+                wait 8 ticks
+                set event-block to air
+                set block under event-block to air
+
+on quit:
+    remove 1 from {tntrun::players}
+    if {tntrun.play} is true:
+        loop all players:
+            newTntrunScoreboard(loop-player)
+
+
+on damage:
+    if victim is in world "tntrun":
+        cancel event
+
+
+every second:
+    loop all players:
+        if loop-player is in world "tntrun":
+            if {tntrun.play} is true:
+                if y coord of loop-player is less than 10:
+                    tntRunDead(loop-player)
+
+
+
+function tntRunDead(p: player):
+    remove 1 from {tntrun::players}
+    set gamemode of {_p} to spectator
+    loop all players:
+        if gamemode of loop-player is survival or adventure:
+            addCoins(loop-player,10,"Přežití")
+            addShards(loop-player, 0.2, "Přežití")
+            run loop-player command "/soundhandler_sound_orb_2" as op
+            newTntrunScoreboard(loop-player)
+    set {_m} to "nebyl/a tak dobrý/á jako Kbelik_Vody" or "spadnul/a.. what a shame!" or "nedával/a pozor když simpil/a Lukynku.." or "se udusil/a ve voidu" or "byl/a rozdrcena spadlou skříní" or "dostal/a infarkt.. Přehnal/a to s energy drinkem." or "dosimpoval/a." or "napsal/a yg.." or "už neni." or "používal/a light mode.." or "byl/a zakousnutý/á shibou!" or "se utopil/a v sopce" or "byl/a až moc sus" or "nejspíš AFKoval/a" or "was ejected... %{tntrun::players}% impostors remaining" or "zapomněl/a dát follow @LukynkaCZe" or "už nechtěl/a žít.." or "nevěděl/a, že pod mapou je void" or ".. to byl 100%% lag!" or "byl/a yeetnut/á!" or "pořád není připojen/á na discordu EventVerse!" or "zjistil/a že Dream není nejlepší hráč.." or "sledoval/a SirYakariho" or "nevyhrál/a 100 hráčů plní ůkoli!" or "se choval/a jako Aragon.. nechovej se jako Aragon a nedopadneš takhle!" or "byl/a přidán/a na list zlobivých dětí!" or "umřel/a.. clip it and ship it!" or ".. uhhh.. už fakt nemám nápady na death message.." or "zapomněl/a že tohle není water drop!"
+    if {_p} is "NeoriginalniKari":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si myslel, že vyhraje.. bohužel tohle není parkour"
+    if {_p} is "yq__":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "pořád neví jestli je to ""yq"" nebo ""yg"".." or "became to sexi"
+    if {_p} is "Alien584":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to ", jako správný mimozemšťan, odletěl na jinou planetu.."
+    if {_p} is "RiillyCZ" or "RizzRikCz":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "je tu jenom pro výhru.. zaprodanec smh"
+    if {_p} is "Danicekk" or "S0ptik":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl/a zaplavat.. akorát, ve voidu není voda.."
+    if {_p} is "Th3Dolphin":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl zaplavat s delfínama.. uh oh"
+    if {_p} is "Kbelik_Vody":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "se vylil.. teď je to Kbelik_Prazdny"
+    broadcast "&c✖ &8&l» %{rankcolor.%{_p}%}%%{_p}%&7 %{_m}%"
+    teleport {_p} to {tntrun.mid}
+    if {tntrun::players} is less than 2:
+        loop all players:
+            if gamemode of loop-player is adventure:
+                tntRunWinner(loop-player)
+
+
+
+function tntRunWinner(p: player):  
+    loop all players:
+        set gamemode of loop-player to spectator
+        clear loop-player's inventory
+        send loop-player title "&r " with subtitle "&r "
+    loop all players:
+        message centered "&5&m                                  " to loop-player
+        message centered "&r " to loop-player
+        message centered "&e  ⬛  ⬛  ⬛" to loop-player
+        message centered "&e⬛⬛⬛⬛⬛" to loop-player
+        message center "&r " to loop-player
+        message centered "&7Výherce: &6%{_p}%" to loop-player
+        message centered "&r " to loop-player
+        message centered "&5&m                                  " to loop-player
+    addCoins({_p},100,"Výhra kola")
+    addShards({_p}, 3, "Výhra kola")
+    run {_p} command "/soundhandler_sound_orb_2" as op
+    loop all players:
+        resetScoreboard(loop-player)
+    delete {tntrun.play} 
+
+
+
+    
+
+function newTntrunScoreboard(p: player):
+    if {tntrun.play} is true:
+        wipe {_p}'s sidebar
+        set name of sidebar of {_p} to "&d&n&lTNT Run"
+        set score "&r          " in sidebar of {_p} to 9
+        set score "&f&lMapa:" in sidebar of {_p} to 8
+        set score "  &eTNT Tube" in sidebar of {_p} to 7
+        set score "  &7&oby Kbelik_Vody" in sidebar of {_p} to 6
+        set score "&r  " in sidebar of {_p} to 5
+        set id score "Hráči na živu: &a%{tntrun::players}%" in sidebar of {_p} to 4 with id "tntrunsb-%{_p}%-players"
+        set score "&r   " in sidebar of {_p} to 3
+        set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "tntrunsb-%{_p}%-coins"
+        set score "&r " in sidebar of {_p} to 1
+        set score "&ewww.eventverse.eu" in sidebar of {_p} to 0

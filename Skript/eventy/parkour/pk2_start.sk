@@ -1,0 +1,38 @@
+command /parkour2:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            wait 1 tick
+            teleport player to {PARKOUR2.spawn}
+            wait 5 ticks
+            parkourEventSetup(player)
+            pkResetWinners()
+            eventStartSetup("PARKOUR2")
+            #
+            parkour2_ResetGate()
+
+            eventStartTitle("Peterko_","Parkour")
+            wait 3 seconds
+            eventExplain("Parkour")
+            updateEventState("PARKOUR_INFO")
+            wait 30 seconds
+            loop 250 times:
+                broadcast ""
+            delete {mutechat}
+            wait 3 seconds
+            sendTitle("COUNTDOWN")
+            wait 3 seconds
+            #
+            parkour2_OpenGate()
+            wait 2 seconds
+            parkour2_removeGateBarrier()
+            execute player command "worldborder set 1000 5"
+            apply potion of invisibility of tier 1 to players for 10 days
+            updateEventState("PARKOUR_PLAY")
+            boots()
+            loop all players:
+                if loop-player is "SweatyyKubo":
+                    set gamemode of loop-player to spectator
+                set {pk.stage1.%loop-player%} to true
+                newParkourScoreboard(loop-player)
+        else:
+            onlyAdmin(player)

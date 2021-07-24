@@ -1,0 +1,345 @@
+command /carts:newround <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            cartsNewRound(arg-1)
+        else:
+            onlyAdmin(player)
+
+
+function cartsNewRound(n: number):
+    set {carts.round} to {_n}
+    set {carts::players} to 0
+    loop all players:
+        set gamemode of loop-player to adventure
+        teleport loop-player to {carts_spawn}
+        spectator(loop-player)
+        if gamemode of loop-player is adventure:
+            wait 1 ticks
+            add 1 to {carts::players}
+    loop all players:
+        execute server command "effect %loop-player% clear"
+        send loop-player title "&a&l%{_n}%. KOLO &7(%{_n}%/3)" with subtitle "&ePřiprav se.." for 5 seconds
+    wait 2 seconds
+    sendTitle("COUNTDOWN")
+    wait 5 seconds
+    loop all players:
+        newCartsScoreboard(loop-player)
+    boots()
+    set {carts.game} to true
+    cartsNewMinecartsRound()
+
+
+command /dev:carts:cartsNewMinecartsRound:
+    trigger:
+        if {rank.%player%} is "admin":
+            cartsNewMinecartsRound()
+        else:
+            onlyAdmin(player)
+
+
+
+function cartsNewMinecartsRound():
+    if {carts.game} is true:
+        loop all players:
+            send loop-player title "&r " with subtitle "&5♫ &d&nTancuj&r &5♫" for 5 seconds
+        set {carts.stage} to "DANCE"
+        killAllCarts()
+        #
+        set {_r} to 10 or 15 or 20
+        set {_song} to "Archon" or "Cat" or "Goode" or "Mario" or "Shrek" or "Snow"
+        play song file "plugins/songs/carts/%{_song}%%{_r}%.nbs" to all players
+        debug("&eCarts Dance Time: &6%{_r}% seconds &7- &eSong: &6%{_song}%.nbs")
+        execute server command "/effect @a minecraft:speed 9999 5 true"
+        set {_time} to "%{_r}% seconds" parsed as time span
+        wait {_time}
+        #
+        loop all players:
+            send loop-player title "&r " with subtitle "&4♫ &c&nNasedni do Minecartu&r &4♫" for 5 seconds
+            run loop-player command "playsound mob.guardian.curse %loop-player% ~ ~ ~ 5 0" as op
+        set {carts.stage} to "TIME"
+        spawnCarts()
+        set {carts::ctd} to 10
+
+every second:
+    if {carts::ctd} is set:
+        if {carts::ctd} is more than 0:
+            remove 1 from {carts::ctd}
+            play "CLICK" to all players
+            set {carts::ctd-text} to "%{carts::ctd}%"
+            if {carts::ctd} is less than 6:
+                send all players title "&r " with subtitle "&c%{carts::ctd-text}%" for 2 seconds
+        else:
+            delete {carts::ctd}
+            set {carts::ctd-text} to "0"
+            cartsKillPlayers()
+            send all players title "&r " with subtitle "&c" for 2 seconds
+
+function killAllCarts():
+    loop all entities:
+        if loop-entity is minecart:
+            if loop-entity is in world "arcade_musicalcarts":
+                kill loop-entity
+    loop all players:
+        set {_b} to block 1 above loop-player
+        teleport loop-player to {_b}
+
+on vehicle exit:
+    wait 1 ticks
+    set {_b} to block 2 above player
+    teleport player to {_b}
+
+command /remove1fromplayers:
+    trigger:
+        remove 1 from {carts::players}
+
+command /add1fromplayers:
+    trigger:
+        add 1 to {carts::players}
+
+
+function spawnCarts():
+    set {_count} to {carts::players}
+    set {_r} to random integer between 1 and 2
+    remove 1 from {_count}
+    if {carts.game} is true:
+        loop {_count} times:
+            set {_r} to random integer between 1 and 40
+            spawn 1 minecart at {musicalcarts.minecartspawn.%{_r}%}
+            strike fake fake lightning at {musicalcarts.minecartspawn.%{_r}%}
+
+
+
+function cartsKillPlayers():
+    loop all players:
+        if gamemode of loop-player is adventure:
+            if loop-player's vehicle is minecart:
+                send "a" to console
+            else:
+                cartsDead(loop-player)
+    wait 10 ticks
+    killAllCarts()
+    wait 3 seconds
+    if {carts::players} is more than 1:
+        cartsNewMinecartsRound()
+
+
+
+
+command /carts:win <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            cartsEndRound(arg-1)
+        else:
+            onlyAdmin(player)
+
+function cartsDead(p: player):
+    execute server command "effect @a clear"
+    pkCheckpointFirework({_p})
+    remove 1 from {carts::players}
+    set gamemode of {_p} to spectator
+    loop all players:
+        newCartsScoreboard(loop-player)
+        if gamemode of loop-player is adventure:
+            addCoins(loop-player,10,"Přežití")
+            addShards(loop-player, 0.2, "Přežití")
+            run loop-player command "/soundhandler_sound_orb_2" as op
+    set {_m} to "nebyl/a tak dobrý/á jako Kbelik_Vody" or "to nestihnul/a.. what a shame!" or "nedával/a pozor když simpil/a Lukynku.." or "nenašel/šla minecart!" or "si myslel/a že je lepší než PeteZahHutt.. welp" or "si chtěl/a zaplavat.. bohužel tady není žádná voda.." or "byl/a rozdrcena spadlou skříní" or "dostal/a infarkt.. Přehnal/a to s energy drinkem." or "dosimpoval/a." or "napísal/a yg.." or "už neni lol" or "používal/a light mode.." or "byl/a zakousnutý/á shibou!" or "se utopil/a v sopce" or "byl/a až moc sus" or "nejspíš AFKoval/a" or "was ejected... %{carts::players}% impostors remaining" or "zapomněl/a dát follow @LukynkaCZe" or "už nechtěl/a žít.." or "si stěžoval/a že kopírujeme Noxcrew" or ".. to byl 100%% lag!" or "byl/a yeetnut/á!" or "pořád není připojen/á na discordu EventVerse!" or "zjistil/a že Dream není nejlepší hráč.." or "sledoval/a SirYakariho" or "nevyhrál/a 100 hráčů plní ůkoli!" or "nemá odběr u techna!" or "byl/a přidán/a na list zlobivých dětí!" or "umřel/a.. clip it and ship it!" or ".. uhhh.. už fakt nemám nápady na death message.." or "zapomněl/a že má najít minecart!"
+    if {_p} is "NeoriginalniKari":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si myslel že vyhraje.. bohužel tohle není parkour"
+    if {_p} is "yq__":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "pořád neví jestli je to ""yq"" nebo ""yg"".."
+    if {_p} is "Alien584":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "jako správný mimozemšťan, odletěl na jinou planetu.."
+    if {_p} is "RiillyCZ" or "RizzRikCz":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "je tu jenom pro výhru.. zaprodanec smh"
+    if {_p} is "Danicekk":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "Se koukal na TrueFlareX a zapomněl že má najít minecart!"
+    if {_p} is "S0ptik":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "Se koukala na Danika a zapomněla že má najít minecart!"
+    if {_p} is "Th3Dolphin":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "umřel jako delfín na suchu.. haha get it? Tady není voda hahaha.. ha ha *dies of cringe*"
+    if name of {_p} contains "UwU" or "UWU" or "uwu" or "uWu":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu uwu "
+    if {_p} is "Kbelik_Vody":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "se vylil.. teď je to Kbelik_Prazdny"
+    broadcast "&c✖ &8&l» %{rankcolor.%{_p}%}%%{_p}%&7 %{_m}%"
+    if {carts::players} is 1:
+        loop all players:
+            newCartsScoreboard(loop-player)
+            if gamemode of loop-player is adventure:
+                cartsEndRound(loop-player)
+
+
+
+
+on damage:
+    if victim is in world "arcade_musicalcarts":
+        cancel event
+
+on vehicle destroy:
+    if event-world is "arcade_musicalcarts":
+        cancel event
+
+
+every 2 ticks:
+    loop all players in world "arcade_musicalcarts":
+        if {carts.stage} is "DANCE":
+            set action bar of loop-player to "%{acb.carts.color}%"
+        if {carts.stage} is "TIME":
+            set action bar of loop-player to "&4&l⚠ &c&n&lNASEDNI DO MINECARTU&r &7- &fZbývá &e%{carts::ctd-text}% sekund&f &4&l⚠"
+
+#♫
+
+every 30 ticks:
+    set {acb.carts.color} to "&c&lT&6&lA&e&lN&a&lC&b&lU&d&lJ"
+    wait 5 ticks
+    set {acb.carts.color} to "&d&lT&c&lA&6&lN&e&lC&a&lU&b&lJ"
+    wait 5 ticks
+    set {acb.carts.color} to "&b&lT&d&lA&c&lN&6&lC&e&lU&a&lJ"
+    wait 5 ticks
+    set {acb.carts.color} to "&a&lT&b&lA&d&lN&c&lC&6&lU&e&lJ"
+    wait 5 ticks
+    set {acb.carts.color} to "&e&lT&a&lA&b&lN&d&lC&c&lU&6&lJ"
+    wait 5 ticks
+    set {acb.carts.color} to "&6&lT&e&lA&a&lN&b&lC&d&lU&c&lJ"
+
+
+
+function cartsEndRound(p: player):
+    delete {carts.stage}
+    delete {carts.game}
+    killAllCarts()
+    loop all players:
+        set gamemode of loop-player to spectator
+        execute server command "effect %loop-player% clear"
+        clear loop-player's inventory
+        send loop-player title "&r " with subtitle "&r "
+    sendTitle("ROUND_OVER")
+    announceRoundWinner({_p}, {carts.round})
+    addCoins({_p},100,"Výhra kola")
+    addShards({_p}, 3, "Výhra kola")
+    run {_p} command "/soundhandler_sound_orb_2" as op
+    loop all players:
+        resetScoreboard(loop-player)
+    
+every 5 ticks:
+    loop all entities:
+        if loop-entity is minecart:
+            if world of loop-entity is "arcade_musicalcarts":
+                drawDot count 1, particle note, XYZ 0, 0, 0, center location of block above loop-entity, visibleRange 320
+
+
+
+function newCartsScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to " &d&n&lMusical Minecarts "
+    set score "&r           " in sidebar of {_p} to 10
+    set score "&f&lMapa:" in sidebar of {_p} to 9
+    set score "  &eRoom" in sidebar of {_p} to 8
+    set score "  &7&oby Th3Dolphin & Kbelik" in sidebar of {_p} to 7
+    set score "&r        " in sidebar of {_p} to 6
+    set id score "Hráči na živu: &a%{carts::players}%" in sidebar of {_p} to 5 with id "hitwsb-%{_p}%-players"
+    set score "&r   " in sidebar of {_p} to 3
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "hitwsb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&ewww.eventverse.eu" in sidebar of {_p} to 0
+
+
+
+
+
+function lobbyNoteColour1():
+    set {_r} to red clay or orange clay or yellow clay or light green clay or light blue clay or magenta clay
+    set block at location -33, 85, 38 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 86, 38 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -33, 85, 37 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 86, 37 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -33, 85, 36 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 86, 36 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -33, 87, 36 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 88, 36 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 89, 36 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 90, 36 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 91, 36 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 92, 36 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -33, 91, 35 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 92, 35 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -33, 90, 34 in world "arcade_musicalcarts" to {_r}
+    set block at location -33, 91, 34 in world "arcade_musicalcarts" to {_r}
+
+function lobbyNoteColour2():
+    set {_r} to red clay or orange clay or yellow clay or light green clay or light blue clay or magenta clay
+    set block at location -36, 87, 30 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 88, 30 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -36, 87, 29 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 88, 29 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -36, 88, 28 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 87, 28 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -36, 88, 28 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 89, 28 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 90, 28 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 91, 28 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 92, 28 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 93, 28 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -36, 92, 27 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 93, 27 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -36, 91, 26 in world "arcade_musicalcarts" to {_r}
+    set block at location -36, 92, 26 in world "arcade_musicalcarts" to {_r}
+
+function lobbyNoteColour3():
+    set {_r} to red clay or orange clay or yellow clay or light green clay or light blue clay or magenta clay
+    set block at location -42, 88, 37 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 89, 37 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -42, 88, 36 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 89, 36 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -42, 89, 35 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 88, 35 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -42, 89, 35 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 90, 35 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 91, 35 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 92, 35 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 93, 35 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 94, 35 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -42, 93, 34 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 94, 34 in world "arcade_musicalcarts" to {_r}
+    #
+    set block at location -42, 92, 33 in world "arcade_musicalcarts" to {_r}
+    set block at location -42, 93, 33 in world "arcade_musicalcarts" to {_r}
+
+
+every 1 seconds:
+    lobbyNoteColour1()
+    lobbyNoteColour2()
+    lobbyNoteColour3()

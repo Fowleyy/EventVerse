@@ -1,0 +1,724 @@
+command /dodgebolt <player> <player>:
+    trigger:
+        {rank.%player%} is "admin"
+        resetDodgeboltFloor(player)
+        set {mutechat} to true
+        wait 4 seconds
+        loop all players:
+            wait 1 ticks
+            teleport loop-player to {dodgebolt1_sp1} or {dodgebolt1_sp2} or {dodgebolt1_sp3} or {dodgebolt1_sp4} or {dodgebolt1_sp5} or {dodgebolt1_sp6}
+            clear loop-player's inventory
+            set gamemode of loop-player to adventure
+            execute server command "effect %loop-player% clear"
+            resetScoreboard(loop-player)
+        loop all dropped items in radius 100 of {dodgebolt.mid}:
+            delete dropped items
+        loop all entities in radius 100 of {dodgebolt.mid}:
+            if loop-entity is arrow:
+                kill loop-entity
+            #
+        set {dodge.red} to arg-1
+        set {dodge.blue} to arg-2
+        set {dodge-blue::points} to 0
+        set {dodge-red::points} to 0
+        teleport {dodge.red} to {dodge.loc.red}
+        teleport {dodge.blue} to {dodge.loc.blue}
+        set {dodge.red.text} to "⬜⬜⬜"
+        set {dodge.blue.text} to "⬜⬜⬜"
+        loop 250 times:
+            broadcast ""
+        wait 1 tick
+        add 1 to {dodgebolt.round}
+        wait 1 second
+        loop all players:
+            send loop-player title "&6&lDODGEBOLT" with subtitle "&c%arg-1% &f⚔ &9%arg-2%" for 3 seconds
+        wait 3 seconds
+        wait 10 ticks
+        play "CHICKEN_EGG_POP" to all players
+        broadcast "&6&m∙                                                         ∙"
+        broadcast "&e&l DODGEBOLT"
+        broadcast ""
+        broadcast "&f Hráči &c%arg-1% &fa &9%arg-2% &fmají"
+        broadcast "&f stejný počet coinů! (&e%{coins::%arg-1%}%&6⛁&f)"
+        broadcast "&6&m∙                                                         ∙"
+        wait 8 seconds
+        play "CHICKEN_EGG_POP" to all players
+        broadcast ""
+        broadcast "&6&m∙                                                         ∙"
+        broadcast "&e&l DODGEBOLT"
+        broadcast ""
+        broadcast "&f Hráči dostanou luk a spawnou se šípy. Jejich"
+        broadcast "&f cílem je sestřelit nepřítele. Hráč, který"
+        broadcast "&f jako první získá &e3 body&f, vyhrává event!"
+        broadcast "&6&m∙                                                         ∙"      
+        wait 10 seconds
+        delete {mutechat}
+        loop 250 times:
+            broadcast ""           
+        dodgeNewRound()
+
+
+command /dev:resetdodgebolt:
+    trigger:
+        if {rank.%player%} is "admin":
+            resetDodgeboltFloor(player)
+            delete {dodge.red}
+            delete {dodge.blue}
+            set {dodge-blue::points} to 0
+            set {dodge-red::points} to 0
+            set {dodge.red.text} to "⬜⬜⬜"
+            set {dodge.blue.text} to "⬜⬜⬜"
+            set {dodge::shots} to 0
+            loop all dropped items in radius 100 of {dodgebolt.mid}:
+                delete dropped items
+            loop all entities in radius 100 of {dodgebolt.mid}:
+                if loop-entity is arrow:
+                    kill loop-entity
+    
+on enter "dodgebolt1_border":
+    if gamemode of player is adventure:
+        cancel event
+
+command /cleardrops:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all dropped items in radius 100 of {dodgebolt.mid}:
+                delete dropped items
+            loop all entities in radius 100 of {dodgebolt.mid}:
+                if loop-entity is arrow:
+                    kill loop-entity
+
+on damage:
+    if victim is in world "dodgebolt":
+        victim is not attacker
+        heal victim
+        heal attacker
+        if "%damage cause%" is "projectile":
+            if attacker is {dodge.red}:
+                dodgeFw(victim)
+                dodgeRoundWin("red")
+                heal victim
+            if attacker is {dodge.blue}:
+                dodgeFw(victim)
+                dodgeRoundWin("blue")
+                heal victim
+        else:
+            if "%damage cause%" is "lava":
+                if victim is dropped item:
+                    kill victim
+                else:
+                    cancel event
+            else:
+                cancel event
+
+
+on walk on lava:
+    if player is in world "dodgebolt":
+        if {dodge.game} is true:
+            if player is {dodge.red}:
+                dodgeFw(player)
+                dodgeRoundWin("red")
+            if player is {dodge.blue}:
+                dodgeFw(player)
+                dodgeRoundWin("blue")
+
+
+function dodgeRoundWin(t: text):
+    delete {dodge.game}
+    loop all dropped items in radius 100 of {dodgebolt.mid}:
+        delete dropped items
+    loop all entities in radius 100 of {dodgebolt.mid}:
+        if loop-entity is arrow:
+            kill loop-entity
+    loop all players:
+        clear loop-player's inventory
+    if {_t} is "red":
+        set gamemode of {dodge.blue} to spectator
+        sendTitle("ROUND_OVER")
+        add 1 to {dodge-red::points}
+        #modular
+        if {dodge-red::points} is 1:
+            set {dodge.red.text} to "⬛⬜⬜"
+        if {dodge-red::points} is 2:
+            set {dodge.red.text} to "⬛⬛⬜"
+        if {dodge-red::points} is 3:
+            set {dodge.red.text} to "⬛⬛⬛"
+        loop all players:
+            newDodgeboltScoreboard(loop-player)
+        #moduler
+        if {dodge-red::points} is 3:
+            dodgeboltWinner({dodge.red})
+        else:
+            wait 5 seconds
+            dodgeNewRound()
+
+    if {_t} is "blue":
+        set gamemode of {dodge.red} to spectator
+        sendTitle("ROUND_OVER")
+        add 1 to {dodge-blue::points}
+        #modular
+        if {dodge-blue::points} is 1:
+            set {dodge.blue.text} to "⬛⬜⬜"
+        if {dodge-blue::points} is 2:
+            set {dodge.blue.text} to "⬛⬛⬜"
+        if {dodge-blue::points} is 3:
+            set {dodge.blue.text} to "⬛⬛⬛"
+        #moduler
+        if {dodge-blue::points} is 3:
+            dodgeboltWinner({dodge.blue})
+            loop all players:
+                newDodgeboltScoreboard(loop-player)
+        else:
+            wait 5 seconds
+            dodgeNewRound()
+            loop all players:
+                newDodgeboltScoreboard(loop-player)
+
+
+#            if "%damage cause%" is "lava":
+
+function dodgeFw(p: player):
+    if {_p} is {dodge.red}: 
+        run {_p} command "summon FireworksRocketEntity ~ ~1 ~ {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[11743532],FadeColors:[11743532]}],Flight:1}}}}" as op
+    if {_p} is {dodge.blue}: 
+        run {_p} command "summon FireworksRocketEntity ~ ~1 ~ {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[6719955],FadeColors:[6719955]}],Flight:1}}}}" as op
+
+
+function dodgeboltWinner(p: player):
+    wait 5 ticks
+    delete {dodge.winner}
+    loop all players:
+        clear loop-player's inventory
+        send loop-player title "&6&lEvent Vyhrává" with subtitle "%{rankcolor.%{_p}%}%%{_p}%" for 5 seconds
+        play "LEVEL_UP" to loop-player
+        play "ENDERDRAGON_DEATH" to loop-player
+    loop all dropped items in radius 100 of {dodgebolt.mid}:
+        delete dropped items
+    loop all entities in radius 100 of {dodgebolt.mid}:
+        if loop-entity is arrow:
+            kill loop-entity
+
+
+
+function newDodgeboltScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&d&n&lDodgebolt"
+    set score "&r        " in sidebar of {_p} to 10
+    set score "&f&lMapa:" in sidebar of {_p} to 9
+    set score "  &eArena" in sidebar of {_p} to 8
+    set score "  &7&oby Kbelik_Vody" in sidebar of {_p} to 7
+    set score "&r  " in sidebar of {_p} to 6
+    set score "&c&l%{dodge.red.text}% &c%{dodge.red}%" in sidebar of {_p} to 5
+    set score "&9&l%{dodge.blue.text}% &9%{dodge.blue}%" in sidebar of {_p} to 4
+    set score "&r          " in sidebar of {_p} to 3
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "dbsb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&ewww.eventverse.eu" in sidebar of {_p} to 0
+
+function updateDodgeboltScoreboard(p: player):
+    update score id "dbsb-%{_p}%-pointsred" to "&c&l%{dodge.blue.text}% &c%{dodge.red}%" and 5
+    update score id "dbsb-%{_p}%-pointsblue" to "&9&l%{dodge.blue.text}% &9%{dodge.blue}%" and 4
+    update score id "dbsb-%{_p}%-coins" to "&fCoiny: &e%{coins::%{_p}%}%&6⛃" and 2
+
+
+
+command /dbscoreboard:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                newDodgeboltScoreboard(loop-player)
+        else:  
+            onlyAdmin(player)
+
+command /updatedbscoreboard:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                updateDodgeboltScoreboard(loop-player)
+        else:
+            onlyAdmin(player)
+
+function dodgeNewRound():
+    set {dodge::shots} to 0
+    resetDodgeboltFloor({dodge.red})
+    wait 4 seconds
+    loop all players:
+        newDodgeboltScoreboard(loop-player)
+    loop all dropped items in radius 100 of {dodgebolt.mid}:
+        delete dropped items
+    loop all entities in radius 100 of {dodgebolt.mid}:
+        if loop-entity is arrow:
+            kill loop-entity
+    loop all players:
+        clear loop-player's inventory
+        set gamemode of loop-player to adventure
+    give {dodge.blue} 1 bow of unbreaking 10
+    give {dodge.red} 1 bow of unbreaking 10
+    teleport {dodge.red} to {dodge.loc.red}
+    teleport {dodge.blue} to {dodge.loc.blue}
+    equip {dodge.red} with {item.db-red-chestplate} named " " with lore " "
+    equip {dodge.blue} with {item.db-blue-chestplate} named " " with lore " "
+    wait 1 seconds
+    sendTitle("COUNTDOWN")
+    wait 5 seconds
+    set {dodge.game} to true
+    wait 3 seconds
+    drop 1 arrow at {db-blue-arrow}
+    drop 1 arrow at {db-red-arrow}
+    broadcast "&6&lDodgebolt &8&l» &fŠípy se spawnuly!"
+    play "CLICK" to all players
+
+on drop:
+    if player is in world "dodgebolt":
+        cancel event
+
+on projectile hit:
+    event-world is "dodgebolt"
+    if projectile is an arrow:
+        add 1 to {dodge::shots}
+        if {dodge::shots} is 2:
+            dodgeboltRemoveFloor1()
+        if {dodge::shots} is 4:
+            dodgeboltRemoveFloor2()
+        if {dodge::shots} is 6:
+            dodgeboltRemoveFloor3()
+        if "%region at projectile%" contains "dodge-blue":
+            delete projectile
+            drop 1 arrow at {db-blue-arrow}
+        if "%region at projectile%" contains "dodge-red":
+            delete projectile
+            drop 1 arrow at {db-red-arrow}
+
+on walk on red wool:
+    if player is in world "dodgebolt":
+        set player's helmet to {item.red.support}
+
+on walk on blue wool:
+    if player is in world "dodgebolt":
+        set player's helmet to {item.blue.support}
+
+
+function resetDodgeboltFloor(p: player):
+    set {_l} to location of {_p}
+    teleport {_p} to {dodge.resetpoint}
+    wait 5 ticks
+    run {_p} command "//schem load dodge1" as op
+    wait 1 ticks
+    run {_p} command "//paste" as op
+    wait 2 ticks
+    teleport {_p} to {_l}
+    loop 150 times:
+        send " " to {_p}
+
+
+command /dodge:floor1:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {dodge::shots} to 2
+            dodgeboltRemoveFloor1()
+        else:
+            onlyAdmin(player)
+
+function dodgeboltRemoveFloor1():
+    broadcast "&3&lDodgebolt &8&l» &cAréna se zmenšuje!"
+    loop 4 times:
+        wait 8 ticks
+        play "NOTE_BASS" to all players
+        db_1_south("red")
+        db_1_west("red")
+        db_1_east("red")
+        db_1_north("red")
+        wait 8 ticks
+        play "NOTE_BASS" to all players
+        db_1_south("white")
+        db_1_west("white")
+        db_1_east("white")
+        db_1_north("white")
+    wait 5 ticks
+    play "ZOMBIE_REMEDY" to all players
+    db_1_south("air")
+    db_1_west("air")
+    db_1_east("air")
+    db_1_north("air")
+    
+
+command /dodge:resetfloor:
+    trigger:
+        if {rank.%player%} is "admin":
+            resetDodgeboltFloor(player)
+        else:
+            onlyAdmin(player)
+
+
+
+
+function db_1_south(b: text):
+    set {_x} to -109
+    set {_y} to 70
+    set {_z} to -19
+    set {_carp} to -109
+    loop 31 times:
+        set block at location {_carp}, 71, {_z} in world "dodgebolt" to air
+        set block at location {_carp}, 71, -20 in world "dodgebolt" to air
+        add 1 to {_carp}
+    if {_b} is "white":
+        loop 31 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location {_x}, {_y}, -20 in world "dodgebolt" to quartz block
+            add 1 to {_x}
+    if {_b} is "red":
+        loop 31 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location {_x}, {_y}, -20 in world "dodgebolt" to redstone block         
+            add 1 to {_x}
+    if {_b} is "air":
+        loop 31 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location {_x}, {_y}, -20 in world "dodgebolt" to air
+            add 1 to {_x}
+
+
+function db_1_west(b: text):
+    set {_x} to -110
+    set {_y} to 70
+    set {_z} to -20
+    set {_carp} to -20
+    loop 21 times:
+        set block at location -110, 71, {_carp} in world "dodgebolt" to air
+        set block at location -109, 71, {_carp} in world "dodgebolt" to air
+        remove 1 from {_carp}
+    if {_b} is "white":
+        loop 21 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location -109, {_y}, {_z} in world "dodgebolt" to quartz block
+            remove 1 from {_z}
+    if {_b} is "red":
+        loop 21 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location -109, {_y}, {_z} in world "dodgebolt" to redstone block
+            remove 1 from {_z}
+    if {_b} is "air":
+        loop 21 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location -109, {_y}, {_z} in world "dodgebolt" to air
+            remove 1 from {_z}
+
+function db_1_east(b: text):
+    set {_x} to -78
+    set {_y} to 70
+    set {_z} to -20
+    set {_carp} to -20
+    loop 21 times:
+        set block at location -78, 71, {_carp} in world "dodgebolt" to air
+        set block at location -79, 71, {_carp} in world "dodgebolt" to air
+        remove 1 from {_carp}
+    if {_b} is "white":
+        loop 21 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location -79, {_y}, {_z} in world "dodgebolt" to quartz block
+            remove 1 from {_z}
+    if {_b} is "red":
+        loop 21 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location -79, {_y}, {_z} in world "dodgebolt" to redstone block
+            remove 1 from {_z}
+    if {_b} is "air":
+        loop 21 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location -79, {_y}, {_z} in world "dodgebolt" to air
+            remove 1 from {_z}
+
+
+function db_1_north(b: text):
+    set {_x} to -109
+    set {_y} to 70
+    set {_z} to -41
+    set {_carp} to -109
+    loop 31 times:
+        set block at location {_carp}, 71, {_z} in world "dodgebolt" to air
+        set block at location {_carp}, 71, -40 in world "dodgebolt" to air
+        add 1 to {_carp}
+    if {_b} is "white":
+        loop 31 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location {_x}, {_y}, -40 in world "dodgebolt" to quartz block
+            add 1 to {_x}
+    if {_b} is "red":
+        loop 31 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location {_x}, {_y}, -40 in world "dodgebolt" to redstone block         
+            add 1 to {_x}
+    if {_b} is "air":
+        loop 31 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location {_x}, {_y}, -40 in world "dodgebolt" to air
+            add 1 to {_x}
+
+#
+
+
+function dodgeboltRemoveFloor2():
+    broadcast "&3&lDodgebolt &8&l» &cAréna se zmenšuje!"
+    loop 4 times:
+        wait 8 ticks
+        play "NOTE_BASS" to all players
+        db_2_south("red")
+        db_2_north("red")
+        db_2_west("red")
+        db_2_east("red")
+        wait 8 ticks
+        play "NOTE_BASS" to all players
+        db_2_south("white")
+        db_2_north("white")
+        db_2_west("white")
+        db_2_east("white")
+    wait 5 ticks
+    play "ZOMBIE_REMEDY" to all players
+    db_2_south("air")
+    db_2_north("air")
+    db_2_west("air")
+    db_2_east("air")
+
+command /dodge:floor2:
+    trigger:
+        if {rank.%player%} is "admin":
+            dodgeboltRemoveFloor2()
+            set {dodge::shots} to 4
+        else:
+            onlyAdmin(player)
+
+
+function db_2_south(b: text):
+    set {_x} to -108
+    set {_y} to 70
+    set {_z} to -21
+    set {_carp} to -108
+    loop 29 times:
+        set block at location {_carp}, 71, {_z} in world "dodgebolt" to air
+        set block at location {_carp}, 71, -22 in world "dodgebolt" to air
+        add 1 to {_carp}
+    if {_b} is "white":
+        loop 29 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location {_x}, {_y}, -22 in world "dodgebolt" to quartz block
+            add 1 to {_x}
+    if {_b} is "red":
+        loop 29 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location {_x}, {_y}, -22 in world "dodgebolt" to redstone block         
+            add 1 to {_x}
+    if {_b} is "air":
+        loop 29 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location {_x}, {_y}, -22 in world "dodgebolt" to air
+            add 1 to {_x}
+
+function db_2_north(b: text):
+    set {_x} to -108
+    set {_y} to 70
+    set {_z} to -39
+    set {_carp} to -109
+    loop 29 times:
+        set block at location {_carp}, 71, {_z} in world "dodgebolt" to air
+        set block at location {_carp}, 71, -38 in world "dodgebolt" to air
+        add 1 to {_carp}
+    if {_b} is "white":
+        loop 29 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location {_x}, {_y}, -38 in world "dodgebolt" to quartz block
+            add 1 to {_x}
+    if {_b} is "red":
+        loop 29 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location {_x}, {_y}, -38 in world "dodgebolt" to redstone block         
+            add 1 to {_x}
+    if {_b} is "air":
+        loop 29 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location {_x}, {_y}, -38 in world "dodgebolt" to air
+            add 1 to {_x}
+
+
+function db_2_west(b: text):
+    set {_x} to -108
+    set {_y} to 70
+    set {_z} to -23
+    set {_carp} to -23
+    loop 15 times:
+        set block at location -108, 71, {_carp} in world "dodgebolt" to air
+        set block at location -107, 71, {_carp} in world "dodgebolt" to air
+        remove 1 from {_carp}
+    if {_b} is "white":
+        loop 15 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location -107, {_y}, {_z} in world "dodgebolt" to quartz block
+            remove 1 from {_z}
+    if {_b} is "red":
+        loop 15 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location -107, {_y}, {_z} in world "dodgebolt" to redstone block
+            remove 1 from {_z}
+    if {_b} is "air":
+        loop 15 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location -107, {_y}, {_z} in world "dodgebolt" to air
+            remove 1 from {_z}
+
+function db_2_east(b: text):
+    set {_x} to -80
+    set {_y} to 70
+    set {_z} to -23
+    set {_carp} to -23
+    loop 15 times:
+        set block at location -80, 71, {_carp} in world "dodgebolt" to air
+        set block at location -81, 71, {_carp} in world "dodgebolt" to air
+        remove 1 from {_carp}
+    if {_b} is "white":
+        loop 15 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location -81, {_y}, {_z} in world "dodgebolt" to quartz block
+            remove 1 from {_z}
+    if {_b} is "red":
+        loop 15 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location -81, {_y}, {_z} in world "dodgebolt" to redstone block
+            remove 1 from {_z}
+    if {_b} is "air":
+        loop 15 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location -81, {_y}, {_z} in world "dodgebolt" to air
+            remove 1 from {_z}
+
+#
+
+function dodgeboltRemoveFloor3():
+    broadcast "&3&lDodgebolt &8&l» &cAréna se zmenšuje!"
+    loop 4 times:
+        wait 8 ticks
+        play "NOTE_BASS" to all players
+        db_3_south("red")
+        db_3_north("red")
+        db_3_west("red")
+        db_3_east("red")
+        wait 8 ticks
+        play "NOTE_BASS" to all players
+        db_3_south("white")
+        db_3_north("white")
+        db_3_west("white")
+        db_3_east("white")
+    wait 5 ticks
+    play "ZOMBIE_REMEDY" to all players
+    db_3_south("air")
+    db_3_north("air")
+    db_3_west("air")
+    db_3_east("air")
+
+command /dodge:floor3:
+    trigger:
+        if {rank.%player%} is "admin":
+            dodgeboltRemoveFloor3()
+            set {dodge::shots} to 6
+        else:
+            onlyAdmin(player)
+
+
+function db_3_south(b: text):
+    set {_x} to -106
+    set {_y} to 70
+    set {_z} to -23
+    set {_carp} to -106
+    loop 25 times:
+        set block at location {_carp}, 71, {_z} in world "dodgebolt" to air
+        set block at location {_carp}, 71, -24 in world "dodgebolt" to air
+        add 1 to {_carp}
+    if {_b} is "white":
+        loop 25 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location {_x}, {_y}, -24 in world "dodgebolt" to quartz block
+            add 1 to {_x}
+    if {_b} is "red":
+        loop 25 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location {_x}, {_y}, -24 in world "dodgebolt" to redstone block         
+            add 1 to {_x}
+    if {_b} is "air":
+        loop 25 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location {_x}, {_y}, -24 in world "dodgebolt" to air
+            add 1 to {_x}
+
+function db_3_north(b: text):
+    set {_x} to -106
+    set {_y} to 70
+    set {_z} to -37
+    set {_carp} to -106
+    loop 25 times:
+        set block at location {_carp}, 71, {_z} in world "dodgebolt" to air
+        set block at location {_carp}, 71, -36 in world "dodgebolt" to air
+        add 1 to {_carp}
+    if {_b} is "white":
+        loop 25 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location {_x}, {_y}, -36 in world "dodgebolt" to quartz block
+            add 1 to {_x}
+    if {_b} is "red":
+        loop 25 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location {_x}, {_y}, -36 in world "dodgebolt" to redstone block         
+            add 1 to {_x}
+    if {_b} is "air":
+        loop 25 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location {_x}, {_y}, -36 in world "dodgebolt" to air
+            add 1 to {_x}
+
+
+function db_3_west(b: text):
+    set {_x} to -106
+    set {_y} to 70
+    set {_z} to -25
+    set {_carp} to -25
+    loop 15 times:
+        set block at location -106, 71, {_carp} in world "dodgebolt" to air
+        set block at location -105, 71, {_carp} in world "dodgebolt" to air
+        remove 1 from {_carp}
+    if {_b} is "white":
+        loop 13 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location -105, {_y}, {_z} in world "dodgebolt" to quartz block
+            remove 1 from {_z}
+    if {_b} is "red":
+        loop 13 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location -105, {_y}, {_z} in world "dodgebolt" to redstone block
+            remove 1 from {_z}
+    if {_b} is "air":
+        loop 13 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location -105, {_y}, {_z} in world "dodgebolt" to air
+            remove 1 from {_z}
+
+function db_3_east(b: text):
+    set {_x} to -82
+    set {_y} to 70
+    set {_z} to -25
+    set {_carp} to -25
+    loop 13 times:
+        set block at location -82, 71, {_carp} in world "dodgebolt" to air
+        set block at location -83, 71, {_carp} in world "dodgebolt" to air
+        remove 1 from {_carp}
+    if {_b} is "white":
+        loop 13 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to quartz block
+            set block at location -83, {_y}, {_z} in world "dodgebolt" to quartz block
+            remove 1 from {_z}
+    if {_b} is "red":
+        loop 13 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to redstone block
+            set block at location -83, {_y}, {_z} in world "dodgebolt" to redstone block
+            remove 1 from {_z}
+    if {_b} is "air":
+        loop 13 times:
+            set block at location {_x}, {_y}, {_z} in world "dodgebolt" to air
+            set block at location -83, {_y}, {_z} in world "dodgebolt" to air
+            remove 1 from {_z}

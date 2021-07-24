@@ -1,0 +1,172 @@
+command /kaboom:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                push loop-player upwards at speed 3
+                send "&aLaunched %{rankcolor.%loop-player%}%%loop-player%&7!"
+                send loop-player title "&c&lKABOOM!" with subtitle "&eBy %{rankcolor.%player%}%%player%"
+                strike lightning effect at the loop-player
+                drawDot count 20, particle cloud, speed 0.1, XYZ 0.5, 0.5, 0.5, center loop-player, visibleRange 150
+
+        else:
+            onlyAdmin(player)
+
+on death:
+    if victim is in world "hub":
+        if victim is pig:
+            addShards(attacker, 25, "Zabil/a jsi prase GIZMO")
+
+
+on damage:
+    if victim is in world "hub":
+        if victim is pig:
+            if gamemode of attacker is adventure:
+                addShards(attacker, 1, "~G~I~Z~M~O~")
+        else:
+            cancel event
+
+
+command /quickmaths <text> <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {quickmaths} to true
+            set {quickmaths.a} to "%arg 2%"
+            broadcast "&r "
+            broadcast "&d&lQUICK MATHS! &7Vypočítej &e%arg 1%&7 jako první a získej &d10&5✦&7!"
+            broadcast "&r "
+            play "VILLAGER_YES" to all players
+        else:
+            onlyAdmin(player)
+
+on chat:
+    if {quickmaths} is true:
+        if message is "%{quickmaths.a}%":
+            delete {quickmaths}
+            broadcast "&r"
+            broadcast "&d&lQUICK MATHS! %{rankcolor.%player%}%%player%&7 vypočítal/a příklad jako první!"
+            broadcast "&d&lQUICK MATHS! &7Výsledek byl &e%{quickmaths.a}%&7!"
+            broadcast "&r"
+            addShards(player, 10, "Quick Maths")
+            delete {quickmaths.a}
+
+
+command /scramble <text> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {scramble} to true
+            set {scramble.a} to "%arg 2%"
+            broadcast "&r "
+            broadcast "&e&lSCRAMBLE! &7Rozlušti &a%arg 1%&7 jako první a získej &d10&5✦&7!"
+            broadcast "&r "
+            play "VILLAGER_YES" to all players
+        else:
+            onlyAdmin(player)
+
+on chat:
+    if {scramble} is true:
+        if message is "%{scramble.a}%":
+            delete {scramble}
+            broadcast "&r"
+            broadcast "&e&lSCRAMBLE! %{rankcolor.%player%}%%player%&7 rozluštil/a slovo jako první!"
+            broadcast "&e&lSCRAMBLE! &7Slovo bylo &e%{scramble.a}%&7!"
+            broadcast "&r"
+            addShards(player, 10, "Scramble")
+            delete {scramble}
+
+
+command /vanish:
+    trigger:
+        if {rank.%player%} is "admin":
+            drawDot count 1000, particle smokelarge, speed 0.1, XYZ 0.2, 0.5, 0.2, center player, visibleRange 150
+            drawDot count 1000, particle smokelarge, speed 0.1, XYZ 0, 1, 0, center player, visibleRange 150
+            hide player from all players
+            send "&aNapiš &e/unvanish&a pro unvanish!"
+            loop 100 times:
+                spawn bat at player
+            wait 5 seconds
+            kill all bats in player's world
+
+
+
+on join:
+    reveal player to all players
+
+command /unvanish:
+    trigger:
+        if {rank.%player%} is "admin":
+            send "&aUnvanished!"
+            drawDot count 1000, particle explosion, speed 0.2, XYZ 0.2, 0.5, 0.2, center player, visibleRange 150
+            drawDot count 1000, particle explosion, speed 0.2, XYZ 0, 1, 0, center player, visibleRange 150
+            reveal player from all players
+        else:
+            onlyAdmin(player)
+
+
+command /fakeop <text>:
+    trigger:
+        if {rank.%player%} = "admin":
+            broadcast "&7&o[%player%: Opped %arg 1%&7&o]"
+        else:
+            onlyAdmin(player)
+
+command /fakeopall:
+    trigger:
+        if {rank.%player%} = "admin":
+            loop all players:
+                wait 1 ticks
+                broadcast "&7&o[Server: Opped %loop-player%&7&o]"
+
+
+command /hypixel:
+    trigger:
+        if {rank.%player%} = "admin":
+            loop all players:
+                wait 1 ticks
+                add 1 to {hpsw::count}
+                teleport loop-player to {hypixel}
+                broadcast "%{rankcolor.%loop-player%}%%loop-player% &ehas joined (&b%{hpsw::count}%/50&e)"
+            wait 2 seconds
+            play "CLICK" to all players
+            loop all players:
+                give loop-player 1 bow named "&aKit Selector &7(Right Click)"
+            send all players title "&eHypixel Skywars" with subtitle "&cInsane Mode" for 12 seconds
+            send "&eThe game starts in &a20 &eseconds!"
+            wait 10 seconds
+            send all players title "&e10 seconds" with subtitle "&eRight-click the bow to pick a kit!" for 7 seconds
+            play "CLICK" to all players
+            send "&eThe game starts in &610 &eseconds!"
+            wait 5 seconds
+            send all players title "&c5" with subtitle "&ePrepare to fight!" for 7 seconds
+            play "CLICK" to all players
+            send "&eThe game starts in &c5 &eseconds!"
+            wait 1 seconds
+            send all players title "&c4" with subtitle "&ePrepare to fight!" for 7 seconds
+            play "CLICK" to all players
+            send "&eThe game starts in &c4 &eseconds!"
+            wait 1 seconds
+            send all players title "&c3" with subtitle "&ePrepare to fight!" for 7 seconds
+            play "CLICK" to all players
+            send "&eThe game starts in &c3 &eseconds!"
+            wait 1 seconds
+            send all players title "&c2" with subtitle "&ePrepare to fight!" for 7 seconds
+            play "CLICK" to all players
+            send "&eThe game starts in &c2 &eseconds!"
+            wait 1 seconds
+            send all players title "&c1" with subtitle "&ePrepare to fight!" for 2 seconds
+            play "CLICK" to all players
+            send "&eThe game starts in &c1 &eseconds!"
+            wait 1 seconds
+            send all players title "&dSike :3" with subtitle "&7" for 10 seconds
+            teleport all players to {hub}
+            play "LEVEL_UP" to all players
+            delete {hpsw::count}
+
+
+
+        else:
+            onlyAdmin(player)
+
+
+on damage:
+    if victim is in world "hypixel":
+        cancel event

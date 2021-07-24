@@ -1,0 +1,344 @@
+command /day:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            send player title "&r " with subtitle "&eNastaven čas na &6Den" for 1 seconds
+            set time in player's world to 8:00
+        else:
+            onlyMcteam(player)
+
+command /night:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            send player title "&r " with subtitle "&eNastaven čas na &6Noc" for 1 seconds
+            set time in player's world to 0:00
+        else:
+            onlyMcteam(player)
+
+command /fs [<number>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            if gamemode of player is creative:
+                if arg-1 is set:
+                    set {_fs} to arg-1
+                    set {_rfs} to {_fs} / 10
+                    set the player's fly speed to {_rfs}
+                    send "&eTvůj &6Fly Speed&e byl změněn na &b%arg-1%&e!"
+                    play "CLICK" to player
+                else:
+                    set the player's fly speed to 0.1
+                    send "&eTvůj &6Fly Speed&e byl resetován!"
+                    play "CLICK" to player
+            else:
+                send "&cTvůj gamemode není &4CREATIVE&c!"
+        else:
+            onlyAdmin(player)
+
+
+command /rename <text>:
+    trigger:
+        if {rank.%player%} is "mcteam" or "admin":
+            set name of player's held item to colored "%arg 1%"
+            play "ANVIL_USE" to player
+            send "&7Item v tvé ruce byl přejmenován na %arg 1%&7!"
+
+command /flyspeed [<number>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            if gamemode of player is creative:
+                if arg-1 is set:
+                    set {_fs} to arg-1
+                    set {_rfs} to {_fs} / 10
+                    set the player's fly speed to {_rfs}
+                    send "&eTvůj &6Fly Speed&e byl změněn na &b%arg-1%&e!"
+                    play "CLICK" to player
+                else:
+                    set the player's fly speed to 0.1
+                    send "&eTvůj &6Fly Speed&e byl resetován!"
+                    play "CLICK" to player
+            else:
+                send "&cTvůj gamemode není &4CREATIVE&c!"
+        else:
+            onlyAdmin(player)
+
+
+    
+
+
+function tp(p1: player, p2: player):
+    teleport {_p1} to {_p2}
+
+command /tp [<offline player>] [<player>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam" or "dcteam":
+            if arg-2 is not set:
+                tp(player, arg-1)
+                send player title "&r " with subtitle "&eTeleportováno na hráče &6%arg 1%" for 1 seconds
+            else:
+                tp(arg-1, arg-2)
+                send player title "&r " with subtitle "&eHráč &6%arg 1%&e teleportován na hráče &6%arg 2%" for 1 seconds
+        else:
+            onlyDCteam(player)
+
+command /teleport <player> [<player>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam" or "dcteam":
+            if arg-2 is not set:
+                tp(player, arg-1)
+                send player title "&r " with subtitle "&eTeleportováno na hráče &6%arg 1%" for 1 seconds
+            else:
+                tp(arg-1, arg-2)
+                send player title "&r " with subtitle "&eHráč &6%arg 1%&e teleportován na hráče &6%arg 2%" for 1 seconds
+        else:
+            onlyDCteam(player)
+
+
+
+command /tpall:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                wait 1 ticks
+                teleport loop-player to player
+            send player title "&r" with subtitle "&eHráči teleportováni!" for 2 seconds
+        else:
+            onlyAdmin(player)
+
+
+
+command /msg <player> <text>:
+    trigger:
+        send "%{rankcolor.%player%}%&l> &7Od %{rankcolor.%player%}%%player%&7: &f%arg 2%" to arg-1
+        send "%{rankcolor.%arg 1%}%&l> &7Pro %{rankcolor.%arg 1%}%%arg 1%&7: &f%arg 2%" to player 
+        play "SILVERFISH_IDLE" to arg-1
+        set {msg.last.%player%} to arg-1
+        set {msg.last.%arg 1%} to player
+
+
+command /whisper <player> <text>:
+    trigger:
+        send "%{rankcolor.%player%}%&l> &7Od %{rankcolor.%player%}%%player%&7: &f%arg 2%" to arg-1
+        send "%{rankcolor.%arg 1%}%&l> &7Pro %{rankcolor.%arg 1%}%%arg 1%&7: &f%arg 2%" to player 
+        play "SILVERFISH_IDLE" to arg-1
+        set {msg.last.%player%} to arg-1
+        set {msg.last.%arg 1%} to player
+
+
+command /minecraft:w <player> <text>:
+    trigger:
+        send "%{rankcolor.%player%}%&l> &7Od %{rankcolor.%player%}%%player%&7: &f%arg 2%" to arg-1
+        send "%{rankcolor.%arg 1%}%&l> &7Pro %{rankcolor.%arg 1%}%%arg 1%&7: &f%arg 2%" to player 
+        play "SILVERFISH_IDLE" to arg-1
+        set {msg.last.%player%} to arg-1
+        set {msg.last.%arg 1%} to player
+
+
+command /minecraft:whisper <player> <text>:
+    trigger:
+        send "%{rankcolor.%player%}%&l> &7Od %{rankcolor.%player%}%%player%&7: &f%arg 2%" to arg-1
+        send "%{rankcolor.%arg 1%}%&l> &7Pro %{rankcolor.%arg 1%}%%arg 1%&7: &f%arg 2%" to player 
+        play "SILVERFISH_IDLE" to arg-1
+        set {msg.last.%player%} to arg-1
+        set {msg.last.%arg 1%} to player
+
+command /r <text>:
+    trigger:
+        if {msg.last.%player%} is set:
+            execute player command "/msg %{msg.last.%player%}% %arg 1%"
+        else:
+            send "&cNemáš komu odpovědět!"
+
+
+
+command /gmc [<player>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            if arg-1 is not set:
+                set gamemode of player to creative
+                send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Creative" for 2 seconds
+            if arg-1 is set:
+                set gamemode of arg-1 to creative
+                send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Creative" for 2 seconds
+                send "&7&o[&7%player% ti nastavil/a gamemode na &e&oCreative&7&o]" to arg-1
+        else:
+            onlyMcteam(player)
+
+
+command /gma [<player>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            if arg-1 is not set:
+                set gamemode of player to adventure
+                send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Adventure" for 2 seconds
+            if arg-1 is set:
+                set gamemode of arg-1 to adventure
+                send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Adventure" for 2 seconds
+                send "&7&o[&7%player% ti nastavil/a gamemode na &e&oAdventure&7&o]" to arg-1
+        else:
+            onlyMcteam(player)
+
+command /gms [<player>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            if arg-1 is not set:
+                set gamemode of player to survival
+                send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Survival" for 2 seconds
+            if arg-1 is set:
+                set gamemode of arg-1 to survival
+                send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Survival" for 2 seconds
+                send "&7&o[&7%player% ti nastavil/a gamemode na &e&oSurvival&7&o]" to arg-1
+        else:
+            onlyMcteam(player)
+
+command /gmsp [<player>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            if arg-1 is not set:
+                set gamemode of player to spectator
+                send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Spectator" for 2 seconds
+            if arg-1 is set:
+                set gamemode of arg-1 to spectator
+                send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Spectator" for 2 seconds
+                send "&7&o[&7%player% ti nastavil/a gamemode na &e&oSpectator&7&o]" to arg-1
+        else:
+            onlyMcteam(player)
+
+
+
+
+
+
+
+
+
+command /gamemode <text> [<player>]:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            if arg-1 is "survival" or "s" or "0":
+                if arg-2 is not set:
+                    set gamemode of player to survival
+                    send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Survival" for 2 seconds
+                if arg-2 is set:
+                    set gamemode of arg-2 to survival
+                    send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Survival" for 2 seconds
+                    send "&7&o[&7%player% ti nastavil/a gamemode na &e&oSurvival&7&o]" to arg-2
+            if arg-1 is "creative" or "c" or "1":
+                if arg-2 is not set:
+                    set gamemode of player to creative
+                    send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Creative" for 2 seconds
+                if arg-2 is set:
+                    set gamemode of arg-2 to creative
+                    send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Creative" for 2 seconds
+                    send "&7&o[&7%player% ti nastavil/a gamemode na &e&oCreative&7&o]" to arg-2
+            if arg-1 is "adventure" or "a" or "2":
+                if arg-2 is not set:
+                    set gamemode of player to adventure
+                    send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Adventure" for 2 seconds
+                if arg-2 is set:
+                    set gamemode of arg-2 to adventure
+                    send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Adventure" for 2 seconds
+                    send "&7&o[&7%player% ti nastavil/a gamemode na &e&oAdventure&7&o]" to arg-2
+            if arg-1 is "spectator" or "sp" or "3":
+                if arg-2 is not set:
+                    set gamemode of player to spectator
+                    send player title "&r" with subtitle "&eTvůj gamemode byl nastaven na &6Spectator" for 2 seconds
+                if arg-2 is set:
+                    set gamemode of arg-2 to spectator
+                    send player title "&r" with subtitle "&eGamemode hráče &6%arg 1%&e byl nastaven na &6Spectator" for 2 seconds
+                    send "&7&o[&7%player% ti nastavil/a gamemode na &e&oSpectator&7&o]" to arg-2
+        else:
+            onlyMcteam(player)
+
+
+
+
+
+
+command /afk:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam" or "dcteam":
+            if {afk.%player%} is not set:
+                set {afk.%player%} to true
+                broadcast "&c&lAFK &8» &6%player% &eje AFK."
+                make embed:
+                    set description of embed to ":warning: **| %player%** je AFK."
+                    set color of the embed to color from rgb 255, 211, 0
+                    #set the footer of embed to footer with text "" and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+                    #set the timestamp of embed to now
+                send last created embed to channel with id "806200891454521364" with "EventVerse"
+        else:
+            onlyDCteam(player)
+
+on any movement:
+    if {afk.%player%} is true:
+        broadcast "&c&lAFK &8» &6%player% &ese vrátil/a."
+        delete {afk.%player%}
+        make embed:
+            set description of embed to ":green_square: **| %player%** se vrátil/a."
+            set color of the embed to color from rgb 0, 165, 0
+            #set the footer of embed to footer with text "" and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+            #set the timestamp of embed to now
+        send last created embed to channel with id "806200891454521364" with "EventVerse"
+
+on chat:
+    if {afk.%player%} is true:
+        broadcast "&c&lAFK &8» &6%player% &ese vrátil/a."
+        delete {afk.%player%}
+        make embed:
+            set description of embed to ":green_square: **| %player%** se vrátil/a."
+            set color of the embed to color from rgb 0, 165, 0
+            #set the footer of embed to footer with text "" and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+            #set the timestamp of embed to now
+        send last created embed to channel with id "806200891454521364" with "EventVerse"
+
+on quit:
+    delete {afk.%player%}
+
+
+
+on command "/skin":
+    if {rank.%player%} is "admin":
+        stop
+    else:
+        cancel event
+        onlyAdmin(player)
+
+
+
+
+
+
+
+
+
+
+
+
+command /setskin <player> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-2 is set:
+                run player command "skin set %arg 1% %arg 2%" as op
+        else:
+            onlyAdmin(player)
+
+
+
+# Denys worker - https://i.imgur.com/37vm1bW.png
+# Denys suit - https://i.imgur.com/opvCr6z.png
+# Furry denys - https://i.imgur.com/xiE5kh0.png
+# Spooky Denys - https://i.imgur.com/b3l6ucX.png
+# Vánoční Denys - https://i.imgur.com/YQ5CdIA.png
+# Classic Denys - https://i.imgur.com/iRkZh5B.png
+
+# eh? - https://i.imgur.com/mfsciL9.png
+# Scary - https://i.imgur.com/KvqeNJM.png
+
+# Peterko normální - https://i.imgur.com/037uKlH.png
+
+# Kubo krtek - https://i.imgur.com/Si5SiIm.png
+# Lukynka krtek - https://i.imgur.com/RTx74j9.png
+# Eh krtek - https://i.imgur.com/x0IYJiq.png
+
+# Megumin - https://i.imgur.com/FjbEyIW.png
+
+# Danik shark - https://i.imgur.com/IsZkRML.png

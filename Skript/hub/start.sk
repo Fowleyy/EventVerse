@@ -1,0 +1,403 @@
+command /event <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-1 is "start":
+                set {mutechat} to true
+                set {ctd::min} to 1
+                set {ctd::sec} to 59
+                set {ctd::timer} to true
+                updateEventState("EVENT_INFO")
+                wait 1 seconds
+                loop all players:
+                    updateHubScoreboard(loop-player)
+                broadcast "&r "
+                broadcast "&5&m                                                       "
+                broadcast "&r "
+                broadcast "&r "
+                broadcast "&r "
+                broadcast "&r  &d&lEvent začíná za 2 minuty..."
+                broadcast "&r "
+                broadcast "&r "
+                broadcast "&r "
+                broadcast "&5&m                                                       "
+                play "ENDERDRAGON_GROWL" to all players
+                play "CHICKEN_EGG_POP" to all players
+                wait 60 seconds
+                broadcast "&5&m                                                       "
+                broadcast "&r  "
+                broadcast "&r  "
+                broadcast "&r  &f&lVýherce eventu je ten, kdo má na"
+                broadcast "&r  &f&lkonci všech kol nejvíce coinů!"
+                broadcast "&r  "
+                broadcast "&r  &7Jak získat coiny je napsané vždy při startu minihry"
+                broadcast "&r  "
+                broadcast "&r  "
+                broadcast "&5&m                                                       "
+                play "CHICKEN_EGG_POP" to all players
+                wait 10 seconds
+                broadcast "&5&m                                                       "
+                broadcast "&r  "
+                broadcast "&r  &fPokud jsi nalezl/a bug, můžeš ho"
+                broadcast "&r  &fnahlásit pomocí příkazu &b/bug <popis chyby>"
+                broadcast "&r "
+                broadcast "&r  "
+                broadcast "&r  &fPokud máš podezření, že nějaký hráč"
+                broadcast "&r  &fcheatuje, nahlaš ho pomocí &c/report <hráč> <důvod>"
+                broadcast "&r  "
+                broadcast "&5&m                                                       "
+                play "CHICKEN_EGG_POP" to all players
+                wait 10 seconds
+                broadcast "&5&m                                                       "
+                broadcast "&r "
+                broadcast "&r "
+                broadcast "&r  &f&lHodně štěstí!"
+                broadcast "&r "
+                broadcast "&r  &6Ať ten nejlepší hráč vyhraje. :D"
+                broadcast "&r "
+                broadcast "&r "
+                broadcast "&r "
+                broadcast "&5&m                                                       "
+                play "CHICKEN_EGG_POP" to all players
+                wait 10 seconds
+                updateEventState("EVENT_START")
+                delete {mutechat}
+            if arg-1 is "reset":
+                delete {mutechat}
+                delete {ctd::timer}
+                delete {ctd::min}
+                delete {ctd::sec}
+                updateEventState("HUB")
+                loop all players:
+                    updateHubScoreboard(loop-player)
+                set time in world "hub" to 12:00
+                set block at location 95, 85, 1 in world "hub" to air
+                set block at location 95, 85, 2 in world "hub" to quartz block
+                set block at location 95, 85, 3 in world "hub" to quartz block
+                set block at location 95, 85, 4 in world "hub" to quartz block
+                set block at location 95, 85, 5 in world "hub" to quartz block
+                set block at location 95, 85, 6 in world "hub" to air
+        #
+                set block at location 95, 86, 1 in world "hub" to quartz block
+                set block at location 95, 86, 2 in world "hub" to quartz block
+                set block at location 95, 86, 3 in world "hub" to quartz block
+                set block at location 95, 86, 4 in world "hub" to quartz block
+                set block at location 95, 86, 5 in world "hub" to quartz block
+                set block at location 95, 86, 6 in world "hub" to quartz block
+        #
+                set block at location 95, 87, 1 in world "hub" to air
+                set block at location 95, 87, 2 in world "hub" to air
+                set block at location 95, 87, 3 in world "hub" to air
+                set block at location 95, 87, 4 in world "hub" to air
+                set block at location 95, 87, 5 in world "hub" to quartz block
+                set block at location 95, 87, 6 in world "hub" to quartz block
+        #
+                set block at location 95, 88, 1 in world "hub" to air
+                set block at location 95, 88, 2 in world "hub" to air
+                set block at location 95, 88, 3 in world "hub" to air
+                set block at location 95, 88, 4 in world "hub" to air
+                set block at location 95, 88, 5 in world "hub" to quartz block
+                set block at location 95, 88, 6 in world "hub" to quartz block
+        #
+                set block at location 95, 89, 1 in world "hub" to air
+                set block at location 95, 89, 2 in world "hub" to quartz block
+                set block at location 95, 89, 3 in world "hub" to quartz block
+                set block at location 95, 89, 4 in world "hub" to quartz block
+                set block at location 95, 89, 5 in world "hub" to quartz block
+                set block at location 95, 89, 6 in world "hub" to quartz block
+        #
+                set block at location 95, 90, 1 in world "hub" to quartz block
+                set block at location 95, 90, 2 in world "hub" to quartz block
+                set block at location 95, 90, 3 in world "hub" to quartz block
+                set block at location 95, 90, 4 in world "hub" to quartz block
+                set block at location 95, 90, 5 in world "hub" to quartz block
+                set block at location 95, 90, 6 in world "hub" to air
+        #
+                set block at location 95, 91, 1 in world "hub" to quartz block
+                set block at location 95, 91, 2 in world "hub" to quartz block
+                set block at location 95, 91, 3 in world "hub" to air
+                set block at location 95, 91, 4 in world "hub" to air
+                set block at location 95, 91, 5 in world "hub" to air
+                set block at location 95, 91, 6 in world "hub" to air
+        #
+                set block at location 95, 92, 1 in world "hub" to quartz block
+                set block at location 95, 92, 2 in world "hub" to quartz block
+                set block at location 95, 92, 3 in world "hub" to air
+                set block at location 95, 92, 4 in world "hub" to air
+                set block at location 95, 92, 5 in world "hub" to air
+                set block at location 95, 92, 6 in world "hub" to air
+        #
+                set block at location 95, 93, 1 in world "hub" to quartz block
+                set block at location 95, 93, 2 in world "hub" to quartz block
+                set block at location 95, 93, 3 in world "hub" to quartz block
+                set block at location 95, 93, 4 in world "hub" to quartz block
+                set block at location 95, 93, 5 in world "hub" to quartz block
+                set block at location 95, 93, 6 in world "hub" to quartz block
+        #
+                set block at location 95, 94, 1 in world "hub" to air
+                set block at location 95, 94, 2 in world "hub" to quartz block
+                set block at location 95, 94, 3 in world "hub" to quartz block
+                set block at location 95, 94, 4 in world "hub" to quartz block
+                set block at location 95, 94, 5 in world "hub" to quartz block
+                set block at location 95, 94, 6 in world "hub" to air
+
+        #
+
+        #
+
+        #
+
+                set block at location 95, 85, 28 to quartz block
+                set block at location 95, 85, 29 to quartz block
+                set block at location 95, 85, 30 to air
+                set block at location 95, 85, 31 to air
+                set block at location 95, 85, 32 to quartz block
+                set block at location 95, 85, 33 to quartz block
+        #
+                set block at location 95, 86, 28 to quartz block
+                set block at location 95, 86, 29 to quartz block
+                set block at location 95, 86, 30 to air
+                set block at location 95, 86, 31 to air
+                set block at location 95, 86, 32 to quartz block
+                set block at location 95, 86, 33 to quartz block
+        #
+                set block at location 95, 87, 28 to quartz block 
+                set block at location 95, 87, 29 to quartz block
+                set block at location 95, 87, 30 to air
+                set block at location 95, 87, 31 to air
+                set block at location 95, 87, 32 to quartz block
+                set block at location 95, 87, 33 to quartz block
+        #
+                set block at location 95, 88, 28 to quartz block
+                set block at location 95, 88, 29 to quartz block
+                set block at location 95, 88, 30 to air
+                set block at location 95, 88, 31 to air
+                set block at location 95, 88, 32 to quartz block
+                set block at location 95, 88, 33 to quartz block
+        #
+                set block at location 95, 89, 28 to quartz block 
+                set block at location 95, 89, 29 to quartz block
+                set block at location 95, 89, 30 to air
+                set block at location 95, 89, 31 to air
+                set block at location 95, 89, 32 to quartz block
+                set block at location 95, 89, 33 to quartz block
+        #
+                set block at location 95, 90, 28 to quartz block
+                set block at location 95, 90, 29 to quartz block
+                set block at location 95, 90, 30 to air
+                set block at location 95, 90, 31 to air
+                set block at location 95, 90, 32 to quartz block
+                set block at location 95, 90, 33 to quartz block
+        #
+                set block at location 95, 91, 28 to quartz block
+                set block at location 95, 91, 29 to quartz block
+                set block at location 95, 91, 30 to air
+                set block at location 95, 91, 31 to air
+                set block at location 95, 91, 32 to quartz block
+                set block at location 95, 91, 33 to quartz block
+        #
+                set block at location 95, 92, 28 to quartz block
+                set block at location 95, 92, 29 to quartz block
+                set block at location 95, 92, 30 to air
+                set block at location 95, 92, 31 to air
+                set block at location 95, 92, 32 to quartz block
+                set block at location 95, 92, 33 to quartz block
+        #
+                set block at location 95, 93, 28 to quartz block
+                set block at location 95, 93, 29 to quartz block
+                set block at location 95, 93, 30 to quartz block
+                set block at location 95, 93, 31 to quartz block
+                set block at location 95, 93, 32 to quartz block
+                set block at location 95, 93, 33 to quartz block
+        #
+                set block at location 95, 94, 28 to quartz block
+                set block at location 95, 94, 29 to quartz block
+                set block at location 95, 94, 30 to quartz block
+                set block at location 95, 94, 31 to quartz block
+                set block at location 95, 94, 32 to quartz block
+                set block at location 95, 94, 33 to air
+            if arg-1 is "end":
+                delete {tnttag.tagged}
+                delete {wall.canpush}
+                delete {lights.canchange}
+                lightsStage("GO")
+                teleport all players to {hub}
+                reveal all players from all players
+                loop all players:
+                    heal loop-player
+                    feed loop-player
+                    clear loop-player's inventory
+                    set gamemode of loop-player to adventure
+                    updateHubScoreboard(loop-player)
+
+                set time in world "hub" to 12:00
+                execute player command "effect @a clear"
+                delete {mutechat}
+                updateEventState("HUB")
+                loop all players:
+                    updateHubScoreboard(loop-player)
+
+        else:
+            onlyAdmin(player)
+
+command /dev:timertest <number> <number>:
+    trigger:
+        if player is "LukynkaCZE":
+            set {ctd::min} to arg-1
+            set {ctd::sec} to arg-2
+            set {ctd::timer} to true
+
+
+
+
+every second:
+    if {ctd::timer} is true:
+        updateBigTimer()
+        loop all players:
+            updateHubTimerScoreboard(loop-player)
+        if {ctd::sec} is more than -1:
+            remove 1 from {ctd::sec}
+            bigTimerNumberMin("%{ctd::min}%")
+            if {ctd::sec} is 10:
+                if {ctd::min} is 1:
+                    dayToNightAnim()
+            if {ctd::min} is less than 1:
+                play "NOTE_BASS" to all players
+            if {ctd::sec} is 0:
+                if {ctd::min} is more than 0:
+                    remove 1 from {ctd::min}
+                    set {ctd::sec} to 59
+                else:
+                    delete {ctd::timer}
+
+                    fetchPlayers()
+                    wait 1 tick
+                    debug("&6Teleportuji brzy na minihru &e%{event.name}%")
+                    set {_t} to "%{all::players}%"
+                    set {_s} to {all::players} / 20
+                    debug("&6Teleportace zabere &b%{_t}% ticků &7(tj. %{_s}% sekund)")
+
+                    wait 1 seconds
+                    updateBigTimer()
+                    set {players.count} to {all::players}
+                    send all players title "&d&n&l%{event.name}%" with subtitle "&eTeleportuji za &610 sekund&e!" for 11 seconds
+                    broadcast ""
+                    broadcast "&d&lEvent &8&l» &eTeleportuji na event &6%{event.name}%&e za &610 sekund&e!"
+                    broadcast ""
+                    play "CLICK" to all players
+                    play "WOOD_CLICK" to all players
+                    play "NOTE_BASS" to all players
+                    wait 10 ticks
+                    loop all players:
+                        updateHubTimerScoreboard(loop-player)
+                    loop 20 times:
+                        wait 2 ticks
+                        play "NOTE_PLING" to all players
+                        play "NOTE_STICKS" to all players
+
+        if {ctd::min} is less than 10:
+            set {ctd::text-m} to "0%{ctd::min}%"
+        if {ctd::min} is more than 9:
+            set {ctd::text-m} to "%{ctd::min}%"
+        if {ctd::sec} is less than 10:
+            set {ctd::text-s} to "0%{ctd::sec}%"
+        if {ctd::sec} is more than 9:
+            set {ctd::text-s} to "%{ctd::sec}%"
+        set {ctd::text} to "%{ctd::text-m}%:%{ctd::text-s}%"
+
+            
+
+
+
+function fwRed1(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 120 13 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[11743532]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 120 21 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[11743532]}],Flight:1}}}}" as op
+
+function fwRed2(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 119 25 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[11743532]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 119 9 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[11743532]}],Flight:1}}}}" as op
+
+#
+
+function fwOrange1(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 118 29 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[15435844]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 118 5 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[15435844]}],Flight:1}}}}" as op
+
+function fwOrange2(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 115 1 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[15435844]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 115 33 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[15435844]}],Flight:1}}}}" as op
+
+#
+
+function fwYellow1(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 113 -3 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[14602026]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 113 37 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[14602026]}],Flight:1}}}}" as op
+
+function fwYellow2(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 109 -6 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[14602026]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 109 40 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[14602026]}],Flight:1}}}}" as op
+
+#
+
+function fwLime1(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 105 43 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[4312372]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 105 -9 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[4312372]}],Flight:1}}}}" as op
+
+function fwLime2(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 101 -11 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[4312372]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 101 45 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[4312372]}],Flight:1}}}}" as op
+
+#
+
+function fwBlue1(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 97 46 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[6719955]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 97 -12 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[6719955]}],Flight:1}}}}" as op
+
+function fwBlue2(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 93 -13 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[6719955]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 93 47 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[6719955]}],Flight:1}}}}" as op
+
+#
+
+function fwPink1(p: player):
+    run {_p} command "/summon FireworksRocketEntity 89 89 -14 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[12801229]}],Flight:1}}}}" as op
+    run {_p} command "/summon FireworksRocketEntity 89 89 48 {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[12801229]}],Flight:1}}}}" as op
+
+
+command /lol:
+    trigger:
+        run player command "/minecraft:summon FireworksRocketEntity %{newfwloc}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Colors:[11743532]}],Flight:1}}}}" as op
+
+command /hub:fw:
+    trigger:
+        if {rank.%player%} is "admin":
+            fwRed1(player)
+            wait 5 ticks
+            fwRed2(player)
+            wait 5 ticks
+            fwOrange1(player)
+            wait 5 ticks
+            fwOrange2(player)
+            wait 5 ticks
+            fwYellow1(player)
+            wait 5 ticks
+            fwYellow2(player)
+            wait 5 ticks
+            fwLime1(player)
+            wait 5 ticks
+            fwLime2(player)
+            wait 5 ticks
+            fwBlue1(player)
+            wait 5 ticks
+            fwBlue2(player)
+            wait 5 ticks
+            fwPink1(player)
+        else:
+            onlyAdmin(player)
+
+
+function hubFireworksAnim():
+    loop all players:
+        if loop-player is "LukynkaCZE" or "Kbelik_Vody":
+            wait 1 ticks
+            run loop-player command "hub:fw" as op
+            stop loop

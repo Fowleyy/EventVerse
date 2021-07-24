@@ -1,0 +1,75 @@
+command /dev:settrail <player> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-2 is "FLAME" or "ICEY_SEASON" or "CHERRY_BLOSSOM" or "EASTER_BREEZE" or "HEART" or "AQUA" or "WIND" or "NOTE" or "PRIDE" or "SUMMERTIME":
+                set {trail.%arg 1%} to "%arg 2%"
+                send "&aNastavil/a jsi trail hráče &b%arg 1%&a na &e%arg 2%&a!" to player
+                send "&aAdmin &c%player%&a ti nastavil/a trail na &e%arg 2%&a!" to arg-1
+                stopEffect id "pride.%player%"
+  
+        else:
+            onlyAdmin(player)
+
+command /dev:unlockpridetrail <offline player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {cosmetics.%arg 1%.owned.trail.pride} to true
+            send "&aOdemknul/a jsi trail &bPRIDE &atrail hráči &e%arg 1%&a!"
+
+#  --- [ PARTICLES ] ---
+
+
+on right click with nether star:
+    if name of player's held item is "&d&nKosmetiky&r &7(Right Click)":
+        if player is in world "hub":
+            
+
+on any movement:
+    if player is not in world "hole" or "hypixel":
+        if gamemode of player is adventure:
+            spawnTrail(player)
+
+
+
+
+function spawnTrail(p: player):
+    if {trail.%{_p}%} is "FLAME":
+        drawDot count 1, particle flame, speed 0, XYZ 0, 0, 0, center location of {_p}, visibleRange 100
+    if {trail.%{_p}%} is "ICEY_SEASON":
+        drawDot count 1, particle fireworkspark, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320
+        drawDot count 4, particle blockcrack, material ice or packed ice, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320, keepFor 1 ticks
+    if {trail.%{_p}%} is "CHERRY_BLOSSOM":
+  #      drawDot count 1, particle blockcrack, material pink wool or pink clay, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320, keepFor 5 ticks
+        drawDot count 1, particle mobspell, RGB 255, 184, 252, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 255, 143, 250, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 255, 230, 254, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+    if {trail.%{_p}%} is "EASTER_BREEZE":
+  #      drawDot count 1, particle blockcrack, material pink wool or pink clay, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320, keepFor 5 ticks
+        drawDot count 1, particle mobspell, RGB 255, 163, 240, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 198, 255, 194, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 185, 255, 138, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 126, 252, 137, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+    if {trail.%{_p}%} is "HEART":
+        drawDot count 1, particle heart, speed 0, XYZ 0, 0, 0, center location of {_p}, visibleRange 100
+        drawDot count 1, particle mobspell, RGB 255, 66, 110, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320, keepFor 1 ticks
+    if {trail.%{_p}%} is "AQUA":
+  #      drawDot count 1, particle blockcrack, material pink wool or pink clay, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320, keepFor 5 ticks
+        drawDot count 1, particle mobspell, RGB 126, 250, 252, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 201, 254, 255, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+    if {trail.%{_p}%} is "WIND":
+  #      drawDot count 1, particle blockcrack, material pink wool or pink clay, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320, keepFor 5 ticks
+        drawDot count 1, particle explosion, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320
+        drawDot count 2, particle mobspell, RGB 255, 255, 255, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+    if {trail.%{_p}%} is "NOTE":
+  #      drawDot count 1, particle blockcrack, material pink wool or pink clay, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320, keepFor 5 ticks
+        drawDot count 1, particle note, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320
+    if {trail.%{_p}%} is "PRIDE":
+        drawNyanCat center {_p}, id "pride.%{_p}%", visibleRange 30
+        wait 2 ticks
+        stopEffect id "pride.%{_p}%"
+    if {trail.%{_p}%} is "SUMMERTIME":
+  #      drawDot count 1, particle blockcrack, material pink wool or pink clay, speed 0, XYZ 0.1, 0.1, 0.1, center location of {_p}, visibleRange 320, keepFor 5 ticks
+        drawDot count 1, particle mobspell, RGB 255, 237, 166, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 138, 255, 245, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 255, 247, 181, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320
+        drawDot count 1, particle mobspell, RGB 242, 220, 48, colorOffset 0, 0, 0, center location of {_p}, randomColor false, visibleRange 320

@@ -1,0 +1,187 @@
+
+command /me [<text>]:
+    trigger:
+        if arg-1 is not set:
+            send "&cUsage: /me <action ...>"
+        if arg-1 is set:
+            make player say "%arg 1%"
+
+
+
+
+
+command /minecraft:me [<text>]:
+    trigger:
+        if arg-1 is not set:
+            send "&cUsage: /me <action ...>"
+        if arg-1 is set:
+            make player say "%arg 1%"
+
+
+
+
+
+
+
+on chat:
+    if message contains "&a" or "&b" or "&e" or "&d" or "&c":
+        if {rank.%player%} is "donator" or "media" or "dcteam" or "hostify" or "mcteam" or "admin":
+            set {_msgtext} to coloured "%message%"
+        else:
+            replace all "&" in message with ""
+            set {_msgtext} to uncolored "%message%"
+    else:
+        set {_msgtext} to uncolored "%message%"
+    cancel event
+
+    if {_msgtext} is "gg" or "cg":
+        if {event.state} is "WALK_OF_FAME" or "EVENT_OVER":
+            if {ggreward::%player%} is not set:
+                if {rank.%player%} is "donator" or "media" or "dcteam" or "hostify" or "mcteam" or "admin":
+                    addShards(player, 10, "Napsal/a jsi %{_msgtext}%!")
+                else:
+                    addShards(player, 5, "Napsal/a jsi %{_msgtext}%!")
+                set {ggreward::%player%} to 1
+
+    replace all "<3" in {_msgtext} with "❤"
+    replace all ":yes:" in {_msgtext} with "✔"
+    replace all ":no:" in {_msgtext} with "✖"
+    replace all ":tableflip:" in {_msgtext} with "(╯°□°）╯︵ ┻━┻"
+    replace all ":soontm:" in {_msgtext} with "&9Soon™&r"
+    replace all ":shiba:" in {_msgtext} with "ฅ^•ﻌ•^ฅ"
+    replace all ":unflip:" in {_msgtext} with "┬─┬ ノ( ゜-゜ノ)"
+    #
+    if {rank.%player%} is "tester" or "donator" or "admin" or "mcteam" or "dcteam" or "media" or "hostify":
+        replace all "o/" in {_msgtext} with "( ﾟ◡ﾟ)/"
+        if message is "gg":
+            replace all "gg" in {_msgtext} with "&6gg&r"
+        if message is "cg":
+            replace all "cg" in {_msgtext} with "&6cg&r"
+        replace all ":dizzy:" in {_msgtext} with "ヽ(。_°)ノ"
+        replace all ":sopka:" in {_msgtext} with "ヽ(。_°)ノ"
+        replace all ":soptik:" in {_msgtext} with "ヽ(。_°)ノ"
+        replace all ":shrug:" in {_msgtext} with "¯\_(ツ)_/¯"
+    if player is "S0ptik":
+        set {_r} to "༼ つ ◕◡◕ ༽つ" or "(⊃｡•́‿•̀｡)⊃" or "( ˘ ³˘)♥︎" or "(｡♡‿♡｡)" or "(๑˙❥˙๑)" or "(✿ ♡‿♡)" or "♡´･ᴗ･`♡"
+        replace all ":uralove:" in {_msgtext} with "%{_r}%"
+    if player is "Kbelik_Vody":
+        replace all "xd" in {_msgtext} with "&bxd&r"
+    if {ac.%player%} is true:
+        execute player command "/ac %message%"
+        stop
+    if {mute.%player%} is true:
+        set action bar of player to "&c&l&nJsi umlčen/a.&7 (%{mute.reason.%player%}%)"
+        stop
+    if {loggedin.%player%} is not set:
+        stop
+    if {2fa.%player%} is true:
+        if {2fa.session.uses.%player%} is less than 1:
+            set {2fa.session.%player%} to "%ip of player%"
+            set {2fa.session.uses.%player%} to 2
+        if message is "%{2fa.code.%player%}%":
+            delete {2fa.%player%}
+            delete {2fa.code.%player%}
+            send player title "&2&n&l2FA" with subtitle "&aÚspěšně ověřeno!" for 2 seconds
+            postLoginEvent(player)
+            make embed:
+                set the title of embed to title with text "**__Úspěšně ověřeno!__**"
+                set color of the embed to color from rgb 147, 255, 117
+                set the timestamp of embed to now
+                set description of embed to "Byl/a jsi ověřen/a!"
+            if player is "LukynkaCZE":
+                set {_id} to "813849538850324530"
+                send last created embed to channel with id "%{_id}%" with "EventVerse"
+            if player is "Peterko_":
+                set {_id} to "813849705925574676"
+                send last created embed to channel with id "%{_id}%" with "EventVerse"
+            if player is "Kbelik_Vody":
+                set {_id} to "813849768933326848"
+                send last created embed to channel with id "%{_id}%" with "EventVerse"
+            if player is "S0ptik":
+                set {_id} to "813849889581826048"
+                send last created embed to channel with id "%{_id}%" with "EventVerse"
+            if player is "Th3Dolphin":
+                set {_id} to "813849972356153434"
+                send last created embed to channel with id "%{_id}%" with "EventVerse"
+            if player is "JopGamer":
+                set {_id} to "824380822202089533"
+                send last created embed to channel with id "%{_id}%" with "EventVerse"
+            if player is "TenViki":
+                set {_id} to "835550289179967508"
+                send last created embed to channel with id "%{_id}%" with "EventVerse" 
+            if {rank.%player%} is "admin" or "mcteam":
+            stop
+        else:
+            send "&r "
+            send "&c&lŠpatný 2fa kod!"
+            send "&r "
+            stop
+    if {mutechat.plebs} is true:
+        if {rank.%player%} is "player":
+            set action bar of player to "&c&n&lNemůžeš psát, když je zapnutý mutechat."
+            stop
+    if {mutechat} is true:
+        set action bar of player to "&c&n&lNemůžeš psát, když je zapnutý mutechat."
+        stop
+    if {chat.delay.%player%} is true:
+        if {rank.%player%} is "player" or "spectator" or "komunita" or "donator":
+            set action bar of player to "&c&n&lDo chatu můžeš psát jednou za 3 sekundy."
+            stop
+
+
+
+    if {rank.%player%} is "admin" or "mcteam" or "donator" or "komunita" or "tester" or "dcteam" or "spectator" or "champion" or "player" or "lexi" or "sus" or "hostify" or "media":
+        if {rank.%player%} is "admin":
+            set {_msg} to coloured "&4&lADMIN &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "mcteam":
+            set {_msg} to coloured "&c&lMC TEAM &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "dcteam":
+            set {_msg} to coloured "&6&lDC TEAM &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "tester":
+            set {_msg} to coloured "&b&lTESTER &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "donator":
+            set {_msg} to coloured "&D&lDONATOR &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "media":
+            set {_msg} to coloured "&5&lMEDIA &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "spectator":
+            set {_msg} to "&f&lSPECTATOR &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "hostify":
+            set {_msg} to coloured "&3&lHOSTIFY &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "komunita":
+            set {_msg} to "&A✔%player%: &f%{_msgtext}%"
+        if {rank.%player%} is "champion":
+            set {_msg} to "&6&lCHAMPION &8&l︳ &e%player%: &f%{_msgtext}%"
+        if {rank.%player%} is not set:
+            set {rank.%player%} to "player"
+        if {rank.%player%} is "player":
+            if player is in world "hub":
+                set {_msg} to "&e%player%: &f%{_msgtext}%"
+            else:
+                set action bar of player to "&cDo chatu můžou psát hráči s rankem &d&lDonator&c a &aKomunita&c!"
+                send "&c&lDo chatu můžou psát hráči s rankem&d&l Donator&c a&a Komunita&c!"
+                stop
+        broadcast "%{_msg}%"
+        wf "[%now%] %player%: %message%" to "plugins/profiler/%player%.yml"
+        if {rank.%player%} is "admin":
+            send "`💻` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "mcteam":
+            send "`📕` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "dcteam":
+            send "`📙` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "spectator":
+            send "`🔦` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "tester":
+            send "`🧪` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "hostify":
+            send "`⚡` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "media":
+            send "`🎥` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "donator":
+            send "`🔮` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "champion":
+            send "`👑` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        if {rank.%player%} is "player":
+            send "`👤` | **%player%:** `%{_msgtext}%`" to channel with id "806200891454521364" with "EventVerse"
+        set {chat.delay.%player%} to true
+        wait 3 seconds
+        delete {chat.delay.%player%}

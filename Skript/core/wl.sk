@@ -1,0 +1,52 @@
+command /whitelist <text>:
+    aliases: /wl, /wlist, /whitel
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-1 is "on":
+                set {whitelist} to "on"
+                debug("&2%player% &aZapnul/a whitelist! &7(BYPASS: Admin, MCTeam, DCTeam)")
+                run player command "/soundhandler_sound_levelup_2" as op
+            if arg-1 is "off":
+                set {whitelist} to "off"
+                debug("&4%player% &cVypnul/a whitelist!")
+                run player command "/soundhandler_sound_levelup_2" as op
+            if arg-1 is "tester":
+                set {whitelist} to "tester"
+                debug("&3%player% &bZapnul/a whitelist jenom pro testery! &7(BYPASS: Admin, MCTeam, DCTeam, Tester, Spectator)")
+                run player command "/soundhandler_sound_levelup_2" as op
+        else:
+            onlyAdmin(player)
+
+on connect:
+    if {whitelist} is "on":
+        if {rank.%player%} is "admin" or "mcteam" or "dcteam":
+            send "%player% se připojil/a přes whitelist!"
+        else:
+            if player is "LukynkaCZE":
+                send "%player% se připojil/a přes whitelist!"
+            else:
+                if {event.state} is "hub":
+                    kick player due to "&4⚠ &cAktuálně žádný event neprobíhá!"
+                else:
+                    kick player due to "&4⚠ &cEvent již začal!"
+                debug("&4%player%&c se snažil/a připojit, ale je zapnutý whitelist!")
+    if {whitelist} is "off":
+        stop
+    if {whitelist} is "tester":
+        if {rank.%player%} is "admin" or "mcteam" or "dcteam" or "tester" or "spectator":
+            send "%player% se připojil/a přes whitelist!"
+        else:
+            if {event.state} is "HUB":
+                kick player due to "&4⚠ &cAktuálně probíhá testování eventů!%nl%&cPřipojit se můžou pouze hráči, kteří mají rank &bTESTER&c!"
+            else:
+                kick player due to "&4⚠ &cAktuálně probíhá testování eventů!%nl%&cPřipojit se můžou pouze hráči, kteří mají rank &bTESTER&c!"
+            debug("&4%player%&c se snažil/a připojit, ale je zapnutý whitelist, přes který se můžou připojit testeři!")
+    if {whitelist} is "udrzba":
+        if player is "LukynkaCZE":
+            send "%player% se připojil/a přes whitelist!"
+        else:
+            if {event.state} is "HUB":
+                kick player due to "&4⚠ &cAktuálně probíhá údržba.%nl%&cPřipojit se může pouze hráč LukynkaCZE."
+            else:
+                kick player due to "&4⚠ &cAktuálně probíhá údržba.%nl%&cPřipojit se může pouze hráč LukynkaCZE."
+            debug("&4%player%&c se snažil/a připojit, ale je zapnutá údržba!")

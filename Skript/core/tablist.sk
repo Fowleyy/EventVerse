@@ -1,0 +1,20 @@
+every second:
+    set {_e} to uncoloured "%{event.name}%"
+    loop all players:
+        if loop-player is in world "hypixel":
+            set tab header to "&bYou are playing on &e&lMC.HYPIXEL.NET" and footer to "&aRanks, Boosters & MORE! &c&lSTORE.HYPIXEL.NET" for loop-player
+        else:
+            if {tournamentmode} is true: 
+                set tab header to "&r%nl%&d&lEventVerse%nl%&r&7Turnaj: &f%{_e}%%nl%" and footer to "&r%nl%&7Vytvořil team &5EventVerse%nl%&7Sponzoruje &bBisectHosting%nl%&r%nl%&dwww.event-verse.fun &7| &bwww.bisechosting.com&r%nl%                                        " for loop-player
+            else:
+                set tab header to "&r%nl%&d&lEventVerse%nl%&r&7Event: &f%{_e}%%nl%" and footer to coloured "&r%nl%%{tab.text.anim}%%nl%                                        " for loop-player
+     
+
+
+every 12 seconds:
+    wait 4 seconds
+    set {tab.text.anim} to coloured "&7Web: &dwww.event-verse.fun"
+    wait 4 seconds
+    set {tab.text.anim} to coloured "&7Twitter: &b@EventVerse_"
+    wait 4 seconds
+    set {tab.text.anim} to coloured "&7Discord: &9www.dsc.gg/ev"

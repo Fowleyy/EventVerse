@@ -1,0 +1,157 @@
+command /synth:nore:electric <text>:
+    trigger:
+        player have permission "pog.champ"
+        if {synth.%player%.sounds} is not set:
+            loop all players in radius {synth.radius.%player%} of player:
+                play song file "plugins/EVSynth/ele/%arg 1%.nbs" to loop-player
+        else:
+            play song file "plugins/EVSynth/ele/%arg 1%.nbs" to player
+
+command /synth:nore:classical <text>:
+    trigger:
+        player have permission "pog.champ"
+        if {synth.%player%.sounds} is not set:
+            loop all players in radius {synth.radius.%player%} of player:
+                play song file "plugins/EVSynth/class/%arg 1%.nbs" to loop-player
+        else:
+            play song file "plugins/EVSynth/class/%arg 1%.nbs" to player
+
+command /synth:nore:drums <text>:
+    trigger:
+        player have permission "pog.champ"
+        if {synth.%player%.sounds} is not set:
+            loop all players in radius {synth.radius.%player%} of player:
+                play song file "plugins/EVSynth/drums/%arg 1%.nbs" to loop-player
+        else:
+            play song file "plugins/EVSynth/drums/%arg 1%.nbs" to player
+
+command /synth:nore:woof <text>:
+    trigger:
+        player have permission "pog.champ"
+        if {synth.%player%.sounds} is not set:
+            loop all players in radius {synth.radius.%player%} of player:
+                play song file "plugins/EVSynth/woof/%arg 1%.nbs" to loop-player
+        else:
+            play song file "plugins/EVSynth/woof/%arg 1%.nbs" to player
+
+command /synth:menu [<text>]:
+    trigger:
+        player have permission "synth.use"
+        if {synth.radius.%player%} is not set:
+            set {synth.radius.%player%} to 5
+        if {synth.instrument.%player%} is not set:
+            set {synth.instrument.%player%} to "Electric Synth"
+        if arg-1 is set:
+            if arg-1 is "PIANO":
+                open chest with 3 rows named "&0&lSynth                            &dwww.eventverse.fun" to player
+                format slot 0 of player with black stained glass pane named "&r" to be unstealable
+                play "WOOD_CLICK" to player
+                loop 26 times:
+                    add 1 to {_slot}
+                    format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+                wait 1 ticks
+                if {synth.instrument.%player%} is "Electric Synth":
+                    format slot 9 of player with light blue clay named "&b&nC Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric C" as op]
+                    format slot 10 of player with blue clay named "&9&nD Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric D" as op]
+                    format slot 11 of player with purple clay named "&5&nE Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric E" as op]
+                    format slot 12 of player with green clay named "&2&nF Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric F" as op]
+                    format slot 13 of player with light green clay named "&a&nG Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric G" as op]
+                    format slot 14 of player with yellow clay named "&e&nA Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric A" as op]
+                    format slot 15 of player with pink clay named "&c&nH Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric H" as op]
+                    format slot 16 of player with red clay named "&4&nC2 Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:electric C2" as op]
+                    format slot 17 of player with barrier named "&c&nZavřít" with lore "&7» &7Klikni" to close
+                    format slot 21 of player with acacia stairs named "&6&nNástroj" with lore "&7||&7Aktuální Nástroj: &eElectric Synth||&7||&aKlikni pro přepnutí!" to run [run player command "synth:menu:isntrument Classical Piano" as op]
+                if {synth.instrument.%player%} is "Classical Piano":
+                    format slot 9 of player with light blue wool named "&b&nC Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical C" as op]
+                    format slot 10 of player with magenta wool named "&9&nD Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical D" as op]
+                    format slot 11 of player with purple wool named "&5&nE Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical E" as op]
+                    format slot 12 of player with green wool named "&2&nF Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical F" as op]
+                    format slot 13 of player with light green wool named "&a&nG Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical G" as op]
+                    format slot 14 of player with yellow wool named "&e&nA Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical A" as op]
+                    format slot 15 of player with pink wool named "&c&nH Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical H" as op]
+                    format slot 16 of player with red wool named "&4&nC2 Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:classical C2" as op]
+                    format slot 17 of player with barrier named "&c&nZavřít" with lore "&7» &7Klikni" to close
+                    format slot 21 of player with dark oak stairs named "&6&nNástroj" with lore "&7||&7Aktuální Nástroj: &eClassical Piano||&7||&aKlikni pro přepnutí!" to run [run player command "synth:menu:isntrument Drums" as op]
+                if {synth.instrument.%player%} is "Drums":
+                    format slot 9 of player with black wool named "&b&nC Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums C" as op]
+                    format slot 10 of player with gray wool named "&9&nD Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums D" as op]
+                    format slot 11 of player with cyan clay named "&5&nE Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums E" as op]
+                    format slot 12 of player with black clay named "&2&nF Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums F" as op]
+                    format slot 13 of player with gray clay named "&a&nG Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums G" as op]
+                    format slot 14 of player with brown clay named "&e&nA Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums A" as op]
+                    format slot 15 of player with light gray clay named "&c&nH Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums H" as op]
+                    format slot 16 of player with white clay named "&4&nC2 Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:drums C2" as op]
+                    format slot 17 of player with barrier named "&c&nZavřít" with lore "&7» &7Klikni" to close
+                    format slot 21 of player with cobblestone stairs named "&6&nNástroj" with lore "&7||&7Aktuální Nástroj: &eDrums||&7||&aKlikni pro přepnutí!" to run [run player command "synth:menu:isntrument Click" as op]
+                if {synth.instrument.%player%} is "Click":
+                    format slot 9 of player with light blue glass block named "&b&nC Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof C" as op]
+                    format slot 10 of player with blue glass block named "&9&nD Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof D" as op]
+                    format slot 11 of player with purple glass block named "&5&nE Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof E" as op]
+                    format slot 12 of player with green glass block named "&2&nF Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof F" as op]
+                    format slot 13 of player with light green glass block named "&a&nG Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof G" as op]
+                    format slot 14 of player with yellow glass block named "&e&nA Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof A" as op]
+                    format slot 15 of player with pink glass block named "&c&nH Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof H" as op]
+                    format slot 16 of player with red glass block named "&4&nC2 Nota" with lore "&7» &7Klikni" to run [run player command "synth:nore:woof C2" as op]
+                    format slot 17 of player with barrier named "&c&nZavřít" with lore "&7» &7Klikni" to close
+                    format slot 21 of player with quartz stairs named "&6&nNástroj" with lore "&7||&7Aktuální Nástroj: &eClick||&7||&aKlikni pro přepnutí!" to run [run player command "synth:menu:isntrument Electric Synth" as op]
+                if {synth.%player%.sounds} is not set:
+                    format slot 22 of player with light green dye named "&a&nZvuky" with lore "&7Slyší ostatní hráči to, co hraješ?||&r||&7Zvuky: &aVšichni v okolí||&r||&cKlikni pro Vypnutí" to run [run player command "synth:menu:settings" as op]
+                    format slot 23 of player with shiny inactive_iron_pressure_plate named "&b&nRadius" with lore "&7V jaké vzdálenosti ostatní slyší to, co hraješ?||&r||&7Radius zvuků: &3%{synth.radius.%player%}% &3blocků||&7||&aKlikni pro změnení" to run [run player command "synth:settings:radius-add" as op]
+                if {synth.%player%.sounds} is true:
+                    format slot 22 of player with gray dye named "&c&nZvuky" with lore "&7Slyší ostatní hráči to, co hraješ?||&r||&7Zvuky: &cJenom já||&r||&aKlikni pro Zapnutí" to run [run player command "synth:menu:settings" as op]
+                    format slot 23 of player with inactive_stone_pressure_plate named "&7&nRadius" with lore "&7V jaké vzdálenosti ostatní slyší to, co hraješ?||&r||&7Radius zvuků: &CNemůžeš upravovat radius||&7||&c&mKlikni pro změnení" to be unstealable
+
+        else:
+            execute player command "synth:menu PIANO"
+
+
+command /synth:menu:isntrument <text>:
+    trigger:
+        if player have permission "synth.instrument.change":
+            set {synth.instrument.%player%} to "%arg 1%"
+            close player's inventory
+            wait 1 ticks
+            run player command "synth:menu" as op
+
+
+
+command /synth:settings:radius-add:
+    trigger:
+        if player have permission "synth.modifyradius":
+            if {synth.radius.%player%} is 5:
+                set {synth.radius.%player%} to 10
+                run player command "soundhandler_sound_orb_2" as op
+                format slot 23 of player with shiny inactive_iron_pressure_plate named "&b&nRadius" with lore "&7V jaké vzdálenosti ostatní slyší to, co hraješ?||&r||&7Radius zvuků: &3%{synth.radius.%player%}% &3blocků||&7||&aKlikni pro změnení" to run [run player command "synth:settings:radius-add" as op]
+                stop
+            if {synth.radius.%player%} is 10:
+                set {synth.radius.%player%} to 15
+                run player command "soundhandler_sound_orb_2" as op
+                format slot 23 of player with shiny inactive_iron_pressure_plate named "&b&nRadius" with lore "&7V jaké vzdálenosti ostatní slyší to, co hraješ?||&r||&7Radius zvuků: &3%{synth.radius.%player%}% &3blocků||&7||&aKlikni pro změnení" to run [run player command "synth:settings:radius-add" as op]
+                stop
+            if {synth.radius.%player%} is 15:
+                set {synth.radius.%player%} to 5
+                run player command "soundhandler_sound_orb_2" as op
+                format slot 23 of player with shiny inactive_iron_pressure_plate named "&b&nRadius" with lore "&7V jaké vzdálenosti ostatní slyší to, co hraješ?||&r||&7Radius zvuků: &3%{synth.radius.%player%}% &3blocků||&7||&aKlikni pro změnení" to run [run player command "synth:settings:radius-add" as op]
+
+
+
+
+command /synth:menu:settings:
+    trigger:
+        if player have permission "pog.champ":
+            if {synth.%player%.sounds} is not set:
+                set {synth.%player%.sounds} to true
+                run player command "soundhandler_sound_orb_2" as op
+                format slot 22 of player with gray dye named "&c&nZvuky" with lore "&7Slyší ostatní hráči to, co hraješ?||&r||&7Zvuky: &cJenom já||&r||&aKlikni pro Zapnutí" to run [run player command "synth:menu:settings" as op]
+                format slot 23 of player with inactive_stone_pressure_plate named "&7&nRadius" with lore "&7V jaké vzdálenosti ostatní slyší to, co hraješ?||&r||&7Radius zvuků: &CNemůžeš upravovat radius||&7||&c&mKlikni pro změnení" to be unstealable
+                stop
+            if {synth.%player%.sounds} is true:
+                delete {synth.%player%.sounds}
+                run player command "soundhandler_sound_orb_2" as op
+                format slot 22 of player with light green dye named "&a&nZvuky" with lore "&7Slyší ostatní hráči to, co hraješ?||&r||&7Zvuky: &aVšichni v okolí||&r||&cKlikni pro Vypnutí" to run [run player command "synth:menu:settings" as op]
+                format slot 23 of player with shiny inactive_iron_pressure_plate named "&b&nRadius" with lore "&7V jaké vzdálenosti ostatní slyší to, co hraješ?||&r||&7Radius zvuků: &3%{synth.radius.%player%}%||&7||&aKlikni pro změnení" to run [run player command "synth:settings:radius-add" as op]
+
+
+on right click on quartz stairs:
+    if player is in world "hub":
+        run player command "synth:menu" as op

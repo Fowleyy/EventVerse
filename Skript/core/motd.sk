@@ -1,0 +1,4 @@
+on server list ping:
+    set {_motd} to "&8&l» &5&lEventVerse &7- &dSeason 0%nl%&7www.event-verse.fun &8│ &7www.dsc.gg/ev"
+    set motd to "%{_motd}%"
+    set max player count to 50

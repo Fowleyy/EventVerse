@@ -1,0 +1,38 @@
+command /tntrun:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            teleport player to {tntrun.schem}
+            execute player command "//schem load tntrun"
+            wait 1 ticks
+            execute player command "//paste"
+            wait 3 seconds
+            delete {tntrun::players}
+            delete {tntrun.play}
+            apply potion of night vision of tier 1 to all players for 10 days
+            eventStartSetup("TNT_RUN")
+            wait 3 seconds
+            eventStartTitle("Kbelik_Vody","TNT Run")
+            wait 5 seconds
+            updateEventState("TNTRUN_INFO")
+            eventExplain("TNT Run")
+            wait 30 seconds
+            loop all players:
+                wait 1 tick
+                teleport loop-player to {tntrun.spawn1} or {tntrun.spawn2} or {tntrun.spawn3} or {tntrun.spawn4}
+            delete {mutechat}
+            wait 2 seconds
+            sendTitle("COUNTDOWN")
+            wait 5 seconds
+            updateEventState("TNTRUN_PLAY")
+            boots()
+            set {tntrun.play} to true
+            loop all players:
+                spectator(loop-player)
+            loop all players:
+                if gamemode of loop-player is adventure:
+                    add 1 to {tntrun::players}
+            wait 1 tick
+            loop all players:
+                newTntrunScoreboard(loop-player)
+        else:
+            onlyAdmin(player)

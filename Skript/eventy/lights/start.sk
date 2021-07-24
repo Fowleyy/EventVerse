@@ -1,0 +1,41 @@
+command /lights:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            teleport player to {GO_SLOW_STOP.spawn}
+            loop all players:
+                delete {hubpk.%loop-player%}
+                delete {spectator.%loop-player%}
+                delete {lights.finish.%loop-player%}
+            wait 1 tick
+            delete {lights.finish}
+            delete {lights.first}
+            delete {lights.second}
+            delete {lights.third}
+            set {lights.first} to coloured "&kLukynkaJeBest"
+            set {lights.second} to coloured "&kLukynkaJeBest"
+            set {lights.third} to coloured "&kLukynkaJeBest"
+            eventStartSetup("GO_SLOW_STOP")
+            execute player command "effect @a clear"
+            execute player command "worldborder center 17 46"
+            execute player command "worldborder set 14"
+            wait 3 seconds
+            updateEventState("LIGHTS_INFO")
+            eventStartTitle("Kbelik_Vody","Go, Slow, STOP")
+            wait 5 seconds
+            eventExplain("Go, Slow, STOP")
+            wait 30 seconds
+            delete {mutechat}
+            wait 3 seconds
+            sendTitle("COUNTDOWN")
+            wait 5 seconds
+            execute player command "worldborder set 320 2"
+            apply potion of invisibility of tier 1 to players for 10 days
+            updateEventState("LIGHTS_PLAY")
+            set {lights.canchange} to true
+            boots()
+            loop all players:
+                spectator(loop-player)
+            wait 3 seconds
+            startLightsLoop()
+        else:
+            onlyAdmin(player)

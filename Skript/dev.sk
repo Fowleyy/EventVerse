@@ -1,0 +1,710 @@
+command /setlokace <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {%arg 1%} to location of player
+            set {_t} to "%{%arg-1%}%"
+            send "&aNastavil/a jsi lokaci &b%arg 1%&a na &e%{%arg 1%}%"
+            debug("&6%player%&e nastavil/a lokaci &b%arg 1%&e na &a%{%arg 1%}%")
+        else:
+            onlyAdmin(player)
+
+
+on right click on iron trapdoor:
+    if player's held item is redstone block:
+        if gamemode of player is creative:
+            if {rank.%player%} is "admin" or "mcteam":
+                activate clicked block
+                cancel event
+            else:
+                onlyMcteam(player)
+
+
+
+command /bug <text>:
+    trigger:
+        if {bug-cooldown::%player%} is not set:
+            loop all players:
+                if player have permission "pog.champ":
+                    play "ANVIL_LAND" to loop-player
+                    send "&4&m                        " to loop-player
+                    send "&4&l BUG REPORT" to loop-player
+                    send "&r " to loop-player
+                    send "&8&l» &fBug: &e%arg 1%" to loop-player
+                    send "&8&l» &fNahlásil/a: &c%player%" to loop-player
+                    send "&4&m                        " to loop-player
+            send "&4&lBUG REPORT &8&l» &fTvůj bug report byl úspěšně odeslán!"
+            set {bug-cooldown::%player%} to true
+            wait 1 seconds
+            delete {bug-cooldown::%player%}
+        else:
+            send "&4&lBUG REPORT &8&l» &cProsím, počkej chvíli, než nahlásíš další chybu!"
+
+
+command /report <player> <text>:
+    trigger:
+        if {report-cooldown::%player%} is not set:
+            loop all players:
+                if loop-player have permission "pog.champ":
+                    play "ANVIL_LAND" to loop-player
+                    send "&4&m                        " to loop-player
+                    send "&4&l PLAYER REPORT" to loop-player
+                    send "&r " to loop-player
+                    send "&8&l» &fNahlášený/á: &b%arg 1%" to loop-player
+                    send "&8&l» &fDůvod: &e%arg 2%" to loop-player
+                    send "&8&l» &fNahlásil/a: &c%player%" to loop-player
+                    send "&4&m                        " to loop-player
+            set {report-cooldown::%player%} to true
+            send "&4&lPLAYER REPORT &8&l» &fTvůj player report byl úspěšně odeslán!"
+            wait 5 seconds
+            delete {report-cooldown::%player%}
+        else:
+            send "&4&lPLAYER REPORT &8&l» &cProsím, počkej chvíli, než nahlásíš dalšího hráče!"
+
+
+on join:
+    delete {bug-cooldown::%player%}
+    delete {report-cooldown::%player%}
+
+
+function spectator(p: player):
+    if {_player} is "LukynkaCZE":
+        set gamemode of {_p} to spectator
+        message "&cTvůj gamemode byl změněn na &fSpectator&c, protože jsi &c%{rank.%{_p}%}%&c!" to {_p}
+
+
+
+function onlyAdmin(p: player):
+    message "&cTento příkaz můžou použít pouze hráči s rankem &4ADMIN&c a výše!" to {_p}
+
+function onlyMcteam(p: player):
+    message "&cTento příkaz můžou použít pouze hráči s rankem &4MCTEAM&c a výše!" to {_p}
+
+function onlyDCteam(p: player):
+    message "&cTento příkaz můžou použít pouze hráči s rankem &4DCTEAM&c a výše!" to {_p}
+
+function onlyTester(p: player):
+    message "&cTento příkaz můžou použít pouze hráči s rankem &4TESTER&c a výše!" to {_p}
+
+function onlyDonator(p: player):
+    message "&cTento příkaz můžou použít pouze hráči s rankem &4DONATOR&c a výše!" to {_p}
+
+
+
+function debug(t: text):
+    loop all players:
+        if {debug.%loop-player%} is true:
+            send "&7[DEBUG] %{_t}%" to loop-player
+
+
+command /debug:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam" or "dcteam" or "tester":
+            if {debug.%player%} is not set:
+                set {debug.%player%} to true
+                send "&7[DEBUG] &aDebug zapnut pro hráče &e%player%&a!"
+                run player command "/soundhandler_sound_levelup_2" as op
+                stop
+            if {debug.%player%} is true:
+                delete {debug.%player%}
+                send "&7[DEBUG] &cDebug vypnut pro hráče &e%player%&c!"
+                run player command "/soundhandler_sound_levelup_2" as op
+        else:
+            onlyTester(player)
+
+function boots():
+    loop all players:
+        if {rank.%loop-player%} is "player" or "verified":
+            equip loop-player with {item.boots.default}
+        if {rank.%loop-player%} is "champion":
+            equip loop-player with {item.boots.champ}
+        if {rank.%loop-player%} is "donator":
+            equip loop-player with {item.boots.donator}
+        if {rank.%loop-player%} is "tester":
+            equip loop-player with {item.boots.tester}
+        if {rank.%loop-player%} is "dcteam":
+            equip loop-player with {item.boots.dcteam}
+        if {rank.%loop-player%} is "admin" or "mcteam":
+            equip loop-player with {item.boots.mcteam}
+            spectator(loop-player)
+        if {rank.%loop-player%} is "spectator":
+            equip loop-player with {item.boots.default}
+            spectator(loop-player)
+
+
+on inventory click:
+    if clicked item is {item.boots.default} or {item.boots.champ} or {item.boots.donator} or {item.boots.tester} or {item.boots.dcteam} or {item.boots.mcteam}:
+        if {rank.%player%} is "admin":
+            stop
+        else:
+            cancel event
+
+on inventory click:
+    if clicked item is command block or book or sign:
+        if player is in world "hub":
+            cancel event
+
+command /testboots:
+    trigger:
+        if {rank.%player%} is "admin":
+            boots()
+        else:
+            onlyAdmin(player)
+
+command /saveitem <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {item.%arg 1%} to player's held item
+            send "&7[ITEM] &cItem &6{item.%arg-1%} &cbyl uložen!"
+        else:
+            onlyAdmin(player)
+
+
+
+command /eval <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            send "&6[EVAL] &b{%arg 1%} &8=> &e%{%arg 1%}%" to player
+        else:
+            onlyAdmin(player)
+
+command /shards <text> <player> <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-1 is "add":
+                add arg-3 to {shards::%arg-2%}
+            if arg-2 is "remove":
+                remove arg-3 from {shards::%arg-2%}
+        else:
+            onlyAdmin(player)
+
+command /setinvstate <player> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {invstate.%arg-1%} to "%arg-2%"
+        else:
+            onlyAdmin(player)
+
+
+
+
+command /stop [<text>]:
+    trigger:
+        if executor is console:
+            stop server
+        else:
+            send "&cZ Bezpečnostích důvodů tento příkaz může použít jenom konzole!"
+
+
+
+command /say <text>:
+    trigger:
+        if player have permission "pog.champ":
+            broadcast "&7[SAY] %{rankcolor.%player%}%%player%: &f%arg 1%"
+
+on flow:
+    cancel event
+
+
+on quit:
+    delete {bt.worldmenu.%player%}
+
+on inventory close:
+    delete {bt.worldmenu.%player%}
+
+
+command /w [<text>]:
+    trigger:
+        if {rank.%player%} is "mcteam" or "admin":
+            if arg-1 is not set:
+                set {bt.worldmenu.%player%} to true
+                play "CLICK" to player
+                wait 1 ticks
+                set {heads} to 0
+                set {_slot} to -1
+                open chest with 6 rows named "&0Builder Tools: &8World Menu" to player
+                loop all worlds:
+                    add 1 to {_slot}
+                    #wait 1 ticks
+                    set {_b} to grass
+                    if loop-world is "hole":
+                        set {_b} to {item.slime}
+                    if loop-world is "spleff1":
+                        set {_b} to golden shovel
+                    if loop-world is "dev":
+                        set {_b} to command block
+                    if loop-world is "Tntrun":
+                        set {_b} to sand
+                    if loop-world is "tntag":
+                        set {_b} to tnt
+                    if loop-world is "CraftMart":
+                        set {_b} to crafting table
+                    if loop-world is "dodgebolt":
+                        set {_b} to bow
+                    create a gui slot {_slot} of player with {_b} named "&a&n%loop-world%" to close
+                    # format slot {_slot} of player with skull of loop-player named "%{rankcolor.%loop-player%}%&n%loop-value%" with lore "&7Klikni pro teleport" to be unstealable
+                    set {list::%loop-value%} to loop-value
+            else:
+                teleport player to world "%arg 1%"
+                play "CLICK" to player
+
+
+
+        else:
+            onlyMcteam(player)
+
+on inventory click:
+    if {bt.worldmenu.%player%} is true:
+        set {_l} to uncoloured name of clicked item
+        set {_player-tp} to "%{_l}%"
+        play "CLICK" to player
+        teleport player to world "%{_l}%"
+
+
+command /reboot:
+    trigger:
+        if {rank.%player%} is "admin":
+            broadcast "&r "
+            broadcast "&4&l» &cServer se restartuje za &b20 sekund&c!"
+            broadcast "&r "
+            loop all players:
+                send loop-player title "&4SERVER REBOOT" with subtitle "&cServer se restartuje za &b20 sekund&c!" for 30 seconds
+                run loop-player command "soundhandler_sound_orb_0" as op
+            wait 20 seconds
+            loop all players:
+                wait 1 ticks
+                kick loop-player due to "&4&lSERVER REBOOT%nl%&r%nl%&cServer se restartuje!"
+            wait 10 ticks
+            stop server
+        else:
+            onlyAdmin(player)
+
+
+
+function playSong(Type: text, Path: text, Player: player, Dev: boolean):
+    if {_Type} = "LOCAL":
+        play song file "plugins/songs/%{_Path}%" to {_Player}
+    if {_Type} = "WEB_BROADCAST":
+        play song file "%{_Path}%" to {_Player}
+    if {_Dev} is true:
+        debug("&6Playing song &e%{_Path}% &7| Type: &f%{_Type}%")
+
+
+
+command /playsong <text> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-1 is "LOCAL":
+                play song file "plugins/songs/%arg 2%" to all players
+                broadcast "&7[PLAYSONG] &ePlaying &6%arg 2% &b[TYPE: LOCAL]"
+            if arg-1 is "WEB_BROADCAST":
+                play song file "%arg 2%" to all players
+                broadcast "&7[PLAYSONG] &ePlaying &6%arg 2% &b[TYPE: WEB_BROADCAST]"
+        else:
+            onlyAdmin(player)
+
+command /dev:lockstands:
+    trigger:
+        if {rank.%player%} is "mcteam" or "admin":
+            run player command "/entitydata @e {DisabledSlots:2039583}" as op
+            send "&7[DEV] &cArmorstands locked!"
+            run player command "/soundhandler_sound_levelup_2" as op
+            wait 2 ticks
+            run player command "/holo reload" as op
+        else:
+            onlyMcteam(player)
+
+command /dev:unlockstands:
+    trigger:
+        if {rank.%player%} is "mcteam" or "admin":
+            run player command "/entitydata @e {DisabledSlots:0}" as op
+            send "&7[DEV] &aArmorstands unlocked!"
+            run player command "/soundhandler_sound_levelup_2" as op
+            wait 2 ticks
+            run player command "/holo reload" as op
+        else:
+            onlyMcteam(player)
+
+
+command /dev:resetallcoins:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {coins::*} to 0
+        else:
+            onlyAdmin(player)
+
+
+command /ac [<text>]:
+    trigger:
+        if player have permission "pog.champ":
+            if arg-1 is not set:
+                if {ac.%player%} is not set:
+                    set {ac.%player%} to true
+                    send "&4&lAdminChat &8&l» &aAdminChat toggled!"
+                    run player command "/soundhandler_sound_levelup_2" as op
+                else:
+                    delete {ac.%player%}
+                    send "&4&lAdminChat &8&l» &cAdminChat toggled!"
+                    run player command "/soundhandler_sound_levelup_2" as op
+            if arg-1 is set:
+                loop all players:
+                    if loop-player have permission "pog.champ":
+                        send "&4&lAdminChat &8&l» %{rankcolor.%player%}%%player%: &f%arg 1%" to loop-player
+                        run loop-player command "/soundhandler_sound_orb_2" as op
+                 #       send "**[AdminChat] %player% »** `%arg 1%`" to channel with id "806200891454521364" with "EventVerse - Test"
+
+
+
+command /builderhelper:item <text>:
+    trigger:
+        if {rank.%player%} is "mcteam" or "admin":
+            builderHelperItem(player, "%arg 1%")
+        else:
+            onlyMcteam(player)
+
+
+function builderHelperItem(p: player, i: text):
+    if {_i} is "SUPER_BARRIER" or "DEBUG_STICK" or "SUPER_SPONGE" or "WOOL_BUILDER":
+        run {_p} command "/soundhandler_sound_levelup_2" as op
+        message "&3&lBuilder Helper > &aItem &e%{_i}%&a byl přidát do tvého inventáře!" to {_p}
+        if {_i} is "SUPER_BARRIER":
+            give {_p} 1 of shiny barrier named "&c&nSuper Barrier&r" with lore "&r||&7Vytvoří sloup barriér 6 blocků do výšky||&r"
+        if {_i} is "DEBUG_STICK":
+            give {_p} 1 of shiny stick named "&d&nDebug Stick&r" with lore "&r||&7Debug stick..||&r"
+        if {_i} is "SUPER_SPONGE":
+            give {_p} 1 of shiny sponge named "&e&nSuper Sponge&r" with lore "&r||&7Odstraní vodu v okolí||&r"
+        if {_i} is "WOOL_BUILDER":
+            give {_p} 1 of shiny red wool named "&c&nWool Builder&r" with lore "&r||&7Protože je lukynka líná..||&r"
+
+on place:
+    if name of player's held item is "&c&nWool Builder&r":
+        wait 2 ticks
+        set event-block to red wool
+        set {_index} to 0
+        loop 6 times:
+            wait 2 ticks
+            add 1 to {_index}
+            if block {_index} above event-block is air:
+                set block {_index} above event-block to red wool
+
+    
+on explode:
+    if event-world is "Tntrun":
+        cancel event
+
+on place:
+    if name of player's held item is "&c&nSuper Barrier&r":
+        wait 2 ticks
+        set event-block to 159:14
+        set {_index} to 0
+        loop 6 times:
+            wait 2 ticks
+            add 1 to {_index}
+            if block {_index} above event-block is air:
+                set block {_index} above event-block to 159:14
+        set {_index} to 0
+        set event-block to barrier
+        loop 6 times:
+            wait 2 ticks
+            add 1 to {_index}
+            if block {_index} above event-block is 159:14:
+                set block {_index} above event-block to barrier
+
+
+command /soundhandler_sound_levelup_all:
+    trigger:
+        if player have permission "pog.champ":
+            run player command "/soundhandler_sound_levelup_2" as op
+            wait 10 ticks
+            play "LEVEL_UP" to player
+            wait 10 ticks
+            run player command "/soundhandler_sound_levelup_0" as op
+
+command /dev:armostand-with-head-block:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            spawn 1 armor stand at location of player
+            set helmet of spawned armor stand to player's held item
+        onlyMcteam(player)
+
+command /emoji:
+    aliases: /emotes, /emote, /emojis, /smajlici, /divnyznakyvchatu
+    trigger:
+        send "&5&m---------------------"
+        send "&f<3 &7➜ &6❤"
+        send "&f:yes: &7➜ &6✔"
+        send "&f:no: &7➜ &6✖ "
+        send "&f:tableflip: &7➜ &6(╯°□°）╯︵ ┻━┻"
+        send "&f:unflip: &7➜ &6┬─┬ ノ( ゜-゜ノ)"
+        send "&f:soontm: &7➜ &9Soon™&r"
+        send "&f:verysoon: &7➜ &9Very Soon™&r"
+        send "&f:shiba: &7➜ &6ฅ^•ﻌ•^ฅ"
+        send "&r "
+        send "&d&lDonator only:"
+        send "&r "
+        send "&f:shrug: &7➜ &6¯\_(ツ)_/¯"
+        send "&fo/ &7➜ &6( ﾟ◡ﾟ)/ "
+        send "&fgg &7➜ &6gg "
+        send "&f:dizzy: &7➜ &6ヽ(。_°)ノ "
+        send "&5&m---------------------"
+
+
+command /dev:ripsign <text> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set line 1 of player's target block to "&0&n&lR.I.P"
+            set line 2 of player's target block to " "
+            set line 3 of player's target block to "&0%arg 2%"
+            set line 4 of player's target block to "&o%arg 1% - 2021"
+        else:
+            onlyAdmin(player)
+
+
+command /skull <text>:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            give player skull of ("%arg-1%" parsed as offline player)
+        else:
+            onlyMcteam(player)
+
+command /dev:gamerulesetup:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            execute player command "/gamerule commandBlockOutput false"
+            wait 1 ticks
+            execute player command "/gamerule doDaylightCycle false"
+            wait 1 ticks
+            execute player command "/gamerule doFireTick false"
+            wait 1 ticks
+            execute player command "/gamerule doMobSpawning false"
+            wait 1 ticks
+            execute player command "/gamerule logAdminCommands false"
+            wait 1 ticks
+            execute player command "/gamerule reducedDebugInfo true"
+            wait 1 ticks
+            execute player command "/gamerule randomTickSpeed 0"
+            wait 1 ticks
+            execute player command "/gamerule sendCommandFeedback false"
+            send "&fGame rule has been updated"
+        else:
+            onlyMcteam(player)
+
+command /leavemealone:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            teleport player to {hmmm}
+        else:
+            onlyMcteam(player)
+
+function sendToAllOp(t: text):
+    loop all players:
+        if loop-player have permission "pog.champ":
+            send "%{_t}%" to loop-player
+
+
+command /raketa <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            wait 10 ticks
+            loop 80 times:
+                wait 1 ticks
+                create a fake explosion at arg-1
+                push arg-1 upwards at speed 2
+        else:
+            onlyAdmin(player)
+
+
+command /loop <number> <number> <text>:
+    usage: &c/loop <times> <ticks> <command (with /)>
+    trigger:
+        if {rank.%player%} is "admin":
+            set {_wait} to "%arg 2% ticks" parsed as time span
+            loop arg-1 times:
+                run player command "%arg 3%" as op
+                wait {_wait}
+        else:
+            onlyAdmin(player)
+
+
+command /dev:donatorsign <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set line 1 of player's target block to "&m--------------"
+            set line 2 of player's target block to "&l%coloured arg-1%"
+            set line 3 of player's target block to "Díky &c❤"
+            set line 4 of player's target block to "&m--------------"
+        else:
+            onlyAdmin(player)
+
+command /builderhelper:woolstage1:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 70 of player:
+                if loop-block is magenta wool:
+                    broadcast "&8%loop-block% %location of loop-block%"
+                    if y-coordinate of loop-block is 65.5 or 66.5:
+                        broadcast "&a%loop-block% %location of loop-block%"
+                        set loop-block to purple wool
+                    else:
+                        broadcast "&c%loop-block% %location of loop-block%"
+        else:
+            onlyAdmin(player)
+
+
+command /builderhelper:woolstage2:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 70 of player:
+                if loop-block is magenta wool:
+                    broadcast "&8%loop-block% %location of loop-block%"
+                    if y-coordinate of loop-block is 68.5 or 67.5:
+                        broadcast "&a%loop-block% %location of loop-block%"
+                        set loop-block to magenta wool
+                    else:
+                        broadcast "&c%loop-block% %location of loop-block%"
+        else:
+            onlyAdmin(player)
+
+
+command /builderhelper:woolstage3:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 70 of player:
+                if loop-block is magenta wool:
+                    broadcast "&8%loop-block% %location of loop-block%"
+                    if y-coordinate of loop-block is 69.5 or 70.5:
+                        broadcast "&a%loop-block% %location of loop-block%"
+                        set loop-block to pink wool
+                    else:
+                        broadcast "&c%loop-block% %location of loop-block%"
+        else:
+            onlyAdmin(player)
+
+
+
+
+command /builderhelper:woolstage4:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 70 of player:
+                if loop-block is magenta wool:
+                    broadcast "&8%loop-block% %location of loop-block%"
+                    if y-coordinate of loop-block is more than 70.5:
+                        broadcast "&a%loop-block% %location of loop-block%"
+                        set loop-block to white wool
+                    else:
+                        broadcast "&c%loop-block% %location of loop-block%"
+        else:
+            onlyAdmin(player)
+
+
+command /builderhelper:woolallstages:
+    trigger:
+        if {rank.%player%} is "admin":
+            execute player command "builderhelper:woolstage1"
+            wait 2 seconds
+            execute player command "builderhelper:woolstage2"
+            wait 2 seconds
+            execute player command "builderhelper:woolstage3"
+            wait 2 seconds
+            execute player command "builderhelper:woolstage4"
+            wait 2 seconds
+            send "&a&lDONE!"
+        else:
+            onlyAdmin(player)
+
+
+
+on quit:
+    if {rank.%player%} is "admin" or "mcteam":
+        set {last.loc.%player%} to location of player
+
+command /hub:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            teleport player to {hub}
+            play "ENDERMAN_TELEPORT" to player
+        else:
+            onlyMcteam(player)
+
+
+
+
+
+command /builderhelper:sands1:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 70 of player:
+                if loop-block is yellow wool:
+                    broadcast "&8%loop-block% %location of loop-block%"
+                    if y-coordinate of loop-block is below 74.5:
+                        broadcast "&a%loop-block% %location of loop-block%"
+                        if block above loop-block is air:
+                            if block under loop-block is not air:
+                                set loop-block to sand
+                            else:
+                                set block under loop-block to sandstone
+                                set loop-block to sand
+                        else:
+                            set loop-block to sandstone
+                    else:
+                        broadcast "&c%loop-block% %location of loop-block%"
+        else:
+            onlyAdmin(player)
+
+
+command /builderhelper:sands4:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 70 of player:
+                if loop-block is yellow wool:
+                    broadcast "&8%loop-block% %location of loop-block%"
+                    if y-coordinate of loop-block is above 78.5:
+                        broadcast "&a%loop-block% %location of loop-block%"
+                        if block above loop-block is air:
+                            if block under loop-block is not air:
+                                set loop-block to sand
+                            else:
+                                set block under loop-block to 43:9
+                                set loop-block to sand
+                        else:
+                            set loop-block to 43:9
+                    else:
+                        broadcast "&c%loop-block% %location of loop-block%"
+        else:
+            onlyAdmin(player)
+
+
+
+
+
+command /builderhelper:redsand:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 70 of player:
+                if loop-block is red wool:
+                    broadcast "&a%loop-block% %location of loop-block%"
+                    if block under loop-block is not air:
+                        set loop-block to 12:1
+                    else:
+                        set block under loop-block to barrier
+                        set loop-block to 12:1
+        else:
+            onlyAdmin(player)
+
+
+command /builderhelper:islandstage1:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all blocks in radius 10 of player:
+                if loop-block is sand:
+                    broadcast "&8%loop-block% %location of loop-block%"
+                    if y-coordinate of loop-block is 66.5 or 67.5 or 68.5:
+                        broadcast "&a%loop-block% %location of loop-block%"
+                        if block above loop-block is air:
+                            set loop-block to grass
+                        else:
+                            set loop-block to dirt
+                    else:
+                        broadcast "&c%loop-block% %location of loop-block%"
+        else:
+            onlyAdmin(player)

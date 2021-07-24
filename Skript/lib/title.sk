@@ -1,0 +1,74 @@
+#External functions that converts vanilla commands to simplified functions to be easier to use in skript
+
+#▶◀
+
+command /lib_title:gameover:
+    trigger:
+        if executor have permission "pog.champ":
+            execute server command "minecraft:title @a times 0 100 60"
+            wait 1 ticks
+            execute server command "minecraft:title @a title {""text"":""> Konec Eventu <"",""bold"":true,""color"":""red""}"
+            play "WITHER_DEATH" to all players
+        else:
+            onlyAdmin(player)
+
+command /lib_title:roundover:
+    trigger:
+        if executor have permission "pog.champ":
+            execute server command "minecraft:title @a times 0 100 60"
+            wait 1 ticks
+            execute server command "minecraft:title @a title {""text"":""> Konec Kola <"",""bold"":true,""color"":""red""}"
+            play "WITHER_SPAWN" to all players
+        else:
+            onlyAdmin(player)
+
+command /lib_title:countdown:
+    trigger:
+        if executor have permission "pog.champ":
+            execute server command "minecraft:title @a times 0 100 0"
+            wait 1 ticks
+            execute server command "minecraft:title @a title {""text"":"">     5     <"",""color"":""dark_red"",""bold"":true}"
+            execute server command "minecraft:title @a subtitle {""text"":""Připrav se na start.."",""color"":""gray""}"
+            playSong("LOCAL", "/ctd/5.nbs", all players, false)
+            wait 1 seconds
+            execute server command "minecraft:title @a title {""text"":"">    4    <"",""color"":""red"",""bold"":true}"
+            execute server command "minecraft:title @a subtitle {""text"":""Připrav se na start.."",""color"":""gray""}"
+            playSong("LOCAL", "/ctd/4.nbs", all players, false)
+            wait 1 seconds
+            execute server command "minecraft:title @a title {""text"":"">   3   <"",""color"":""gold"",""bold"":true}"
+            execute server command "minecraft:title @a subtitle {""text"":""Připrav se na start.."",""color"":""gray""}"
+            playSong("LOCAL", "/ctd/3.nbs", all players, false)
+            wait 1 seconds
+            execute server command "minecraft:title @a title {""text"":"">  2  <"",""color"":""yellow"",""bold"":true}"
+            execute server command "minecraft:title @a subtitle {""text"":""Připrav se na start.."",""color"":""gray""}"
+            playSong("LOCAL", "/ctd/2.nbs", all players, false)
+            wait 1 seconds
+            execute server command "minecraft:title @a title {""text"":""> 1 <"",""color"":""green"",""bold"":true}"
+            execute server command "minecraft:title @a subtitle {""text"":""Připrav se na start.."",""color"":""gray""}"
+            playSong("LOCAL", "/ctd/1.nbs", all players, false)
+            wait 1 seconds
+            execute server command "minecraft:title @a title {""text"":"" "",""color"":""gold"",""bold"":true}"
+            execute server command "minecraft:title @a subtitle {""text"":"" "",""color"":""yellow""}"
+            play "ENDERDRAGON_GROWL" to all players
+        else:
+            onlyAdmin(player)
+
+
+
+
+function sendTitle(t: text):
+    if {_t} is "GAME_OVER":
+        execute server command "lib_title:gameover"
+    if {_t} is "ROUND_OVER":
+        execute server command "lib_title:roundover"
+    if {_t} is "COUNTDOWN":
+        execute server command "lib_title:countdown"
+
+
+
+command /dev:testtitle <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            sendTitle("%arg 1%")
+        else:
+            onlyAdmin(player)

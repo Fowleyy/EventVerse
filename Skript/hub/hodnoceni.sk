@@ -1,0 +1,298 @@
+
+#----------------------------------------------------------------------
+#
+# Tenhle skript je zbytečně komplikovaný ale jsem líná to opravit..
+#
+#----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+command /hodnoceni:
+    trigger:
+        if player is in world "hub":
+            wait 2 ticks
+            open chest with 5 rows named "&0&lHodnocení                       &dwww.event-verse.fun" to player
+            play "WOOD_CLICK" to player
+            wait 1 ticks
+            format slot 0 of player with black stained glass pane named "&r" to be unstealable
+            loop 44 times:
+                add 1 to {_slot}
+                format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+
+                #
+
+                format slot 10 of player with bricks named "&8&l» &eStavby" with lore "||&e Veškeré stavby na eventu.||&e Terén, budovy, design atd." to be unstealable
+                format slot 12 of player with red clay named "&c&l〔 1/5 〕" with lore "||&8&l» &cVelmi špatné|| &c✰&8✰✰✰✰||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:stavby 1" as op]
+                format slot 13 of player with orange clay named "&6&l〔 2/5 〕" with lore "||&8&l» &6Špatné|| &6✰✰&8✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:stavby 2" as op]
+                format slot 14 of player with yellow clay named "&e&l〔 3/5 〕" with lore "||&8&l» &ePrůměrné|| &e✰✰✰&8✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:stavby 3" as op]
+                format slot 15 of player with light green clay named "&a&l〔 4/5 〕" with lore "||&8&l» &aDobré|| &a✰✰✰✰&8✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:stavby 4" as op]
+                format slot 16 of player with green clay named "&2&l〔 5/5 〕" with lore "||&8&l» &2Velmi dobré|| &2✰✰✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:stavby 5" as op]
+                #
+                format slot 19 of player with redstone named "&8&l» &bNastavení" with lore "||&e Nastavení eventu. Pluginy,||&e výkon serveru atd." to be unstealable
+                format slot 21 of player with red clay named "&c&l〔 1/5 〕" with lore "||&8&l» &cVelmi špatné|| &c✰&8✰✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:nastaveni 1" as op]
+                format slot 22 of player with orange clay named "&6&l〔 2/5 〕" with lore "||&8&l» &6Špatné|| &6✰✰&8✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:nastaveni 2" as op]
+                format slot 23 of player with yellow clay named "&e&l〔 3/5 〕" with lore "||&8&l» &ePrůměrné|| &e✰✰✰&8✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:nastaveni 3" as op]
+                format slot 24 of player with light green clay named "&a&l〔 4/5 〕" with lore "||&8&l» &aDobré|| &a✰✰✰✰&8✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:nastaveni 4" as op]
+                format slot 25 of player with green clay named "&2&l〔 5/5 〕" with lore "||&8&l» &2Velmi dobré|| &2✰✰✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:nastaveni 5" as op]
+                #
+                format slot 28 of player with diamond named "&8&l»&a Organizace" with lore "||&e Organizace. Řešení problémů,||&e plynulost organizování,||&e chování eventerů atd." to be unstealable
+                format slot 30 of player with red clay named "&c&l〔 1/5 〕" with lore "||&8&l» &cVelmi špatné|| &c✰&8✰✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:organizace 1" as op]
+                format slot 31 of player with orange clay named "&6&l〔 2/5 〕" with lore "||&8&l» &6Špatné|| &6✰✰&8✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:organizace 2" as op]
+                format slot 32 of player with yellow clay named "&e&l〔 3/5 〕" with lore "||&8&l» &ePrůměrné|| &e✰✰✰&8✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:organizace 3" as op]
+                format slot 33 of player with light green clay named "&a&l〔 4/5 〕" with lore "||&8&l» &aDobré|| &a✰✰✰✰&8✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:organizace 4" as op]
+                format slot 34 of player with green clay named "&2&l〔 5/5 〕" with lore "||&8&l» &2Velmi dobré|| &2✰✰✰✰✰&r||&r||&7Klikni pro hodnocení!" to run [run player command "hodnoceni:organizace 5" as op]
+
+#
+#
+#
+#
+#
+
+on right click with empty map:
+    if name of player's held item is "&a&nHodnocení Eventu&r &7(Right Click)":
+        execute player command "hodnoceni"
+
+command /hodnoceni:stavby <number>:
+    trigger:
+        if {hodnoceni.stavby.%player%} is true:
+            send "&7[STAVBY] &cUž jsi hodnotil stavby!" to player
+            play "ANVIL_LAND" to player
+            stop
+        if arg-1 is 1:
+            send "&7[STAVBY] &c1/5" to player
+            set {hodnoceni.stavby.%player%} to true
+            set {hodnoceni.stavby.number.%player%} to 1
+            play "ORB_PICKUP" to player
+        if arg-1 is 2:
+            send "&7[STAVBY] &62/5 " to player
+            set {hodnoceni.stavby.%player%} to true
+            set {hodnoceni.stavby.number.%player%} to 2
+            play "ORB_PICKUP" to player
+        if arg-1 is 3:
+            send "&7[STAVBY] &e3/5" to player
+            set {hodnoceni.stavby.%player%} to true
+            set {hodnoceni.stavby.number.%player%} to 3
+            play "ORB_PICKUP" to player
+        if arg-1 is 4:
+            send "&7[STAVBY] &a4/5" to player
+            set {hodnoceni.stavby.%player%} to true
+            set {hodnoceni.stavby.number.%player%} to 4
+            play "ORB_PICKUP" to player
+        if arg-1 is 5:
+            send "&7[STAVBY] &25/5" to player
+            set {hodnoceni.stavby.%player%} to true
+            set {hodnoceni.stavby.number.%player%} to 5
+            play "ORB_PICKUP" to player
+        if {hodnoceni.stavby.%player%} is true:
+            if {hodnoceni.nastaveni.%player%} is true:
+                if {hodnoceni.organizace.%player%} is true:
+                    send "&5&m                                                           &r" to player
+                    send "&r " to player
+                    send " &d&n&lHodnocení" to player
+                    send "" to player
+                    send " &8&l» &eStavby: &f%{hodnoceni.stavby.number.%player%}%/5" to player
+                    send " &8&l» &bNastavení: &f%{hodnoceni.nastaveni.number.%player%}%/5" to player
+                    send " &8&l» &aOrganizace: &f%{hodnoceni.organizace.number.%player%}%/5" to player
+                    send "&r " to player
+                    send "&5&m                                                           &r" to player
+                    play "LEVEL_UP" to player
+                    set {hodnoceni.%player%.all} to true
+                    set {_hodc} to 0
+                    add {hodnoceni.stavby.number.%player%} to {_hodc}
+                    add {hodnoceni.nastaveni.number.%player%} to {_hodc}
+                    add {hodnoceni.organizace.number.%player%} to {_hodc}
+                    add 15 to {hodnoceni.2}
+                    add 1 to {hodnoceni.3}
+                    add {_hodc} to {hodnoceni.1}
+                    make embed:
+                        if {_hodc} is 3:
+                            set color of the embed to color from rgb 255, 23, 35
+                            set the title of embed to title with text "😡   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 3:
+                            set color of the embed to color from rgb 255, 108, 23
+                            set the title of embed to title with text "😠   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 6:
+                            set color of the embed to color from rgb 255, 247, 28
+                            set the title of embed to title with text "🙁   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 10:
+                            set color of the embed to color from rgb 119, 255, 56
+                            set the title of embed to title with text "😃   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 13:
+                            set color of the embed to color from rgb 75, 209, 54
+                            set the title of embed to title with text "🥰   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        add field named "**%{hodnoceni.stavby.number.%player%}%/5**" with value "Stavby" to embed
+                        add field named "**%{hodnoceni.nastaveni.number.%player%}%/5**" with value "Nastavení" to embed
+                        add field named "**%{hodnoceni.organizace.number.%player%}%/5**" with value "Organizace" to embed
+                        set the footer of embed to footer with text "Hodnotil: %player%" and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+                        set the timestamp of embed to now
+                    send last created embed to channel with id "813066323861045258" with "EventVerse" and store it in {_embed}
+
+command /hodnoceni:nastaveni <number>:
+    trigger:
+        if {hodnoceni.nastaveni.%player%} is true:
+            send "&7[NASTAVENÍ] &cUž jsi hodnotil nastavení!" to player
+            play "ANVIL_LAND" to player
+            stop
+        if arg-1 is 1:
+            send "&7[NASTAVENÍ] &c1/5" to player
+            set {hodnoceni.nastaveni.%player%} to true
+            set {hodnoceni.nastaveni.number.%player%} to 1
+            play "ORB_PICKUP" to player
+        if arg-1 is 2:
+            send "&7[NASTAVENÍ] &62/5" to player
+            set {hodnoceni.nastaveni.%player%} to true
+            set {hodnoceni.nastaveni.number.%player%} to 2
+            play "ORB_PICKUP" to player
+        if arg-1 is 3:
+            send "&7[NASTAVENÍ] &e3/5" to player
+            set {hodnoceni.nastaveni.%player%} to true
+            set {hodnoceni.nastaveni.number.%player%} to 3
+            play "ORB_PICKUP" to player
+        if arg-1 is 4:
+            send "&7[NASTAVENÍ] &a4/5" to player
+            set {hodnoceni.nastaveni.%player%} to true
+            set {hodnoceni.nastaveni.number.%player%} to 4
+            play "ORB_PICKUP" to player
+        if arg-1 is 5:
+            send "&7[NASTAVENÍ] &25/5" to player
+            set {hodnoceni.nastaveni.%player%} to true
+            set {hodnoceni.nastaveni.number.%player%} to 5
+            play "ORB_PICKUP" to player
+        if {hodnoceni.stavby.%player%} is true:
+            if {hodnoceni.nastaveni.%player%} is true:
+                if {hodnoceni.organizace.%player%} is true:
+                    send "&5&m                                                           &r" to player
+                    send "&r " to player
+                    send " &d&n&lHodnocení" to player
+                    send "" to player
+                    send " &8&l» &eStavby: &f%{hodnoceni.stavby.number.%player%}%/5" to player
+                    send " &8&l» &bNastavení: &f%{hodnoceni.nastaveni.number.%player%}%/5" to player
+                    send " &8&l» &aOrganizace: &f%{hodnoceni.organizace.number.%player%}%/5" to player
+                    send "&r " to player
+                    send "&5&m                                                           &r" to player
+                    play "LEVEL_UP" to player
+                    set {hodnoceni.%player%.all} to true
+                    set {_hodc} to 0
+                    add {hodnoceni.stavby.number.%player%} to {_hodc}
+                    add {hodnoceni.nastaveni.number.%player%} to {_hodc}
+                    add {hodnoceni.organizace.number.%player%} to {_hodc}
+                    add 15 to {hodnoceni.2}
+                    add 1 to {hodnoceni.3}
+                    add {_hodc} to {hodnoceni.1}
+                    make embed:
+                        if {_hodc} is 3:
+                            set color of the embed to color from rgb 255, 23, 35
+                            set the title of embed to title with text "😡   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 3:
+                            set color of the embed to color from rgb 255, 108, 23
+                            set the title of embed to title with text "😠   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 5:
+                            set color of the embed to color from rgb 255, 247, 28
+                            set the title of embed to title with text "🙁   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 10:
+                            set color of the embed to color from rgb 119, 255, 56
+                            set the title of embed to title with text "😃   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 15:
+                            set color of the embed to color from rgb 75, 209, 54
+                            set the title of embed to title with text "🥰   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        add field named "**%{hodnoceni.stavby.number.%player%}%/5**" with value "Stavby" to embed
+                        add field named "**%{hodnoceni.nastaveni.number.%player%}%/5**" with value "Nastavení" to embed
+                        add field named "**%{hodnoceni.organizace.number.%player%}%/5**" with value "Organizace" to embed
+                        set the footer of embed to footer with text "Hodnotil: %player%" and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+                        set the timestamp of embed to now
+                    send last created embed to channel with id "813066323861045258" with "EventVerse" and store it in {_embed}
+
+command /hodnoceni:organizace <number>:
+    trigger:
+        if {hodnoceni.organizace.%player%} is true:
+            send "&7[ORGANIZACE] &cUž jsi hodnotil organizace!" to player
+            play "ANVIL_LAND" to player
+            stop
+        if arg-1 is 1:
+            send "&7[ORGANIZACE] &c1/5" to player
+            set {hodnoceni.organizace.%player%} to true
+            set {hodnoceni.organizace.number.%player%} to 1
+            play "ORB_PICKUP" to player
+        if arg-1 is 2:
+            send "&7[ORGANIZACE] &62/5" to player
+            set {hodnoceni.organizace.%player%} to true
+            set {hodnoceni.organizace.number.%player%} to 2
+            play "ORB_PICKUP" to player
+        if arg-1 is 3:
+            send "&7[ORGANIZACE] &e3/5" to player
+            set {hodnoceni.organizace.%player%} to true
+            set {hodnoceni.organizace.number.%player%} to 3
+            play "ORB_PICKUP" to player
+        if arg-1 is 4:
+            send "&7[ORGANIZACE] &a4/5" to player
+            set {hodnoceni.organizace.%player%} to true
+            set {hodnoceni.organizace.number.%player%} to 4
+            play "ORB_PICKUP" to player
+        if arg-1 is 5:
+            send "&7[ORGANIZACE] &25/5" to player
+            set {hodnoceni.organizace.%player%} to true
+            set {hodnoceni.organizace.number.%player%} to 5
+            play "ORB_PICKUP" to player
+        if {hodnoceni.stavby.%player%} is true:
+            if {hodnoceni.nastaveni.%player%} is true:
+                if {hodnoceni.organizace.%player%} is true:
+                    send "&5&m                                                           &r" to player
+                    send "&r " to player
+                    send " &d&n&lHodnocení" to player
+                    send "" to player
+                    send " &8&l» &eStavby: &f%{hodnoceni.stavby.number.%player%}%/5" to player
+                    send " &8&l» &bNastavení: &f%{hodnoceni.nastaveni.number.%player%}%/5" to player
+                    send " &8&l» &aOrganizace: &f%{hodnoceni.organizace.number.%player%}%/5" to player
+                    send "&r " to player
+                    send "&5&m                                                           &r" to player
+                    play "LEVEL_UP" to player
+                    set {hodnoceni.%player%.all} to true
+                    set {_hodc} to 0
+                    add {hodnoceni.stavby.number.%player%} to {_hodc}
+                    add {hodnoceni.nastaveni.number.%player%} to {_hodc}
+                    add {hodnoceni.organizace.number.%player%} to {_hodc}
+                    add 15 to {hodnoceni.2}
+                    add 1 to {hodnoceni.3}
+                    add {_hodc} to {hodnoceni.1}
+                    make embed:
+                        if {_hodc} is 3:
+                            set color of the embed to color from rgb 255, 23, 35
+                            set the title of embed to title with text "😡   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 3:
+                            set color of the embed to color from rgb 255, 108, 23
+                            set the title of embed to title with text "😠   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 5:
+                            set color of the embed to color from rgb 255, 247, 28
+                            set the title of embed to title with text "🙁   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 10:
+                            set color of the embed to color from rgb 119, 255, 56
+                            set the title of embed to title with text "😃   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        if {_hodc} is more than 13:
+                            set color of the embed to color from rgb 75, 209, 54
+                            set the title of embed to title with text "🥰   Hodnocení Eventu (%{event.name}%) [%{_hodc}%/15]"
+                        add field named "**%{hodnoceni.stavby.number.%player%}%/5**" with value "Stavby" to embed
+                        add field named "**%{hodnoceni.nastaveni.number.%player%}%/5**" with value "Nastavení" to embed
+                        add field named "**%{hodnoceni.organizace.number.%player%}%/5**" with value "Organizace" to embed
+                        set the footer of embed to footer with text "Hodnotil: %player%" and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+                        set the timestamp of embed to now
+                    send last created embed to channel with id "813066323861045258" with "EventVerse" and store it in {_embed}
+
+command /resethodnoceni <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            send "&7[HODNOCENI] &cResetuji hodnocení hráče %arg-1%." to player
+            delete {hodnoceni.stavby.%arg-1%}
+            delete {hodnoceni.stavby.number.%arg-1%}
+            delete {hodnoceni.nastaveni.%arg-1%}
+            delete {hodnoceni.nastaveni.number.%arg-1%}
+            delete {hodnoceni.organizace.%arg-1%}
+            delete {hodnoceni.organizace.number.%arg-1%}
+            delete {hodnoceni.%arg 1%.all}
+        else:
+            onlyAdmin(player)

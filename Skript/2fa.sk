@@ -1,0 +1,82 @@
+command /2fa:
+    trigger:
+        {rank.%player%} is "admin" or "mcteam"
+        wait 1 ticks
+        set {2fa.%player%} to true
+        set {_r} to random integer between 10000000 and 99999999
+        set {2fa.code.%player%} to "%{_r}%"
+        send "&4&n                                "
+        send "&r "
+        send " &4&n&l2FA Ověření"
+        send "&r "
+        send " &c&oByl ti na discord zaslán ověřovací kod, opiš ho do chatu!"
+        send "&r "
+        send "&4&n                                "
+        send player title "&4&n&l2FA" with subtitle "&cByl ti na discord zaslán ověřovací kod, opiš ho do chatu!" for 99999 seconds
+        make embed:
+            set the title of embed to title with text "**__Tvůj ověřovací kod:__**"
+            set color of the embed to color from rgb 245, 66, 87
+            set the timestamp of embed to now
+            set description of embed to "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬%nl%Tvůj ověřovací kod na eventverse je:%nl%||%{2fa.code.%player%}%||%nl%▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬%nl%%nl%⚠️ **POKUD SE ZA TEBE NĚKDO PŘIPOJUJE, OKAMŽITĚ TO NAHLAŠ NĚKOMU Z VEDĚNÍ!**"
+        if player is "LukynkaCZE":
+            set {_id} to "813849538850324530"
+            send last created embed to channel with id "%{_id}%" with "EventVerse"
+            send "<@332594189911195649>" to channel with id "%{_id}%" with "EventVerse"
+        if player is "Peterko_":
+            set {_id} to "813849705925574676"
+            send last created embed to channel with id "%{_id}%" with "EventVerse"
+            send "<@762372621597016125>" to channel with id "%{_id}%" with "EventVerse"
+        if player is "Kbelik_Vody":
+            set {_id} to "813849768933326848"
+            send last created embed to channel with id "%{_id}%" with "EventVerse"
+            send "<@495126301447946242>" to channel with id "%{_id}%" with "EventVerse"
+        if player is "S0ptik":
+            set {_id} to "813849889581826048"
+            send last created embed to channel with id "%{_id}%" with "EventVerse"
+            send "<@538669612854935562>" to channel with id "%{_id}%" with "EventVerse"
+        if player is "Th3Dolphin":
+            set {_id} to "813849972356153434"
+            send last created embed to channel with id "%{_id}%" with "EventVerse"
+            send "<@692753890382315581>" to channel with id "%{_id}%" with "EventVerse"
+        if player is "JopGamer":
+            set {_id} to "824380822202089533"
+            send last created embed to channel with id "%{_id}%" with "EventVerse"
+            send "<@718393019132280862>" to channel with id "%{_id}%" with "EventVerse"
+        if player is "TenViki":
+            set {_id} to "835550289179967508"
+            send last created embed to channel with id "%{_id}%" with "EventVerse"
+            send "<@769599885585809419>" to channel with id "%{_id}%" with "EventVerse"
+
+on any movement:
+    if {2fa.%player%} is true:
+        set {_l} to location of player
+        teleport player to {_l}
+
+on command:
+    if {2fa.%player%} is true:
+        cancel event
+
+on place:
+    if {2fa.%player%} is true:
+        cancel event
+
+on break:
+    if {2fa.%player%} is true:
+        cancel event
+
+on authme login:
+    if {2fa.session.%player%} is "%ip of player%":
+        if {2fa.session.uses.%player%} is more than 0:
+            remove 1 from {2fa.session.uses.%player%}
+            send "&7[2FA] &aByl/a jsi přihlášen/a pomocí session id! &7(%{2fa.session.uses.%player%}%/2)"
+            stop
+    if player is "LukynkaCZE" or "Peterko_" or "Kbelik_Vody" or "S0ptik" or "Th3Dolphin" or "JopGamer" or "TenViki":
+        run player command "2fa" as op
+
+on connect:
+    if {2fa.session.uses.%player%} is not set:
+        set {2fa.session.uses.%player%} to 0
+
+on quit:
+    delete {2fa.code.%player%}
+    delete {2fa.%player%}

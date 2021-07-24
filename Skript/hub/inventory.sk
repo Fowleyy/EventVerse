@@ -1,0 +1,334 @@
+every 5 ticks:
+
+    loop all players:
+
+        if loop-player is in world "hub":
+
+            set loop-player's xp to 0
+
+            heal loop-player
+
+            feed loop-player
+
+            if {buildmode.%loop-player%} is not set:
+
+                if {invstate.%loop-player%} is not set:
+
+                    set {invstate.%loop-player%} to "hub"
+
+                if {invstate.%loop-player%} is "hub":
+
+                    set loop-player's level to 0
+
+                    set slot 0 of loop-player to air
+
+                    if {rank.%loop-player%} is "admin":
+
+                        set slot 1 of loop-player to shiny command block named "&c&nEventer Menu&r &7(Right Click)" with lore "||&fMyslím že sem fakt popisek dávat nemusím..||&r"
+
+                    else:
+
+                        set slot 1 of loop-player to air
+
+                    set slot 2 of loop-player to air
+
+                    set slot 3 of loop-player to air
+
+                    set slot 7 of loop-player to nether star named "&d&nKosmetiky&r &7(Right Click)" with lore "||&fJoin messages, traily, ..."
+
+                    if {rank.%loop-player%} is "admin" or "mcteam" or "dcteam" or "tester" or "donator" or "hostify" or "media":
+
+                        if {hubcooldown::%loop-player%} is not set:
+                            set slot 5 of loop-player to shiny feather named "&f&nDouble Jump&r &7(Right Click)"
+                        else:
+                            set slot 5 of loop-player to 1 barrier named "&4&n&mDouble Jump&r &7(Right Click)"
+                    else:
+                        set slot 5 of loop-player to air
+
+                    set slot 6 of loop-player to tnt
+
+                    set slot 4 of loop-player to shiny blaze rod named "&c&lP&6&la&e&lr&a&lt&b&ly &d&lP&c&lo&6&lp&e&lp&a&le&b&lr" with lore "&r||&7Show timeeeeeee!||&r"
+
+                    set slot 8 of loop-player to shiny book named "&6&nAchievementy&r &7(Right Click)" with lore "&r||&fKliknutím zobrazíš všechny tvoje achievmenty!||&r"
+
+                if {invstate.%loop-player%} is "minibp":
+
+                    set loop-player's level to {minibp-rounds::%loop-player%}
+
+                    stop
+
+                if {invstate.%loop-player%} is "parkour":
+
+                    set loop-player's level to {hubpktime::%loop-player%}
+
+                    set slot 0 of loop-player to air
+
+                    set slot 1 of loop-player to air
+
+                    set slot 2 of loop-player to air
+
+                    set slot 3 of loop-player to air
+
+                    set slot 4 of loop-player to air
+
+                    set slot 5 of loop-player to air
+
+                    set slot 6 of loop-player to air
+
+                    set slot 7 of loop-player to air
+
+                    set slot 8 of loop-player to shiny barrier named "&c&n&lOpustit Parkour Režim&r &7(Right Click)" with lore "&r||&fKliknutím opustíš parkour režim!||&r"
+
+                if {invstate.%loop-player%} is "warmode":
+                    stop
+                if {invstate.%loop-player%} is "hodnoceni":
+                    set loop-player's level to 0
+                    set slot 0 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 1 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 2 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 3 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 4 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 5 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 6 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 7 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+                    set slot 8 of loop-player to shiny paper named "&a&nHodnocení Eventu&r &7(Right Click)"
+
+                if {invstate.%loop-player%} is "auth":
+                    set loop-player's level to 0
+                    set slot 0 of loop-player to air
+                    set slot 1 of loop-player to air
+                    set slot 2 of loop-player to air
+                    set slot 3 of loop-player to air
+                    set slot 4 of loop-player to air
+                    set slot 5 of loop-player to air
+                    set slot 6 of loop-player to air
+                    set slot 7 of loop-player to air
+                    set slot 8 of loop-player to red dye named "&c&n&lNepamatuješ si heslo?"
+
+
+
+
+
+on right click with feather:
+    if name of player's held item is "&f&nDouble Jump&r &7(Right Click)":
+        play "ENDERDRAGON_WINGS" to player
+        push player upwards at speed 1
+        push player forwards at speed 2
+        drawDot count 20, particle explosion, speed 0, XYZ 1, 0.1, 1, center location of player, visibleRange 320
+        drawDot count 10, particle cloud, speed 0, XYZ 1, 0.3, 1, center location of player, visibleRange 320
+        set {hubcooldown::%player%} to true
+        loop 20 times:
+            wait 1 ticks
+            drawDot count 1, particle cloud, speed 0, XYZ 0.2, 0, 0.2, center location of player, visibleRange 320
+        wait 2 seconds
+        delete {hubcooldown::%player%}
+    
+
+
+on quit:
+
+    delete {buildmode.%player%}
+    delete {hubcooldown::%player%}
+
+on join:
+    delete {hubcooldown::%player%}
+
+on right click with tnt:
+    run player command "/summon PrimedTnt" as op
+
+command /buildmode:
+
+    trigger:
+
+        if {rank.%player%} is "admin" or "mcteam":
+
+            if {buildmode.%player%} is not set:
+
+                set {buildmode.%player%} to true
+
+                send "&7[BUILD] &aBuild mode zapnut pro hráče &e%player%&a!"
+
+                run player command "/soundhandler_sound_levelup_2" as op
+
+                clear player's inventory
+
+                stop
+
+            if {buildmode.%player%} is true:
+
+                delete {buildmode.%player%}
+
+                send "&7[BUILD] &cBuild mode vypnut pro hráče &e%player%&c!"
+
+                run player command "/soundhandler_sound_levelup_2" as op
+
+                stop
+
+        else:
+
+            onlyMcteam(player)
+
+
+
+on world change:
+
+    wait 1 ticks
+
+    if player's world is not "hub":
+
+        if {rank.%player%} is "mcteam" or "admin":
+
+            {buildmode.%player%} is not set
+
+            set {buildmode.%player%} to true
+
+            send "&7[BUILD] &aBuild mode zapnut pro hráče &e%player%&a!"
+
+            run player command "/soundhandler_sound_levelup_2" as op
+
+            clear player's inventory
+
+            stop
+
+    if player's world is "hub":
+
+        if {rank.%player%} is "mcteam" or "admin":
+
+            {buildmode.%player%} is true:
+
+            delete {buildmode.%player%}
+
+            send "&7[BUILD] &cBuild mode vypnut pro hráče &e%player%&c!"
+
+            run player command "/soundhandler_sound_levelup_2" as op
+
+            stop
+
+
+
+
+
+on break:
+
+    if player is in world "hub":
+
+        if {buildmode.%player%} is not set:
+
+            cancel event
+
+
+
+on place:
+
+    if player is in world "hub":
+
+        if {buildmode.%player%} is not set:
+
+            cancel event
+
+
+
+on drop:
+
+    if player is in world "hub":
+
+        if {buildmode.%player%} is not set:
+
+            cancel event
+
+
+
+on click on armor stand:
+
+    if player is in world "hub":
+
+        if {buildmode.%player%} is not set:
+
+            cancel event
+
+
+
+on right click with blaze rod:
+    if player is in world "hub":
+        if {rank.%player%} is "admin" or "dcteam" or "mcteam" or "donator" or "tester":
+            run player command "/summon ArmorStand ~ ~ ~ {Invisible:1b,NoGravity:1b}" as op
+            loop all entities in radius 0.2 of player:
+                if loop-entity is armor stand:
+                    set {_baloon} to loop-entity
+            set {_r} to "&c" or "&e" or "&a" or "&b" or "&d"
+            if {_r} is "&c":
+                set helmet of {_baloon} to {item.b1}
+            if {_r} is "&e":
+                set helmet of {_baloon} to {item.b3}
+            if {_r} is "&a":
+                set helmet of {_baloon} to {item.b4}
+            if {_r} is "&b":
+                set helmet of {_baloon} to {item.b5}
+            if {_r} is "&d":
+                set helmet of {_baloon} to {item.b6}
+            set {_lpk} to block 1 above player
+            loop blocks from the block 1 in front of {_lpk} to the block 20 in front of the player:
+                wait 1 ticks
+                if loop-block is solid:
+                    stop loop
+                else:
+                    teleport {_baloon} to location of loop-block
+            set {_l} to location of {_baloon}
+            kill {_baloon}
+            set {_rl} to "%{_l}%"
+            replace all "x: " and "y: " and "z: " in {_rl} with ""
+            replace all "," in {_rl} with ""
+            if {_r} is "&c":
+                run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[11743532]}],Flight:1}}}}" as op
+            if {_r} is "&e":
+                run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[14602026]}],Flight:1}}}}" as op
+            if {_r} is "&a":
+                run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[4312372]}],Flight:1}}}}" as op
+            if {_r} is "&b":
+                run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[6719955]}],Flight:1}}}}" as op
+            if {_r} is "&d":
+                run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[12801229]}],Flight:1}}}}" as op
+        else:
+            if {pc::%player%} is not set:
+                set {pc::%player%} to true
+                run player command "/summon ArmorStand ~ ~ ~ {Invisible:1b,NoGravity:1b}" as op
+                loop all entities in radius 0.2 of player:
+                    if loop-entity is armor stand:
+                        set {_baloon} to loop-entity
+                set {_r} to "&c" or "&e" or "&a" or "&b" or "&d"
+                if {_r} is "&c":
+                    set helmet of {_baloon} to {item.b1}
+                if {_r} is "&e":
+                    set helmet of {_baloon} to {item.b3}
+                if {_r} is "&a":
+                    set helmet of {_baloon} to {item.b4}
+                if {_r} is "&b":
+                    set helmet of {_baloon} to {item.b5}
+                if {_r} is "&d":
+                    set helmet of {_baloon} to {item.b6}
+                set {_lpk} to block 1 above player
+                loop blocks from the block 1 in front of {_lpk} to the block 20 in front of the player:
+                    wait 1 ticks
+                    if loop-block is solid:
+                        stop loop
+                    else:
+                        teleport {_baloon} to location of loop-block
+                set {_l} to location of {_baloon}
+                kill {_baloon}
+                set {_rl} to "%{_l}%"
+                replace all "x: " and "y: " and "z: " in {_rl} with ""
+                replace all "," in {_rl} with ""
+                if {_r} is "&c":
+                    run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[11743532]}],Flight:1}}}}" as op
+                if {_r} is "&e":
+                    run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[14602026]}],Flight:1}}}}" as op
+                if {_r} is "&a":
+                    run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[4312372]}],Flight:1}}}}" as op
+                if {_r} is "&b":
+                    run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[6719955]}],Flight:1}}}}" as op
+                if {_r} is "&d":
+                    run player command "/summon FireworksRocketEntity %{_rl}% {LifeTime:0,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Colors:[12801229]}],Flight:1}}}}" as op
+                delete {pc::%player%}
+command /boom:
+    trigger:
+        run player command "/summon FireworksRocketEntity ~ ~ ~{LifeTime:1,FireworksItem:{id:fireworks,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Colors:[11743532]}],Flight:1}}}}" as op

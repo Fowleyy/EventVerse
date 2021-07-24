@@ -1,0 +1,25 @@
+command /hotfloor:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                delete {hubpk.%player%}
+            set {mutechat} to true
+            wait 1 tick
+            loop all blocks in radius 35 of {hotfloor.mid}:
+                if loop-block is 95:4 or 95:1 or 95:14:
+                    set loop-block to 95:0
+            delete {arcademinigame.hotfloor.isenabled}
+            set {hotfloor::players} to 0
+            eventStartSetup("HOT_FLOOR")
+            wait 3 seconds
+            eventStartTitle("LukynkaCZE","Hot Floor")
+            wait 5 seconds
+            updateEventState("GAME_INFO")
+            eventExplain("Hot Floor")
+            wait 30 seconds
+            delete {mutechat}
+            wait 3 seconds
+            updateEventState("GAME_PLAY")
+            hotfloorNewRound(1, player)
+        else:
+            onlyAdmin(player)

@@ -1,0 +1,204 @@
+command /dev:minibp:colorswap:
+    trigger:
+        if executor have permission "pog.champ":
+            set {_b} to red clay or blue clay or light green clay or yellow clay or orange clay
+            wait 3 seconds
+            loop all players:
+                if "%region at loop-player%" contains "bp_play":
+                    set slot 0 of loop-player to {_b}
+                    set slot 1 of loop-player to {_b}
+                    set slot 2 of loop-player to {_b}
+                    set slot 3 of loop-player to {_b}
+                    set slot 4 of loop-player to {_b}
+                    set slot 5 of loop-player to {_b}
+                    set slot 6 of loop-player to {_b}
+                    set slot 7 of loop-player to {_b}
+                    set slot 8 of loop-player to {_b}
+                    play "NOTE_BASS" to loop-player
+            wait 2 seconds
+            loop all players:
+                if "%region at loop-player%" contains "bp_play":
+                    clear loop-player's inventory
+                    play "ORB_PICKUP" to loop-player
+                    add 1 to {minibp-rounds::%loop-player%}
+                    if {minibp-rounds::%loop-player%} = 10:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 10 kol! &5(&d+1&5✦)" to loop-player
+                        #
+#                        if {quest.bp.t1.%loop-player%} is not set:
+#                            set {quest.bp.t1.%loop-player%} to true
+#                            send "&8&m-------------------------" to loop-player
+#                            send "   &6&l&nQuest Splněn" to loop-player
+#                            send "&r " to loop-player
+#                            send " &a&nParty Master&2 (Úroveň 1)" to loop-player
+#                            send "&r " to loop-player
+#                            send " &f» Obtížnost: &aLehká" to loop-player
+#                            send " &f» Odměna: &d+5&5✦" to loop-player
+#                            send "&8&m-------------------------" to loop-player
+#                            add 5 to {shards::%loop-player%}
+                        #
+                    if {minibp-rounds::%loop-player%} = 20:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 20 kol! &5(&d+1&5✦)" to loop-player
+                    if {minibp-rounds::%loop-player%} = 30:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 30 kol! &5(&d+1&5✦)" to loop-player
+                    if {minibp-rounds::%loop-player%} = 40:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 40 kol! &5(&d+1&5✦)" to loop-player
+                    if {minibp-rounds::%loop-player%} = 50:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 50 kol! &5(&d+1&5✦)" to loop-player
+                        #
+#                        if {quest.bp.t2.%loop-player%} is not set:
+#                            set {quest.bp.t2.%loop-player%} to true
+#                            send "&8&m-------------------------" to loop-player
+#                            send "   &6&l&nQuest Splněn" to loop-player
+#                            send "&r " to loop-player
+#                            send " &e&nParty Master&6 (Úroveň 2)" to loop-player
+#                            send "&r " to loop-player
+#                            send " &f» Obtížnost: &eStředně těžká" to loop-player
+#                            send " &f» Odměna: &d+10&5✦" to loop-player
+#                            send "&8&m-------------------------" to loop-player
+#                            add 10 to {shards::%loop-player%}
+                        #
+                    if {minibp-rounds::%loop-player%} = 60:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 60 kol! &5(&d+1&5✦)" to loop-player
+                    if {minibp-rounds::%loop-player%} = 70:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 70 kol! &5(&d+1&5✦)" to loop-player
+                    if {minibp-rounds::%loop-player%} = 80:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 80 kol! &5(&d+1&5✦)" to loop-player
+                    if {minibp-rounds::%loop-player%} = 90:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 90 kol! &5(&d+1&5✦)" to loop-player
+                    if {minibp-rounds::%loop-player%} = 100:
+                        add 1 to {shards::%loop-player%}
+                        send "&3&lMini &b&lBP &8&l» &ePrežil/a jsi 100 kol! &5(&d+1&5✦)" to loop-player
+                        send "&7&o Víc shardů nedostaneš. :P"
+                    if {minibp-rounds::%loop-player%} = 150:
+                        #
+#                        if {quest.bp.t3.%loop-player%} is not set:
+#                            set {quest.bp.t3.%loop-player%} to true
+#                            send "&8&m-------------------------" to loop-player
+#                            send "   &6&l&nQuest Splněn" to loop-player
+#                            send "&r " to loop-player
+#                            send " &c&nParty Master&4 (Úroveň 3)" to loop-player
+#                            send "&r " to loop-player
+#                            send " &f» Obtížnost: &cTěžká" to loop-player
+#                            send " &f» Odměna: &d+20&5✦" to loop-player
+#                            send "&8&m-------------------------" to loop-player
+#                            add 20 to {shards::%loop-player%}
+                        #
+            loop all blocks in radius 8 of {bp}:
+                if loop-block is not {_b}:
+                    if loop-block is not air:
+                        loop-block is not lava
+                        loop-block is not 67:0
+                        loop-block is not polished andesite
+                        loop-block is not barrier
+                       # loop-block is not cobblestone
+                        loop-block is not stone
+                       # broadcast "&b[DEV] &6MINI_BP &7=> set &e%loop-block%&7 to &3BLOCK_AIR&r"
+                        set loop-block to air
+            wait 2 seconds
+            execute server command "dev:minibp:regeneratecolorpatern"
+            if {minibptoggled} is true:
+                execute server command "dev:minibp:colorswap"
+        else:
+            onlyAdmin(executor)
+
+on enter "bp_play":
+    clear player's inventory
+    set {minibp-rounds::%player%} to 0
+    set {invstate.%player%} to "minibp"
+
+on walk on lava:
+    if "%region at player%" contains "bp_play":
+        set {_s} to skull of player
+        create holo object "ItemStack:%{_s}%;&4✖ &c%player% &4✖" with id "%player%.minibp.death" at location 4 meter above player
+        teleport player to {minibp_death}
+        play "SILVERFISH_KILL" to player
+        play "FIZZ" to player
+        play "BLAZE_HIT" to player
+        set {minibp-rounds::%player%} to 0
+        set {invstate.%player%} to "hub"
+        
+
+command /toggleminibp:
+    trigger:
+        if {rank.%player%} is "admin":
+            if {minibptoggled} is not set:
+                set {minibptoggled} to true
+                send "&aZapnuto"
+            else:
+                delete {minibptoggled}
+                send "&cVypnuto"
+        else:
+            onlyAdmin(player)
+
+command /dev:minibp:regeneratecolorpatern:
+    trigger:
+        if executor have permission "pog.champ":
+            set {z} to 8
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 9
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 10
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 11
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 12
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 13
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 14
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 15
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 16
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 17
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 18
+            execute server command "dev:minibp:regeneratecolor"
+            wait 1 ticks
+            set {z} to 19
+            execute server command "dev:minibp:regeneratecolor"
+            loop all players:
+                delete holo object "%loop-player%.minibp.death"
+            loop all players:
+                if "%region at loop-player%" contains "bp_i_want_to_play":
+                    teleport loop-player to {bp_playzone1} or {bp_playzone2} or {bp_playzone3} or {bp_playzone4}
+                    play "ENDERMAN_TELEPORT" to loop-player
+        else:
+            onlyAdmin(executor)
+
+command /dev:minibp:regeneratecolor:
+    trigger:
+        executor is console
+        set block at location 30, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 31, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 32, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 33, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 34, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 35, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 36, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 37, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 38, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 39, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 40, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        set block at location 41, 45, {z} in world "hub" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+        

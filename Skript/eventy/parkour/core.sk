@@ -1,0 +1,38 @@
+command /npc:resetPkWinners:
+    trigger:
+        if player have permission "pog.champ":
+            pkResetWinners()
+
+on damage:
+    if victim is in world "parkour2" or "parkour3":
+        cancel event
+
+command /testfw:
+    trigger:
+        if {rank.%player%} is "admin":
+            pkCheckpointFirework(player)
+        else:
+            onlyAdmin(player)
+
+on right click on trapdoor:
+    if player is in world "parkour2" or "parkour3":
+        if {rank.%player%} is not "admin" or "mcteam":
+            cancel event
+        trapdoorParkourAchievement(player)
+
+command /pkscoreboard:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                newParkourScoreboard(loop-player)
+        else:  
+            onlyAdmin(player)
+
+on enter "ach_juty":
+    if {ach.pk_juty.%player%} is not set:
+        set {ach.pk_juty.%player%} to true
+        play "LEVEL_UP" to player
+        send "&d&l» ACHIEVMENT ODEMČEN: &eJutyho Jacuzzi" to player
+        send "&7&oNajdi jutyho jacuzzi na parkouru" to player
+        add 1 to {achievements::%player%}
+        add 2 to {shards::%player%}

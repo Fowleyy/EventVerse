@@ -1,0 +1,96 @@
+
+command /shardy [<text>] [<offline player>] [<number>]:
+    trigger:
+        if arg-1 is not set:
+            send "&c/shardy <add/remove/send/set/reset> <player> <shards>"
+        if arg-1 is "add":
+            if {rank.%player%} is "admin":
+                add arg-3 to {shards::%arg 2%}
+                if arg-3 is less than 5:
+                    if arg-3 is more than 1:
+                        send "&7[SHARDY] &dPřidal/a jsi &e%arg 3%&d shardy hráči &b%arg 2%&d!" to player
+                        send "&7[SHARDY] &dAdmin &c%Player% &dti přidal/a &e%arg 3%&d shardy!" to arg-2
+                    if arg-3 is 1:
+                        send "&7[SHARDY] &dPřidal/a jsi &e%arg 3%&d shard hráči &b%arg 2%&d!" to player
+                        send "&7[SHARDY] &dAdmin &c%Player% &dti přidal/a &e%arg 3%&d shard!" to arg-2
+                if arg-3 is more than 4:
+                    send "&7[SHARDY] &dPřidal/a jsi &e%arg 3%&d shardů hráči &b%arg 2%&d!" to player
+                    send "&7[SHARDY] &dAdmin &c%Player% &dti přidal/a &e%arg 3%&d shardů!" to arg-2
+                run player command "/soundhandler_sound_orb_2" as op
+                run arg-2 command "/soundhandler_sound_orb_2" as op
+            else:
+                onlyAdmin(player)
+        if arg-1 is "remove":
+            if {rank.%player%} is "admin":
+                remove arg-3 from {shards::%arg 2%}
+                if arg-3 is less than 5:
+                    if arg-3 is more than 1:
+                        send "&7[SHARDY] &dOdebral/a jsi &e%arg 3%&d shardy hráči &b%arg 2%&d!" to player
+                        send "&7[SHARDY] &dAdmin &c%Player% &dti odebral/a &e%arg 3%&d shardy!" to arg-2
+                    if arg-3 is 1:
+                        send "&7[SHARDY] &dOdebral/a jsi &e%arg 3%&d shard hráči &b%arg 2%&d!" to player
+                        send "&7[SHARDY] &dAdmin &c%Player% &dti odebral/a &e%arg 3%&d shard!" to arg-2
+                if arg-3 is more than 4:
+                    send "&7[SHARDY] &dOdebral/a jsi &e%arg 3%&d shardů hráči &b%arg 2%&d!" to player
+                    send "&7[SHARDY] &dAdmin &c%Player% &dti odebral/a &e%arg 3%&d shardů!" to arg-2
+                run player command "/soundhandler_sound_orb_2" as op
+                run arg-2 command "/soundhandler_sound_orb_2" as op
+            else:
+                onlyAdmin(player)
+        if arg-1 is "reset":
+            if {rank.%player%} is "admin":
+                set {shards::%arg 2%} to 0
+                updateHubScoreboard(arg-2)
+                send "&7[SHARDY] &dResetoval/a jsi shardy hráče &b%arg 2%&d!" to player
+                send "&7[SHARDY] &dAdmin &c%Player% &dti resetoval shardy! :(" to arg-2
+                run player command "/soundhandler_sound_orb_2" as op
+                run arg-2 command "/soundhandler_sound_orb_2" as op
+            else:
+                onlyAdmin(player)
+        if arg-1 is "send":
+            run player command "/shards:transfer %arg 2% %arg 3%" as op
+            updateHubScoreboard(player)
+            updateHubScoreboard(arg-2)
+        if arg-1 is "set":
+            if {rank.%player%} is "admin":
+                set {shards::%arg 2%} to arg-3
+                updateHubScoreboard(arg-2)
+                send "&7[SHARDY] &dNastavil/a jsi shardy hráče &b%arg 2%&d!" to player
+                send "&7[SHARDY] &dAdmin &c%Player% &dti nastavil/a shardy na &e%arg 3%&d!" to arg-2
+                run player command "/soundhandler_sound_orb_2" as op
+                run arg-2 command "/soundhandler_sound_orb_2" as op
+            else:
+                onlyAdmin(player)
+
+command /shards:transfer <player> <number>:
+    trigger:
+        if {shards.pay.%player%} is not set:
+            if arg-2 is more than 0:
+                set {_shards.%player%} to {shards::%player%} - arg-2
+                if {_shards.%player%} is less than 0:
+                    send "&7[SHARDY] &cNemáš dostatek shardů!"
+                    play "ENDERMAN_TELEPORT" to player
+                else:
+                    send "&7[SHARDY] &dÚspěšne jsi odeslal/a &e%arg-2% &dshardů hráči &b%arg-1%&d!" to player
+                    send "&7[SHARDY] &dObdržel/a jsi &e%arg-2% &dshardů od hráče &b%player%&d!" to arg-1
+                    play "LEVEL_UP" to player
+                    play "ORB_PICKUP" to arg-1
+                    remove arg-2 from {shards::%player%}
+                    add arg-2 to {shards::%arg-1%}
+                    set {shards.pay.%player%} to true
+                    wait 1 minute
+                    delete {shards.pay.%player%}
+                    updateHubScoreboard(arg-1)
+                    updateHubScoreboard(player)
+            else:
+                send "&7[SHARDY] &cNemůžeš odeslat méně než &40 shardů&c!"
+                play "ENDERMAN_TELEPORT" to player
+        else:
+            send "&7[SHARDY] &cShardy můžeš posílat pouze jednou za &4minutu&c!"
+            play "ENDERMAN_TELEPORT" to player
+
+
+function addShards(player: player, shards: number, reason: text):
+    message "&d+%{_shards}%&5✦ &7(%{_reason}%)" to {_player}
+    add {_shards} to {shards::%{_player}%}
+    run {_player} command "/soundhandler_sound_orb_2" as op

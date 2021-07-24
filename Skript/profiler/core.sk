@@ -1,0 +1,58 @@
+on load:
+    wait 1 seconds
+    loop all players:
+        wait 5 ticks
+        if file "plugins/profiler/%loop-player%.yml" doesn't exist:
+            create file "plugins/profiler/%loop-player%.yml"
+            wf "Vygenerováno profilerem za 5 tick/y/ů | %now%" to "plugins/profiler/%loop-player%.yml"
+            wf "Profiler V0.3 | Created by LukynkaCZE " to "plugins/profiler/%loop-player%.yml"
+            wf " " to "plugins/profiler/%loop-player%.yml"
+            wf "IP: %ip of loop-player%" to "plugins/profiler/%loop-player%.yml"
+            wf "UUID: %uuid of loop-player%" to "plugins/profiler/%loop-player%.yml"
+            wf "NICK: %loop-player%" to "plugins/profiler/%loop-player%.yml"
+            wf " " to "plugins/profiler/%loop-player%.yml"
+            wf " " to "plugins/profiler/%loop-player%.yml"
+            wf "--- CHAT LOG ---" to "plugins/profiler/%loop-player%.yml"
+            wf " " to "plugins/profiler/%loop-player%.yml"
+            debug("&eVygenerován soubor &6profiler/%loop-player%.yml&e")
+
+
+
+
+
+command /profiler:purgedata <text> [<player>]:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-1 is "ALL":
+                loop all players:
+                    wait 2 ticks
+                    delete file "plugins/profiler/%loop-player%.yml"
+                    broadcast "&7[PROFILER] &cOdstraňuji &eplugins/profiler/%loop-player%.yml"
+            if arg-1 is "PLAYER":
+                if arg-2 is set:
+                    delete file "plugins/profiler/%arg 2%.yml"
+                    broadcast "&7[PROFILER] &cOdstraňuji &eplugins/profiler/%arg 2%.yml"
+        else:
+            onlyAdmin(player)
+
+
+
+
+on authme login:
+    if file "plugins/profiler/%player%.yml" doesn't exist:
+        create file "plugins/profiler/%player%.yml"
+        wf "Vygenerováno profilerem za 5 tick/y/ů | %now%" to "plugins/profiler/%player%.yml"
+        wf "Profiler V0.3 | Created by LukynkaCZE " to "plugins/profiler/%player%.yml"
+        wf " " to "plugins/profiler/%player%.yml"
+        wf "IP: %ip of player%" to "plugins/profiler/%player%.yml"
+        wf "UUID: %uuid of player%" to "plugins/profiler/%player%.yml"
+        wf "NICK: %player%" to "plugins/profiler/%player%.yml"
+         #   set line 1 in file "plugins/profiler/%player%.yml" to "##Vygenerováno profilerem za 5 tick/y/ů | %now%"
+        debug("&eVygenerován soubor &6profiler/%player%.yml&e")
+
+
+
+
+
+
+

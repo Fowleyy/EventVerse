@@ -1,0 +1,1735 @@
+command /pushwall:
+    trigger:
+        if executor have permission "pog.champ":
+            set block at location at -21, 81, 5 in world "hole" to piston:5
+            set block at location at -21, 81, 1 in world "hole" to piston:5
+            set block at location at -21, 81, -3 in world "hole" to piston:5
+            set block at location at -21, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -21, 82, 5 in world "hole" to redstone block
+        #   activate block at location at -21, 81, 5 in world "hole"
+            set block at location at -21, 82, 1 in world "hole" to redstone block
+            set block at location at -21, 82, -3 in world "hole" to redstone block
+            set block at location at -21, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -21, 81, 5 in world "hole" to air
+            set block at location at -21, 81, 1 in world "hole" to air
+            set block at location at -21, 81, -3 in world "hole" to air
+            set block at location at -21, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -21, 82, 5 in world "hole" to air
+            set block at location at -21, 82, 1 in world "hole" to air
+            set block at location at -21, 82, -3 in world "hole" to air
+            set block at location at -21, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            wait {walltime}
+            {wall.canpush} is true
+
+
+            set block at location at -20, 81, 5 in world "hole" to piston:5
+            set block at location at -20, 81, 1 in world "hole" to piston:5
+            set block at location at -20, 81, -3 in world "hole" to piston:5
+            set block at location at -20, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -20, 82, 5 in world "hole" to redstone block
+            set block at location at -20, 82, 1 in world "hole" to redstone block
+            set block at location at -20, 82, -3 in world "hole" to redstone block
+            set block at location at -20, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -20, 81, 5 in world "hole" to air
+            set block at location at -20, 81, 1 in world "hole" to air
+            set block at location at -20, 81, -3 in world "hole" to air
+            set block at location at -20, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -20, 82, 5 in world "hole" to air
+            set block at location at -20, 82, 1 in world "hole" to air
+            set block at location at -20, 82, -3 in world "hole" to air
+            set block at location at -20, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -19, 81, 5 in world "hole" to piston:5
+            set block at location at -19, 81, 1 in world "hole" to piston:5
+            set block at location at -19, 81, -3 in world "hole" to piston:5
+            set block at location at -19, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -19, 82, 5 in world "hole" to redstone block
+            set block at location at -19, 82, 1 in world "hole" to redstone block
+            set block at location at -19, 82, -3 in world "hole" to redstone block
+            set block at location at -19, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -19, 81, 5 in world "hole" to air
+            set block at location at -19, 81, 1 in world "hole" to air
+            set block at location at -19, 81, -3 in world "hole" to air
+            set block at location at -19, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -19, 82, 5 in world "hole" to air
+            set block at location at -19, 82, 1 in world "hole" to air
+            set block at location at -19, 82, -3 in world "hole" to air
+            set block at location at -19, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -18, 81, 5 in world "hole" to piston:5
+            set block at location at -18, 81, 1 in world "hole" to piston:5
+            set block at location at -18, 81, -3 in world "hole" to piston:5
+            set block at location at -18, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -18, 82, 5 in world "hole" to redstone block
+            set block at location at -18, 82, 1 in world "hole" to redstone block
+            set block at location at -18, 82, -3 in world "hole" to redstone block
+            set block at location at -18, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -18, 81, 5 in world "hole" to air
+            set block at location at -18, 81, 1 in world "hole" to air
+            set block at location at -18, 81, -3 in world "hole" to air
+            set block at location at -18, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -18, 82, 5 in world "hole" to air
+            set block at location at -18, 82, 1 in world "hole" to air
+            set block at location at -18, 82, -3 in world "hole" to air
+            set block at location at -18, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -17, 81, 5 in world "hole" to piston:5
+            set block at location at -17, 81, 1 in world "hole" to piston:5
+            set block at location at -17, 81, -3 in world "hole" to piston:5
+            set block at location at -17, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -17, 82, 5 in world "hole" to redstone block
+            set block at location at -17, 82, 1 in world "hole" to redstone block
+            set block at location at -17, 82, -3 in world "hole" to redstone block
+            set block at location at -17, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -17, 81, 5 in world "hole" to air
+            set block at location at -17, 81, 1 in world "hole" to air
+            set block at location at -17, 81, -3 in world "hole" to air
+            set block at location at -17, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -17, 82, 5 in world "hole" to air
+            set block at location at -17, 82, 1 in world "hole" to air
+            set block at location at -17, 82, -3 in world "hole" to air
+            set block at location at -17, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -16, 81, 5 in world "hole" to piston:5
+            set block at location at -16, 81, 1 in world "hole" to piston:5
+            set block at location at -16, 81, -3 in world "hole" to piston:5
+            set block at location at -16, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -16, 82, 5 in world "hole" to redstone block
+            set block at location at -16, 82, 1 in world "hole" to redstone block
+            set block at location at -16, 82, -3 in world "hole" to redstone block
+            set block at location at -16, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -16, 81, 5 in world "hole" to air
+            set block at location at -16, 81, 1 in world "hole" to air
+            set block at location at -16, 81, -3 in world "hole" to air
+            set block at location at -16, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -16, 82, 5 in world "hole" to air
+            set block at location at -16, 82, 1 in world "hole" to air
+            set block at location at -16, 82, -3 in world "hole" to air
+            set block at location at -16, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -15, 81, 5 in world "hole" to piston:5
+            set block at location at -15, 81, 1 in world "hole" to piston:5
+            set block at location at -15, 81, -3 in world "hole" to piston:5
+            set block at location at -15, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -15, 82, 5 in world "hole" to redstone block
+            set block at location at -15, 82, 1 in world "hole" to redstone block
+            set block at location at -15, 82, -3 in world "hole" to redstone block
+            set block at location at -15, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -15, 81, 5 in world "hole" to air
+            set block at location at -15, 81, 1 in world "hole" to air
+            set block at location at -15, 81, -3 in world "hole" to air
+            set block at location at -15, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -15, 82, 5 in world "hole" to air
+            set block at location at -15, 82, 1 in world "hole" to air
+            set block at location at -15, 82, -3 in world "hole" to air
+            set block at location at -15, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -14, 81, 5 in world "hole" to piston:5
+            set block at location at -14, 81, 1 in world "hole" to piston:5
+            set block at location at -14, 81, -3 in world "hole" to piston:5
+            set block at location at -14, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -14, 82, 5 in world "hole" to redstone block
+            set block at location at -14, 82, 1 in world "hole" to redstone block
+            set block at location at -14, 82, -3 in world "hole" to redstone block
+            set block at location at -14, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -14, 81, 5 in world "hole" to air
+            set block at location at -14, 81, 1 in world "hole" to air
+            set block at location at -14, 81, -3 in world "hole" to air
+            set block at location at -14, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -14, 82, 5 in world "hole" to air
+            set block at location at -14, 82, 1 in world "hole" to air
+            set block at location at -14, 82, -3 in world "hole" to air
+            set block at location at -14, 82, 9 in world "hole" to air 
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 5 in world "hole" to piston:5
+            set block at location at -13, 81, 1 in world "hole" to piston:5
+            set block at location at -13, 81, -3 in world "hole" to piston:5
+            set block at location at -13, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -13, 82, 5 in world "hole" to redstone block
+            set block at location at -13, 82, 1 in world "hole" to redstone block
+            set block at location at -13, 82, -3 in world "hole" to redstone block
+            set block at location at -13, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 5 in world "hole" to air
+            set block at location at -13, 81, 1 in world "hole" to air
+            set block at location at -13, 81, -3 in world "hole" to air
+            set block at location at -13, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 5 in world "hole" to air
+            set block at location at -13, 82, 1 in world "hole" to air
+            set block at location at -13, 82, -3 in world "hole" to air
+            set block at location at -13, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -12, 81, 5 in world "hole" to piston:5
+            set block at location at -12, 81, 1 in world "hole" to piston:5
+            set block at location at -12, 81, -3 in world "hole" to piston:5
+            set block at location at -12, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -12, 82, 5 in world "hole" to redstone block
+            set block at location at -12, 82, 1 in world "hole" to redstone block
+            set block at location at -12, 82, -3 in world "hole" to redstone block
+            set block at location at -12, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -12, 81, 5 in world "hole" to air
+            set block at location at -12, 81, 1 in world "hole" to air
+            set block at location at -12, 81, -3 in world "hole" to air
+            set block at location at -12, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -12, 82, 5 in world "hole" to air
+            set block at location at -12, 82, 1 in world "hole" to air
+            set block at location at -12, 82, -3 in world "hole" to air
+            set block at location at -12, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -11, 81, 5 in world "hole" to piston:5
+            set block at location at -11, 81, 1 in world "hole" to piston:5
+            set block at location at -11, 81, -3 in world "hole" to piston:5
+            set block at location at -11, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -11, 82, 5 in world "hole" to redstone block
+            set block at location at -11, 82, 1 in world "hole" to redstone block
+            set block at location at -11, 82, -3 in world "hole" to redstone block
+            set block at location at -11, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -11, 81, 5 in world "hole" to air
+            set block at location at -11, 81, 1 in world "hole" to air
+            set block at location at -11, 81, -3 in world "hole" to air
+            set block at location at -11, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -11, 82, 5 in world "hole" to air
+            set block at location at -11, 82, 1 in world "hole" to air
+            set block at location at -11, 82, -3 in world "hole" to air
+            set block at location at -11, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -10, 81, 5 in world "hole" to piston:5
+            set block at location at -10, 81, 1 in world "hole" to piston:5
+            set block at location at -10, 81, -3 in world "hole" to piston:5
+            set block at location at -10, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -10, 82, 5 in world "hole" to redstone block
+            set block at location at -10, 82, 1 in world "hole" to redstone block
+            set block at location at -10, 82, -3 in world "hole" to redstone block
+            set block at location at -10, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -10, 81, 5 in world "hole" to air
+            set block at location at -10, 81, 1 in world "hole" to air
+            set block at location at -10, 81, -3 in world "hole" to air
+            set block at location at -10, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -10, 82, 5 in world "hole" to air
+            set block at location at -10, 82, 1 in world "hole" to air
+            set block at location at -10, 82, -3 in world "hole" to air
+            set block at location at -10, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -9, 81, 5 in world "hole" to piston:5
+            set block at location at -9, 81, 1 in world "hole" to piston:5
+            set block at location at -9, 81, -3 in world "hole" to piston:5
+            set block at location at -9, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -9, 82, 5 in world "hole" to redstone block
+            set block at location at -9, 82, 1 in world "hole" to redstone block
+            set block at location at -9, 82, -3 in world "hole" to redstone block
+            set block at location at -9, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -9, 81, 5 in world "hole" to air
+            set block at location at -9, 81, 1 in world "hole" to air
+            set block at location at -9, 81, -3 in world "hole" to air
+            set block at location at -9, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -9, 82, 5 in world "hole" to air
+            set block at location at -9, 82, 1 in world "hole" to air
+            set block at location at -9, 82, -3 in world "hole" to air
+            set block at location at -9, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -8, 81, 5 in world "hole" to piston:5
+            set block at location at -8, 81, 1 in world "hole" to piston:5
+            set block at location at -8, 81, -3 in world "hole" to piston:5
+            set block at location at -8, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -8, 82, 5 in world "hole" to redstone block
+            set block at location at -8, 82, 1 in world "hole" to redstone block
+            set block at location at -8, 82, -3 in world "hole" to redstone block
+            set block at location at -8, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -8, 81, 5 in world "hole" to air
+            set block at location at -8, 81, 1 in world "hole" to air
+            set block at location at -8, 81, -3 in world "hole" to air
+            set block at location at -8, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -8, 82, 5 in world "hole" to air
+            set block at location at -8, 82, 1 in world "hole" to air
+            set block at location at -8, 82, -3 in world "hole" to air
+            set block at location at -8, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -7, 81, 5 in world "hole" to piston:5
+            set block at location at -7, 81, 1 in world "hole" to piston:5
+            set block at location at -7, 81, -3 in world "hole" to piston:5
+            set block at location at -7, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -7, 82, 5 in world "hole" to redstone block
+            set block at location at -7, 82, 1 in world "hole" to redstone block
+            set block at location at -7, 82, -3 in world "hole" to redstone block
+            set block at location at -7, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -7, 81, 5 in world "hole" to air
+            set block at location at -7, 81, 1 in world "hole" to air
+            set block at location at -7, 81, -3 in world "hole" to air
+            set block at location at -7, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -7, 82, 5 in world "hole" to air
+            set block at location at -7, 82, 1 in world "hole" to air
+            set block at location at -7, 82, -3 in world "hole" to air
+            set block at location at -7, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -6, 81, 5 in world "hole" to piston:5
+            set block at location at -6, 81, 1 in world "hole" to piston:5
+            set block at location at -6, 81, -3 in world "hole" to piston:5
+            set block at location at -6, 81, 9 in world "hole" to piston:5
+            wait 1 ticks
+            set block at location at -6, 82, 5 in world "hole" to redstone block
+            set block at location at -6, 82, 1 in world "hole" to redstone block
+            set block at location at -6, 82, -3 in world "hole" to redstone block
+            set block at location at -6, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -6, 81, 5 in world "hole" to air
+            set block at location at -6, 81, 1 in world "hole" to air
+            set block at location at -6, 81, -3 in world "hole" to air
+            set block at location at -6, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -6, 82, 5 in world "hole" to air
+            set block at location at -6, 82, 1 in world "hole" to air
+            set block at location at -6, 82, -3 in world "hole" to air
+            set block at location at -6, 82, 9 in world "hole" to air 
+
+
+            # smazání
+
+            set block at location at -4, 81, 9 in world "hole" to air
+            set block at location at -4, 81, 8 in world "hole" to air
+            set block at location at -4, 81, 7 in world "hole" to air
+            set block at location at -4, 81, 6 in world "hole" to air
+            set block at location at -4, 81, 5 in world "hole" to air
+            set block at location at -4, 81, 4 in world "hole" to air
+            set block at location at -4, 81, 3 in world "hole" to air
+            set block at location at -4, 81, 2 in world "hole" to air
+            set block at location at -4, 81, 1 in world "hole" to air
+            set block at location at -4, 81, 0 in world "hole" to air
+            set block at location at -4, 81, -1 in world "hole" to air
+            set block at location at -4, 81, -2 in world "hole" to air
+            set block at location at -4, 81, -3 in world "hole" to air
+
+            set block at location at -4, 80, 9 in world "hole" to air
+            set block at location at -4, 80, 8 in world "hole" to air
+            set block at location at -4, 80, 7 in world "hole" to air
+            set block at location at -4, 80, 6 in world "hole" to air
+            set block at location at -4, 80, 5 in world "hole" to air
+            set block at location at -4, 80, 4 in world "hole" to air
+            set block at location at -4, 80, 3 in world "hole" to air
+            set block at location at -4, 80, 2 in world "hole" to air
+            set block at location at -4, 80, 1 in world "hole" to air
+            set block at location at -4, 80, 0 in world "hole" to air
+            set block at location at -4, 80, -1 in world "hole" to air
+            set block at location at -4, 80, -2 in world "hole" to air
+            set block at location at -4, 80, -3 in world "hole" to air
+
+            set block at location at -4, 79, 9 in world "hole" to air
+            set block at location at -4, 79, 8 in world "hole" to air
+            set block at location at -4, 79, 7 in world "hole" to air
+            set block at location at -4, 79, 6 in world "hole" to air
+            set block at location at -4, 79, 5 in world "hole" to air
+            set block at location at -4, 79, 4 in world "hole" to air
+            set block at location at -4, 79, 3 in world "hole" to air
+            set block at location at -4, 79, 2 in world "hole" to air
+            set block at location at -4, 79, 1 in world "hole" to air
+            set block at location at -4, 79, 0 in world "hole" to air
+            set block at location at -4, 79, -1 in world "hole" to air
+            set block at location at -4, 79, -2 in world "hole" to air
+            set block at location at -4, 79, -3 in world "hole" to air
+
+            set block at location at -4, 78, 9 in world "hole" to air
+            set block at location at -4, 78, 8 in world "hole" to air
+            set block at location at -4, 78, 7 in world "hole" to air
+            set block at location at -4, 78, 6 in world "hole" to air
+            set block at location at -4, 78, 5 in world "hole" to air
+            set block at location at -4, 78, 4 in world "hole" to air
+            set block at location at -4, 78, 3 in world "hole" to air
+            set block at location at -4, 78, 2 in world "hole" to air
+            set block at location at -4, 78, 1 in world "hole" to air
+            set block at location at -4, 78, 0 in world "hole" to air
+            set block at location at -4, 78, -1 in world "hole" to air
+            set block at location at -4, 78, -2 in world "hole" to air
+            set block at location at -4, 78, -3 in world "hole" to air
+
+            set block at location -5, 81, 1 in world "hole" to air
+
+            execute server command "newwall"
+        else:
+            onlyAdmin(player)
+
+
+command /pushwall2:
+    trigger:
+        if executor have permission "pog.champ":
+            set block at location at -13, 81, 13 in world "hole" to piston:2
+            set block at location at -17, 81, 13 in world "hole" to piston:2
+            set block at location at -9, 81, 13 in world "hole" to piston:2
+            set block at location at -5, 81, 13 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 13 in world "hole" to redstone block
+            set block at location at -17, 82, 13 in world "hole" to redstone block
+            set block at location at -9, 82, 13 in world "hole" to redstone block
+            set block at location at -5, 82, 13 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 13 in world "hole" to air
+            set block at location at -17, 81, 13 in world "hole" to air
+            set block at location at -9, 81, 13 in world "hole" to air
+            set block at location at -5, 81, 13 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 13 in world "hole" to air
+            set block at location at -17, 82, 13 in world "hole" to air
+            set block at location at -9, 82, 13 in world "hole" to air
+            set block at location at -5, 82, 13 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 12 in world "hole" to piston:2
+            set block at location at -17, 81, 12 in world "hole" to piston:2
+            set block at location at -9, 81, 12 in world "hole" to piston:2
+            set block at location at -5, 81, 12 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 12 in world "hole" to redstone block
+            set block at location at -17, 82, 12 in world "hole" to redstone block
+            set block at location at -9, 82, 12 in world "hole" to redstone block
+            set block at location at -5, 82, 12 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 12 in world "hole" to air
+            set block at location at -17, 81, 12 in world "hole" to air
+            set block at location at -9, 81, 12 in world "hole" to air
+            set block at location at -5, 81, 12 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 12 in world "hole" to air
+            set block at location at -17, 82, 12 in world "hole" to air
+            set block at location at -9, 82, 12 in world "hole" to air
+            set block at location at -5, 82, 12 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 11 in world "hole" to piston:2
+            set block at location at -17, 81, 11 in world "hole" to piston:2
+            set block at location at -9, 81, 11 in world "hole" to piston:2
+            set block at location at -5, 81, 11 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 11 in world "hole" to redstone block
+            set block at location at -17, 82, 11 in world "hole" to redstone block
+            set block at location at -9, 82, 11 in world "hole" to redstone block
+            set block at location at -5, 82, 11 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 11 in world "hole" to air
+            set block at location at -17, 81, 11 in world "hole" to air
+            set block at location at -9, 81, 11 in world "hole" to air
+            set block at location at -5, 81, 11 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 11 in world "hole" to air
+            set block at location at -17, 82, 11 in world "hole" to air
+            set block at location at -9, 82, 11 in world "hole" to air
+            set block at location at -5, 82, 11 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 10 in world "hole" to piston:2
+            set block at location at -17, 81, 10 in world "hole" to piston:2
+            set block at location at -9, 81, 10 in world "hole" to piston:2
+            set block at location at -5, 81, 10 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 10 in world "hole" to redstone block
+            set block at location at -17, 82, 10 in world "hole" to redstone block
+            set block at location at -9, 82, 10 in world "hole" to redstone block
+            set block at location at -5, 82, 10 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 10 in world "hole" to air
+            set block at location at -17, 81, 10 in world "hole" to air
+            set block at location at -9, 81, 10 in world "hole" to air
+            set block at location at -5, 81, 10 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 10 in world "hole" to air
+            set block at location at -17, 82, 10 in world "hole" to air
+            set block at location at -9, 82, 10 in world "hole" to air
+            set block at location at -5, 82, 10 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 9 in world "hole" to piston:2
+            set block at location at -17, 81, 9 in world "hole" to piston:2
+            set block at location at -9, 81, 9 in world "hole" to piston:2
+            set block at location at -5, 81, 9 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 9 in world "hole" to redstone block
+            set block at location at -17, 82, 9 in world "hole" to redstone block
+            set block at location at -9, 82, 9 in world "hole" to redstone block
+            set block at location at -5, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 9 in world "hole" to air
+            set block at location at -17, 81, 9 in world "hole" to air
+            set block at location at -9, 81, 9 in world "hole" to air
+            set block at location at -5, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 9 in world "hole" to air
+            set block at location at -17, 82, 9 in world "hole" to air
+            set block at location at -9, 82, 9 in world "hole" to air
+            set block at location at -5, 82, 9 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 8 in world "hole" to piston:2
+            set block at location at -17, 81, 8 in world "hole" to piston:2
+            set block at location at -9, 81, 8 in world "hole" to piston:2
+            set block at location at -5, 81, 8 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 8 in world "hole" to redstone block
+            set block at location at -17, 82, 8 in world "hole" to redstone block
+            set block at location at -9, 82, 8 in world "hole" to redstone block
+            set block at location at -5, 82, 8 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 8 in world "hole" to air
+            set block at location at -17, 81, 8 in world "hole" to air
+            set block at location at -9, 81, 8 in world "hole" to air
+            set block at location at -5, 81, 8 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 8 in world "hole" to air
+            set block at location at -17, 82, 8 in world "hole" to air
+            set block at location at -9, 82, 8 in world "hole" to air
+            set block at location at -5, 82, 8 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 7 in world "hole" to piston:2
+            set block at location at -17, 81, 7 in world "hole" to piston:2
+            set block at location at -9, 81, 7 in world "hole" to piston:2
+            set block at location at -5, 81, 7 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 7 in world "hole" to redstone block
+            set block at location at -17, 82, 7 in world "hole" to redstone block
+            set block at location at -9, 82, 7 in world "hole" to redstone block
+            set block at location at -5, 82, 7 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 7 in world "hole" to air
+            set block at location at -17, 81, 7 in world "hole" to air
+            set block at location at -9, 81, 7 in world "hole" to air
+            set block at location at -5, 81, 7 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 7 in world "hole" to air
+            set block at location at -17, 82, 7 in world "hole" to air
+            set block at location at -9, 82, 7 in world "hole" to air
+            set block at location at -5, 82, 7 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 6 in world "hole" to piston:2
+            set block at location at -17, 81, 6 in world "hole" to piston:2
+            set block at location at -9, 81, 6 in world "hole" to piston:2
+            set block at location at -5, 81, 6 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 6 in world "hole" to redstone block
+            set block at location at -17, 82, 6 in world "hole" to redstone block
+            set block at location at -9, 82, 6 in world "hole" to redstone block
+            set block at location at -5, 82, 6 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 6 in world "hole" to air
+            set block at location at -17, 81, 6 in world "hole" to air
+            set block at location at -9, 81, 6 in world "hole" to air
+            set block at location at -5, 81, 6 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 6 in world "hole" to air
+            set block at location at -17, 82, 6 in world "hole" to air
+            set block at location at -9, 82, 6 in world "hole" to air
+            set block at location at -5, 82, 6 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 5 in world "hole" to piston:2
+            set block at location at -17, 81, 5 in world "hole" to piston:2
+            set block at location at -9, 81, 5 in world "hole" to piston:2
+            set block at location at -5, 81, 5 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 5 in world "hole" to redstone block
+            set block at location at -17, 82, 5 in world "hole" to redstone block
+            set block at location at -9, 82, 5 in world "hole" to redstone block
+            set block at location at -5, 82, 5 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 5 in world "hole" to air
+            set block at location at -17, 81, 5 in world "hole" to air
+            set block at location at -9, 81, 5 in world "hole" to air
+            set block at location at -5, 81, 5 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 5 in world "hole" to air
+            set block at location at -17, 82, 5 in world "hole" to air
+            set block at location at -9, 82, 5 in world "hole" to air
+            set block at location at -5, 82, 5 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 4 in world "hole" to piston:2
+            set block at location at -17, 81, 4 in world "hole" to piston:2
+            set block at location at -9, 81, 4 in world "hole" to piston:2
+            set block at location at -5, 81, 4 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 4 in world "hole" to redstone block
+            set block at location at -17, 82, 4 in world "hole" to redstone block
+            set block at location at -9, 82, 4 in world "hole" to redstone block
+            set block at location at -5, 82, 4 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 4 in world "hole" to air
+            set block at location at -17, 81, 4 in world "hole" to air
+            set block at location at -9, 81, 4 in world "hole" to air
+            set block at location at -5, 81, 4 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 4 in world "hole" to air
+            set block at location at -17, 82, 4 in world "hole" to air
+            set block at location at -9, 82, 4 in world "hole" to air
+            set block at location at -5, 82, 4 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 3 in world "hole" to piston:2
+            set block at location at -17, 81, 3 in world "hole" to piston:2
+            set block at location at -9, 81, 3 in world "hole" to piston:2
+            set block at location at -5, 81, 3 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 3 in world "hole" to redstone block
+            set block at location at -17, 82, 3 in world "hole" to redstone block
+            set block at location at -9, 82, 3 in world "hole" to redstone block
+            set block at location at -5, 82, 3 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 3 in world "hole" to air
+            set block at location at -17, 81, 3 in world "hole" to air
+            set block at location at -9, 81, 3 in world "hole" to air
+            set block at location at -5, 81, 3 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 3 in world "hole" to air
+            set block at location at -17, 82, 3 in world "hole" to air
+            set block at location at -9, 82, 3 in world "hole" to air
+            set block at location at -5, 82, 3 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 2 in world "hole" to piston:2
+            set block at location at -17, 81, 2 in world "hole" to piston:2
+            set block at location at -9, 81, 2 in world "hole" to piston:2
+            set block at location at -5, 81, 2 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 2 in world "hole" to redstone block
+            set block at location at -17, 82, 2 in world "hole" to redstone block
+            set block at location at -9, 82, 2 in world "hole" to redstone block
+            set block at location at -5, 82, 2 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 2 in world "hole" to air
+            set block at location at -17, 81, 2 in world "hole" to air
+            set block at location at -9, 81, 2 in world "hole" to air
+            set block at location at -5, 81, 2 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 2 in world "hole" to air
+            set block at location at -17, 82, 2 in world "hole" to air
+            set block at location at -9, 82, 2 in world "hole" to air
+            set block at location at -5, 82, 2 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 1 in world "hole" to piston:2
+            set block at location at -17, 81, 1 in world "hole" to piston:2
+            set block at location at -9, 81, 1 in world "hole" to piston:2
+            set block at location at -5, 81, 1 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 1 in world "hole" to redstone block
+            set block at location at -17, 82, 1 in world "hole" to redstone block
+            set block at location at -9, 82, 1 in world "hole" to redstone block
+            set block at location at -5, 82, 1 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 1 in world "hole" to air
+            set block at location at -17, 81, 1 in world "hole" to air
+            set block at location at -9, 81, 1 in world "hole" to air
+            set block at location at -5, 81, 1 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 1 in world "hole" to air
+            set block at location at -17, 82, 1 in world "hole" to air
+            set block at location at -9, 82, 1 in world "hole" to air
+            set block at location at -5, 82, 1 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, 0 in world "hole" to piston:2
+            set block at location at -17, 81, 0 in world "hole" to piston:2
+            set block at location at -9, 81, 0 in world "hole" to piston:2
+            set block at location at -5, 81, 0 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, 0 in world "hole" to redstone block
+            set block at location at -17, 82, 0 in world "hole" to redstone block
+            set block at location at -9, 82, 0 in world "hole" to redstone block
+            set block at location at -5, 82, 0 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, 0 in world "hole" to air
+            set block at location at -17, 81, 0 in world "hole" to air
+            set block at location at -9, 81, 0 in world "hole" to air
+            set block at location at -5, 81, 0 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, 0 in world "hole" to air
+            set block at location at -17, 82, 0 in world "hole" to air
+            set block at location at -9, 82, 0 in world "hole" to air
+            set block at location at -5, 82, 0 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, -1 in world "hole" to piston:2
+            set block at location at -17, 81, -1 in world "hole" to piston:2
+            set block at location at -9, 81, -1 in world "hole" to piston:2
+            set block at location at -5, 81, -1 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, -1 in world "hole" to redstone block
+            set block at location at -17, 82, -1 in world "hole" to redstone block
+            set block at location at -9, 82, -1 in world "hole" to redstone block
+            set block at location at -5, 82, -1 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, -1 in world "hole" to air
+            set block at location at -17, 81, -1 in world "hole" to air
+            set block at location at -9, 81, -1 in world "hole" to air
+            set block at location at -5, 81, -1 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, -1 in world "hole" to air
+            set block at location at -17, 82, -1 in world "hole" to air
+            set block at location at -9, 82, -1 in world "hole" to air
+            set block at location at -5, 82, -1 in world "hole" to air 
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, -2 in world "hole" to piston:2
+            set block at location at -17, 81, -2 in world "hole" to piston:2
+            set block at location at -9, 81, -2 in world "hole" to piston:2
+            set block at location at -5, 81, -2 in world "hole" to piston:2
+            wait 1 ticks
+            set block at location at -13, 82, -2 in world "hole" to redstone block
+            set block at location at -17, 82, -2 in world "hole" to redstone block
+            set block at location at -9, 82, -2 in world "hole" to redstone block
+            set block at location at -5, 82, -2 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, -2 in world "hole" to air
+            set block at location at -17, 81, -2 in world "hole" to air
+            set block at location at -9, 81, -2 in world "hole" to air
+            set block at location at -5, 81, -2 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, -2 in world "hole" to air
+            set block at location at -17, 82, -2 in world "hole" to air
+            set block at location at -9, 82, -2 in world "hole" to air
+            set block at location at -5, 82, -2 in world "hole" to air 
+
+            #smazání
+
+            set block at location at -17, 81, -4 in world "hole" to air 
+            set block at location at -16, 81, -4 in world "hole" to air 
+            set block at location at -15, 81, -4 in world "hole" to air 
+            set block at location at -14, 81, -4 in world "hole" to air 
+            set block at location at -13, 81, -4 in world "hole" to air 
+            set block at location at -12, 81, -4 in world "hole" to air 
+            set block at location at -11, 81, -4 in world "hole" to air 
+            set block at location at -10, 81, -4 in world "hole" to air 
+            set block at location at -9, 81, -4 in world "hole" to air 
+            set block at location at -8, 81, -4 in world "hole" to air 
+            set block at location at -7, 81, -4 in world "hole" to air 
+            set block at location at -6, 81, -4 in world "hole" to air 
+            set block at location at -5, 81, -4 in world "hole" to air 
+
+            set block at location at -17, 80, -4 in world "hole" to air 
+            set block at location at -16, 80, -4 in world "hole" to air 
+            set block at location at -15, 80, -4 in world "hole" to air 
+            set block at location at -14, 80, -4 in world "hole" to air 
+            set block at location at -13, 80, -4 in world "hole" to air 
+            set block at location at -12, 80, -4 in world "hole" to air 
+            set block at location at -11, 80, -4 in world "hole" to air 
+            set block at location at -10, 80, -4 in world "hole" to air 
+            set block at location at -9, 80, -4 in world "hole" to air 
+            set block at location at -8, 80, -4 in world "hole" to air 
+            set block at location at -7, 80, -4 in world "hole" to air 
+            set block at location at -6, 80, -4 in world "hole" to air 
+            set block at location at -5, 80, -4 in world "hole" to air 
+
+            set block at location at -17, 79, -4 in world "hole" to air 
+            set block at location at -16, 79, -4 in world "hole" to air 
+            set block at location at -15, 79, -4 in world "hole" to air 
+            set block at location at -14, 79, -4 in world "hole" to air 
+            set block at location at -13, 79, -4 in world "hole" to air 
+            set block at location at -12, 79, -4 in world "hole" to air 
+            set block at location at -11, 79, -4 in world "hole" to air 
+            set block at location at -10, 79, -4 in world "hole" to air 
+            set block at location at -9, 79, -4 in world "hole" to air 
+            set block at location at -8, 79, -4 in world "hole" to air 
+            set block at location at -7, 79, -4 in world "hole" to air 
+            set block at location at -6, 79, -4 in world "hole" to air 
+            set block at location at -5, 79, -4 in world "hole" to air 
+
+            set block at location at -17, 78, -4 in world "hole" to air 
+            set block at location at -16, 78, -4 in world "hole" to air 
+            set block at location at -15, 78, -4 in world "hole" to air 
+            set block at location at -14, 78, -4 in world "hole" to air 
+            set block at location at -13, 78, -4 in world "hole" to air 
+            set block at location at -12, 78, -4 in world "hole" to air 
+            set block at location at -11, 78, -4 in world "hole" to air 
+            set block at location at -10, 78, -4 in world "hole" to air 
+            set block at location at -9, 78, -4 in world "hole" to air 
+            set block at location at -8, 78, -4 in world "hole" to air 
+            set block at location at -7, 78, -4 in world "hole" to air 
+            set block at location at -6, 78, -4 in world "hole" to air 
+            set block at location at -5, 78, -4 in world "hole" to air
+
+            set block at location at -9, 81, -3 in world "hole" to air
+
+            execute server command "newwall"
+        else:
+            onlyAdmin(player)
+
+command /pushwall3:
+    trigger:
+        if executor have permission "pog.champ":
+            set block at location at -5, 81, -7 in world "hole" to piston:3
+            set block at location at -9, 81, -7 in world "hole" to piston:3
+            set block at location at -13, 81, -7 in world "hole" to piston:3
+            set block at location at -17, 81, -7 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, -7 in world "hole" to redstone block
+            set block at location at -9, 82, -7 in world "hole" to redstone block
+            set block at location at -13, 82, -7 in world "hole" to redstone block
+            set block at location at -17, 82, -7 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -7 in world "hole" to air
+            set block at location at -9, 81, -7 in world "hole" to air
+            set block at location at -13, 81, -7 in world "hole" to air
+            set block at location at -17, 81, -7 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -7 in world "hole" to air
+            set block at location at -9, 82, -7 in world "hole" to air
+            set block at location at -13, 82, -7 in world "hole" to air
+            set block at location at -17, 82, -7 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+            
+            set block at location at -5, 81, -6 in world "hole" to piston:3
+            set block at location at -9, 81, -6 in world "hole" to piston:3
+            set block at location at -13, 81, -6 in world "hole" to piston:3
+            set block at location at -17, 81, -6 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82,  -6 in world "hole" to redstone block
+            set block at location at -9, 82,  -6 in world "hole" to redstone block
+            set block at location at -13, 82, -6 in world "hole" to redstone block
+            set block at location at -17, 82, -6 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -6 in world "hole" to air
+            set block at location at -9, 81, -6 in world "hole" to air
+            set block at location at -13, 81, -6 in world "hole" to air
+            set block at location at -17, 81, -6 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -6 in world "hole" to air
+            set block at location at -9, 82, -6 in world "hole" to air
+            set block at location at -13, 82, -6 in world "hole" to air
+            set block at location at -17, 82, -6 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, -5 in world "hole" to piston:3
+            set block at location at -9, 81, -5 in world "hole" to piston:3
+            set block at location at -13, 81, -5 in world "hole" to piston:3
+            set block at location at -17, 81, -5 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, -5 in world "hole" to redstone block
+            set block at location at -9, 82, -5 in world "hole" to redstone block
+            set block at location at -13, 82, -5 in world "hole" to redstone block
+            set block at location at -17, 82, -5 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -5 in world "hole" to air
+            set block at location at -9, 81, -5 in world "hole" to air
+            set block at location at -13, 81, -5 in world "hole" to air
+            set block at location at -17, 81, -5 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -5 in world "hole" to air
+            set block at location at -9, 82, -5 in world "hole" to air
+            set block at location at -13, 82, -5 in world "hole" to air
+            set block at location at -17, 82, -5 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, -4 in world "hole" to piston:3
+            set block at location at -9, 81, -4 in world "hole" to piston:3
+            set block at location at -13, 81, -4 in world "hole" to piston:3
+            set block at location at -17, 81, -4 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, -4 in world "hole" to redstone block
+            set block at location at -9, 82, -4 in world "hole" to redstone block
+            set block at location at -13, 82, -4 in world "hole" to redstone block
+            set block at location at -17, 82, -4 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -4 in world "hole" to air
+            set block at location at -9, 81, -4 in world "hole" to air
+            set block at location at -13, 81, -4 in world "hole" to air
+            set block at location at -17, 81, -4 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -4 in world "hole" to air
+            set block at location at -9, 82, -4 in world "hole" to air
+            set block at location at -13, 82, -4 in world "hole" to air
+            set block at location at -17, 82, -4 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, -3 in world "hole" to piston:3
+            set block at location at -9, 81, -3 in world "hole" to piston:3
+            set block at location at -13, 81, -3 in world "hole" to piston:3
+            set block at location at -17, 81, -3 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, -3 in world "hole" to redstone block
+            set block at location at -9, 82, -3 in world "hole" to redstone block
+            set block at location at -13, 82, -3 in world "hole" to redstone block
+            set block at location at -17, 82, -3 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -3 in world "hole" to air
+            set block at location at -9, 81, -3 in world "hole" to air
+            set block at location at -13, 81, -3 in world "hole" to air
+            set block at location at -17, 81, -3 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -3 in world "hole" to air
+            set block at location at -9, 82, -3 in world "hole" to air
+            set block at location at -13, 82, -3 in world "hole" to air
+            set block at location at -17, 82, -3 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, -2 in world "hole" to piston:3
+            set block at location at -9, 81, -2 in world "hole" to piston:3
+            set block at location at -13, 81, -2 in world "hole" to piston:3
+            set block at location at -17, 81, -2 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, -2 in world "hole" to redstone block
+            set block at location at -9, 82, -2 in world "hole" to redstone block
+            set block at location at -13, 82, -2 in world "hole" to redstone block
+            set block at location at -17, 82, -2 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -2 in world "hole" to air
+            set block at location at -9, 81, -2 in world "hole" to air
+            set block at location at -13, 81, -2 in world "hole" to air
+            set block at location at -17, 81, -2 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -2 in world "hole" to air
+            set block at location at -9, 82, -2 in world "hole" to air
+            set block at location at -13, 82, -2 in world "hole" to air
+            set block at location at -17, 82, -2 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, -1 in world "hole" to piston:3
+            set block at location at -9, 81, -1 in world "hole" to piston:3
+            set block at location at -13, 81, -1 in world "hole" to piston:3
+            set block at location at -17, 81, -1 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, -1 in world "hole" to redstone block
+            set block at location at -9, 82, -1 in world "hole" to redstone block
+            set block at location at -13, 82, -1 in world "hole" to redstone block
+            set block at location at -17, 82, -1 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -1 in world "hole" to air
+            set block at location at -9, 81, -1 in world "hole" to air
+            set block at location at -13, 81, -1 in world "hole" to air
+            set block at location at -17, 81, -1 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -1 in world "hole" to air
+            set block at location at -9, 82, -1 in world "hole" to air
+            set block at location at -13, 82, -1 in world "hole" to air
+            set block at location at -17, 82, -1 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 0 in world "hole" to piston:3
+            set block at location at -9, 81, 0 in world "hole" to piston:3
+            set block at location at -13, 81, 0 in world "hole" to piston:3
+            set block at location at -17, 81, 0 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 0 in world "hole" to redstone block
+            set block at location at -9, 82, 0 in world "hole" to redstone block
+            set block at location at -13, 82, 0 in world "hole" to redstone block
+            set block at location at -17, 82, 0 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 0 in world "hole" to air
+            set block at location at -9, 81, 0 in world "hole" to air
+            set block at location at -13, 81, 0 in world "hole" to air
+            set block at location at -17, 81, 0 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 0 in world "hole" to air
+            set block at location at -9, 82, 0 in world "hole" to air
+            set block at location at -13, 82, 0 in world "hole" to air
+            set block at location at -17, 82, 0 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 1 in world "hole" to piston:3
+            set block at location at -9, 81, 1 in world "hole" to piston:3
+            set block at location at -13, 81, 1 in world "hole" to piston:3
+            set block at location at -17, 81, 1 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 1 in world "hole" to redstone block
+            set block at location at -9, 82, 1 in world "hole" to redstone block
+            set block at location at -13, 82, 1 in world "hole" to redstone block
+            set block at location at -17, 82, 1 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 1 in world "hole" to air
+            set block at location at -9, 81, 1 in world "hole" to air
+            set block at location at -13, 81, 1 in world "hole" to air
+            set block at location at -17, 81, 1 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 1 in world "hole" to air
+            set block at location at -9, 82, 1 in world "hole" to air
+            set block at location at -13, 82, 1 in world "hole" to air
+            set block at location at -17, 82, 1 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 2 in world "hole" to piston:3
+            set block at location at -9, 81, 2 in world "hole" to piston:3
+            set block at location at -13, 81, 2 in world "hole" to piston:3
+            set block at location at -17, 81, 2 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 2 in world "hole" to redstone block
+            set block at location at -9, 82, 2 in world "hole" to redstone block
+            set block at location at -13, 82, 2 in world "hole" to redstone block
+            set block at location at -17, 82, 2 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 2 in world "hole" to air
+            set block at location at -9, 81, 2 in world "hole" to air
+            set block at location at -13, 81, 2 in world "hole" to air
+            set block at location at -17, 81, 2 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 2 in world "hole" to air
+            set block at location at -9, 82, 2 in world "hole" to air
+            set block at location at -13, 82, 2 in world "hole" to air
+            set block at location at -17, 82, 2 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 3 in world "hole" to piston:3
+            set block at location at -9, 81, 3 in world "hole" to piston:3
+            set block at location at -13, 81, 3 in world "hole" to piston:3
+            set block at location at -17, 81, 3 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 3 in world "hole" to redstone block
+            set block at location at -9, 82, 3 in world "hole" to redstone block
+            set block at location at -13, 82, 3 in world "hole" to redstone block
+            set block at location at -17, 82, 3 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 3 in world "hole" to air
+            set block at location at -9, 81, 3 in world "hole" to air
+            set block at location at -13, 81, 3 in world "hole" to air
+            set block at location at -17, 81, 3 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 3 in world "hole" to air
+            set block at location at -9, 82, 3 in world "hole" to air
+            set block at location at -13, 82, 3 in world "hole" to air
+            set block at location at -17, 82, 3 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 4 in world "hole" to piston:3
+            set block at location at -9, 81, 4 in world "hole" to piston:3
+            set block at location at -13, 81, 4 in world "hole" to piston:3
+            set block at location at -17, 81, 4 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 4 in world "hole" to redstone block
+            set block at location at -9, 82, 4 in world "hole" to redstone block
+            set block at location at -13, 82, 4 in world "hole" to redstone block
+            set block at location at -17, 82, 4 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 4 in world "hole" to air
+            set block at location at -9, 81, 4 in world "hole" to air
+            set block at location at -13, 81, 4 in world "hole" to air
+            set block at location at -17, 81, 4 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 4 in world "hole" to air
+            set block at location at -9, 82, 4 in world "hole" to air
+            set block at location at -13, 82, 4 in world "hole" to air
+            set block at location at -17, 82, 4 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 5 in world "hole" to piston:3
+            set block at location at -9, 81, 5 in world "hole" to piston:3
+            set block at location at -13, 81, 5 in world "hole" to piston:3
+            set block at location at -17, 81, 5 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 5 in world "hole" to redstone block
+            set block at location at -9, 82, 5 in world "hole" to redstone block
+            set block at location at -13, 82, 5 in world "hole" to redstone block
+            set block at location at -17, 82, 5 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 5 in world "hole" to air
+            set block at location at -9, 81, 5 in world "hole" to air
+            set block at location at -13, 81, 5 in world "hole" to air
+            set block at location at -17, 81, 5 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 5 in world "hole" to air
+            set block at location at -9, 82, 5 in world "hole" to air
+            set block at location at -13, 82, 5 in world "hole" to air
+            set block at location at -17, 82, 5 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 6 in world "hole" to piston:3
+            set block at location at -9, 81, 6 in world "hole" to piston:3
+            set block at location at -13, 81, 6 in world "hole" to piston:3
+            set block at location at -17, 81, 6 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 6 in world "hole" to redstone block
+            set block at location at -9, 82, 6 in world "hole" to redstone block
+            set block at location at -13, 82, 6 in world "hole" to redstone block
+            set block at location at -17, 82, 6 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 6 in world "hole" to air
+            set block at location at -9, 81, 6 in world "hole" to air
+            set block at location at -13, 81, 6 in world "hole" to air
+            set block at location at -17, 81, 6 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 6 in world "hole" to air
+            set block at location at -9, 82, 6 in world "hole" to air
+            set block at location at -13, 82, 6 in world "hole" to air
+            set block at location at -17, 82, 6 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 7 in world "hole" to piston:3
+            set block at location at -9, 81, 7 in world "hole" to piston:3
+            set block at location at -13, 81, 7 in world "hole" to piston:3
+            set block at location at -17, 81, 7 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 7 in world "hole" to redstone block
+            set block at location at -9, 82, 7 in world "hole" to redstone block
+            set block at location at -13, 82, 7 in world "hole" to redstone block
+            set block at location at -17, 82, 7 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 7 in world "hole" to air
+            set block at location at -9, 81, 7 in world "hole" to air
+            set block at location at -13, 81, 7 in world "hole" to air
+            set block at location at -17, 81, 7 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 7 in world "hole" to air
+            set block at location at -9, 82, 7 in world "hole" to air
+            set block at location at -13, 82, 7 in world "hole" to air
+            set block at location at -17, 82, 7 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, 8 in world "hole" to piston:3
+            set block at location at -9, 81, 8 in world "hole" to piston:3
+            set block at location at -13, 81, 8 in world "hole" to piston:3
+            set block at location at -17, 81, 8 in world "hole" to piston:3
+            wait 1 ticks
+            set block at location at -5, 82, 8 in world "hole" to redstone block
+            set block at location at -9, 82, 8 in world "hole" to redstone block
+            set block at location at -13, 82, 8 in world "hole" to redstone block
+            set block at location at -17, 82, 8 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, 8 in world "hole" to air
+            set block at location at -9, 81, 8 in world "hole" to air
+            set block at location at -13, 81, 8 in world "hole" to air
+            set block at location at -17, 81, 8 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, 8 in world "hole" to air
+            set block at location at -9, 82, 8 in world "hole" to air
+            set block at location at -13, 82, 8 in world "hole" to air
+            set block at location at -17, 82, 8 in world "hole" to air
+
+
+            # smazání
+
+            set block at location at -17, 81, 10 in world "hole" to air 
+            set block at location at -16, 81, 10 in world "hole" to air 
+            set block at location at -15, 81, 10 in world "hole" to air 
+            set block at location at -14, 81, 10 in world "hole" to air 
+            set block at location at -13, 81, 10 in world "hole" to air 
+            set block at location at -12, 81, 10 in world "hole" to air 
+            set block at location at -11, 81, 10 in world "hole" to air 
+            set block at location at -10, 81, 10 in world "hole" to air 
+            set block at location at -9, 81, 10 in world "hole" to air 
+            set block at location at -8, 81, 10 in world "hole" to air 
+            set block at location at -7, 81, 10 in world "hole" to air 
+            set block at location at -6, 81, 10 in world "hole" to air 
+            set block at location at -5, 81, 10 in world "hole" to air 
+
+            set block at location at -17, 80, 10 in world "hole" to air 
+            set block at location at -16, 80, 10 in world "hole" to air 
+            set block at location at -15, 80, 10 in world "hole" to air 
+            set block at location at -14, 80, 10 in world "hole" to air 
+            set block at location at -13, 80, 10 in world "hole" to air 
+            set block at location at -12, 80, 10 in world "hole" to air 
+            set block at location at -11, 80, 10 in world "hole" to air 
+            set block at location at -10, 80, 10 in world "hole" to air 
+            set block at location at -9, 80, 10 in world "hole" to air 
+            set block at location at -8, 80, 10 in world "hole" to air 
+            set block at location at -7, 80, 10 in world "hole" to air 
+            set block at location at -6, 80, 10 in world "hole" to air 
+            set block at location at -5, 80, 10 in world "hole" to air 
+
+            set block at location at -17, 79, 10 in world "hole" to air 
+            set block at location at -16, 79, 10 in world "hole" to air 
+            set block at location at -15, 79, 10 in world "hole" to air 
+            set block at location at -14, 79, 10 in world "hole" to air 
+            set block at location at -13, 79, 10 in world "hole" to air 
+            set block at location at -12, 79, 10 in world "hole" to air 
+            set block at location at -11, 79, 10 in world "hole" to air 
+            set block at location at -10, 79, 10 in world "hole" to air 
+            set block at location at -9, 79, 10 in world "hole" to air 
+            set block at location at -8, 79, 10 in world "hole" to air 
+            set block at location at -7, 79, 10 in world "hole" to air 
+            set block at location at -6, 79, 10 in world "hole" to air 
+            set block at location at -5, 79, 10 in world "hole" to air 
+
+            set block at location at -17, 78, 10 in world "hole" to air 
+            set block at location at -16, 78, 10 in world "hole" to air 
+            set block at location at -15, 78, 10 in world "hole" to air 
+            set block at location at -14, 78, 10 in world "hole" to air 
+            set block at location at -13, 78, 10 in world "hole" to air 
+            set block at location at -12, 78, 10 in world "hole" to air 
+            set block at location at -11, 78, 10 in world "hole" to air 
+            set block at location at -10, 78, 10 in world "hole" to air 
+            set block at location at -9, 78, 10 in world "hole" to air 
+            set block at location at -8, 78, 10 in world "hole" to air 
+            set block at location at -7, 78, 10 in world "hole" to air 
+            set block at location at -6, 78, 10 in world "hole" to air 
+            set block at location at -5, 78, 10 in world "hole" to air
+
+            set block at location at -13, 81, 9 in world "hole" to air
+
+            execute server command "newwall"
+        else:
+            onlyAdmin(player)
+
+command /pushwall4:
+    trigger:
+        if executor have permission "pog.champ":
+            set block at location at -1, 81, -3 in world "hole" to piston:4
+            set block at location at -1, 81, 1 in world "hole" to piston:4
+            set block at location at -1, 81, 5 in world "hole" to piston:4
+            set block at location at -1, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -1, 82, -3 in world "hole" to redstone block
+            set block at location at -1, 82, 1 in world "hole" to redstone block
+            set block at location at -1, 82, 5 in world "hole" to redstone block
+            set block at location at -1, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -1, 81, -3 in world "hole" to air
+            set block at location at -1, 81, 1 in world "hole" to air
+            set block at location at -1, 81, 5 in world "hole" to air
+            set block at location at -1, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -1, 82, -3 in world "hole" to air
+            set block at location at -1, 82, 1 in world "hole" to air
+            set block at location at -1, 82, 5 in world "hole" to air
+            set block at location at -1, 82, 9 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -2, 81, -3 in world "hole" to piston:4
+            set block at location at -2, 81, 1 in world "hole" to piston:4
+            set block at location at -2, 81, 5 in world "hole" to piston:4
+            set block at location at -2, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -2, 82, -3 in world "hole" to redstone block
+            set block at location at -2, 82, 1 in world "hole" to redstone block
+            set block at location at -2, 82, 5 in world "hole" to redstone block
+            set block at location at -2, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -2, 81, -3 in world "hole" to air
+            set block at location at -2, 81, 1 in world "hole" to air
+            set block at location at -2, 81, 5 in world "hole" to air
+            set block at location at -2, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -2, 82, -3 in world "hole" to air
+            set block at location at -2, 82, 1 in world "hole" to air
+            set block at location at -2, 82, 5 in world "hole" to air
+            set block at location at -2, 82, 9 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -3, 81, -3 in world "hole" to piston:4
+            set block at location at -3, 81, 1 in world "hole" to piston:4
+            set block at location at -3, 81, 5 in world "hole" to piston:4
+            set block at location at -3, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -3, 82, -3 in world "hole" to redstone block
+            set block at location at -3, 82, 1 in world "hole" to redstone block
+            set block at location at -3, 82, 5 in world "hole" to redstone block
+            set block at location at -3, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -3, 81, -3 in world "hole" to air
+            set block at location at -3, 81, 1 in world "hole" to air
+            set block at location at -3, 81, 5 in world "hole" to air
+            set block at location at -3, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -3, 82, -3 in world "hole" to air
+            set block at location at -3, 82, 1 in world "hole" to air
+            set block at location at -3, 82, 5 in world "hole" to air
+            set block at location at -3, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -4, 81, -3 in world "hole" to piston:4
+            set block at location at -4, 81, 1 in world "hole" to piston:4
+            set block at location at -4, 81, 5 in world "hole" to piston:4
+            set block at location at -4, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -4, 82, -3 in world "hole" to redstone block
+            set block at location at -4, 82, 1 in world "hole" to redstone block
+            set block at location at -4, 82, 5 in world "hole" to redstone block
+            set block at location at -4, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -4, 81, -3 in world "hole" to air
+            set block at location at -4, 81, 1 in world "hole" to air
+            set block at location at -4, 81, 5 in world "hole" to air
+            set block at location at -4, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -4, 82, -3 in world "hole" to air
+            set block at location at -4, 82, 1 in world "hole" to air
+            set block at location at -4, 82, 5 in world "hole" to air
+            set block at location at -4, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -5, 81, -3 in world "hole" to piston:4
+            set block at location at -5, 81, 1 in world "hole" to piston:4
+            set block at location at -5, 81, 5 in world "hole" to piston:4
+            set block at location at -5, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -5, 82, -3 in world "hole" to redstone block
+            set block at location at -5, 82, 1 in world "hole" to redstone block
+            set block at location at -5, 82, 5 in world "hole" to redstone block
+            set block at location at -5, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -5, 81, -3 in world "hole" to air
+            set block at location at -5, 81, 1 in world "hole" to air
+            set block at location at -5, 81, 5 in world "hole" to air
+            set block at location at -5, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -5, 82, -3 in world "hole" to air
+            set block at location at -5, 82, 1 in world "hole" to air
+            set block at location at -5, 82, 5 in world "hole" to air
+            set block at location at -5, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -6, 81, -3 in world "hole" to piston:4
+            set block at location at -6, 81, 1 in world "hole" to piston:4
+            set block at location at -6, 81, 5 in world "hole" to piston:4
+            set block at location at -6, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -6, 82, -3 in world "hole" to redstone block
+            set block at location at -6, 82, 1 in world "hole" to redstone block
+            set block at location at -6, 82, 5 in world "hole" to redstone block
+            set block at location at -6, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -6, 81, -3 in world "hole" to air
+            set block at location at -6, 81, 1 in world "hole" to air
+            set block at location at -6, 81, 5 in world "hole" to air
+            set block at location at -6, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -6, 82, -3 in world "hole" to air
+            set block at location at -6, 82, 1 in world "hole" to air
+            set block at location at -6, 82, 5 in world "hole" to air
+            set block at location at -6, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -7, 81, -3 in world "hole" to piston:4
+            set block at location at -7, 81, 1 in world "hole" to piston:4
+            set block at location at -7, 81, 5 in world "hole" to piston:4
+            set block at location at -7, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -7, 82, -3 in world "hole" to redstone block
+            set block at location at -7, 82, 1 in world "hole" to redstone block
+            set block at location at -7, 82, 5 in world "hole" to redstone block
+            set block at location at -7, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -7, 81, -3 in world "hole" to air
+            set block at location at -7, 81, 1 in world "hole" to air
+            set block at location at -7, 81, 5 in world "hole" to air
+            set block at location at -7, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -7, 82, -3 in world "hole" to air
+            set block at location at -7, 82, 1 in world "hole" to air
+            set block at location at -7, 82, 5 in world "hole" to air
+            set block at location at -7, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -8, 81, -3 in world "hole" to piston:4
+            set block at location at -8, 81, 1 in world "hole" to piston:4
+            set block at location at -8, 81, 5 in world "hole" to piston:4
+            set block at location at -8, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -8, 82, -3 in world "hole" to redstone block
+            set block at location at -8, 82, 1 in world "hole" to redstone block
+            set block at location at -8, 82, 5 in world "hole" to redstone block
+            set block at location at -8, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -8, 81, -3 in world "hole" to air
+            set block at location at -8, 81, 1 in world "hole" to air
+            set block at location at -8, 81, 5 in world "hole" to air
+            set block at location at -8, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -8, 82, -3 in world "hole" to air
+            set block at location at -8, 82, 1 in world "hole" to air
+            set block at location at -8, 82, 5 in world "hole" to air
+            set block at location at -8, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -9, 81, -3 in world "hole" to piston:4
+            set block at location at -9, 81, 1 in world "hole" to piston:4
+            set block at location at -9, 81, 5 in world "hole" to piston:4
+            set block at location at -9, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -9, 82, -3 in world "hole" to redstone block
+            set block at location at -9, 82, 1 in world "hole" to redstone block
+            set block at location at -9, 82, 5 in world "hole" to redstone block
+            set block at location at -9, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -9, 81, -3 in world "hole" to air
+            set block at location at -9, 81, 1 in world "hole" to air
+            set block at location at -9, 81, 5 in world "hole" to air
+            set block at location at -9, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -9, 82, -3 in world "hole" to air
+            set block at location at -9, 82, 1 in world "hole" to air
+            set block at location at -9, 82, 5 in world "hole" to air
+            set block at location at -9, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -10, 81, -3 in world "hole" to piston:4
+            set block at location at -10, 81, 1 in world "hole" to piston:4
+            set block at location at -10, 81, 5 in world "hole" to piston:4
+            set block at location at -10, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -10, 82, -3 in world "hole" to redstone block
+            set block at location at -10, 82, 1 in world "hole" to redstone block
+            set block at location at -10, 82, 5 in world "hole" to redstone block
+            set block at location at -10, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -10, 81, -3 in world "hole" to air
+            set block at location at -10, 81, 1 in world "hole" to air
+            set block at location at -10, 81, 5 in world "hole" to air
+            set block at location at -10, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -10, 82, -3 in world "hole" to air
+            set block at location at -10, 82, 1 in world "hole" to air
+            set block at location at -10, 82, 5 in world "hole" to air
+            set block at location at -10, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -11, 81, -3 in world "hole" to piston:4
+            set block at location at -11, 81, 1 in world "hole" to piston:4
+            set block at location at -11, 81, 5 in world "hole" to piston:4
+            set block at location at -11, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -11, 82, -3 in world "hole" to redstone block
+            set block at location at -11, 82, 1 in world "hole" to redstone block
+            set block at location at -11, 82, 5 in world "hole" to redstone block
+            set block at location at -11, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -11, 81, -3 in world "hole" to air
+            set block at location at -11, 81, 1 in world "hole" to air
+            set block at location at -11, 81, 5 in world "hole" to air
+            set block at location at -11, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -11, 82, -3 in world "hole" to air
+            set block at location at -11, 82, 1 in world "hole" to air
+            set block at location at -11, 82, 5 in world "hole" to air
+            set block at location at -11, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -12, 81, -3 in world "hole" to piston:4
+            set block at location at -12, 81, 1 in world "hole" to piston:4
+            set block at location at -12, 81, 5 in world "hole" to piston:4
+            set block at location at -12, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -12, 82, -3 in world "hole" to redstone block
+            set block at location at -12, 82, 1 in world "hole" to redstone block
+            set block at location at -12, 82, 5 in world "hole" to redstone block
+            set block at location at -12, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -12, 81, -3 in world "hole" to air
+            set block at location at -12, 81, 1 in world "hole" to air
+            set block at location at -12, 81, 5 in world "hole" to air
+            set block at location at -12, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -12, 82, -3 in world "hole" to air
+            set block at location at -12, 82, 1 in world "hole" to air
+            set block at location at -12, 82, 5 in world "hole" to air
+            set block at location at -12, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -13, 81, -3 in world "hole" to piston:4
+            set block at location at -13, 81, 1 in world "hole" to piston:4
+            set block at location at -13, 81, 5 in world "hole" to piston:4
+            set block at location at -13, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -13, 82, -3 in world "hole" to redstone block
+            set block at location at -13, 82, 1 in world "hole" to redstone block
+            set block at location at -13, 82, 5 in world "hole" to redstone block
+            set block at location at -13, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -13, 81, -3 in world "hole" to air
+            set block at location at -13, 81, 1 in world "hole" to air
+            set block at location at -13, 81, 5 in world "hole" to air
+            set block at location at -13, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -13, 82, -3 in world "hole" to air
+            set block at location at -13, 82, 1 in world "hole" to air
+            set block at location at -13, 82, 5 in world "hole" to air
+            set block at location at -13, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -14, 81, -3 in world "hole" to piston:4
+            set block at location at -14, 81, 1 in world "hole" to piston:4
+            set block at location at -14, 81, 5 in world "hole" to piston:4
+            set block at location at -14, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -14, 82, -3 in world "hole" to redstone block
+            set block at location at -14, 82, 1 in world "hole" to redstone block
+            set block at location at -14, 82, 5 in world "hole" to redstone block
+            set block at location at -14, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -14, 81, -3 in world "hole" to air
+            set block at location at -14, 81, 1 in world "hole" to air
+            set block at location at -14, 81, 5 in world "hole" to air
+            set block at location at -14, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -14, 82, -3 in world "hole" to air
+            set block at location at -14, 82, 1 in world "hole" to air
+            set block at location at -14, 82, 5 in world "hole" to air
+            set block at location at -14, 82, 9 in world "hole" to air
+            
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -15, 81, -3 in world "hole" to piston:4
+            set block at location at -15, 81, 1 in world "hole" to piston:4
+            set block at location at -15, 81, 5 in world "hole" to piston:4
+            set block at location at -15, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -15, 82, -3 in world "hole" to redstone block
+            set block at location at -15, 82, 1 in world "hole" to redstone block
+            set block at location at -15, 82, 5 in world "hole" to redstone block
+            set block at location at -15, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -15, 81, -3 in world "hole" to air
+            set block at location at -15, 81, 1 in world "hole" to air
+            set block at location at -15, 81, 5 in world "hole" to air
+            set block at location at -15, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -15, 82, -3 in world "hole" to air
+            set block at location at -15, 82, 1 in world "hole" to air
+            set block at location at -15, 82, 5 in world "hole" to air
+            set block at location at -15, 82, 9 in world "hole" to air
+
+            wait {walltime}
+            {wall.canpush} is true
+
+            set block at location at -16, 81, -3 in world "hole" to piston:4
+            set block at location at -16, 81, 1 in world "hole" to piston:4
+            set block at location at -16, 81, 5 in world "hole" to piston:4
+            set block at location at -16, 81, 9 in world "hole" to piston:4
+            wait 1 ticks
+            set block at location at -16, 82, -3 in world "hole" to redstone block
+            set block at location at -16, 82, 1 in world "hole" to redstone block
+            set block at location at -16, 82, 5 in world "hole" to redstone block
+            set block at location at -16, 82, 9 in world "hole" to redstone block
+            wait 1 ticks
+            set block at location at -16, 81, -3 in world "hole" to air
+            set block at location at -16, 81, 1 in world "hole" to air
+            set block at location at -16, 81, 5 in world "hole" to air
+            set block at location at -16, 81, 9 in world "hole" to air
+            wait 1 ticks
+            set block at location at -16, 82, -3 in world "hole" to air
+            set block at location at -16, 82, 1 in world "hole" to air
+            set block at location at -16, 82, 5 in world "hole" to air
+            set block at location at -16, 82, 9 in world "hole" to air
+
+
+            # smazání
+
+            set block at location at -18, 81, 9 in world "hole" to air
+            set block at location at -18, 81, 8 in world "hole" to air
+            set block at location at -18, 81, 7 in world "hole" to air
+            set block at location at -18, 81, 6 in world "hole" to air
+            set block at location at -18, 81, 5 in world "hole" to air
+            set block at location at -18, 81, 4 in world "hole" to air
+            set block at location at -18, 81, 3 in world "hole" to air
+            set block at location at -18, 81, 2 in world "hole" to air
+            set block at location at -18, 81, 1 in world "hole" to air
+            set block at location at -18, 81, 0 in world "hole" to air
+            set block at location at -18, 81, -1 in world "hole" to air
+            set block at location at -18, 81, -2 in world "hole" to air
+            set block at location at -18, 81, -3 in world "hole" to air
+
+            set block at location at -18, 80, 9 in world "hole" to air
+            set block at location at -18, 80, 8 in world "hole" to air
+            set block at location at -18, 80, 7 in world "hole" to air
+            set block at location at -18, 80, 6 in world "hole" to air
+            set block at location at -18, 80, 5 in world "hole" to air
+            set block at location at -18, 80, 4 in world "hole" to air
+            set block at location at -18, 80, 3 in world "hole" to air
+            set block at location at -18, 80, 2 in world "hole" to air
+            set block at location at -18, 80, 1 in world "hole" to air
+            set block at location at -18, 80, 0 in world "hole" to air
+            set block at location at -18, 80, -1 in world "hole" to air
+            set block at location at -18, 80, -2 in world "hole" to air
+            set block at location at -18, 80, -3 in world "hole" to air
+
+            set block at location at -18, 79, 9 in world "hole" to air
+            set block at location at -18, 79, 8 in world "hole" to air
+            set block at location at -18, 79, 7 in world "hole" to air
+            set block at location at -18, 79, 6 in world "hole" to air
+            set block at location at -18, 79, 5 in world "hole" to air
+            set block at location at -18, 79, 4 in world "hole" to air
+            set block at location at -18, 79, 3 in world "hole" to air
+            set block at location at -18, 79, 2 in world "hole" to air
+            set block at location at -18, 79, 1 in world "hole" to air
+            set block at location at -18, 79, 0 in world "hole" to air
+            set block at location at -18, 79, -1 in world "hole" to air
+            set block at location at -18, 79, -2 in world "hole" to air
+            set block at location at -18, 79, -3 in world "hole" to air
+
+            set block at location at -18, 78, 9 in world "hole" to air
+            set block at location at -18, 78, 8 in world "hole" to air
+            set block at location at -18, 78, 7 in world "hole" to air
+            set block at location at -18, 78, 6 in world "hole" to air
+            set block at location at -18, 78, 5 in world "hole" to air
+            set block at location at -18, 78, 4 in world "hole" to air
+            set block at location at -18, 78, 3 in world "hole" to air
+            set block at location at -18, 78, 2 in world "hole" to air
+            set block at location at -18, 78, 1 in world "hole" to air
+            set block at location at -18, 78, 0 in world "hole" to air
+            set block at location at -18, 78, -1 in world "hole" to air
+            set block at location at -18, 78, -2 in world "hole" to air
+            set block at location at -18, 78, -3 in world "hole" to air
+
+            set block at location at -17, 81, 5 in world "hole" to air
+
+            execute server command "newwall"
+        else:
+            onlyAdmin(player)

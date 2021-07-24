@@ -1,0 +1,245 @@
+function eventStartTitle(builder: text,event: text):
+    loop 250 times:
+        broadcast ""
+    loop all players:
+        send loop-player title "&5&l%{_event}%" with subtitle "&eMapu vytvořil/a: &d%{_builder}%" for 5 seconds
+    wait 5 seconds
+    loop all players:
+        send loop-player title "&r" with subtitle "&r" for 1 second
+
+function eventStartSetup(event: text):
+    set {mutechat} to true
+    loop all players:
+        wait 1 tick
+        delete {spectator.%loop-player%}
+        resetScoreboard(loop-player)
+        clear loop-player's inventory
+        set loop-player's gamemode to adventure
+        run loop-player command "effect %loop-player% clear" as op
+        teleport loop-player to {%{_event}%.spawn}
+
+function eventExplain(event: text):
+    play "CHICKEN_EGG_POP" to all players
+    broadcast "&5&m                                                           "
+    broadcast "&r "
+    broadcast " &d&l&n%{_event}%"
+
+    if {_event} is "Parkour":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Skákej až do cíle. Je zde mnoho checkpointů"
+        broadcast "&f a mini checkpointů. První v cíli vyhrává."
+        broadcast "&r "
+
+    if {_event} is "TNT Run":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Běhej, a přežij jako poslední. Blocky pod tebou"
+        broadcast "&f budou mizet, takže se nezastavuj."
+        broadcast "&r "
+
+    if {_event} is "TNT Tag":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Každé kolo získá náhodný hráč TNT, které"
+        broadcast "&f za 20 sekund vybouchne. Tvým cílem je předat"
+        broadcast "&f TNT jinému hráči, abys nevybouchnul."
+        
+        
+
+    if {_event} is "Super Spleef":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Podkopávej ostatní hráče a zůstaň jako"
+        broadcast "&f poslední na živu! Během hry budeš získávat"
+        broadcast "&f speciální power upy."
+
+    if {_event} is "Splashdown":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Když skočíš do vody, objeví se pod tebou block."
+        broadcast "&f Cílem je zůstat na živu jako poslední!"
+        broadcast "&r"
+
+    if {_event} is "Go, Slow, STOP":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Pokud zazní pokyn &cSTOP!&f, musíš se zastavit."
+        broadcast "&f Tvým úkolem je dostat se do cíle. První v cíli"
+        broadcast "&f vyhrává."
+
+
+    if {_event} is "Hot Floor":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Pokud stoupneš na červené sklo, zemřeš!"
+        broadcast "&f Tvým cílem je přežít jako poslední."
+        broadcast "&r "
+
+    if {_event} is "Hole in the Wall":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Musíš se vyhýbat posunujícím stěnám, aby tě"
+        broadcast "&f neshodily mimo plochu. Poslední na živu vyhrál."
+        broadcast "&r "
+
+    if {_event} is "Chicken Shoot":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Střílej do padajících slepic a získej coiny."
+        broadcast "&f Hráč s nejvyšším počtem coinů vyhrává!"
+        broadcast "&r "
+
+    if {_event} is "Musical Minecarts":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Tvým úkolem je co nejrychleji nasednout do"
+        broadcast "&f vozíku. Pokud na tebe žádný vozík nezbyde,"
+        broadcast "&f vypadáváš. Poslední na živu vyhrál."
+
+    if {_event} is "Block Party":
+        broadcast "&r "
+        broadcast "&r "
+        broadcast "&f Postav se včas na správný block. Po"
+        broadcast "&f odpočtu zmizí blocky jiné, než máš v"
+        broadcast "&f inventáři. Poslední na živu vyhrál."
+    broadcast "&r "
+    broadcast "&5&m                                                           "
+
+    wait 10 seconds
+    
+    play "CHICKEN_EGG_POP" to all players
+    broadcast "&5&m                                                           "
+    broadcast ""
+    broadcast " &d&l&nJak získat coiny?"
+    broadcast ""
+
+    if {_event} is "Parkour":
+        broadcast "&f - Za 1. místo: &e+100&6⛁"
+        broadcast "&f - Za 2. místo: &e+70&6⛁"
+        broadcast "&f - Za 3. místo: &e+50&6⛁"
+        broadcast "&f - Za dosažení checkpointu: &e+20&6⛁"
+        broadcast "&r "
+
+    if {_event} is "TNT Run":
+        broadcast "&r "
+        broadcast "&f - Když vypadne hráč: &e+10&6⛁"
+        broadcast "&f - Za výhru: &e+100&6⛁"
+        broadcast "&r "
+        broadcast "&r "
+
+    if {_event} is "TNT Tag":
+        broadcast "&r "
+        broadcast "&f - Když vypadne hráč kola: &e+10&6⛁"
+        broadcast "&f - Za výhru: &e+100&6⛁"
+        broadcast "&r "
+        broadcast "&r"
+
+    if {_event} is "Super Spleef":
+        broadcast "&r "
+        broadcast "&f - Za výhru kola: &e+100&6⛁"
+        broadcast "&f - Když vypadne hráč: &e+10&6⛁"
+        broadcast "&r "
+        broadcast "&r"
+
+    if {_event} is "Splashdown":
+        broadcast "&r "
+        broadcast "&f - Když se trefíš do vody: &e+10&6⛁"
+        broadcast "&f - Za výhru: &e+100&6⛁"
+        broadcast "&r "
+        broadcast "&r"
+
+    if {_event} is "Go, Slow, STOP":
+        broadcast "&f - Za 1. místo: &e+100&6⛁"
+        broadcast "&f - Za 2. místo: &e+70&6⛁"
+        broadcast "&f - Za 3. místo: &e+50&6⛁"
+        broadcast "&f - Za dokončení mapy: &e+20&6⛁"
+        broadcast "&r "
+
+    if {_event} is "Hot Floor":
+        broadcast "&r "
+        broadcast "&f - Když vypadne hráč: &e+10&6⛁"
+        broadcast "&f - Za výhru: &e+100&6⛁"
+        broadcast "&r "
+        broadcast "&r"
+
+    if {_event} is "Hole in the Wall":
+        broadcast "&r "
+        broadcast "&f - Když vypadne hráč: &e+15&6⛁"
+        broadcast "&f - Za výhru kola: &e+100&6⛁"
+        broadcast "&r "
+        broadcast "&r"
+
+    if {_event} is "Chicken Shoot":
+        broadcast "&r "
+        broadcast "&f - Za zabití slepice ""&c&l+5&f"": &e+5&6⛁"
+        broadcast "&f - Za zabití slepice ""&f&l+10&f"": &e+10&6⛁"
+        broadcast "&f - Za zabití slepice ""&6&l+15&f"": &e+15&6⛁"
+        broadcast "&r "
+
+    if {_event} is "Musical Minecarts":
+        broadcast "&r "
+        broadcast "&f - Když vypadne hráč: &e+10&6⛁"
+        broadcast "&f - Za výhru: &e+100&6⛁"
+        broadcast "&r "
+        broadcast "&r"
+
+    if {_event} is "Block Party":
+        broadcast "&r "
+        broadcast "&f - Když vypadne hráč: &e+15&6⛁"
+        broadcast "&f - Za výhru kola: &e+100&6⛁"
+        broadcast "&r "
+        broadcast "&r"
+
+    broadcast "&5&m                                                           "
+
+    wait 10 seconds
+
+    play "CHICKEN_EGG_POP" to all players
+    broadcast "&5&m                                                           "
+    broadcast "&r "
+    broadcast " &d&l&n%{_event}%"
+    broadcast ""
+    broadcast ""
+    broadcast "&f Good Luck :D"
+    broadcast ""
+    broadcast ""
+    broadcast "&5&m                                                           "
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+command /dev:test:explain <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            eventExplain("%arg-1%")
+        else:
+            onlyAdmin(player)
+
+command /dev:test:setup <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            eventStartSetup("%arg-1%")
+        else:
+            onlyAdmin(player)
+
+command /dev:test:title <text> <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            eventStartTitle("%arg-1%","%arg-2%")
+        else:
+            onlyAdmin(player)

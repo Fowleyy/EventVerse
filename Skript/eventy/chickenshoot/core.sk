@@ -1,0 +1,231 @@
+command /chickenshoot:start:
+    trigger:   
+        if {rank.%player%} is "admin":
+            teleport player to {CHICKEN_SHOOT.spawn}
+            wait 1 tick 
+            eventStartSetup("CHICKEN_SHOOT")
+            wait 1 seconds
+            eventStartTitle("n0t_GonkiS","Chicken Shoot")
+            updateEventState("GAME_INFO")
+            wait 5 seconds
+            eventExplain("Chicken Shoot")
+            wait 30 seconds
+            delete {mutechat}
+            sendTitle("COUNTDOWN")
+            wait 5 seconds
+            loop all players:
+                exe("effect @a minecraft:invisibility 9999 5 true")
+            updateEventState("GAME_PLAY")
+            boots()
+            set {chicken-ctd::min} to 2
+            set {chicken-ctd::sec} to 31
+            set {chicken::ctd} to true
+            set {chickenshoot.game} to true
+            loop all players:
+                newChickenScoreboard(loop-player)
+            loop all players:
+                spectator(loop-player)
+                chickenshootBow(loop-player)
+
+        else:
+            onlyAdmin(player)
+
+
+command /dev:testchickentimer <number> <number>:
+    trigger:
+        if player is "LukynkaCZE":
+            set {chicken-ctd::min} to arg-1
+            set {chicken-ctd::sec} to arg-2
+            set {chicken::ctd} to true
+
+
+every second:
+    loop all players:
+        if loop-player is in world "arcade_chickenshoot":
+            if y coord of loop-player is less than 15:
+                teleport loop-player to {chickenshoot_spawn1} or {chickenshoot_spawn2} or {chickenshoot_spawn3} or {chickenshoot_spawn4}
+                play "ENDERMAN_TELEPORT" to loop-player
+
+
+on item damage:
+    if player is in world "arcade_chickenshoot":
+        cancel event
+        repair player's held item
+
+on shoot:
+    if gamemode of shooter is adventure:
+        if shooter is in world "arcade_chickenshoot":
+            give shooter 1 arrow
+
+on projectile hit:
+    event-world is "arcade_chickenshoot"
+    if projectile is an arrow:
+        kill projectile
+
+command /dev:testspawnchicken:
+    trigger:
+        if {rank.%player%} = "admin":
+            spawnChickens()
+        else:
+            onlyAdmin(player)
+
+on damage:
+    if victim is in world "arcade_chickenshoot":
+        if attacker is player:
+            if victim is chicken:
+                kill victim
+                if name of victim is "1" or "2":
+                    play "EXPLODE" to attacker
+                    loop all entities in radius 10 of victim:
+                        if loop-entity is not victim:
+                            if loop-entity is chicken:
+                                if name of loop-entity is "+15":
+                                    add 15 to {_coinsqueue}
+                                    add 1 to {_killedn}
+                                if name of loop-entity is "+10":
+                                    add 10 to {_coinsqueue}
+                                    add 1 to {_killedn}
+                                if name of loop-entity is "+5":
+                                    add 5 to {_coinsqueue}
+                                    add 1 to {_killedn}
+                                kill loop-entity
+                                drawDot count 1, particle explosionhuge, speed 0, XYZ 0, 0, 0, center victim, visibleRange 150
+                    if {_coinsqueue} is not set:
+                        set {_coinsqueue} to 0
+                    if {_killedn} is not set:
+                        set {_killedn} to 0
+                    if {_killedn} is more than 0:
+                        send "&5&lChicken Shoot &8&l» &fExploze zabila &b%{_killedn}%&f slepic za &6%{_coinsqueue}% &fcoinů!" to attacker
+                        send attacker title "&r" with subtitle "&e+%{_coinsqueue}%&6⛁ (&e%{coins::%attacker%}%&6⛁)" for 1 seconds
+                        run attacker command "/soundhandler_sound_orb_2" as op
+                        send "&e+%{_coinsqueue}%&6⛁" to attacker
+                        add {_coinsqueue} to {coins::%attacker%}
+                        add {_coinsqueue} to {lifetime-coins::%attacker%}
+                if name of victim is "+15":
+                    addCoins(attacker, 15, "Zabití slepice")
+                if name of victim is "+10":
+                    addCoins(attacker, 10, "Zabití slepice")
+                if name of victim is "+5":
+                    addCoins(attacker, 5, "Zabití slepice")
+                if name of victim is "+5" or "+10" or "+15":
+                    set {_n} to name of victim
+                    send attacker title "&r" with subtitle "&e%{_n}%&6⛁ (&e%{coins::%attacker%}%&6⛁)" for 1 seconds
+                updateChickenScoreboard(attacker)
+
+                    
+
+function spawnChickens():
+    set {_r} to random integer between 1 and 56
+    spawn 1 chicken at {arcade.chicken.spawn.%{_r}%}
+    wait 10 seconds
+
+
+every 7 ticks:
+    if {chickenshoot.game} is true:
+        if {chicken::ctd} is true:
+            spawnChickens()
+
+
+
+function chickenshootBow(Player: player):
+    set {_n} to "Chicken Bow" or "Chicken-o-nator" or "Chicken butcher"
+    give {_Player} 1 bow named "&c&n%{_n}%&r"
+    set slot 8 of {_Player} to shiny arrow named "&7&nPew Pew"
+
+function removeAttachedArmorStand(Entity: entity):
+   # loop all entities in radius 0.4 of {_Entity}:
+   #     if loop-entity is armor stand:
+   #         kill loop-entity
+   #         set {_l} to location of loop-entity
+   #         debug("&cAutokill (%loop-entity%): &7%{_l}%")
+   set {_p} to passenger of {_Entity}
+   kill {_p}
+
+
+every 1 seconds:
+    loop all entities in world "arcade_chickenshoot":
+        if loop-entity is chicken:
+            if y-coordinate of loop-entity is less than 35:
+                kill loop-entity
+        if "%region at loop-entity%" contains "chicken_killzone":
+            if loop-entity is chicken:
+                kill loop-entity
+
+on death:
+    if victim is in world "arcade_chickenshoot":
+        if victim is chicken:
+            removeAttachedArmorStand(victim)
+
+on damage:
+    if victim is in world "arcade_chickenshoot":
+        if victim is player:
+            cancel event
+            
+
+on experience spawn:
+    if world is "arcade_chickenshoot":
+        cancel event
+
+on drop:
+    if player is in world "arcade_chickenshoot":
+        cancel event
+
+command /dev:removenearbystands:
+    trigger:
+        if {rank.%player%} = "admin":
+            if player is in world "arcade_chickenshoot":
+                loop all entities in radius 50 of player:
+                    if loop-entity is armor stand or chicken:
+                        kill loop-entity
+                        set {_l} to location of loop-entity
+                        debug("&c%loop-entity% &7| &f%{_l}%")
+        else:
+            onlyAdmin(player)
+
+
+every second:
+    if {chicken::ctd} is true:
+        if {chicken-ctd::sec} is more than -1:
+            remove 1 from {chicken-ctd::sec}
+            if {chicken-ctd::sec} is less than 10:
+                loop all players:
+                    update score id "cssb-%loop-player%-time" to "&fKonec za: &b0%{chicken-ctd::min}%:0%{chicken-ctd::sec}%" and 3
+
+            else:
+                loop all players:
+                    update score id "cssb-%loop-player%-time" to "&fKonec za: &b0%{chicken-ctd::min}%:%{chicken-ctd::sec}%" and 3
+                 #   broadcast "0%{chicken-ctd::min}%:%{chicken-ctd::sec}%"
+            if {chicken-ctd::sec} is 0:
+                if {chicken-ctd::min} is more than 0:
+                    remove 1 from {chicken-ctd::min}
+                    set {chicken-ctd::sec} to 59
+                else:
+                    delete {chicken::ctd}
+                    loop all entities in world "arcade_chickenshoot":
+                        if loop-entity is chicken:
+                            kill loop-entity
+                    execute server command "clead"
+                    loop all players:
+                        set gamemode of loop-player to spectator
+                    
+
+
+
+function newChickenScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&d&n&lChicken Shoot"
+    set score "&r        " in sidebar of {_p} to 8
+    set score "&f&lMapa:" in sidebar of {_p} to 7
+    set score "  &eLost Island" in sidebar of {_p} to 6
+    set score "  &7&oby n0t_GonkiS" in sidebar of {_p} to 5
+    set score "&r  " in sidebar of {_p} to 4
+    set id score "&fKonec za: &b2:00" in sidebar of {_p} to 3 with id "cssb-%{_p}%-time"
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "cssb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&5www.event-verse.fun" in sidebar of {_p} to 0
+
+function updateChickenScoreboard(p: player):
+    update score id "cssb-%{_p}%-coins" to "&fCoiny: &e%{coins::%{_p}%}%&6⛃" and 2
+
+
+

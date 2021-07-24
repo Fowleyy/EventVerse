@@ -1,0 +1,18 @@
+command /carts:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all entities:
+                if loop-entity is minecart:
+                    if loop-entity is in world "arcade_musicalcarts":
+                        kill loop-entity
+            eventStartSetup("MUSICAL_MINECARTS")
+            wait 3 seconds
+            eventStartTitle("Th3Dolphin","Musical Minecarts")
+            updateEventState("CARTS_INFO")
+            wait 5 seconds
+            eventExplain("Musical Minecarts")
+            wait 30 seconds
+            delete {mutechat}
+            wait 3 seconds
+            updateEventState("CARTS_PLAY")
+            cartsNewRound(1)

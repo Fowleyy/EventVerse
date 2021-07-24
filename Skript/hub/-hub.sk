@@ -1,0 +1,46 @@
+on damage:
+    if victim is in world "hub":
+        if victim is pig:
+            stop
+        else:
+            cancel event
+
+every second:
+    loop all players:
+        if loop-player is in world "hub":
+            if y coord of loop-player is less than 25:
+                if {hupk.%loop-player%} is not set:
+                    teleport loop-player to {hub}
+                    play "ENDERMAN_TELEPORT" to loop-player
+
+
+on right click on item frame:
+    if player is in world "hub":
+        if gamemode of player is creative:
+            stop
+        else:
+            cancel event
+
+
+
+
+on join:
+    if {shards::%player%} is not set:
+        set {shards::%player%} to 0
+
+every 5 seconds:
+    loop all players:
+        feed loop-player
+        extinguish loop-player
+
+
+every second:
+    loop all players:
+        if loop-player is in world "hub":
+            if y coord of loop-player is less than 0:
+                teleport loop-player to {hub}
+                play "ENDERMAN_TELEPORT" to loop-player
+
+
+on weather change:
+    cancel event

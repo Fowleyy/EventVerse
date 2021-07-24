@@ -1,0 +1,2737 @@
+function newEasyWestWall(n: number):
+    if {_n} is 1:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to slime_block
+        set block at location -20, 78, 3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 2:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to light green glass block
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 3:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to light green glass block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to light green glass block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 4:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 5:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to light green glass block
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 0 in world "hole" to slime_block
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to light green glass block
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to light green glass block
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 6:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to light green glass block
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 0 in world "hole" to slime_block
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to light green glass block
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to light green glass block
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 7:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to air
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to air
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to air
+        set block at location -20, 78, 9 in world "hole" to air
+    if {_n} is 8:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 9:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to air
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to light green glass block
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to light green glass block
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to light green glass block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to air
+    if {_n} is 10:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to light green glass block
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to slime_block
+        set block at location -20, 79, 3 in world "hole" to slime_block
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to light green glass block
+        set block at location -20, 78, 5 in world "hole" to air
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 11:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 12:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 13:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to air
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 14:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to birch_fence
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to birch_fence
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to birch_fence
+        set block at location -20, 80, 2 in world "hole" to birch_fence
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to birch_fence
+        set block at location -20, 79, 4 in world "hole" to birch_fence
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+
+
+function newNormalWestWall(n: number):
+    if {_n} is 1:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to light green glass block
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 0 in world "hole" to slime_block
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to light green glass block
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to light green glass block
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 2:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to air
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to light green glass block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to light green glass block
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to light green glass block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to air
+        set block at location -20, 79, 9 in world "hole" to air
+        set block at location -20, 78, 9 in world "hole" to light green glass block
+    if {_n} is 3:
+        set block at location -20, 81, -3 in world "hole" to air
+        set block at location -20, 80, -3 in world "hole" to air
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to air
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to air
+        set block at location -20, 80, 9 in world "hole" to air
+        set block at location -20, 79, 9 in world "hole" to air
+        set block at location -20, 78, 9 in world "hole" to air
+    if {_n} is 4:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to slime_block
+        set block at location -20, 78, 3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 5:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to slime_block
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 6:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to air
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to light green glass block
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 7:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to light green glass block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to slime_block
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to light green glass block
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 8:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to air
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to birch_fence
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to birch_fence
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to air
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to birch_fence
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to air
+        set block at location -20, 78, 9 in world "hole" to air
+    if {_n} is 9:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to birch_fence
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to slime_block
+        set block at location -20, 78, 3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to birch_fence
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 10:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to upside-down birch slab item
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to birch slab item
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_r} is 11:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to light green glass block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to slime_block
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to air
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to light green glass block
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to air
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to air
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to light green glass block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_r} is 12:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to _birch_wood_stairs
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to birch_fence
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to birch_fence
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to _birch_wood_stairs
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to air
+        set block at location -20, 78, 9 in world "hole" to birch_fence
+    if {_n} is 13:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to air
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to slime_block
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to air
+        set block at location -20, 79, 1 in world "hole" to air
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to birch_fence
+        set block at location -20, 79, 3 in world "hole" to birch_fence
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to air
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to air
+        set block at location -20, 79, 9 in world "hole" to air
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 14:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to air
+        set block at location -20, 78, -3 in world "hole" to air
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to birch_fence
+        set block at location -20, 78, 0 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to birch_fence
+        set block at location -20, 78, 3 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to birch_fence
+        set block at location -20, 78, 6 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to air
+        set block at location -20, 78, 9 in world "hole" to air
+
+
+function newHardWestWall(n: number):
+    if {_n} is 1:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to birch_fence
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to light green glass block
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to birch_fence
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 2:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to light green glass block
+        set block at location -20, 79, 0 in world "hole" to light green glass block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to birch_fence
+        set block at location -20, 79, 2 in world "hole" to birch_fence
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to light green glass block
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to birch_fence
+        set block at location -20, 79, 4 in world "hole" to birch_fence
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to light green glass block
+        set block at location -20, 79, 6 in world "hole" to light green glass block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 3:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to light green glass block
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_r} is 4:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to air
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to air
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to light green glass block
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to air
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 5:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to birch_fence
+        set block at location -20, 79, -2 in world "hole" to birch_fence
+        set block at location -20, 78, -2 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to birch_fence
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to light green glass block
+        set block at location -20, 80, 0 in world "hole" to birch_fence
+        set block at location -20, 79, 0 in world "hole" to birch_fence
+        set block at location -20, 78, 0 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to birch_fence
+        set block at location -20, 79, 3 in world "hole" to birch_fence
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to light green glass block
+        set block at location -20, 80, 6 in world "hole" to birch_fence
+        set block at location -20, 79, 6 in world "hole" to birch_fence
+        set block at location -20, 78, 6 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 7 in world "hole" to slime_block
+        set block at location -20, 80, 7 in world "hole" to birch_fence
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to birch_fence
+        set block at location -20, 79, 8 in world "hole" to birch_fence
+        set block at location -20, 78, 8 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 6:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to birch_fence
+        set block at location -20, 78, -3 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to light green glass block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to upside-down birch slab item
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to light green glass block
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to birch slab item
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to upside-down birch slab item
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to light green glass block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to birch_fence
+        set block at location -20, 78, 9 in world "hole" to birch_fence
+    if {_n} is 7:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to light green glass block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to birch_fence
+        set block at location -20, 79, 2 in world "hole" to birch_fence
+        set block at location -20, 78, 2 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 3 in world "hole" to slime_block
+        set block at location -20, 80, 3 in world "hole" to upside-down birch slab item
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to birch slab item
+        #
+        set block at location -20, 81, 4 in world "hole" to light green glass block
+        set block at location -20, 80, 4 in world "hole" to birch_fence
+        set block at location -20, 79, 4 in world "hole" to birch_fence
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to light green glass block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 8:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to slime_block
+        set block at location -20, 80, -1 in world "hole" to slime_block
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to birch_fence
+        set block at location -20, 79, 0 in world "hole" to birch_fence
+        set block at location -20, 78, 0 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to air
+        set block at location -20, 78, 5 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to air
+        set block at location -20, 78, 6 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to slime_block
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to birch_fence
+        set block at location -20, 79, 8 in world "hole" to birch_fence
+        set block at location -20, 78, 8 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 9:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to birch_fence
+        set block at location -20, 78, -1 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to birch_fence
+        set block at location -20, 78, 0 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to birch_fence
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to light green glass block
+        set block at location -20, 78, 2 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to light green glass block
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to birch_fence
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to light green glass block
+        set block at location -20, 78, 4 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to birch_fence
+        set block at location -20, 78, 6 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to birch_fence
+        set block at location -20, 78, 7 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 10:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to slime_block
+        set block at location -20, 80, -2 in world "hole" to birch_fence
+        set block at location -20, 79, -2 in world "hole" to birch_fence
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to light green glass block
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to air
+        set block at location -20, 78, -1 in world "hole" to birch slab item
+        #
+        set block at location -20, 81, 0 in world "hole" to slime_block
+        set block at location -20, 80, 0 in world "hole" to birch_fence
+        set block at location -20, 79, 0 in world "hole" to birch_fence
+        set block at location -20, 78, 0 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to air
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to birch_fence
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to air
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to slime_block
+        set block at location -20, 80, 6 in world "hole" to birch_fence
+        set block at location -20, 79, 6 in world "hole" to birch_fence
+        set block at location -20, 78, 6 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 7 in world "hole" to light green glass block
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to air
+        set block at location -20, 78, 7 in world "hole" to birch slab item
+        #
+        set block at location -20, 81, 8 in world "hole" to slime_block
+        set block at location -20, 80, 8 in world "hole" to birch_fence
+        set block at location -20, 79, 8 in world "hole" to birch_fence
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 11:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to slime_block
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to birch_fence
+        set block at location -20, 79, -1 in world "hole" to birch_fence
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to slime_block
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to birch_fence
+        set block at location -20, 80, 3 in world "hole" to air
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to slime_block
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to birch_fence
+        set block at location -20, 79, 7 in world "hole" to birch_fence
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to slime_block
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 12:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to air
+        set block at location -20, 79, 1 in world "hole" to light green glass block
+        set block at location -20, 78, 1 in world "hole" to air
+        #
+        set block at location -20, 81, 2 in world "hole" to slime_block
+        set block at location -20, 80, 2 in world "hole" to air
+        set block at location -20, 79, 2 in world "hole" to air
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to slime_block
+        set block at location -20, 80, 3 in world "hole" to slime_block
+        set block at location -20, 79, 3 in world "hole" to slime_block
+        set block at location -20, 78, 3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 4 in world "hole" to slime_block
+        set block at location -20, 80, 4 in world "hole" to air
+        set block at location -20, 79, 4 in world "hole" to air
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to air
+        set block at location -20, 79, 5 in world "hole" to light green glass block
+        set block at location -20, 78, 5 in world "hole" to air
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 13:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to birch slab item
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to birch slab item
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to birch slab item
+        set block at location -20, 79, 0 in world "hole" to light green glass block
+        set block at location -20, 78, 0 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to slime_block
+        set block at location -20, 78, 2 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to upside-down birch slab item
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to birch slab item
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to slime_block
+        set block at location -20, 78, 4 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to birch slab item
+        set block at location -20, 79, 6 in world "hole" to light green glass block
+        set block at location -20, 78, 6 in world "hole" to light green glass block
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to birch slab item
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to birch slab item
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block
+    if {_n} is 14:
+        set block at location -20, 81, -3 in world "hole" to slime_block
+        set block at location -20, 80, -3 in world "hole" to slime_block
+        set block at location -20, 79, -3 in world "hole" to slime_block
+        set block at location -20, 78, -3 in world "hole" to slime_block
+        #
+        set block at location -20, 81, -2 in world "hole" to air
+        set block at location -20, 80, -2 in world "hole" to air
+        set block at location -20, 79, -2 in world "hole" to slime_block
+        set block at location -20, 78, -2 in world "hole" to air
+        #
+        set block at location -20, 81, -1 in world "hole" to air
+        set block at location -20, 80, -1 in world "hole" to air
+        set block at location -20, 79, -1 in world "hole" to slime_block
+        set block at location -20, 78, -1 in world "hole" to air
+        #
+        set block at location -20, 81, 0 in world "hole" to air
+        set block at location -20, 80, 0 in world "hole" to air
+        set block at location -20, 79, 0 in world "hole" to slime_block
+        set block at location -20, 78, 0 in world "hole" to air
+        #
+        set block at location -20, 81, 1 in world "hole" to slime_block
+        set block at location -20, 80, 1 in world "hole" to slime_block
+        set block at location -20, 79, 1 in world "hole" to slime_block
+        set block at location -20, 78, 1 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 2 in world "hole" to air
+        set block at location -20, 80, 2 in world "hole" to slime_block
+        set block at location -20, 79, 2 in world "hole" to birch_fence
+        set block at location -20, 78, 2 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 3 in world "hole" to air
+        set block at location -20, 80, 3 in world "hole" to slime_block
+        set block at location -20, 79, 3 in world "hole" to air
+        set block at location -20, 78, 3 in world "hole" to air
+        #
+        set block at location -20, 81, 4 in world "hole" to air
+        set block at location -20, 80, 4 in world "hole" to slime_block
+        set block at location -20, 79, 4 in world "hole" to birch_fence
+        set block at location -20, 78, 4 in world "hole" to birch_fence
+        #
+        set block at location -20, 81, 5 in world "hole" to slime_block
+        set block at location -20, 80, 5 in world "hole" to slime_block
+        set block at location -20, 79, 5 in world "hole" to slime_block
+        set block at location -20, 78, 5 in world "hole" to slime_block
+        #
+        set block at location -20, 81, 6 in world "hole" to air
+        set block at location -20, 80, 6 in world "hole" to air
+        set block at location -20, 79, 6 in world "hole" to slime_block
+        set block at location -20, 78, 6 in world "hole" to air
+        #
+        set block at location -20, 81, 7 in world "hole" to air
+        set block at location -20, 80, 7 in world "hole" to air
+        set block at location -20, 79, 7 in world "hole" to slime_block
+        set block at location -20, 78, 7 in world "hole" to air
+        #
+        set block at location -20, 81, 8 in world "hole" to air
+        set block at location -20, 80, 8 in world "hole" to air
+        set block at location -20, 79, 8 in world "hole" to slime_block
+        set block at location -20, 78, 8 in world "hole" to air
+        #
+        set block at location -20, 81, 9 in world "hole" to slime_block
+        set block at location -20, 80, 9 in world "hole" to slime_block
+        set block at location -20, 79, 9 in world "hole" to slime_block
+        set block at location -20, 78, 9 in world "hole" to slime_block

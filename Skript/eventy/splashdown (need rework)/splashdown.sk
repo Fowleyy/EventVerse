@@ -1,0 +1,213 @@
+#----------------------------------------------------------------------
+#
+# Tenhle skript je hodně old a vůbec se divím že funguje..
+#
+#----------------------------------------------------------------------
+
+
+
+
+on damage:
+    if victim is in world "splashdown":
+        if damage cause is fall:
+            if gamemode of victim is adventure:
+                cancel event
+                if {sd.start} is not set:
+                    splashdownDead(victim)
+
+every 10 ticks:
+    loop all players:
+        if loop-player is in world "splashdown":
+            if {sd.start} is true:
+                if y coord of loop-player is less than 90:
+                    teleport loop-player to {sd1} or {sd2} or {sd3} or {sd4} or {sd5} or {sd6} or {sd7} or {sd8} or {sd9} or {sd10} or {sd11} or {sd12} or {sd13} or {sd14} or {sd15} or {sd16}
+
+
+on quit:
+    remove 1 from {sd::players}
+    remove 1 from {sd::players.alive}
+    updateSdScoreboard()
+    wait 1 ticks
+    if {sd.play} is true:
+        if {sd::players} is less than 1:
+            if {sd::players.alive} is less than 1:
+                loop all players:
+                    if gamemode of loop-player is adventure:
+                        splashdownEnd(loop-player)
+                        stop
+        if {sd::players} is more than 1:
+            if {sd::players.alive} is less than 1:
+                splashdownNextRound()
+                stop
+
+function splashdownDead(p: player):
+    pkCheckpointFirework({_p})
+    set gamemode of {_p} to spectator
+    remove 1 from {sd::players}
+    remove 1 from {sd::players.alive}
+    set {_m} to "nebyl/a tak dobrý/á jako Kbelik_Vody" or "spadnul/a.. what a shame!" or "nedával/a pozor když simpil/a Lukynku.." or "se utopil/a" or "si myslel/a že je lepší než PeteZahHutt.. welp" or "si chtěl/a zaplavat.. uh oh" or "byl/a rozdrcena spadlou skříní" or "dostal/a infarkt.. Přehnal/a to s energy drinkem." or "dosimpoval/a." or "napísal/a yg.." or "už neni." or "používal/a light mode.." or "byl/a zakousnutý/á shibou!" or "se utopil/a v sopce" or "byl/a až moc sus" or "nejspíš AFKoval/a" or "was ejected... %{sd::players}% impostors remaining" or "zapomněl/a dát follow @LukynkaCZe" or "už nechtěl/a žít.." or "si stěžoval/a že kopírujeme Noxcrew" or ".. to byl 100%% lag!" or "byl/a yeetnut/á!" or "pořád není připojen/á na discordu EventVerse!" or "zjistil/a že Dream není nejlepší hráč.." or "sledoval/a SirYakariho" or "nevyhrál/a 100 hráčů plní ůkoli!" or "se choval/a jako Aragon.. nechovej se jako Aragon a nedopadneš takhle!" or "byl/a přidán/a na list zlobivých dětí!" or "umřel/a.. clip it and ship it!" or ".. uhhh.. už fakt nemám nápady na death message.." or "zapomněl/a že tohle není water drop!"
+    if {_p} is "NeoriginalniKari":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si myslel že vyhraje.. bohužel tohle není parkour"
+    if {_p} is "yq__":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "pořád neví jestli je to ""yq"" nebo ""yg"".."
+    if {_p} is "Alien584":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to ",jako správný mimozemšťan, odletěl na jinou planetu.."
+    if {_p} is "RiillyCZ" or "RizzRikCz":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "je tu jenom pro výhru.. zaprodanec smh"
+    if {_p} is "Danicekk" or "S0ptik":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl/a zaplavat.. jako správný žralok!"
+    if {_p} is "Th3Dolphin":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl zaplavat s delfínama.. uh oh"
+    if {_p} is "Kbelik_Vody":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "se vylil.. teď je to Kbelik_Prazdny"
+    broadcast "&c✖ &8&l» %{rankcolor.%{_p}%}%%{_p}%&7 %{_m}%"
+    updateSdScoreboard()
+    set {sdsp.%{_p}%} to true
+    wait 1 ticks
+    if {sd::players} is less than 2:
+        if {sd::players.alive} is less than 2:
+            loop all players:
+                if {sdsp.%loop-player%} is not set:
+                    splashdownEnd(loop-player)
+                    stop
+    if {sd::players} is more than 0:
+        if {sd::players.alive} is less than 1:
+            splashdownNextRound()
+            stop
+
+on damage:
+    if victim is in world "splashdown":
+        cancel event
+
+every 2 ticks:
+    loop all players:
+        if gamemode of loop-player is adventure:
+            if block at loop-player is water:
+                if loop-player is in world "splashdown":
+                    if {rank.%loop-player%} is "donator":
+                        set block at loop-player to magenta wool
+                    if {rank.%loop-player%} is "tester":
+                        set block at loop-player to cyan wool
+                    if {rank.%loop-player%} is "player" or "verified":
+                        set block at loop-player to white wool
+                    if {rank.%loop-player%} is "admin" or "mcteam":
+                        set block at loop-player to red wool
+                    if {rank.%loop-player%} is "dcteam":
+                        set block at loop-player to orange wool
+                    set gamemode of loop-player to spectator
+                    addCoins(loop-player,10,"Přežití")
+                    broadcast "&a✔ &8&l» %{rankcolor.%loop-player%}%%loop-player%&7 se trefil/a do vody!"
+                    addShards(loop-player, 0.2, "Přežití")
+                    run loop-player command "/soundhandler_sound_orb_2" as op
+                    updateSdScoreboard()
+                    remove 1 from {sd::players.alive}
+                    if {sd::players} is less than 2:
+                        splashdownEnd(loop-player)
+                        stop
+                    if {sd::players} is more than 1:
+                        if {sd::players.alive} is less than 1:
+                            if {sdsp.%loop-player%} is not set:
+                                splashdownNextRound()
+                                stop
+
+function splashdownEnd(p: player):
+    delete {sd.play}
+    set gamemode of {_p} to spectator
+    loop all players:
+        message centered "&5&m                                  " to loop-player
+        message centered "&r " to loop-player
+        message centered "&e  ⬛  ⬛  ⬛" to loop-player
+        message centered "&e⬛⬛⬛⬛⬛" to loop-player
+        message center "&r " to loop-player
+        message centered "&7Výherce: &6%{_p}%" to loop-player
+        message centered "&r " to loop-player
+        message centered "&5&m                                  " to loop-player
+    addCoins({_p},100,"Výhra")
+    addShards({_p}, 3, "Výhra")
+    loop all players:
+        resetScoreboard(loop-player)
+
+
+on any movement:
+    if {freeze} is true:
+        if {sdsp.%player%} is true:
+            stop
+        else:
+            set {_l} to location of player
+            teleport player to {_l}
+
+command /sd:newround:
+    trigger:
+        if {rank.%player%} is "admin":
+            splashdownNextRound()
+        else:  
+            onlyAdmin(player)
+
+function splashdownNextRound():
+    loop all players:
+        resetScoreboard(loop-player)
+        if {sdsp.%loop-player%} is not set:
+            set gamemode of loop-player to adventure
+        send loop-player title "&a&lNOVÉ KOLO" with subtitle "&ePřiprav se..." for 5 seconds
+        if {sdsp.%loop-player%} is not set:
+            teleport loop-player to {sd1} or {sd2} or {sd3} or {sd4} or {sd5} or {sd6} or {sd7} or {sd8} or {sd9} or {sd10} or {sd11} or {sd12} or {sd13} or {sd14} or {sd15} or {sd16}
+    set {freeze} to true
+    wait 1 seconds
+    wait 10 ticks
+    set {sd::players} to 0
+    set {sd::players.alive} to 0
+    loop all players:
+        if {sdsp.%loop-player%} is not set:
+            set gamemode of loop-player to adventure
+        if gamemode of loop-player is adventure or survival:
+            wait 1 ticks
+            add 1 to {sd::players}
+            add 1 to {sd::players.alive}
+    wait 2 seconds
+    sendTitle("COUNTDOWN")
+    wait 5 seconds
+    delete {freeze}
+    apply potion of night vision of tier 1 to all players for 10 days
+    loop all players:
+        newSdScoreboard(loop-player)
+        spectator(loop-player)
+
+
+
+
+function updateSdScoreboard():
+    loop all players:
+        if loop-player is in world "splashdown":
+            update score id "sdsb-%loop-player%-players" to "Hráči na živu: &a%{sd::players}%" and 4
+            update score id "sdsb-%loop-player%-coins" to "&fCoiny: &e%{coins::%loop-player%}%&6⛃" and 2
+
+
+
+function newSdScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&d&n&lSplashdown"
+    set score "&r           " in sidebar of {_p} to 10
+    set score "&f&lMapa:" in sidebar of {_p} to 9
+    set score "  &eSky" in sidebar of {_p} to 8
+    set score "  &7&oby LukynkaCZE" in sidebar of {_p} to 7
+    set score "  &7&o & Kbelik_Vody" in sidebar of {_p} to 6
+    set score "&r        " in sidebar of {_p} to 5
+    set id score "Hráči na živu: &a%{sd::players}%" in sidebar of {_p} to 4 with id "sdsb-%{_p}%-players"
+    set score "&r   " in sidebar of {_p} to 3
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "sdsb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&ewww.eventverse.eu" in sidebar of {_p} to 0

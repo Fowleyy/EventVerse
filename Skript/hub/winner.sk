@@ -1,0 +1,359 @@
+command /winner <player> [<player>] [<player>]:
+    trigger:
+        if {rank.%player%} is "admin":
+            #hitwEndRound()
+            delete {lights.canchange}
+            delete {ggreward::*}
+            set {last.event.winner} to "%arg-1%"
+            {winnerstage.state} is not set
+            delete {hodnoceni.1}
+            delete {hodnoceni.2}
+            delete {hodnoceni.3}
+            set {iswinner.%arg 1%} to true
+            set {iswinner.%arg 2%} to true
+            set {iswinner.%arg 3%} to true
+            add 1 to {event.win::%arg-1%}
+            loop all players:
+                reveal all players from all players
+                delete {freeze}
+                delete {sdsp.%loop-player%}
+                delete {spectator.%loop-player%}
+                add 1 to {event.play::%loop-player%}
+            set {winnerstage.state} to true
+            add 1 to {event-win::%arg-1%}
+            updateEventState("GAME_END")
+            wait 2 ticks
+            loop all players:
+                set loop-player's gamemode to spectator
+                clear inventory of loop-player
+            sendTitle("GAME_OVER")
+            set time in world "hub" to 00:00
+            execute player command "lead"
+            loop 250 times:
+                broadcast ""
+            if arg-1 is set:
+                execute server command "npc sel 30"
+                execute server command "npc rename %arg 1%"
+                execute server command "npc skin %arg 1%"
+                execute server command "holo setline w1 2 &e%arg 1%"
+            if arg-2 is set:
+                execute server command "npc sel 31"
+                execute server command "npc rename %arg 2%"
+                execute server command "npc skin %arg 2%"
+                execute server command "holo setline w2 2 &f%arg 2%"
+            else:
+                execute server command "npc sel 31"
+                execute server command "npc rename &c✖"
+                execute server command "npc skin beanwater"           
+                execute server command "holo setline w2 2 &f&kDenysNeniBest"
+            if arg-3 is set:
+                execute server command "npc sel 32"
+                execute server command "npc rename %arg 3%"
+                execute server command "npc skin %arg 3%"
+                execute server command "holo setline w3 2 &c%arg 3%"
+            else:
+                execute server command "npc sel 32"
+                execute server command "npc rename &c✖"
+                execute server command "npc skin beanwater"  
+                execute server command "holo setline w3 2 &c&kDenysNeniBest"
+            wait 5 seconds
+            execute player command "effect @a clear"
+            updateEventState("WALK_OF_FAME")
+            loop all players:
+                wait 1 tick
+                teleport loop-player to {wintp} or {wintp1} or {wintp2}
+                resetScoreboard(loop-player)
+            loop all players:
+                clear loop-player's inventory
+                newHubScoreboard(loop-player)
+                set loop-player's gamemode to adventure
+                set {invstate.%loop-player%} to "hodnoceni"
+                set {winnerstage.%loop-player%} to true
+                delete {hodnoceni.%loop-player%.all}
+                delete {hodnoceni.organizace.%loop-player%}
+                delete {hodnoceni.nastaveni.%loop-player%}
+                delete {hodnoceni.stavby.%loop-player%}
+                delete {buildmode.%loop-player%}
+            equip arg-1 with golden boots
+            equip arg-2 with iron boots
+            equip arg-3 with leather boots
+            wait 10 ticks
+            set {mutechat} to true
+            loop all players:
+                newHubScoreboard(loop-player)
+            loop 250 times:
+                broadcast ""    
+            winnerAnimation()
+            broadcast "&5&m                                                       "
+            broadcast "&r  "
+            broadcast "&r  &d&lKonec Eventu!"
+            broadcast "&r  &eDíky za hraní <3"
+            broadcast "&r  "
+            broadcast "&r  &C&l1. Místo &7- &f%arg-1% &e(%{coins::%arg-1%}%&6⛁&e)"
+            broadcast "&r  &6&l2. Místo &7- &f%arg-2% &e(%{coins::%arg-2%}%&6⛁&e)"
+            broadcast "&r  &e&l3. Místo &7- &f%arg-3% &e(%{coins::%arg-3%}%&6⛁&e)"
+            broadcast "&r  "
+            broadcast "&5&m                                                       "
+            play "CHICKEN_EGG_POP" to all players
+            wait 12 seconds
+            broadcast "&5&m                                                       "
+            broadcast "&r  &e"
+            broadcast "&r  &ePřipoj se na náš discord server kde oznamuje"
+            broadcast "&r  &enaše eventy, turnaje, giveawaye, novinky a"
+            broadcast "&r  &einformace o updatech!"
+            broadcast "&r  &e"
+            broadcast "&r  &e"
+            broadcast "&r  &d&nhttps://event-verse.fun/discord/"
+            broadcast "&r  "
+            broadcast "&5&m                                                       "
+            wait 12 seconds
+            broadcast "&5&m                                                       "
+            broadcast "&r  &e"
+            broadcast "&r  &eNezapomeň nám event ohodnotit!"
+            broadcast "&r  &eHodnocení nám pomáhat zlepšit naše eventy"
+            broadcast "&r  &eStačí kliknout &6Papírem&e v &6hotbaru&e!"
+            broadcast "&r  &e"
+            broadcast "&r  &eTaky jestli chceš můžeš napsat delší hodnocení"
+            broadcast "&r  &ena našem &6discord&e serveru!"
+            broadcast "&r  "
+            broadcast "&5&m                                                       "
+            play "CHICKEN_EGG_POP" to all players
+            wait 5 seconds
+            delete {mutechat}
+            updateEventState("EVENT_OVER")
+            loop all players:
+                send loop-player title "&c&lKonec Eventu!" with subtitle "&fDíky moc za hraní &d<3" for 5 seconds
+            wait 5 seconds
+            loop all players:
+                send loop-player title "&c&lKonec Eventu!" with subtitle "&fZa jednu minutu budeš kicknut/a!" for 10 seconds
+            set {event::kick} to 59
+            sendToAllOp("&7[DEV] &8Nastaven kick timer na &759s")
+            sendToAllOp("&7[DEV] &8Pro skipnutí napiš &7/dev:skipkicktimer")
+        else:
+            onlyAdmin(player)
+
+command /dev:skipkicktimer:
+    trigger:
+        if {rank.%player%} is "admin":
+            if {event::kick} is more than 5:
+                set {event::kick} to 1
+            else:
+                send "&4[ERROR] &cPro skipnutí musí být na timeru více než &45s&c!"
+        else:
+            onlyAdmin(player)
+
+every 1 ticks:
+    loop all players:
+        if {iswinner.%loop-player%} is true:
+            drawDot count 1, particle fireworkspark, speed 0.1, XYZ 0.2, 1.5, 0.2, center location of loop-player, visibleRange 100
+
+
+on connect:
+    if {coins::%player%} is not set:
+        set {coins::%player%} to 0
+
+
+on quit:
+    set {invstate.%player%} to "hub"
+
+every second:
+    if {event::kick} is set:
+        if {event::kick} is more than 0:
+            remove 1 from {event::kick}
+            if {event::kick} is more than 9:
+                set {ctd::text} to "00:%{event::kick}%"
+            else:
+                set {ctd::text} to "00:0%{event::kick}%"
+            loop all players:
+                updateHubTimerScoreboard(loop-player)
+            if {event::kick} is less than 1:
+                delete {event::kick}
+                eventOver("KICK_ALL_PLAYERS")
+
+
+on right click with paper:
+    if name of player's held item is "&a&nHodnocení Eventu&r &7(Right Click)":
+        run player command "hodnoceni" as op
+
+
+command /kickall:
+    trigger:
+        if {rank.%player%} is "admin":
+            kick all players due to "&c&nKonec Eventu%nl%&r%nl%&eDíky za hraní &d<3%nl%%nl%%nl%&8&oMožná se někdy vrátíme.."
+
+function eventOver(t: text):
+    if {_t} is "KICK_ALL_PLAYERS":
+        updateEventState("KICK_PLAYERS")
+        loop all players:
+            delete {iswinner.%loop-player%}
+            set {invstate.%loop-player%} to "hub"
+        wait 10 ticks
+        wait 5 ticks
+        updateEventState("HUB")
+        execute console command "vysledky"
+        execute console command "deletewinnerstage"
+        delete {winnerstage.state}
+        execute server command "resetwinnerstage"
+        set time in world "hub" to 12:00
+        #updateHubScoreboard()
+        loop all players:
+            if {rank.%loop-player%} is "admin" or "mcteam":
+                send "L" to console
+            else:
+      #          kick loop-player due to "&c&n&lKonec Eventu%nl%&r%nl%&eDíky za hraní a nezapomeň%Nl%&eohodnotit náš event :)%nl%"
+                send "L" to console
+            set slot 7 of loop-player to air
+        wait 1 second
+        set {_hodnoceni1} to {hodnoceni.1} / {hodnoceni.3}
+        set {_hodnoceni2} to {hodnoceni.2} / {hodnoceni.3}
+        make embed:
+            set the title of embed to title with text ":bar_chart:   __Přehled Eventu__"
+            set color of the embed to color from rgb 37, 18, 103
+            add field named "‎ ‎" with value "\🎮 **Event:** %{event.name}%%nl%\👥 **Zúčastněno hráčů:** %{players.count}%%nl%\⭐ **Celkové hodnocení:** %{_hodnoceni1}%/%{_hodnoceni2}%%nl%\🏆 **Výherce:** %{last.event.winner}%%nl% %nl%**TIP:** Leadearboard zjistíš pomocí příkazu `!leaderboard`%nl% ‎" to embed
+            set the footer of embed to footer with text "🌌 • Event %{event::number}%/30, Season %{event::season}%"
+            set the timestamp of embed to now
+        send last created embed to channel with id "813066323861045258" with "EventVerse" and store it in {_embed}
+
+
+
+
+
+command /Deletewinnerstage:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                delete {winnerstage.%loop-player%}
+        else:
+            onlyAdmin(player)
+
+command /dev:testwinner:true:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {winnerstage.%player%} to true
+        else:
+            onlyAdmin(player)
+
+command /dev:testwinner:false:
+    trigger:
+        if {rank.%player%} is "admin":
+            delete {winnerstage.%player%}
+        else:
+            onlyAdmin(player)
+
+
+command /resetwinnerstage:
+    trigger:
+        if {rank.%player%} is "admin":
+            execute server command "npc sel 31"
+            execute server command "npc rename &c✖"
+            execute server command "npc skin beanwater"           
+            execute server command "holo setline w2 2 &f&kDenysNeniBest"
+            execute server command "npc sel 32"
+            execute server command "npc rename &c✖"
+            execute server command "npc skin beanwater"  
+            execute server command "holo setline w3 2 &c&kDenysNeniBest"
+            execute server command "npc sel 30"
+            execute server command "npc rename &c✖"
+            execute server command "npc skin beanwater"  
+            execute server command "holo setline w1 2 &e&kDenysNeniBest"
+        else:
+            onlyAdmin(player)
+
+command /winner:fireworktest:
+    trigger:
+        if {rank.%player%} is "admin":
+            winnerfwloops()
+            winnerfwloops2()
+            winnerfwloops3()
+            winnerfwloops4()
+            loop 5 times:
+                wait 20 ticks
+                launch star coloured yellow at {win_fw_1} with duration 2
+                launch star coloured yellow at {win_fw_2} with duration 1
+                launch star coloured yellow at {win_fw_3} with duration 2
+        #    launch star coloured white at player's location with duration 0
+            wait 25 ticks
+            launch star coloured gold at {win_fw_4} with duration 2
+            launch star coloured gold at {win_fw_5} with duration 2
+        else:
+            onlyAdmin(player)
+
+
+command /dev:walkoffameanimation:
+    trigger:
+        if {rank.%player%} is "admin":
+            winnerAnimation()
+            send "&7[DEV] &eRunning &6WALK_OF_FAME&e animation test.."
+        else:
+            onlyAdmin(player)
+
+
+
+function winnerAnimation():
+    winnerfwloops()
+    winnerfwloops()
+    winnerfwloops2()
+    winnerfwloops3()
+    winnerfwloops4()
+
+
+
+
+
+
+
+
+
+
+function winnerfwloops():
+    loop 60 times:
+        wait 10 ticks
+        set {_r} to random element out of blocks in radius 20 of {winner_fwl}
+        set {_c} to yellow or white or orange
+        launch star coloured white at {_r} with duration 2
+
+
+function winnerfwloops2():
+    loop 40 times:
+        wait 20 ticks
+        set {_r} to random element out of blocks in radius 5 of {winner_fwl2}
+        set {_c} to yellow or white or orange
+        launch star coloured orange at {_r} with duration 1
+
+function winnerfwloops3():
+    loop 40 times:
+        wait 20 ticks
+        set {_r} to random element out of blocks in radius 5 of {winner_fwl3}
+        set {_c} to yellow or white or orange
+        launch star coloured orange at {_r} with duration 1
+
+function winnerfwloops4():
+    loop 40 times:
+        wait 20 ticks
+        set {_r} to random element out of blocks in radius 5 of {winner_fwl4}
+        set {_c} to yellow or white or orange
+        launch burst coloured yellow at {_r} with duration 1
+
+
+command /set:eventwins <player> <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {event-win::%arg-1%} to arg-2
+        else:
+            onlyAdmin(player)
+
+
+command /vysledky:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {_hodnoceni1} to {hodnoceni.1} / {hodnoceni.3}
+            set {_hodnoceni2} to {hodnoceni.2} / {hodnoceni.3}
+            make embed:
+                set the title of embed to title with text ":bar_chart:   __Přehled Eventu__"
+                set color of the embed to color from rgb 37, 18, 103
+                add field named "‎ ‎" with value "\🎮 **Event:** %{event.name}%%nl%\👥 **Zúčastněno hráčů:** %{players.count}%%nl%\⭐ **Celkové hodnocení:** %{_hodnoceni1}%/%{_hodnoceni2}%%nl%\🏆 **Výherce:** %{last.event.winner}%%nl% %nl%**TIP:** Leadearboard zjistíš pomocí příkazu `!leaderboard`%nl% ‎" to embed
+                set the footer of embed to footer with text "🌌 • Event %{event::number}%/30, Season %{event::season}%"
+                set the timestamp of embed to now
+            send last created embed to channel with id "813066323861045258" with "EventVerse" and store it in {_embed}
+        else:
+            onlyAdmin(player)

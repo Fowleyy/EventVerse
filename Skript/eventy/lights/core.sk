@@ -1,0 +1,80 @@
+function startLightsLoop():
+    {lights.canchange} is true
+    lightsStage("GO")
+    wait 5 seconds
+    {lights.canchange} is true
+    lightsStage("SLOW")
+    wait 3 seconds
+    {lights.canchange} is true
+    lightsStage("STOP")
+    wait 3 seconds
+    if {lights.canchange} is true:
+        startLightsLoop()
+
+
+
+
+on damage:
+    if victim is in world "arcade_lights":
+        cancel event
+
+on enter "lights_finish":
+    if player is in world "arcade_lights":
+        if {lights.finish.%player%} is not set:
+            if gamemode of player is adventure:
+                if {dev-play} is not set:
+                    if {rank.%player%} is "admin" or "mcteam" or "dcteam" or "spectator":
+                        stop
+                    else:
+                        add 1 to {lights.finish}
+                        if {lights.finish} = 1:
+                            addCoins(player,100,"1. místo")
+                            set {lights.first} to "%player%"
+                        if {lights.finish} = 2:
+                            addCoins(player,70,"2. místo")
+                            set {lights.second} to "%player%"
+                        if {lights.finish} = 3:
+                            addCoins(player,50,"3. místo")
+                            set {lights.third} to "%player%"
+                        if {lights.finish} is more than 3:
+                            addCoins(player,20,"Dokončení Mapy")
+                        if {lights.finish} is less than 4:
+                            broadcast "&6&m------------------------------"
+                            broadcast " &a&lGo, &e&lSlow, &c&lSTOP!"
+                            broadcast ""
+                            broadcast "&6 %player% &edokončil/a mapu! &7(%{lights.finish}%/3)"
+                            broadcast "&6&m------------------------------"
+                        if {lights.finish} is more than 3:
+                            broadcast "&6&m------------------------------"
+                            broadcast " &a&lGo, &e&lSlow, &c&lSTOP!"
+                            broadcast ""
+                            broadcast "&6 %player% &edokončil/a mapu!"
+                            broadcast "&6&m------------------------------"
+                        set player's gamemode to spectator
+                        set {lights.finish.%player%} to true
+                        loop all players:
+                            run loop-player command "/soundhandler_sound_levelup_all" as op
+                if {dev-play} is true:
+                    add 1 to {lights.finish}
+                    if {lights.finish} = 1:
+                        addCoins(player,100,"1. místo")
+                        set {lights.first} to "%player%"
+                    if {lights.finish} = 2:
+                        addCoins(player,70,"2. místo")
+                        set {lights.second} to "%player%"
+                    if {lights.finish} = 3:
+                        addCoins(player,50,"3. místo")
+                        set {lights.third} to "%player%"
+                        delete {lights.canchange}
+                        lightsStage("GO")
+                    if {lights.finish} is less than 4:
+                        broadcast "&6&m------------------------------"
+                        broadcast " &a&lGo, &e&lSlow, &c&lSTOP!"
+                        broadcast ""
+                        broadcast "&6 %player% &edokončil/a mapu! &7(%{lights.finish}%/3)"
+                        broadcast "&6&m------------------------------"
+
+                    set player's gamemode to spectator
+                    set {lights.finish.%player%} to true
+                    loop all players:
+                        run loop-player command "/soundhandler_sound_levelup_all" as op

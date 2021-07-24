@@ -1,0 +1,24 @@
+command /bp:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            delete {bp::players}
+            delete {bp.play}
+            set {bp.hard} to "easy"
+            set {bp.difficulty} to coloured "&aLehká"
+            set {bp.speed} to "7 seconds" parsed as time span
+            set {bp.ctd.speed} to 7
+            wait 1 tick
+            bpNewFloor()
+            eventStartSetup("BLOCK_PARTY")
+            wait 3 seconds
+            eventStartTitle("LukynkaCZE","Block Party")
+            updateEventState("PARTY_INFO")
+            wait 5 seconds
+            eventExplain("Block Party")
+            wait 30 seconds
+            delete {mutechat}
+            wait 3 seconds
+            updateEventState("PARTY_PLAY")
+            bpNewRound(1)
+        else:
+            onlyAdmin(player)

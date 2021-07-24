@@ -1,0 +1,18 @@
+function updateEventState(t: text):
+    set {_pes} to "%{event.state}%"
+    set {event.state} to "%{_t}%"
+    send "**[DEV] Event State Changed** `%{_pes}% ➜ %{event.state}%`" to channel with id "806200891454521364" with "EventVerse"
+    loop all players:
+        if loop-player have permission "pog.champ":
+            send "&7[DEV] &6Event State Changed &7%{_pes}% &b-> &e%{event.state}%" to loop-player
+
+
+command /forceeventstatechange <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            updateEventState("%arg 1%")
+            loop all players:
+                if loop-player have permission "pog.champ":
+                    send "&7[DEV] &b%player%&f has forced Event State Change &7(&6%arg 1%&7)" to loop-player
+        else:
+            onlyAdmin(player)

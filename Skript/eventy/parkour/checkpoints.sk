@@ -1,0 +1,205 @@
+on enter "parkour_stage1":
+    if {pk.stage1.%player%} is not set:
+        if gamemode of player is adventure:
+            set {pk.stage1.%player%} to true
+            set {parkour.stage.%player%} to coloured "&a1/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage2":
+    if {pk.stage2.%player%} is not set:
+        if gamemode of player is adventure:
+            addCoins(player, 20, "Dokončení Stage")
+            broadcast "&3&lParkour &8&l» %{rankcolor.%player%}%%player% &e&ldokončil/a &bStage 1&e!"
+            send "&3&lParkour &8&l» &aDokončil/a jsi &bStage 1&a!" to player
+            pkCheckpointFirework(player)
+            addShards(player, 0.5, "Dokončení Stage")
+            set {pk.stage2.%player%} to true
+            set {parkour.stage.%player%} to coloured "&a2/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage3":
+    if {pk.stage3.%player%} is not set:
+        if gamemode of player is adventure:
+            addCoins(player,20,"Dokončení Stage")
+            send "&3&lParkour &8&l» &aDosáhnul/a jsi mini checkpointu&a! &6(&e+10&6⛁)" to player
+            pkCheckpointFirework(player)
+            set {pk.stage3.%player%} to true
+            set {parkour.stage.%player%} to coloured "&23/10"
+            updateParkourScoreboard(player)
+
+on enter "parkour_stage4":
+    if {pk.stage4.%player%} is not set:
+        if gamemode of player is adventure:
+            addCoins(player,20,"Dokončení Stage")
+            broadcast "&3&lParkour &8&l» %{rankcolor.%player%}%%player% &e&ldokončil/a &bStage 2&e!"
+            send "&3&lParkour &8&l» &aDokončil/a jsi &bStage 2&a! &6(&e+20&6⛁)" to player
+            addShards(player, 0.5, "Dokončení Stage")
+            pkCheckpointFirework(player)
+            set {pk.stage4.%player%} to true
+            set {parkour.stage.%player%} to coloured "&24/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage5":
+    if {pk.stage5.%player%} is not set:
+        if gamemode of player is adventure:
+            add 20 to {coins::%player%}
+            send "&3&lParkour &8&l» &aDosáhnul/a jsi mini checkpointu&a! &6(&e+10&6⛁)" to player
+            pkCheckpointFirework(player)
+            set {pk.stage5.%player%} to true
+            set {parkour.stage.%player%} to coloured "&e5/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage6":
+    if {pk.stage6.%player%} is not set:
+        if gamemode of player is adventure:
+            addCoins(player,20,"Dokončení Stage")
+            broadcast "&3&lParkour &8&l» %{rankcolor.%player%}%%player% &e&ldokončil/a &bStage 3&e!"
+            send "&3&lParkour &8&l» &aDokončil/a jsi &bStage 3&a! &6(&e+20&6⛁)" to player
+            addShards(player, 0.5, "Dokončení Stage")
+            pkCheckpointFirework(player)
+            set {pk.stage6.%player%} to true
+            set {parkour.stage.%player%} to coloured "&e6/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage7":
+    if {pk.stage7.%player%} is not set:
+        if gamemode of player is adventure:
+            add 20 to {coins::%player%}
+            send "&3&lParkour &8&l» &aDosáhnul/a jsi mini checkpointu&a! &6(&e+10&6⛁)" to player
+            pkCheckpointFirework(player)
+            set {pk.stage7.%player%} to true
+            set {parkour.stage.%player%} to coloured "&67/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage8":
+    if {pk.stage8.%player%} is not set:
+        if gamemode of player is adventure:
+            addCoins(player,20,"Dokončení Stage")
+            broadcast "&3&lParkour &8&l» %{rankcolor.%player%}%%player% &e&ldokončil/a &bStage 4&e!"
+            send "&3&lParkour &8&l» &aDokončil/a jsi &bStage 4&a! &6(&e+20&6⛁)" to player
+            addShards(player, 0.5, "Dokončení Stage")
+            pkCheckpointFirework(player)
+            set {pk.stage8.%player%} to true
+            set {parkour.stage.%player%} to coloured "&68/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage9":
+    if {pk.stage9.%player%} is not set:
+        if gamemode of player is adventure:
+            addCoins(player,20,"Dokončení Stage")
+            send "&3&lParkour &8&l» &aDosáhnul/a jsi mini checkpointu&a! &6(&e+10&6⛁)" to player
+            pkCheckpointFirework(player)
+            set {pk.stage9.%player%} to true
+            set {parkour.stage.%player%} to coloured "&c9/10"
+            updateParkourScoreboard(player)
+
+
+on enter "parkour_stage10":
+    if {pk.stage10.%player%} is not set:
+        if gamemode of player is adventure:
+            addCoins(player,20,"Dokončení Stage")
+            broadcast "&3&lParkour &8&l» %{rankcolor.%player%}%%player% &e&ldokončil/a &bStage 5&e!"
+            send "&3&lParkour &8&l» &aDokončil/a jsi &bStage 5&a! &6(&e+20&6⛁)" to player
+            addShards(player, 0.5, "Dokončení Stage")
+            pkCheckpointFirework(player)
+            set {pk.stage10.%player%} to true
+            set {parkour.stage.%player%} to coloured "&c10/10"
+            updateParkourScoreboard(player)
+
+
+every second:
+    loop all players:
+        if loop-player is in world "parkour2":
+            if y coord of loop-player is less than 85:
+                if gamemode of loop-player is adventure:
+                    add 1 to {parkour-falls::%loop-player%}
+                    newParkourScoreboard(loop-player)
+                    callUpdateFallAchievment(loop-player)
+                    updateParkourScoreboard(loop-player)
+                    if {pk.stage1.%loop-player%} is true:
+                        teleport loop-player to {pk_ch1}
+                        play "ENDERMAN_TELEPORT" to loop-player
+                        if {pk.stage2.%loop-player%} is true:
+                            teleport loop-player to {pk_ch2}
+                            play "ENDERMAN_TELEPORT" to loop-player
+                            if {pk.stage3.%loop-player%} is true:
+                                teleport loop-player to {pk_ch3}
+                                play "ENDERMAN_TELEPORT" to loop-player
+                                if {pk.stage4.%loop-player%} is true:
+                                    teleport loop-player to {pk_ch4}
+                                    play "ENDERMAN_TELEPORT" to loop-player
+                                    if {pk.stage5.%loop-player%} is true:
+                                        teleport loop-player to {pk_ch5}
+                                        play "ENDERMAN_TELEPORT" to loop-player
+                                        if {pk.stage6.%loop-player%} is true:
+                                            teleport loop-player to {pk_ch6}
+                                            play "ENDERMAN_TELEPORT" to loop-player
+                                            if {pk.stage7.%loop-player%} is true:
+                                                teleport loop-player to {pk_ch7}
+                                                play "ENDERMAN_TELEPORT" to loop-player
+                                                if {pk.stage8.%loop-player%} is true:
+                                                    teleport loop-player to {pk_ch8}
+                                                    play "ENDERMAN_TELEPORT" to loop-player
+                                                    if {pk.stage9.%loop-player%} is true:
+                                                        teleport loop-player to {pk_ch9}
+                                                        play "ENDERMAN_TELEPORT" to loop-player
+                                                        if {pk.stage10.%loop-player%} is true:
+                                                            teleport loop-player to {pk_ch10}
+                                                            play "ENDERMAN_TELEPORT" to loop-player
+                else:
+                    teleport loop-player to {pk.mid}
+
+#
+
+on enter "parkour_finish":
+    if player is in world "parkour2":
+        if {pk.stage1.%player%} is true:
+            if {pk.stage2.%player%} is true:
+                if {pk.stage3.%player%} is true:
+                    if {pk.stage4.%player%} is true:
+                        if {pk.stage5.%player%} is true:
+                            if {pk.stage6.%player%} is true:
+                                if {pk.stage7.%player%} is true:
+                                    if {pk.stage8.%player%} is true:
+                                        if {pk.stage9.%player%} is true:
+                                            if {pk.stage10.%player%} is true:
+                                                if {pk.finish.%player%} is not set:
+                                                    add 1 to {pk.finish}
+                                                    if {pk.finish} = 1:
+                                                        addCoins(player,100,"1. místo")
+                                                        set {parkour.first} to "%player%"
+                                                        pkSetWinnerNpc1(player)
+                                                    if {pk.finish} = 2:
+                                                        addCoins(player,70,"2. místo")
+                                                        set {parkour.second} to "%player%"
+                                                        pkSetWinnerNpc2(player)
+                                                    if {pk.finish} = 3:
+                                                        addCoins(player,50,"3. místo")
+                                                        set {parkour.third} to "%player%"
+                                                        pkSetWinnerNpc3(player)
+                                                    if {pk.finish} is 1 or 2 or 3:
+                                                        broadcast "&6&m------------------------------"
+                                                        broadcast " &a&lParkour"
+                                                        broadcast ""
+                                                        broadcast "&6 %player% &edokončil/a parkour! &7(%{pk.finish}%/3)"
+                                                        broadcast "&6&m------------------------------"
+                                                        pkCheckpointFirework(player)
+                                                        addShards(player, 2, "Dokončení Parkouru")
+                                                        set player's gamemode to spectator
+                                                        set {pk.finish.%player%} to true
+                                                        loop all players:
+                                                            run loop-player command "/soundhandler_sound_levelup_all" as op
+                                                            updateParkourScoreboard(loop-player)
+                                                    if {pk.finish} is more than 3:
+                                                        pkCheckpointFirework(player)
+                                                        addCoins(player,20,"Dokončení Parkouru")
+                                                        addShards(player, 2, "Dokončení Parkouru")
+                                                        set player's gamemode to spectator
+                                                        set {pk.finish.%player%} to true

@@ -1,0 +1,172 @@
+command /newWallHelper <text>:
+    trigger:
+        if arg-1 is "SOUTH":
+            if player is "LukynkaCZE":
+                broadcast "&aStarting process.."
+                broadcast "&7Results will be sent do discord channel 824388525491224587 (? | bot-testing)"
+                set {_w1} to block at location 77, 71, 35 in world "Dev"
+                set {_w2} to block at location 77, 70, 35 in world "Dev"
+                set {_w3} to block at location 77, 69, 35 in world "Dev"
+                set {_w4} to block at location 77, 68, 35 in world "Dev"
+                #
+                set {_w5} to block at location 76, 71, 35 in world "Dev"
+                set {_w6} to block at location 76, 70, 35 in world "Dev"
+                set {_w7} to block at location 76, 69, 35 in world "Dev"
+                set {_w8} to block at location 76, 68, 35 in world "Dev"
+                #
+                set {_w9} to block at location 75, 71, 35 in world "Dev"
+                set {_w10} to block at location 75, 70, 35 in world "Dev"
+                set {_w11} to block at location 75, 69, 35 in world "Dev"
+                set {_w12} to block at location 75, 68, 35 in world "Dev"
+                #
+                set {_w13} to block at location 74, 71, 35 in world "Dev"
+                set {_w14} to block at location 74, 70, 35 in world "Dev"
+                set {_w15} to block at location 74, 69, 35 in world "Dev"
+                set {_w16} to block at location 74, 68, 35 in world "Dev"
+                #
+                set {_w17} to block at location 73, 71, 35 in world "Dev"
+                set {_w18} to block at location 73, 70, 35 in world "Dev"
+                set {_w19} to block at location 73, 69, 35 in world "Dev"
+                set {_w20} to block at location 73, 68, 35 in world "Dev"
+                #
+                set {_w21} to block at location 72, 71, 35 in world "Dev"
+                set {_w22} to block at location 72, 70, 35 in world "Dev"
+                set {_w23} to block at location 72, 69, 35 in world "Dev"
+                set {_w24} to block at location 72, 68, 35 in world "Dev"
+                #
+                set {_w25} to block at location 71, 71, 35 in world "Dev"
+                set {_w26} to block at location 71, 70, 35 in world "Dev"
+                set {_w27} to block at location 71, 69, 35 in world "Dev"
+                set {_w28} to block at location 71, 68, 35 in world "Dev"
+                #
+                set {_w29} to block at location 70, 71, 35 in world "Dev"
+                set {_w30} to block at location 70, 70, 35 in world "Dev"
+                set {_w31} to block at location 70, 69, 35 in world "Dev"
+                set {_w32} to block at location 70, 68, 35 in world "Dev"
+                #
+                set {_w33} to block at location 69, 71, 35 in world "Dev"
+                set {_w34} to block at location 69, 70, 35 in world "Dev"
+                set {_w35} to block at location 69, 69, 35 in world "Dev"
+                set {_w36} to block at location 69, 68, 35 in world "Dev"
+                #
+                set {_w37} to block at location 68, 71, 35 in world "Dev"
+                set {_w38} to block at location 68, 70, 35 in world "Dev"
+                set {_w39} to block at location 68, 69, 35 in world "Dev"
+                set {_w40} to block at location 68, 68, 35 in world "Dev"
+                #
+                set {_w41} to block at location 67, 71, 35 in world "Dev"
+                set {_w42} to block at location 67, 70, 35 in world "Dev"
+                set {_w43} to block at location 67, 69, 35 in world "Dev"
+                set {_w44} to block at location 67, 68, 35 in world "Dev"
+                #
+                set {_w45} to block at location 66, 71, 35 in world "Dev"
+                set {_w46} to block at location 66, 70, 35 in world "Dev"
+                set {_w47} to block at location 66, 69, 35 in world "Dev"
+                set {_w48} to block at location 66, 68, 35 in world "Dev"
+                #
+                set {_w49} to block at location 65, 71, 35 in world "Dev"
+                set {_w50} to block at location 65, 70, 35 in world "Dev"
+                set {_w51} to block at location 65, 69, 35 in world "Dev"
+                set {_w52} to block at location 65, 68, 35 in world "Dev"
+                #
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                send "**__WalHelper 0.1 | Code requested by %player%__**%nl%&r" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -5, 81, 12 in world ""hole"" to %{_w1}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -5, 80, 12 in world ""hole"" to %{_w2}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -5, 79, 12 in world ""hole"" to %{_w3}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -5, 78, 12 in world ""hole"" to %{_w4}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -6, 81, 12 in world ""hole"" to %{_w5}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -6, 80, 12 in world ""hole"" to %{_w6}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -6, 79, 12 in world ""hole"" to %{_w7}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -6, 78, 12 in world ""hole"" to %{_w8}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -7, 81, 12 in world ""hole"" to %{_w9}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -7, 80, 12 in world ""hole"" to %{_w10}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -7, 79, 12 in world ""hole"" to %{_w11}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -7, 78, 12 in world ""hole"" to %{_w12}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -8, 81, 12 in world ""hole"" to %{_w13}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -8, 80, 12 in world ""hole"" to %{_w14}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -8, 79, 12 in world ""hole"" to %{_w15}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -8, 78, 12 in world ""hole"" to %{_w16}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -9, 81, 12 in world ""hole"" to %{_w17}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -9, 80, 12 in world ""hole"" to %{_w18}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -9, 79, 12 in world ""hole"" to %{_w19}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -9, 78, 12 in world ""hole"" to %{_w20}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -10, 81, 12 in world ""hole"" to %{_w21}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -10, 80, 12 in world ""hole"" to %{_w22}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -10, 79, 12 in world ""hole"" to %{_w23}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -10, 78, 12 in world ""hole"" to %{_w24}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -11, 81, 12 in world ""hole"" to %{_w25}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -11, 80, 12 in world ""hole"" to %{_w26}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -11, 79, 12 in world ""hole"" to %{_w27}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -11, 78, 12 in world ""hole"" to %{_w28}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -12, 81, 12 in world ""hole"" to %{_w29}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -12, 80, 12 in world ""hole"" to %{_w30}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -12, 79, 12 in world ""hole"" to %{_w31}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -12, 78, 12 in world ""hole"" to %{_w32}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -13, 81, 12 in world ""hole"" to %{_w33}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -13, 80, 12 in world ""hole"" to %{_w34}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -13, 79, 12 in world ""hole"" to %{_w35}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -13, 78, 12 in world ""hole"" to %{_w36}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -14, 81, 12 in world ""hole"" to %{_w37}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -14, 80, 12 in world ""hole"" to %{_w38}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -14, 79, 12 in world ""hole"" to %{_w39}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -14, 78, 12 in world ""hole"" to %{_w40}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -15, 81, 12 in world ""hole"" to %{_w41}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -15, 80, 12 in world ""hole"" to %{_w42}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -15, 79, 12 in world ""hole"" to %{_w43}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -15, 78, 12 in world ""hole"" to %{_w44}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -16, 81, 12 in world ""hole"" to %{_w45}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -16, 80, 12 in world ""hole"" to %{_w46}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -16, 79, 12 in world ""hole"" to %{_w47}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -16, 78, 12 in world ""hole"" to %{_w48}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        ##`"  to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -17, 81, 12 in world ""hole"" to %{_w49}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -17, 80, 12 in world ""hole"" to %{_w50}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -17, 79, 12 in world ""hole"" to %{_w51}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "`        set block at location -17, 78, 12 in world ""hole"" to %{_w52}%`" to channel with id "824388525491224587" with "EventVerse"
+                send "**__WalHelper 0.1 | FINISHED__**" to channel with id "824388525491224587" with "EventVerse"
+                wait 65 seconds
+                broadcast "&aFinished!"

@@ -1,0 +1,244 @@
+command /dev:spleef-revive <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if gamemode of arg-1 is spectator:
+                play "ZOMBIE_REMEDY" to all players
+                broadcast "&r "
+                broadcast "&b&lSpleef &8&l» &aAdmin &c%player%&a oživil/a hráče &e%arg 1%&a!"
+                broadcast "&r "
+                add 1 to {spleef::players}
+                teleport arg-1 to player
+                set gamemode of arg-1 to survival
+                send arg-1 title "&a&nREVIVE" with subtitle "&eAdmin &c%player%&e tě oživil/a" for 5 seconds
+
+command /dev:spleef-kill <player>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if gamemode of arg-1 is survival:
+                play "ZOMBIE_REMEDY" to all players
+                broadcast "&r "
+                broadcast "&b&lSpleef &8&l» &aAdmin &c%player%&a zabil/a hráče &e%arg 1%&a!"
+                broadcast "&r "
+                spleefDead(arg-1)
+
+
+on projectile hit:
+    projectile is a snowball
+    event-world is "Spleff1"
+    set {_l} to location of event-projectile
+    if block under {_l} is barrier:
+        stop
+    else:
+        set block under {_l} to air
+
+
+on left click:
+    if player is in world "spleff1":
+        if {spleef.play} is true:
+            set block to air
+            set {_r} to random integer between 1 and 10
+            if {_r} is 1:
+                play "ITEM_PICKUP" to player
+                give player 1 snowball
+        else:
+            cancel event
+
+on craft:
+    if player is in world "Spleff1":
+        cancel event
+
+
+every second:
+    loop all players:
+        if loop-player is in world "spleff1":
+            if y coord of loop-player is less than 17:
+                if gamemode of loop-player is survival or adventure or creative:
+                    if {spleef.play} is true:
+                        spleefDead(loop-player)
+                    else:
+                        teleport loop-player to {spleef.mid}
+                else:
+                    teleport loop-player to {spleef.spawn}
+
+function spleefDead(p: player):
+    pkCheckpointFirework({_p})
+    teleport {_p} to {spleef.mid}
+    remove 1 from {spleef::players}
+    set gamemode of {_p} to spectator
+    loop all players:
+        newSpleefScoreboard(loop-player)
+        if gamemode of loop-player is survival or adventure:
+            addCoins(loop-player,10,"Přežití")
+            addShards(loop-player, 0.2, "Přežití")
+            run loop-player command "/soundhandler_sound_orb_2" as op
+    set {_m} to "nebyl/a tak dobrý/á jako Kbelik_Vody" or "spadnul/a.. what a shame!" or "nedával/a pozor když simpil/a Lukynku.." or "se udusil/a ve voidu" or "byl/a rozdrcena spadlou skříní" or "dostal/a infarkt.. Přehnal/a to s energy drinkem." or "dosimpoval/a." or "napsal/a yg.." or "už neni." or "používal/a light mode.." or "byl/a zakousnutý/á shibou!" or "se utopil/a v sopce" or "byl/a až moc sus" or "nejspíš AFKoval/a" or "was ejected... %{spleef::players}% impostors remaining" or "zapomněl/a dát follow @LukynkaCZe" or "už nechtěl/a žít.." or "nevěděl/a, že pod mapou je void" or ".. to byl 100%% lag!" or "byl/a yeetnut/á!" or "pořád není připojen/á na discordu EventVerse!" or "zjistil/a že Dream není nejlepší hráč.." or "sledoval/a SirYakariho" or "nevyhrál/a 100 hráčů plní ůkoli!" or "se choval/a jako Aragon.. nechovej se jako Aragon a nedopadneš takhle!" or "byl/a přidán/a na list zlobivých dětí!" or "umřel/a.. clip it and ship it!" or ".. uhhh.. už fakt nemám nápady na death message.." or "zapomněl/a že tohle není water drop!"
+    if {_p} is "NeoriginalniKari":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si myslel, že vyhraje.. bohužel tohle není parkour"
+    if {_p} is "yq__":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "pořád neví jestli je to ""yq"" nebo ""yg"".." or "became to sexi"
+    if {_p} is "Alien584":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to ", jako správný mimozemšťan, odletěl na jinou planetu.."
+    if {_p} is "RiillyCZ" or "RizzRikCz":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "je tu jenom pro výhru.. zaprodanec smh"
+    if {_p} is "Danicekk" or "S0ptik":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl/a zaplavat.. akorát, ve voidu není voda.."
+    if {_p} is "Th3Dolphin":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "si chtěl zaplavat s delfínama.. uh oh"
+    if {_p} is "Kbelik_Vody":
+        set {_r} to random integer between 1 and 2
+        if {_r} is 1:
+            set {_m} to "se vylil.. teď je to Kbelik_Prazdny"
+    broadcast "&c✖ &8&l» %{rankcolor.%{_p}%}%%{_p}%&7 %{_m}%"
+    if {spleef::players} is 1:
+        loop all players:
+            if gamemode of loop-player is adventure or survival or creative:
+                spleefEndRound(loop-player)
+    teleport {_p} to {spleef.mid}
+    wait 5 ticks
+    if {spleef.round} is less than 3:
+        if {spleef::players} is more than 1:
+            send {_p} title "&c&nNEODPOJUJ SE!" with subtitle "&eDalší kolo začne za chvíli" for 7 seconds
+            teleport {_p} to {spleef.mid}
+
+
+function spleefEndRound(p: player):
+    loop all players:
+        set gamemode of loop-player to spectator
+        clear loop-player's inventory
+        send loop-player title "&r " with subtitle "&r "
+    sendTitle("ROUND_OVER")
+    announceRoundWinner({_p}, {spleef.round})
+    addCoins({_p},100,"Výhra kola")
+    addShards({_p}, 3, "Výhra kola")
+    run {_p} command "/soundhandler_sound_orb_2" as op
+    loop all players:
+        resetScoreboard(loop-player)
+    delete {spleef.play}
+
+on quit:
+    if player's world is "spleff1":
+        if gamemode of player is adventure or creative or survival:
+            remove 1 from {spleef::players}
+            loop all players:
+                newSpleefScoreboard(loop-player)
+
+
+command /dev:spleef:reset:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {_l} to location of player
+            teleport player to {spleef_resetmap}
+            execute player command "//schem load spleff"
+            wait 1 ticks
+            execute player command "//paste"
+            wait 1 seconds
+            teleport player to {_l}
+            run player command "worldborder set 51" as op
+        else:
+            onlyAdmin(player)
+
+command /spleef:newround <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            teleport player to {spleef_resetmap}
+            execute player command "//schem load spleff"
+            wait 1 ticks
+            execute player command "//paste"
+            spleefNewRound(arg-1, player)
+        else:
+            onlyAdmin(player)
+
+
+command /spleef:border <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            if arg-1 is 1:
+                loop all players:
+                    send loop-player title "&r " with subtitle  "&4&l⚠ &cBorder se zmenšuje &4&l⚠" for 5 seconds
+                    run loop-player command "playsound mob.guardian.curse %loop-player% ~ ~ ~ 0.5 0" as op
+                run player command "/worldborder set 40 10" as op
+            if arg-1 is 2:
+                loop all players:
+                    send loop-player title "&r " with subtitle  "&4&l⚠ &cBorder se zmenšuje &4&l⚠" for 5 seconds
+                    run loop-player command "playsound mob.guardian.curse %loop-player% ~ ~ ~ 0.5 0" as op
+                run player command "/worldborder set 30 10" as op
+            if arg-1 is 3:
+                loop all players:
+                    send loop-player title "&r " with subtitle  "&4&l⚠ &cBorder se zmenšuje &4&l⚠" for 5 seconds
+                    run loop-player command "playsound mob.guardian.curse %loop-player% ~ ~ ~ 0.5 0" as op
+                run player command "/worldborder set 20 10" as op
+            if arg-1 is 4:
+                loop all players:
+                    send loop-player title "&r " with subtitle  "&4&l⚠ &cBorder se zmenšuje &4&l⚠" for 5 seconds
+                    run loop-player command "playsound mob.guardian.curse %loop-player% ~ ~ ~ 0.5 0" as op
+                run player command "/worldborder set 5 10" as op
+        else:
+            onlyAdmin(player)
+
+
+function spleefNewRound(n: number, p: player):
+    delete {spleef.play}
+    set {spleef.round} to {_n}
+    set {spleef::players} to 0
+    loop all players:
+        wait 1 tick
+        set gamemode of loop-player to survival
+        teleport loop-player to {spleef.spawn1} or {spleef.spawn2} or {spleef.spawn3} or {spleef.spawn4}
+        spectator(loop-player)
+        if gamemode of loop-player is adventure or survival or creative:
+            wait 1 ticks
+            add 1 to {spleef::players}
+    if {_n} is less than 100:
+        loop all players:
+            wait 1 tick
+            teleport loop-player to {spleef.spawn1} or {spleef.spawn2} or {spleef.spawn3} or {spleef.spawn4}
+            set loop-player's gamemode to survival
+        loop all players:
+            execute server command "effect %loop-player% clear"
+            send loop-player title "&a&l%{_n}%. KOLO &7(%{_n}%/3)" with subtitle "&ePřiprav se.." for 5 seconds
+        apply potion of night vision of tier 1 to all players for 10 days
+        wait 2 seconds
+        sendTitle("COUNTDOWN")
+        wait 5 seconds
+        set {spleef.play} to true
+        loop all players:
+            newSpleefScoreboard(loop-player)
+        boots()
+
+
+command /bk <player>:
+    trigger:
+        if {rank.%player%} is "admin" or "mcteam":
+            spleefDead(arg-1)
+
+function newSpleefScoreboard(p: player):
+    wipe {_p}'s sidebar
+    set name of sidebar of {_p} to "&d&n&lSuper Spleef"
+    set score "&r          " in sidebar of {_p} to 10
+    set score "&f&lMapa:" in sidebar of {_p} to 9
+    set score "  &eArcade" in sidebar of {_p} to 8
+    set score "  &7&oby Kbelik_Vody" in sidebar of {_p} to 7
+    set score "&r  " in sidebar of {_p} to 6
+    set id score "Hráči na živu: &a%{spleef::players}%" in sidebar of {_p} to 4 with id "spleefsb-%{_p}%-players"
+    set score "&r   " in sidebar of {_p} to 3
+    set id score "&fCoiny: &e%{coins::%{_p}%}%&6⛃" in sidebar of {_p} to 2 with id "spleefsb-%{_p}%-coins"
+    set score "&r " in sidebar of {_p} to 1
+    set score "&ewww.eventverse.eu" in sidebar of {_p} to 0
+
+
+on place:
+    if event-world is "Spleff1":
+        cancel event
+

@@ -1,0 +1,61 @@
+command /megamix:
+    trigger:
+        if {rank.%player%} is "admin":
+            if {pm.count} is not set:
+                set {pm.count} to 0
+            set {partymix} to true
+            add 1 to {partymix.minigame.count}
+            loop 5 times:
+                partymixTitle("Musical Minecarts")
+                wait 5 ticks
+                partymixTitle("Go, Slow, STOP!")
+                wait 5 ticks
+                partymixTitle("Hole in the Wall")
+                wait 5 ticks
+                partymixTitle("Parkour")
+                wait 5 ticks
+                partymixTitle("Super Spleef")
+                wait 5 ticks
+                partymixTitle("Chicken Shoot")
+                wait 5 ticks
+            if {partymix.minigame.count} is 1:
+                set {_r} to "Parkour"
+            if {partymix.minigame.count} is 2:
+                set {_r} to "Musical Minecarts"
+            if {partymix.minigame.count} is 3:
+                set {_r} to "Hole in the Wall"
+            if {partymix.minigame.count} is 4:
+                set {_r} to "Chicken Shoot"
+            if {partymix.minigame.count} is 5:
+                set {_r} to "Super Spleef"
+            if {partymix.minigame.count} is 6:
+                set {_r} to "Go, Slow, STOP!"
+            execute server command "minecraft:title @a times 0 100 10"
+            execute server command "minecraft:title @a title {""text"":""Minihra vybrána!"",""bold"":true,""color"":""green""}"
+            execute server command "minecraft:title @a subtitle {""text"":""%{_r}%"",""bold"":false,""color"":""gold""}" 
+            play "LEVEL_UP" to all players
+            play "ENDERDRAGON_GROWL" to all players
+        else:
+            onlyAdmin(player)
+
+command /pmix:del:vars:
+    trigger:
+        if {rank.%player%} is "admin":
+            delete {partymix.minigame.count}
+            delete {partymix.first.minigame}
+            delete {partymix.second.minigame}
+            delete {partymix.third.minigame}
+            delete {partymix}
+            delete {pm.count}
+        else:
+            onlyAdmin(player)
+
+
+
+function partymixTitle(t: text):
+    execute server command "minecraft:title @a times 0 100 0"
+    execute server command "minecraft:title @a title {""text"":""Vybírám minihru.."",""bold"":true,""color"":""green""}"
+    execute server command "minecraft:title @a subtitle {""text"":""%{_t}%"",""bold"":false,""color"":""yellow""}" 
+    play "CHICKEN_EGG_POP" to all players
+    play "NOTE_STICKS" to all players
+    

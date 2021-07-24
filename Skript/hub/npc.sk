@@ -1,0 +1,21 @@
+command /npc:at <text>:
+    trigger:
+        if player is in world "hub":
+            if arg-1 is "JopGamer" or "Kbelik_Vody" or "LukynkaCZE" or "TenViki" or "Peterko_" or "S0ptik" or "Th3Dolphin" or "SweatyyKubo":
+                play "VILLAGER_YES" to player
+                if arg-1 is "JopGamer":
+                    send "&e[NPC] JopGamer: &fSnažím sa byť programátor ¯\_(ツ)_/¯"
+                if arg-1 is "Kbelik_Vody":
+                    send "&e[NPC] Kbelik_Vody: &fnull"
+                if arg-1 is "LukynkaCZE":
+                    send "&e[NPC] LukynkaCZE: &fJsem majitelka celého projektu a hlavní developerka! UwU &d<3"
+                if arg-1 is "TenViki":
+                    send "&e[NPC] TenViki: &fnull"
+                if arg-1 is "Peterko_":
+                    send "&e[NPC] Peterko_: &fnull"
+                if arg-1 is "S0ptik":
+                    send "&e[NPC] S0ptik: &fnull"
+                if arg-1 is "Th3Dolphin":
+                    send "&e[NPC] Th3Dolphin: &fnull"
+                if arg-1 is "SweatyyKubo":
+                    send "&e[NPC] SweatyyKubo: &fAhoj! Moje meno je Kubo a som hrdý moderátor tohto servera. Veľmi rád ti pomôžem, ak budeš mať nejaký problem alebo mi nahlásiš hráča, ktorý porušuje pravidlá. Dúfam, že si to tu užiješ a vyhráš nejaký event :)"

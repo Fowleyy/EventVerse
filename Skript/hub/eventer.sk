@@ -1,0 +1,234 @@
+on right click with command block:
+    if {rank.%player%} is "admin":
+        if name of player's held item is "&c&nEventer Menu&r &7(Right Click)":
+            if player is in world "hub":
+                open chest with 6 rows named "&0&lEventer Menu                   &dwww.event-verse.fun" to player
+                play "WOOD_CLICK" to player
+                wait 1 ticks
+                format slot 0 of player with black stained glass pane named "&r" to be unstealable
+                loop 53 times:
+                    add 1 to {_slot}
+                    format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+                    #
+                    format slot 10 of player with shiny {item.enderchest} named "&8&l» &d&lArcade Games &7[&fFolder&7]" with lore "||&7 - &eMusical Minecarts||&7 - &eGo, Slow, STOP!||&7 - &eHot Floor||&7 - &eChicken Shoot||&7 - &eBig Sales at Craftmart" to close then run [run player command "eventermenu:file:arcade" as op]
+                    format slot 11 of player with slime block named "&8&l» &d&lHole in the Wall" with lore "||&7- &eVyhýbej se posunujícím-se stěnám||&r||&7Status: &aFunguje||||&2&nKliknutím zapneš" to close then run [run player command "hole:start" as op]
+                    format slot 12 of player with diamond boots named "&8&l» &d&lParkour" with lore "||&7- &eDoskákej do cíle a vyhraj!||&r||&7Status: &aFunguje||||&2&nKliknutím zapneš" to close then run [run player command "parkour:start" as op]
+                    format slot 13 of player with jungle log named "&8&l» &c&m&lJungle Rush" with lore "||&7- &eZávod džunglí...||&r||&7Status: &4SoonTM||||&c&mKliknutím zapneš" to close then run [run player command "splashdown:start" as op]
+                    format slot 14 of player with tnt named "&8&l» &d&lTNT Tag" with lore "||&7- &eNenech se vybouchnout, předej TNT jinému.||&r||&7Status: &6Potřebuje recode||||&2&nKliknutím zapneš&r &7(Nedoporučeno)" to close then run [run player command "tnttag:start" as op]
+                    format slot 15 of player with beacon named "&8&l» &d&lBlock Party" with lore "||&7- &eTancuj a nespadni mimo plochu.||&r||&7Status: &6Potřebuje recode||||&2&nKliknutím zapneš&r &7(Nedoporučeno)" to be unstealable
+                    format slot 16 of player with iron pickaxe named "&8&l» &c&m&lMining Event" with lore "||&7- &eTěž, vylepšuj, vyhraj.||&r||&7Status: &4Depracted||||&c&mKliknutím zapneš" to be unstealable
+                    #
+                    format slot 19 of player with red sandstone named "&8&l» &c&m&lCross Fire" with lore "||&7- &eoheň = bad||&r||&7Status: &4SoonTM||||&c&mKliknutím zapneš" to be unstealable
+                    format slot 20 of player with iron shovel named "&8&l» &d&lSpleef" with lore "||&7- &ePodkopej nepřátelé.||&r||&7Status: &aFunguje||||&2&nKliknutím zapneš" to run [run player command "spleef:start" as op]
+                    format slot 21 of player with blaze rod named "&8&l» &c&m&lWizards" with lore "||&7- &ePomocí superschopností zabij ostatní.||&r||&7Status: &4SoonTM||||&c&mKliknutím zapneš" to be unstealable
+                    format slot 22 of player with air named "&r" with lore "&r" to be unstealable
+                    format slot 23 of player with air named "&r" with lore "&r" to be unstealable
+                    format slot 24 of player with air named "&r" with lore "&r" to be unstealable
+                    format slot 25 of player with air named "&r" with lore "&r" to be unstealable
+                    #
+                    format slot 37 of player with green clay named "&8&l» &a&lZapnout Odpočet" with lore "||&7- Zapne odpočet &e(2 minuty)" to run [run player command "event start" as op]
+                    format slot 38 of player with yellow clay named "&8&l» &e&lPozastavit Odpočet" with lore "||&7- Pozastaví odpočet" to run [run player command "event pause" as op]
+                    format slot 39 of player with red clay named "&8&l» &c&lResetovat Odpočet" with lore "||&7- Resetuje odpočet" to run [run player command "event reset" as op]
+                    format slot 41 of player with paper named "&8&l» &f&lNastavit název eventu" with lore "||&7- Nastaví název eventu &e(%{event.name}%)" to close then run [run player command "eventermenu:seteventname" as op]
+                    format slot 42 of player with ender pearl named "&8&l» &b&lNastavit nový event" with lore "||&7- Nastaví další event &e(%{event::number}%/30)" to run [run player command "eventermenu:addeventcount" as op]
+                    format slot 43 of player with eye of ender named "&8&l» &3&lNastavit novou sezónu" with lore "||&7- Nastaví novou sezónu &e(%{event::season}%. sezóna)" to run [run player command "eventermenu:addseasoncount" as op]
+    else:
+        onlyAdmin(player)
+
+
+command /eventermenu:setprize <text>:
+    trigger:
+        if {rank.%player%} = "admin":
+            set {event.prize} to "%arg 1%"
+            send "&e&l» &eNastavil/a jsi výhru eventu na &6%arg 1%&e!"
+            play "CLICK" to player
+            loop all players in world "hub":
+                updateHubScoreboard(loop-player)
+        else:
+            onlyAdmin(player)
+
+
+command /eventermenu:file:arcade:
+    trigger:
+        if {rank.%player%} is "admin":
+            if player is in world "hub":
+                wait 2 ticks
+                open chest with 3 rows named "&0&lEventer Menu                   &dwww.eventverse.fun" to player
+                play "WOOD_CLICK" to player
+                wait 1 ticks
+                format slot 0 of player with black stained glass pane named "&r" to be unstealable
+                loop 26 times:
+                    add 1 to {_slot}
+                    format slot {_slot} of player with black stained glass pane named "&r" to be unstealable
+                    #
+                    format slot 10 of player with minecart item named "&b&lMusical Minecarts &2[&a✔&2]" with lore "||&e- Po zastavení hudby rychle nasedni do vozíku.||||&6&lStav: &aFunkční" to close then run [run player command "carts:start" as op]
+                    format slot 11 of player with redstone torch on named "&b&lGo, Slow, STOP! &2[&a✔&2]" with lore "||&e- Běž, zpomal, zastav!||||&6&lStav: &aFunkční" to close then run [run player command "lights:start" as op]
+                    format slot 12 of player with lava bucket named "&b&lHot Floor &4[&c✖&4]" with lore "||&e- Nestoupej si na horkou podlahu.||||&6&lStav: &aFunkční" to close then run [run player command "hotfloor:start" as op]
+                    format slot 13 of player with bow named "&b&lChicken Shoot &4[&c✖&4]" with lore "||&e- Střílej do padajících slepic.||||&6&lStav: &aFunkční" to close then run [run player command "chicken:start" as op]
+                    format slot 14 of player with crafting table named "&b&lBig Sales at Craftmart &4[&c✖&4]" with lore "||&e- Získej materiály a vyhraj.||||&6&lStav: &cNefunkční" to be unstealable
+                    format slot 15 of player with air named "&r" with lore "&r" to be unstealable
+                    format slot 16 of player with air named "&r" with lore "&r" to be unstealable
+        else:
+            onlyAdmin(player)
+
+
+command /eventermenu:seteventtime <text>:
+    trigger:
+        if {rank.%player%} = "admin":
+            set {event.time} to "%arg 1%"
+            send "&aČas startu eventu nastaven na &e%arg 1%&a!"
+
+
+
+command /eventermenu:addeventcount:
+    trigger:
+        if {rank.%player%} is "admin":
+            add 1 to {event::number}
+            play "ORB_PICKUP" to player
+            if {event::number} = 31:
+                set {event::number} to 0
+        else:
+            onlyAdmin(player)
+
+command /eventermenu:addseasoncount:
+    trigger:
+        if {rank.%player%} is "admin":
+            add 1 to {event::season}
+            play "LEVEL_UP" to player
+        else:
+            onlyAdmin(player)
+
+every 30 seconds:
+    if {event.name} is not set:
+        set {event.name} to "Event nenastaven"
+
+command /seteventname <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {event.name} to arg-1
+        else:
+            onlyAdmin(player)
+
+command /eventermenu:seteventname:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {set.eventname.%player%} to true
+            send "" to player
+            send "&6&m------------------------------" to player
+            send "&e&l  &nNázev Eventu&7 (Číslo opiš do chatu)" to player
+            send "" to player
+            send "&f&l (0) &cNenastaveno" to player
+            send "" to player
+            send "&f&l (1) &cMusical Minecarts" to player
+            send "&f&l (2) &aGo, Slow, STOP!" to player
+            send "&f&l (3) &aHot Floor" to player
+            send "&f&l (4) &aChicken Shoot" to player
+            send "&7&l (5) &cBig Sales at Craftmart" to player
+            send "&f&l (6) &aHole in the Wall" to player
+            send "&f&l (7) &aParkour" to player
+            send "&7&l (8) &cSplashdown" to player
+            send "&f&l (9) &cTNT Tag" to player
+            send "&f&l (10) &cBlock Party" to player
+            send "&7&l (11) &cThe Mining Event" to player
+            send "&7&l (12) &cRocket Spleef" to player
+            send "&f&l (13) &aSpleef" to player
+            send "&7&l (14) &cWizards" to player
+            send "&6&m------------------------------" to player
+        else:
+            onlyAdmin(player)
+
+
+on chat:
+    if {set.eventname.%player%} is true:
+        cancel event
+
+        if message contains "0":
+            set {event.name} to "&c&lEvent Nenastaven&r"
+            delete {set.eventname.%player%}
+
+        if message contains "1":
+            set {event.name} to "Musical Minecarts"
+            delete {set.eventname.%player%}
+
+        if message contains "2":
+            set {event.name} to "Go, Slow, STOP!"
+            delete {set.eventname.%player%}
+
+        if message contains "3":
+            set {event.name} to "Hot Floor"
+            delete {set.eventname.%player%}
+
+        if message contains "4":
+            set {event.name} to "Chicken Shoot"
+            delete {set.eventname.%player%}
+
+        if message contains "5":
+            set {event.name} to "Big Sales at Craftmart"
+            delete {set.eventname.%player%}
+
+        if message contains "6":
+            set {event.name} to "Hole in the Wall"
+            delete {set.eventname.%player%}
+
+        if message contains "7":
+            set {event.name} to "Parkour"
+            delete {set.eventname.%player%}
+
+        if message contains "8":
+            set {event.name} to "Splashdown"
+            delete {set.eventname.%player%}
+
+        if message contains "9":
+            set {event.name} to "TNT Tag"
+            delete {set.eventname.%player%}
+
+        if message contains "10":
+            set {event.name} to "Block Party"
+            delete {set.eventname.%player%}
+
+        if message contains "11":
+            set {event.name} to "The Mining Event"
+            delete {set.eventname.%player%}
+
+        if message contains "12":
+            set {event.name} to "Rocket Spleef"
+            delete {set.eventname.%player%}
+
+        if message contains "13":
+            set {event.name} to "Spleef"
+            delete {set.eventname.%player%}
+
+        if message contains "14":
+            set {event.name} to "Wizards"
+            delete {set.eventname.%player%}
+
+        delete {set.eventname.%player%}
+        send "" to player
+        send "&6&m------------------------------" to player
+        send "&e&l  &nNázev Eventu" to player
+        send "" to player
+        send "&f Event: &e%{event.name}%" to player
+        send "&6&m------------------------------" to player
+        execute server command "hd setline welcome 3 &fVítej na Eventu &e%{event.name}%"
+
+command /seteventstart <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {event.starttime} to arg-1
+            execute server command "hd setline welcome 8 &fEvent začíná v &e%{event.starttime}%"
+        else:
+            onlyAdmin(player)
+
+command /setseason <number>: 
+    trigger:
+        if {rank.%player%} is "admin":
+            set {event::season} to arg-1
+        else:
+            onlyAdmin(player)
+
+command /setevent <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {event::number} to arg-1
+        else:
+            onlyAdmin(player)

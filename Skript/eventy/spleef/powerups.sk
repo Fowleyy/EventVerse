@@ -1,0 +1,143 @@
+
+on shoot:
+    if event-projectile is arrow:
+        if name of shooter's held item is "&c&nExplosive Bow":
+            remove 1 bow from shooter
+
+
+command /givepowerup:
+    trigger:
+        if {rank.%player%} is "admin":
+            loop all players:
+                if gamemode of loop-player is survival or adventure:
+                    loop-player is in world "Spleff1"
+                    add loop-player to {_players::*}
+            set {_r} to random player out of {_players::*}
+            set {_t} to "EXPLOSIVE_BOW" or "PLATFORM" or "ENDER" or "SLIME"
+            powerUp({_r}, {_t})
+
+on projectile hit:
+    projectile is a arrow
+    event-world is "Spleff1"
+    set {_l} to location of event-projectile
+    set {_index} to 0
+    delete event-projectile
+    loop 4 times:
+        wait 2 ticks
+        add 1 to {_index}
+        loop all players in radius 20 of event-projectile:
+            play "EXPLODE" to loop-player
+        loop all blocks in radius {_index}:
+            if loop-block is not barrier:
+                set loop-block to air
+                drawDot count 1, particle explosionlarge, colorOffset 0.1, 0.5, 0.1, center location of loop-block, randomColor false, visibleRange 320
+    
+command /dev:spleefpowerup <player> <text>:
+    trigger:    
+        if {rank.%player%} is "admin":
+            powerUp(arg-1, "%arg 2%")
+
+
+function powerUp(p: player, t: text):
+    if {_t} is "EXPLOSIVE_BOW":
+        give {_p} 1 of shiny bow named "&c&nExplosive Bow" with lore "&r||&7Tam, kde dopadne šíp se spawne explose, která||&7zníčí všechny blocky v radiusu 4 blocků||&r"
+        give {_p} 1 of shiny arrow named "&7&nExplosive Arrow"
+        loop all players:
+            run loop-player command "/playsound mob.wither.spawn %loop-player% ~ ~ ~ 0.3 2" as op
+        broadcast "&r "
+        broadcast "&b&lPOWER UP! &e%{_p}% &7získal/a &cExplosive Bow&7 power up!"
+        broadcast "&r "
+    if {_t} is "PLATFORM":
+        give {_p} 1 of shiny brick slab named "&6&nZáchraná Platforma&r &7(Right Click)" with lore "&r||&7Vytvoří pod tebou 5x5 platformu||&r"
+        loop all players:
+            run loop-player command "/playsound mob.wither.spawn %loop-player% ~ ~ ~ 0.3 2" as op
+        broadcast "&r "
+        broadcast "&b&lPOWER UP! &e%{_p}% &7získal/a &6Platforma&7 power up!"
+        broadcast "&r "
+    if {_t} is "SLIME":
+        give {_p} 1 of shiny 341 named "&a&nSlime Launcher&r &7(Right Click)" with lore "&r||&7Vystřelí tě do vzduchu||&cPokud máš nad sebou blocky, budou zníčeny||&r"
+        loop all players:
+            run loop-player command "/playsound mob.wither.spawn %loop-player% ~ ~ ~ 0.3 2" as op
+        broadcast "&r "
+        broadcast "&b&lPOWER UP! &e%{_p}% &7získal/a &aSlime Launcher&7 power up!"
+        broadcast "&r "
+    if {_t} is "ENDER":
+        give {_p} 1 of shiny ender pearl named "&d&nEnder Pearl&r &7(Right Click)" with lore "&r||&7Prostě Ender Pearla..||&r"
+        loop all players:
+            run loop-player command "/playsound mob.wither.spawn %loop-player% ~ ~ ~ 0.3 2" as op
+        broadcast "&r "
+        broadcast "&b&lPOWER UP! &e%{_p}% &7získal/a &dEnder Pearl&7 power up!"
+        broadcast "&r "
+
+
+
+
+on right click with 341:
+    if player is in world "Spleff1":
+        remove 1 slimeball from player
+        loop 7 times:
+            wait 2 ticks
+            loop all blocks in radius 2 of {_hb}:
+                if loop-block is not air or barrier:
+                    set loop-block to air
+            push player upwards at speed 0.3
+            set {_hb} to block above player
+            loop all blocks in radius 2 of {_hb}:
+                if loop-block is not air or barrier:
+                    set loop-block to air
+            play "SLIME_WALK" to player
+
+on any movement:
+    if player is in world "Spleff1":
+        if y-coordinate of player is more than 88:
+            set {_l} to block under player
+            teleport player to {_l}
+            play "VILLAGER_NO" to player
+            send "&cTakhle vysoko se nemůžeš dostat!"
+
+on place:
+    if player is in world "Spleff1":
+        if event-block is brick slab:
+            cancel event
+
+on damage:
+    if victim is in world "Spleff1":
+        if projectile is snowball:
+            heal victim
+        else:
+            cancel event
+
+on right click with brick slab:
+    if player is in world "Spleff1":
+        set {_lp} to location of player
+        if y-coordinate of block under {_lp} is between 48 and 61:
+            remove 1 brick slab from player
+            if {rank.%player%} is "admin" or "mcteam":
+                set {_b} to red glass
+                set {_b1} to red wool
+            if {rank.%player%} is "dcteam" or "champion":
+                set {_b} to orange glass
+                set {_b1} to orange wool
+            if {rank.%player%} is "tester":
+                set {_b} to light blue glass
+                set {_b1} to light blue wool
+            if {rank.%player%} is "donator":
+                set {_b} to magenta glass
+                set {_b1} to magenta wool
+            if {rank.%player%} is "komunita" or "verified":
+                set {_b} to light green glass
+                set {_b1} to light green wool
+            if {rank.%player%} is "player":
+                set {_b} to light gray glass
+                set {_b1} to light gray wool
+            loop all blocks in radius 5 of player:
+                if y-coordinate of loop-block is y-coordinate of block under {_lp}:
+                    if x-coordinate of loop-block is between -4 and 48:
+                        if z-coordinate of loop-block is between -103 and -51:
+                            if loop-block is air or any glass:
+                                set loop-block to {_b}
+                            else:
+                                set loop-block to {_b1}
+        else:
+            play "VILLAGER_NO" to player
+            send "&cTento power up se dá použít pouze ve výšce 61 - 48!"

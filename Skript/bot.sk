@@ -1,0 +1,405 @@
+options:
+	color: color from rgb 75, 0, 130
+	bot: EventVerse
+
+on skript load:
+    broadcast "&7[BOT] &aEnabling..."
+    wait 1 second
+    broadcast "&7[BOT] &aLogging in to &6EventVerse&a..."
+    login to "token" with the name "EventVerse"
+    mark "EventVerse" as watching "unseen horizon"
+    broadcast "&7[BOT] &aEnabled!"
+
+command /bot:shutdown:
+    trigger:
+        if {rank.%player%} is "admin":
+            broadcast "&7[BOT] &cDisabling..."
+            shutdown "EventVerse"
+            broadcast "&7[BOT] &cDisabled!"
+        else:
+            onlyAdmin(player)
+
+command /bot:enable:
+    trigger:
+        if {rank.%player%} is "admin":
+            wait 1 second
+            broadcast "&7[BOT] &aLogging in..."
+            login to "token" with the name "EventVerse"
+            mark "EventVerse" as watching "unseen horizon"
+            wait 1 tick
+            broadcast "&7[BOT] &aLogged in!"
+        else:
+            onlyAdmin(player)
+
+
+guild message receive seen by "EventVerse":
+    set {_chat} to channel with id "806200891454521364"
+    if the discord id of event-channel is discord id of {_chat}:
+        set {_msg} to event-string
+        replace all "o/" in {_msg} with "( ﾟ◡ﾟ)/"
+        broadcast "&9&lDiscord &8&l» &e%event-member%: &f%{_msg}%"
+
+on authme login:
+    make embed:
+        set description of embed to ":green_circle: | **%player%** %{cosmetics.%player%.joinmsg}%"
+        set color of the embed to color from rgb 144, 245, 0
+        #set the footer of embed to footer with text " " and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+        #set the timestamp of embed to now
+    if player is "LukynkaCZE":
+        stop 
+    else:
+        send last created embed to channel with id "806200891454521364" with "EventVerse" and store it in {_embed}
+        set {loggedin.%player%.bot} to true
+
+on quit:
+    if {loggedin.%player%.bot} is true:
+        make embed:
+            set description of embed to ":red_circle: | **%player%** se odpojil/a."
+            set color of the embed to color from rgb 255, 70, 70
+            #set the footer of embed to footer with text " " and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+            #set the timestamp of embed to now
+        send last created embed to channel with id "806200891454521364" with "EventVerse" and store it in {_embed}
+        delete {loggedin.%player%.bot}
+
+
+
+discord command !stats <text>:
+    trigger:
+        set {_commands} to channel with id "760533014781755453"
+        #set {_bot.testing} to channel with id "824388525491224587"
+        if the discord id of event-channel is discord id of {_commands}:
+            if {rank.%arg-1%} is set:
+                if {shards::%arg-1%} is not set:
+                    set {shards::%arg-1%} to 0
+                if {lifetime-coins::%arg-1%} is not set:
+                    set {lifetime-coins::%arg-1%} to 0
+                if {event.play::%arg-1%} is not set:
+                    set {event.play::%arg-1%} to 0
+                if {event.win::%arg-1%} is not set:
+                    set {event.win::%arg-1%} to 0
+                make embed:
+                    set the title of embed to title with text ":pencil:   __Statistiky__"
+
+                    if {rank.%arg-1%} is "admin":
+                        set color of the embed to color from rgb 255, 117, 117
+                        set {_rank} to "Admin"
+                    if {rank.%arg-1%} is "mcteam":
+                        set color of the embed to color from rgb 255, 117, 117
+                        set {_rank} to "MC Team"
+                    if {rank.%arg-1%} is "dcteam":
+                        set color of the embed to color from rgb 255, 165, 115
+                        set {_rank} to "DC Team"
+                    if {rank.%arg-1%} is "tester":
+                        set color of the embed to color from rgb 144, 255, 255
+                        set {_rank} to "Tester"
+                    if {rank.%arg-1%} is "donator":
+                        set color of the embed to color from rgb 237, 136, 255
+                        set {_rank} to "Donator"
+                    if {rank.%arg-1%} is "champion":
+                        set color of the embed to color from rgb 251, 145, 1
+                        set {_rank} to "Champion"
+                    if {rank.%arg-1%} is "komunita":
+                        set color of the embed to color from rgb 144, 238, 144
+                        set {_rank} to "Verified"
+                    if {rank.%arg-1%} is "player":
+                        set color of the embed to color from rgb 255, 255, 116
+                        set {_rank} to "Player"
+
+                    set description of embed to "**Nickname:** %arg-1%%nl%**Rank:** %{_rank}%%nl% %nl%**Shardy:** %{shards::%arg-1%}%<:EV_Shard:776100019907592192>%nl%**Lifetime Coiny:** %{lifetime-coins::%arg-1%}% <:Coin1:845701479821475851>%nl% %nl%**Odehrané eventy:** %{event.play::%arg-1%}%%nl%**Vyhrané eventy:** %{event.win::%arg-1%}%"
+                    set the footer of embed to footer with text "🌌 • EventVerse"
+                    set the timestamp of embed to now
+                send last created embed to event-channel with "EventVerse" and store it in {_embed}
+            else:
+                send "> **‣ \⚠️ |** Tento hráč se ještě nepřipojil na server." to event-channel with "EventVerse"
+        else:
+            send "> **‣ \⚠️ |** Tento příkaz můžeš použít pouze v <##760533014781755453>." to event-channel with "EventVerse"
+
+
+discord command !advstats <text>:
+    trigger:
+        set {_commands} to channel with id "760533014781755453"
+        #set {_bot.testing} to channel with id "824388525491224587"
+        if the discord id of event-channel is discord id of {_commands}:
+            if {rank.%arg-1%} is set:
+                if {shards::%arg-1%} is not set:
+                    set {shards::%arg-1%} to 0
+                if {lifetime-coins::%arg-1%} is not set:
+                    set {lifetime-coins::%arg-1%} to 0
+                if {event.play::%arg-1%} is not set:
+                    set {event.play::%arg-1%} to 0
+                if {event.win::%arg-1%} is not set:
+                    set {event.win::%arg-1%} to 0
+                make embed:
+                    set the title of embed to title with text ":pencil:   __Advanced Statistiky__"
+
+                    if {rank.%arg-1%} is "admin":
+                        set color of the embed to color from rgb 255, 117, 117
+                        set {_rank} to "Admin"
+
+                    if {rank.%arg-1%} is "mcteam":
+                        set color of the embed to color from rgb 255, 117, 117
+                        set {_rank} to "MC Team"
+
+                    if {rank.%arg-1%} is "dcteam":
+                        set color of the embed to color from rgb 255, 165, 115
+                        set {_rank} to "DC Team"
+
+                    if {rank.%arg-1%} is "tester":
+                        set color of the embed to color from rgb 144, 255, 255
+                        set {_rank} to "Tester"
+
+                    if {rank.%arg-1%} is "donator":
+                        set color of the embed to color from rgb 237, 136, 255
+                        set {_rank} to "Donator"
+
+                    if {rank.%arg-1%} is "champion":
+                        set color of the embed to color from rgb 251, 145, 1
+                        set {_rank} to "Champion"
+
+                    if {rank.%arg-1%} is "komunita":
+                        set color of the embed to color from rgb 144, 238, 144
+                        set {_rank} to "Verified"
+                        
+                    if {rank.%arg-1%} is "player":
+                        set color of the embed to color from rgb 255, 255, 116
+                        set {_rank} to "Player"
+
+                    # metamtika ugh
+
+                    set {_sa} to {shards::%arg 1%}
+                    set {_ep} to {event.play::%arg 1%}
+
+                    if {_sa} is more than 0:
+                        set {_spe} to {_sa} / {_ep}
+                    if {_sa} is less than 1:
+                        set {_spe} to 0
+                    if {_ep} is less than 1:
+                        set {_spe} to 0
+
+                    if {lifetime-coins::%arg-1%} is more than 0:
+                        set {_lcpe} to {lifetime-coins::%arg 1%} / {event.play::%arg 1%}
+                    if {lifetime-coins::%arg-1%} is less than 1:
+                        set {_lcpe} to 0
+
+                    if {event.play::%arg-1%} is more than 0:
+                        set {_winrate} to 100 * {event.win::%arg 1%} / {event.play::%arg 1%}
+                    if {event.play::%arg-1%} is less than 1:
+                        set {_winrate} to 0
+
+                    # konec matematiky yay
+
+                    set description of embed to "**Nickname:** %arg-1%%nl%**Rank:** %{_rank}%%nl% %nl%**Shardy:** %{shards::%arg-1%}%<:EV_Shard:776100019907592192>%nl%**Shards gain per event:** ~%{_spe}%<:EV_Shard:776100019907592192> / event%nl%%nl%**Lifetime Coiny:** %{lifetime-coins::%arg-1%}% <:Coin1:845701479821475851>%nl%**Lifetime Coin gain per event:** %{_lcpe}% <:Coin1:845701479821475851> / event%nl% %nl%**Odehrané eventy:** %{event.play::%arg-1%}%%nl%**Vyhrané eventy:** %{event.win::%arg-1%}%%nl%**Winrate:** %{_winrate}%%%"
+                    set the footer of embed to footer with text "🌌 • EventVerse"
+                    set the timestamp of embed to now
+                send last created embed to event-channel with "EventVerse" and store it in {_embed}
+            else:
+                send "> **‣ \⚠️ |** Tento hráč se ještě nepřipojil na server." to event-channel with "EventVerse"
+        else:
+            send "> **‣ \⚠️ |** Tento příkaz můžeš použít pouze v <##760533014781755453>." to event-channel with "EventVerse"
+
+
+
+
+
+
+discord command !leaderboard [<text>]:
+    trigger:
+
+        #set {_commands} to channel with id "760533014781755453"
+        set {_bot.testing} to channel with id "824388525491224587"
+        if the discord id of event-channel is discord id of {_bot.testing}:
+
+            if arg-1 is not set:
+                send "> **‣ \💡 |** Správné použití: `!leaderboard <shards/coins/season coins/lifetime coins>`." to event-channel with "EventVerse"
+            else:
+                if arg-1 is "shards":
+                    set {_l} to "shards"
+                if arg-1 is "coins":
+                    set {_l} to "coins"
+                if arg-1 is "season coins":
+                    set {_l} to "season%{event::season}%-coins"
+                if arg-1 is "lifetime coins":
+                    set {_l} to "lifetime-coins"
+                if arg-1 is "shards" or "coins" or "season coins" or "lifetime coins":
+
+                    set {_1st.point} to 0
+                    set {_2nd.point} to 0
+                    set {_3rd.point} to 0
+                    set {_4th.point} to 0
+                    set {_5th.point} to 0
+                    set {_6th.point} to 0
+                    set {_7th.point} to 0
+                    set {_8th.point} to 0
+                    set {_9th.point} to 0
+                    set {_10th.point} to 0
+                    loop {%{_l}%::*}:
+                        if loop-value is more than {_1st.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to {_7th}
+                            set {_8th.point} to {_7th.point}
+                            set {_7th} to {_6th}
+                            set {_7th.point} to {_6th.point}
+                            set {_6th} to {_5th}
+                            set {_6th.point} to {_5th.point}
+                            set {_5th} to {_4th}
+                            set {_5th.point} to {_4th.point}
+                            set {_4th} to {_3rd}
+                            set {_4th.point} to {_3rd.point}
+                            set {_3rd} to {_2nd}
+                            set {_3rd.point} to {_2nd.point}
+                            set {_2nd} to {_1st}
+                            set {_2nd.point} to {_1st.point}
+                            set {_1st} to loop-index
+                            set {_1st.point} to loop-value
+                        else if loop-value is more than {_2nd.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to {_7th}
+                            set {_8th.point} to {_7th.point}
+                            set {_7th} to {_6th}
+                            set {_7th.point} to {_6th.point}
+                            set {_6th} to {_5th}
+                            set {_6th.point} to {_5th.point}
+                            set {_5th} to {_4th}
+                            set {_5th.point} to {_4th.point}
+                            set {_4th} to {_3rd}
+                            set {_4th.point} to {_3rd.point}
+                            set {_3rd} to {_2nd}
+                            set {_3rd.point} to {_2nd.point}
+                            set {_2nd} to loop-index
+                            set {_2nd.point} to loop-value
+                        else if loop-value is more than {_3rd.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to {_7th}
+                            set {_8th.point} to {_7th.point}
+                            set {_7th} to {_6th}
+                            set {_7th.point} to {_6th.point}
+                            set {_6th} to {_5th}
+                            set {_6th.point} to {_5th.point}
+                            set {_5th} to {_4th}
+                            set {_5th.point} to {_4th.point}
+                            set {_4th} to {_3rd}
+                            set {_4th.point} to {_3rd.point}
+                            set {_3rd} to loop-index
+                            set {_3rd.point} to loop-value
+                        else if loop-value is more than {_4th.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to {_7th}
+                            set {_8th.point} to {_7th.point}
+                            set {_7th} to {_6th}
+                            set {_7th.point} to {_6th.point}
+                            set {_6th} to {_5th}
+                            set {_6th.point} to {_5th.point}
+                            set {_5th} to {_4th}
+                            set {_5th.point} to {_4th.point}
+                            set {_4th} to loop-index
+                            set {_4th.point} to loop-value
+                        else if loop-value is more than {_5th.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to {_7th}
+                            set {_8th.point} to {_7th.point}
+                            set {_7th} to {_6th}
+                            set {_7th.point} to {_6th.point}
+                            set {_6th} to {_5th}
+                            set {_6th.point} to {_5th.point}
+                            set {_5th} to loop-index
+                            set {_5th.point} to loop-value
+                        else if loop-value is more than {_6th.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to {_7th}
+                            set {_8th.point} to {_7th.point}
+                            set {_7th} to {_6th}
+                            set {_7th.point} to {_6th.point}
+                            set {_6th} to loop-index
+                            set {_6th.point} to loop-value
+                        else if loop-value is more than {_7th.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to {_7th}
+                            set {_8th.point} to {_7th.point}
+                            set {_7th} to loop-index
+                            set {_7th.point} to loop-value
+                        else if loop-value is more than {_8th.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to {_8th}
+                            set {_9th.point} to {_8th.point}
+                            set {_8th} to loop-index
+                            set {_8th.point} to loop-value
+                        else if loop-value is more than {_9th.point}:
+                            set {_10th} to {_9th}
+                            set {_10th.point} to {_9th.point}
+                            set {_9th} to loop-index
+                            set {_9th.point} to loop-value
+                                
+                    if {_1st} is not set:
+                        set {_1st} to "Nikdo"
+                    if {_2nd} is not set:
+                        set {_2nd} to "Nikdo"
+                    if {_3rd} is not set:
+                        set {_3rd} to "Nikdo"
+                    if {_4th} is not set:
+                        set {_4th} to "Nikdo"
+                    if {_5th} is not set:
+                        set {_5th} to "Nikdo"
+                    if {_6th} is not set:
+                        set {_6th} to "Nikdo"
+                    if {_7th} is not set:
+                        set {_7th} to "Nikdo"
+                    if {_8th} is not set:
+                        set {_8th} to "Nikdo"
+                    if {_9th} is not set:
+                        set {_9th} to "Nikdo"
+                    if {_10th} is not set:
+                        set {_10th} to "Nikdo"
+                        
+                    make embed:
+
+                        if arg-1 is "shards":
+                            set the title of embed to title with text ":pencil:   __Shards Leaderboard__"
+                            set color of the embed to color from rgb 255, 128, 255
+                            set description of embed to "‎ ‎%nl%**1.** `%{_1st}%`: %{_1st.point}%<:EV_Shard:776100019907592192>%nl%**2.** `%{_2nd}%`: %{_2nd.point}%<:EV_Shard:776100019907592192>%nl%**3.** `%{_3rd}%`: %{_3rd.point}%<:EV_Shard:776100019907592192>%nl%**4.** `%{_4th}%`: %{_4th.point}%<:EV_Shard:776100019907592192>%nl%**5.** `%{_5th}%`: %{_5th.point}%<:EV_Shard:776100019907592192>%nl%**6.** `%{_6th}%`: %{_6th.point}%<:EV_Shard:776100019907592192>%nl%**7.** `%{_7th}%`: %{_7th.point}%<:EV_Shard:776100019907592192>%nl%**8.** `%{_8th}%`: %{_8th.point}%<:EV_Shard:776100019907592192>%nl%**9.** `%{_9th}%`: %{_9th.point}%<:EV_Shard:776100019907592192>%nl%**10.** `%{_10th}%`: %{_10th.point}%<:EV_Shard:776100019907592192>%nl%‎ "
+                        
+                        if arg-1 is "coins":
+                            set the title of embed to title with text ":pencil:   __Coins Leaderboard__"
+                            set color of the embed to color from rgb 255, 211, 25
+                            set description of embed to "‎ ‎%nl%**1.** `%{_1st}%`: %{_1st.point}% <:Coin1:845701479821475851>%nl%**2.** `%{_2nd}%`: %{_2nd.point}% <:Coin1:845701479821475851>%nl%**3.** `%{_3rd}%`: %{_3rd.point}% <:Coin1:845701479821475851>%nl%**4.** `%{_4th}%`: %{_4th.point}% <:Coin1:845701479821475851>%nl%**5.** `%{_5th}%`: %{_5th.point}% <:Coin1:845701479821475851>%nl%**6.** `%{_6th}%`: %{_6th.point}% <:Coin1:845701479821475851>%nl%**7.** `%{_7th}%`: %{_7th.point}% <:Coin1:845701479821475851>%nl%**8.** `%{_8th}%`: %{_8th.point}% <:Coin1:845701479821475851>%nl%**9.** `%{_9th}%`: %{_9th.point}% <:Coin1:845701479821475851>%nl%**10.** `%{_10th}%`: %{_10th.point}% <:Coin1:845701479821475851>%nl%‎ "
+                        
+                        if arg-1 is "season coins":
+                            set the title of embed to title with text ":pencil:   __Season Coins Leaderboard__"
+                            set color of the embed to color from rgb 255, 211, 25
+                            set description of embed to "‎ ‎%nl%**1.** `%{_1st}%`: %{_1st.point}% <:Coin1:845701479821475851>%nl%**2.** `%{_2nd}%`: %{_2nd.point}% <:Coin1:845701479821475851>%nl%**3.** `%{_3rd}%`: %{_3rd.point}% <:Coin1:845701479821475851>%nl%**4.** `%{_4th}%`: %{_4th.point}% <:Coin1:845701479821475851>%nl%**5.** `%{_5th}%`: %{_5th.point}% <:Coin1:845701479821475851>%nl%**6.** `%{_6th}%`: %{_6th.point}% <:Coin1:845701479821475851>%nl%**7.** `%{_7th}%`: %{_7th.point}% <:Coin1:845701479821475851>%nl%**8.** `%{_8th}%`: %{_8th.point}% <:Coin1:845701479821475851>%nl%**9.** `%{_9th}%`: %{_9th.point}% <:Coin1:845701479821475851>%nl%**10.** `%{_10th}%`: %{_10th.point}% <:Coin1:845701479821475851>%nl%‎ "
+                        
+                        if arg-1 is "lifetime coins":
+                            set the title of embed to title with text ":pencil:   __Lifetime Coins Leaderboard__"
+                            set color of the embed to color from rgb 255, 211, 25
+                            set description of embed to "‎ ‎%nl%**1.** `%{_1st}%`: %{_1st.point}% <:Coin1:845701479821475851>%nl%**2.** `%{_2nd}%`: %{_2nd.point}% <:Coin1:845701479821475851>%nl%**3.** `%{_3rd}%`: %{_3rd.point}% <:Coin1:845701479821475851>%nl%**4.** `%{_4th}%`: %{_4th.point}% <:Coin1:845701479821475851>%nl%**5.** `%{_5th}%`: %{_5th.point}% <:Coin1:845701479821475851>%nl%**6.** `%{_6th}%`: %{_6th.point}% <:Coin1:845701479821475851>%nl%**7.** `%{_7th}%`: %{_7th.point}% <:Coin1:845701479821475851>%nl%**8.** `%{_8th}%`: %{_8th.point}% <:Coin1:845701479821475851>%nl%**9.** `%{_9th}%`: %{_9th.point}% <:Coin1:845701479821475851>%nl%**10.** `%{_10th}%`: %{_10th.point}% <:Coin1:845701479821475851>%nl%‎ "
+                        
+                        set the footer of embed to footer with text "🌌 • EventVerse"
+                        set the timestamp of embed to now
+                    send last created embed to event-channel with "EventVerse" and store it in {_embed}
+                
+                else:
+                    send "> **‣ \💡 |** Správné použití: `!leaderboard <shards/coins/season coins/lifetime coins>`." to event-channel with "EventVerse"
+        
+        else:
+            send "> **‣ \⚠️ |** Tento příkaz můžeš použít pouze v <##760533014781755453>." to event-channel with "EventVerse"

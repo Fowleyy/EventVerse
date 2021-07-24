@@ -1,0 +1,185 @@
+function bpGenerateFloor():
+    if {bp.hard} is "hard" or "insane":
+        set {_b} to red clay or blue clay or light green clay or yellow clay or orange clay or 159:0 or magenta clay
+    if {bp.hard} is "normal":
+        set {_b} to red clay or blue clay or light green clay or yellow clay or orange clay
+    if {bp.hard} is "easy":
+        set {_b} to red clay or blue clay or light green clay
+    set {bp.block} to {_b}
+    set {bp.newfloor} to true
+    set {bp.ctd} to {bp.ctd.speed}
+    loop all players:
+        set slot 0 of loop-player to {_b}
+        set slot 1 of loop-player to {_b}
+        set slot 2 of loop-player to {_b}
+        set slot 3 of loop-player to {_b}
+        set slot 4 of loop-player to {_b}
+        set slot 5 of loop-player to {_b}
+        set slot 6 of loop-player to {_b}
+        set slot 7 of loop-player to {_b}
+        set slot 8 of loop-player to {_b}
+    wait {bp.speed}
+    loop all players:
+        set slot 0 of loop-player to air
+        set slot 1 of loop-player to air
+        set slot 2 of loop-player to air
+        set slot 3 of loop-player to air
+        set slot 4 of loop-player to air
+        set slot 5 of loop-player to air
+        set slot 6 of loop-player to air
+        set slot 7 of loop-player to air
+        set slot 8 of loop-player to air
+    delete {bp.newfloor}
+    loop all blocks in radius 50 of {blockparty_minigame}:
+        if "%region at loop-block%" contains "bp_floor":
+            loop-block is not {_b}
+            loop-block is not polished andesite
+            set loop-block to air
+    wait 4 seconds
+    bpNewFloor()
+    wait 5 seconds
+    if {bp.play} is true:
+        bpGenerateFloor()
+
+function bpNewFloor():
+    set {_x} to 1584
+    set {_z} to -226
+    loop 45 times:
+        fixPillars()
+        remove 1 from {_x}
+        set {_z} to -226
+        loop 45 times:
+            if {bp.hard} is "insane":
+                set block at location {_x}, 101, {_z} in world "color" to red clay or blue clay or light green clay or yellow clay or orange clay or 159:0 or magenta clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+            if {bp.hard} is "hard":
+                set block at location {_x}, 101, {_z} in world "color" to red clay or blue clay or light green clay or yellow clay or orange clay or 159:0 or magenta clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+            if {bp.hard} is "normal":
+                set block at location {_x}, 101, {_z} in world "color" to red clay or blue clay or light green clay or yellow clay or orange clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+            if {bp.hard} is "easy":
+                set block at location {_x}, 101, {_z} in world "color" to red clay or blue clay or light green clay or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block or white_glass_block
+            add 1 to {_z}
+        wait 1 ticks
+
+function fixPillars():
+    set block at location 1580, 101, -184 in world "color" to polished andesite
+    set block at location 1580, 101, -185 in world "color" to polished andesite
+    set block at location 1581, 101, -184 in world "color" to polished andesite
+    set block at location 1581, 101, -185 in world "color" to polished andesite
+    
+    set block at location 1580, 101, -223 in world "color" to polished andesite
+    set block at location 1580, 101, -224 in world "color" to polished andesite
+    set block at location 1581, 101, -223 in world "color" to polished andesite
+    set block at location 1581, 101, -224 in world "color" to polished andesite
+    
+    set block at location 1541, 101, -223 in world "color" to polished andesite
+    set block at location 1541, 101, -224 in world "color" to polished andesite
+    set block at location 1542, 101, -223 in world "color" to polished andesite
+    set block at location 1542, 101, -224 in world "color" to polished andesite
+    
+    set block at location 1541, 101, -184 in world "color" to polished andesite
+    set block at location 1541, 101, -185 in world "color" to polished andesite
+    set block at location 1542, 101, -184 in world "color" to polished andesite
+    set block at location 1542, 101, -185 in world "color" to polished andesite
+    
+function bpResetFloor():
+    if {bp.hard} is "hard" or "insane":
+        set {_r} to red clay or blue clay or light green clay or yellow clay or orange clay or 159:0 or magenta clay
+    if {bp.hard} is "normal":
+        set {_r} to red clay or blue clay or light green clay or yellow clay or orange clay
+    if {bp.hard} is "easy":
+        set {_r} to red clay or blue clay or light green clay
+    loop all blocks in radius 50 of {blockparty_minigame}:
+        if "%region at loop-block%" contains "bp_floor":
+            loop-block is not {_r}
+            loop-block is not polished andesite
+            set loop-block to air
+    wait 5 seconds
+    bpNewFloor()
+
+
+
+
+
+
+
+
+
+
+
+
+every second:
+    if {bp.newfloor} is true:
+        if {bp.block} is red clay:
+            set {_b} to "&c&l&nČERVENÁ&f - &e%{bp.ctd}% sekund"
+        if {bp.block} is blue clay:
+            set {_b} to "&9&l&nMODRÁ&f - &e%{bp.ctd}% sekund"
+        if {bp.block} is light green clay:
+            set {_b} to "&a&l&nZELENÁ&f - &e%{bp.ctd}% sekund"
+        if {bp.block} is yellow clay:
+            set {_b} to "&e&l&nŽLUTÁ&f - &e%{bp.ctd}% sekund"
+        if {bp.block} is orange clay:
+            set {_b} to "&6&l&nORANŽOVÁ&f - &e%{bp.ctd}% sekund"
+        if {bp.block} is 159:0:
+            set {_b} to "&f&l&nBÍLÁ&f - &e%{bp.ctd}% sekund"
+        if {bp.block} is magenta clay:
+            set {_b} to "&d&l&nFIALOVÁ&f - &e%{bp.ctd}% sekund"
+        loop all players:
+            set action bar of loop-player to "%{_b}%"
+
+
+
+
+
+command /bp:generatefloor:
+    trigger:
+        if {rank.%player%} is "admin":
+            bpNewFloor()
+        else:
+            onlyAdmin(player)
+
+command /bpspeed <number>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {bp.speed} to "%arg-1% seconds" parsed as time span
+            set {bp.ctd.speed} to arg-1
+            debug("&eRychlost nastavena (&6%{bp.speed}%&e)")
+            loop all players:
+                updateBpScoreboard(loop-player)
+        else:
+            onlyAdmin(player)
+
+command /bpcustomspeed <text>:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {bp.speed} to "%arg-1%" parsed as time span
+            set {bp.ctd.speed} to arg-1
+
+
+command /bphard <text>:
+    trigger:    
+        if {rank.%player%} is "admin":
+            if arg-1 is "easy":
+                set {bp.hard} to "easy"
+                set {bp.difficulty} to coloured "&aLehká"
+            if arg-1 is "normal":
+                set {bp.hard} to "normal"
+                set {bp.difficulty} to coloured "&eStřední"
+            if arg-1 is "hard":
+                set {bp.hard} to "hard"
+                set {bp.difficulty} to coloured "&cTěžká"
+            if arg-1 is "insane":
+                set {bp.hard} to "insane"
+                set {bp.difficulty} to coloured "&dŠílená"
+            debug("&eObtížnost nastavena (&6%{bp.hard}%&e)")
+            loop all players:
+                updateBpScoreboard(loop-player)
+        else:
+            onlyAdmin(player)
+
+command /reset-floor:
+    trigger:
+        if {rank.%player%} is "admin":
+            bpResetFloor()
+        else:
+            onlyAdmin(player)
+        

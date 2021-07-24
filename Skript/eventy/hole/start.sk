@@ -1,0 +1,17 @@
+command /hole:start:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {walltime} to "10 ticks" parsed as a time span
+            eventStartSetup("HOLE_IN_THE_WALL")
+            wait 3 seconds
+            eventStartTitle("S0ptik","Hole in the Wall")
+            wait 5 seconds
+            updateEventState("GAME_INFO")
+            wait 5 ticks
+            eventExplain("Hole in the Wall")
+            wait 30 seconds
+            delete {mutechat}
+            updateEventState("GAME_PLAY")
+            hitNewRound(1, player)
+        else:
+            onlyAdmin(player)

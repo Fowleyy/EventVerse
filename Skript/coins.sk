@@ -1,0 +1,653 @@
+function addCoins(player: player, coins: number, reason: text):
+    message "&e+%{_coins}%&6⛁ &7(%{_reason}%)" to {_player}
+    add {_coins} to {coins::%{_player}%}
+    add {_coins} to {lifetime-coins::%{_player}%}
+    add {_coins} to {season%{event::season}%-coins::%{_player}%}
+    run {_player} command "/soundhandler_sound_orb_2" as op
+
+
+
+
+command /lead:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {_1st.point} to 0
+            set {_2nd.point} to 0
+            set {_3rd.point} to 0
+            set {_4th.point} to 0
+            set {_5th.point} to 0
+            loop {coins::*}:
+                if loop-value is more than {_1st.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to {_1st}
+                    set {_2nd.point} to {_1st.point}
+                    set {_1st} to loop-index
+                    set {_1st.point} to loop-value
+                else if loop-value is more than {_2nd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to loop-index
+                    set {_2nd.point} to loop-value
+                else if loop-value is more than {_3rd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to loop-index
+                    set {_3rd.point} to loop-value
+                else if loop-value is more than {_4th.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to loop-index
+                    set {_4th.point} to loop-value
+            loop 20 times:
+                broadcast "&r "
+            if {_1st} is not set:
+                set {_1st} to "Nikdo"
+            if {_2nd} is not set:
+                set {_2nd} to "Nikdo"
+            if {_3rd} is not set:
+                set {_3rd} to "Nikdo"
+            if {_4th} is not set:
+                set {_4th} to "Nikdo"
+            if {_5th} is not set:
+                set {_5th} to "Nikdo"
+            broadcast "&a "
+            broadcast "&f&lAktuální coiny (Top 5)"
+            broadcast "&r "
+            broadcast "&f1. &a&l%{_1st}%&r &7(&e%{_1st.point}%&6⛁&7)"
+            execute server command "holo setline top 4 &e&l1. &8› &f%{_1st}% &7(&e%{_1st.point}%&6⛁&7)"
+            broadcast "&f2. &a%{_2nd}% &7(&e%{_2nd.point}%&6⛁&7)"
+            execute server command "holo setline top 5 &7&l2. &8› &f%{_2nd}% &7(&e%{_2nd.point}%&6⛁&7)"
+            broadcast "&f3. &a%{_3rd}% &7(&e%{_3rd.point}%&6⛁&7)"
+            execute server command "holo setline top 6 &6&l3. &8› &f%{_3rd}% &7(&e%{_3rd.point}%&6⛁&7)"
+            broadcast "&f4. &2%{_4th}% &7(&e%{_4th.point}%&6⛁&7)"
+            execute server command "holo setline top 8 &a&l4. &8› &f%{_4th}% &7(&e%{_4th.point}%&6⛁&7)"
+            broadcast "&f5. &2%{_5th}% &7(&e%{_5th.point}%&6⛁&7)"
+            execute server command "holo setline top 9 &a&l5. &8› &f%{_5th}% &7(&e%{_5th.point}%&6⛁&7)"
+            broadcast "&a   "
+            loop {coins::*}:
+                add loop-value to {_coins}
+            execute server command "holo setline top 12 &a&nCelkem&8 › &e%{_coins}%&6⛁"
+        else:
+            onlyAdmin(player)
+
+
+
+command /clead:
+    trigger:
+        if executor is console:
+            set {_1st.point} to 0
+            set {_2nd.point} to 0
+            set {_3rd.point} to 0
+            set {_4th.point} to 0
+            set {_5th.point} to 0
+            loop {coins::*}:
+                if loop-value is more than {_1st.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to {_1st}
+                    set {_2nd.point} to {_1st.point}
+                    set {_1st} to loop-index
+                    set {_1st.point} to loop-value
+                else if loop-value is more than {_2nd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to loop-index
+                    set {_2nd.point} to loop-value
+                else if loop-value is more than {_3rd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to loop-index
+                    set {_3rd.point} to loop-value
+                else if loop-value is more than {_4th.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to loop-index
+                    set {_4th.point} to loop-value
+            loop 20 times:
+                broadcast "&r "
+            if {_1st} is not set:
+                set {_1st} to "Nikdo"
+            if {_2nd} is not set:
+                set {_2nd} to "Nikdo"
+            if {_3rd} is not set:
+                set {_3rd} to "Nikdo"
+            if {_4th} is not set:
+                set {_4th} to "Nikdo"
+            if {_5th} is not set:
+                set {_5th} to "Nikdo"
+            broadcast "&a "
+            broadcast "&f&lAktuální coiny (Top 5)"
+            broadcast "&r "
+            broadcast "&f1. &a&l%{_1st}%&r &7(&e%{_1st.point}%&6⛁&7)"
+            execute server command "holo setline top 4 &e&l1. &8› &f%{_1st}% &7(&e%{_1st.point}%&6⛁&7)"
+            broadcast "&f2. &a%{_2nd}% &7(&e%{_2nd.point}%&6⛁&7)"
+            execute server command "holo setline top 5 &7&l2. &8› &f%{_2nd}% &7(&e%{_2nd.point}%&6⛁&7)"
+            broadcast "&f3. &a%{_3rd}% &7(&e%{_3rd.point}%&6⛁&7)"
+            execute server command "holo setline top 6 &6&l3. &8› &f%{_3rd}% &7(&e%{_3rd.point}%&6⛁&7)"
+            broadcast "&f4. &2%{_4th}% &7(&e%{_4th.point}%&6⛁&7)"
+            execute server command "holo setline top 8 &a&l4. &8› &f%{_4th}% &7(&e%{_4th.point}%&6⛁&7)"
+            broadcast "&f5. &2%{_5th}% &7(&e%{_5th.point}%&6⛁&7)"
+            execute server command "holo setline top 9 &a&l5. &8› &f%{_5th}% &7(&e%{_5th.point}%&6⛁&7)"
+            broadcast "&a   "
+            loop {coins::*}:
+                add loop-value to {_coins}
+            execute server command "holo setline top 12 &a&nCelkem&8 › &e%{_coins}%&6⛁"
+        else:
+            onlyAdmin(player)
+
+command /slead:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {_1st.point} to 0
+            set {_2nd.point} to 0
+            set {_3rd.point} to 0
+            set {_4th.point} to 0
+            set {_5th.point} to 0
+            loop {season-coins::*}:
+                if loop-value is more than {_1st.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to {_1st}
+                    set {_2nd.point} to {_1st.point}
+                    set {_1st} to loop-index
+                    set {_1st.point} to loop-value
+                else if loop-value is more than {_2nd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to loop-index
+                    set {_2nd.point} to loop-value
+                else if loop-value is more than {_3rd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to loop-index
+                    set {_3rd.point} to loop-value
+                else if loop-value is more than {_4th.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to loop-index
+                    set {_4th.point} to loop-value
+            loop 20 times:
+                broadcast "&r "
+            if {_1st} is not set:
+                set {_1st} to "Nikdo"
+            if {_2nd} is not set:
+                set {_2nd} to "Nikdo"
+            if {_3rd} is not set:
+                set {_3rd} to "Nikdo"
+            if {_4th} is not set:
+                set {_4th} to "Nikdo"
+            if {_5th} is not set:
+                set {_5th} to "Nikdo"
+            broadcast "&a "
+            broadcast "&b&lSeason coiny (Top 5)"
+            broadcast "&r "
+            broadcast "&f1. &a&l%{_1st}%&r &7(&e%{_1st.point}%&6⛁&7)"
+            execute server command "holo setline season_top 4 &e&l1. &8› &f%{_1st}% &7(&e%{_1st.point}%&6⛁&7)"
+            broadcast "&f2. &a%{_2nd}% &7(&e%{_2nd.point}%&6⛁&7)"
+            execute server command "holo setline season_top 5 &7&l2. &8› &f%{_2nd}% &7(&e%{_2nd.point}%&6⛁&7)"
+            broadcast "&f3. &a%{_3rd}% &7(&e%{_3rd.point}%&6⛁&7)"
+            execute server command "holo setline season_top 6 &6&l3. &8› &f%{_3rd}% &7(&e%{_3rd.point}%&6⛁&7)"
+            broadcast "&f4. &2%{_4th}% &7(&e%{_4th.point}%&6⛁&7)"
+            execute server command "holo setline season_top 8 &a&l4. &8› &f%{_4th}% &7(&e%{_4th.point}%&6⛁&7)"
+            broadcast "&f5. &2%{_5th}% &7(&e%{_5th.point}%&6⛁&7)"
+            execute server command "holo setline season_top 9 &a&l5. &8› &f%{_5th}% &7(&e%{_5th.point}%&6⛁&7)"
+            broadcast "&a   "
+            broadcast "&8» &fSeason &3%{event::season}%&f"
+            broadcast "&8» &fEvent &3%{event::number}%/30"
+            broadcast ""
+            loop {season-coins::*}:
+                add loop-value to {_season.coins}
+            execute server command "holo setline season_top 12 &a&nCelkem&8 › &e%{_season.coins}%&6⛁"
+        else:
+            onlyAdmin(player)
+
+command /msglead:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {_1st.point} to 0
+            set {_2nd.point} to 0
+            set {_3rd.point} to 0
+            set {_4th.point} to 0
+            set {_5th.point} to 0
+            loop {coins::*}:
+                if loop-value is more than {_1st.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to {_1st}
+                    set {_2nd.point} to {_1st.point}
+                    set {_1st} to loop-index
+                    set {_1st.point} to loop-value
+                else if loop-value is more than {_2nd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to {_2nd}
+                    set {_3rd.point} to {_2nd.point}
+                    set {_2nd} to loop-index
+                    set {_2nd.point} to loop-value
+                else if loop-value is more than {_3rd.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to {_3rd}
+                    set {_4th.point} to {_3rd.point}
+                    set {_3rd} to loop-index
+                    set {_3rd.point} to loop-value
+                else if loop-value is more than {_4th.point}:
+                    set {_5th} to {_4th}
+                    set {_5th.point} to {_4th.point}
+                    set {_4th} to loop-index
+                    set {_4th.point} to loop-value
+            if {_1st} is not set:
+                set {_1st} to "Nikdo"
+            if {_2nd} is not set:
+                set {_2nd} to "Nikdo"
+            if {_3rd} is not set:
+                set {_3rd} to "Nikdo"
+            if {_4th} is not set:
+                set {_4th} to "Nikdo"
+            if {_5th} is not set:
+                set {_5th} to "Nikdo"
+            send "&r"
+            send " &a&l%{_1st}%&r &7(&e%{_1st.point}%&6⛁&7)"
+            send " &a%{_2nd}% &7(&e%{_2nd.point}%&6⛁&7)"
+            send " &a%{_3rd}% &7(&e%{_3rd.point}%&6⛁&7)"
+            send " &2%{_4th}% &7(&e%{_4th.point}%&6⛁&7)"
+            send " &2%{_5th}% &7(&e%{_5th.point}%&6⛁&7)"
+            send "&r "
+        else:
+            onlyAdmin(player)
+
+on quit:
+    #add {coins::%player%} to {season-coins::%player%}
+    add {coins::%player%} to {last.coins::%player%}
+    wait 1 ticks
+    set {coins::%player%} to 0
+
+on join:
+    delete {season-coins::%player%}
+    wait 1 ticks
+    if {season%{event::season}%-coins::%player%} is not set:
+        set {season%{event::season}%-coins::%player%} to 0
+    if {coins::%player%} is not set:
+        set {coins::%player%} to 0
+
+
+
+
+
+
+
+command /dclead:
+    trigger:
+        if {rank.%player%} is "admin":
+            set {_sc1st.point} to 0
+            set {_sc2nd.point} to 0
+            set {_sc3rd.point} to 0
+            set {_sc4th.point} to 0
+            set {_sc5th.point} to 0
+            set {_sc6th.point} to 0
+            set {_sc7th.point} to 0
+            set {_sc8th.point} to 0
+            set {_sc9th.point} to 0
+            set {_sc10th.point} to 0
+            loop {season%{event::season}%-coins::*}:
+                if loop-value is more than {_sc1st.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to {_sc7th}
+                    set {_sc8th.point} to {_sc7th.point}
+                    set {_sc7th} to {_sc6th}
+                    set {_sc7th.point} to {_sc6th.point}
+                    set {_sc6th} to {_sc5th}
+                    set {_sc6th.point} to {_sc5th.point}
+                    set {_sc5th} to {_sc4th}
+                    set {_sc5th.point} to {_sc4th.point}
+                    set {_sc4th} to {_sc3rd}
+                    set {_sc4th.point} to {_sc3rd.point}
+                    set {_sc3rd} to {_sc2nd}
+                    set {_sc3rd.point} to {_sc2nd.point}
+                    set {_sc2nd} to {_sc1st}
+                    set {_sc2nd.point} to {_sc1st.point}
+                    set {_sc1st} to loop-index
+                    set {_sc1st.point} to loop-value
+                else if loop-value is more than {_sc2nd.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to {_sc7th}
+                    set {_sc8th.point} to {_sc7th.point}
+                    set {_sc7th} to {_sc6th}
+                    set {_sc7th.point} to {_sc6th.point}
+                    set {_sc6th} to {_sc5th}
+                    set {_sc6th.point} to {_sc5th.point}
+                    set {_sc5th} to {_sc4th}
+                    set {_sc5th.point} to {_sc4th.point}
+                    set {_sc4th} to {_sc3rd}
+                    set {_sc4th.point} to {_sc3rd.point}
+                    set {_sc3rd} to {_sc2nd}
+                    set {_sc3rd.point} to {_sc2nd.point}
+                    set {_sc2nd} to loop-index
+                    set {_sc2nd.point} to loop-value
+                else if loop-value is more than {_sc3rd.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to {_sc7th}
+                    set {_sc8th.point} to {_sc7th.point}
+                    set {_sc7th} to {_sc6th}
+                    set {_sc7th.point} to {_sc6th.point}
+                    set {_sc6th} to {_sc5th}
+                    set {_sc6th.point} to {_sc5th.point}
+                    set {_sc5th} to {_sc4th}
+                    set {_sc5th.point} to {_sc4th.point}
+                    set {_sc4th} to {_sc3rd}
+                    set {_sc4th.point} to {_sc3rd.point}
+                    set {_sc3rd} to loop-index
+                    set {_sc3rd.point} to loop-value
+                else if loop-value is more than {_sc4th.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to {_sc7th}
+                    set {_sc8th.point} to {_sc7th.point}
+                    set {_sc7th} to {_sc6th}
+                    set {_sc7th.point} to {_sc6th.point}
+                    set {_sc6th} to {_sc5th}
+                    set {_sc6th.point} to {_sc5th.point}
+                    set {_sc5th} to {_sc4th}
+                    set {_sc5th.point} to {_sc4th.point}
+                    set {_sc4th} to loop-index
+                    set {_sc4th.point} to loop-value
+                else if loop-value is more than {_sc5th.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to {_sc7th}
+                    set {_sc8th.point} to {_sc7th.point}
+                    set {_sc7th} to {_sc6th}
+                    set {_sc7th.point} to {_sc6th.point}
+                    set {_sc6th} to {_sc5th}
+                    set {_sc6th.point} to {_sc5th.point}
+                    set {_sc5th} to loop-index
+                    set {_sc5th.point} to loop-value
+                else if loop-value is more than {_sc6th.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to {_sc7th}
+                    set {_sc8th.point} to {_sc7th.point}
+                    set {_sc7th} to {_sc6th}
+                    set {_sc7th.point} to {_sc6th.point}
+                    set {_sc6th} to loop-index
+                    set {_sc6th.point} to loop-value
+                else if loop-value is more than {_sc7th.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to {_sc7th}
+                    set {_sc8th.point} to {_sc7th.point}
+                    set {_sc7th} to loop-index
+                    set {_sc7th.point} to loop-value
+                else if loop-value is more than {_sc8th.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to {_sc8th}
+                    set {_sc9th.point} to {_sc8th.point}
+                    set {_sc8th} to loop-index
+                    set {_sc8th.point} to loop-value
+                else if loop-value is more than {_sc9th.point}:
+                    set {_sc10th} to {_sc9th}
+                    set {_sc10th.point} to {_sc9th.point}
+                    set {_sc9th} to loop-index
+                    set {_sc9th.point} to loop-value
+            set {_c1st.point} to 0
+            set {_c2nd.point} to 0
+            set {_c3rd.point} to 0
+            set {_c4th.point} to 0
+            set {_c5th.point} to 0
+            set {_c6th.point} to 0
+            set {_c7th.point} to 0
+            set {_c8th.point} to 0
+            set {_c9th.point} to 0
+            set {_c10th.point} to 0
+            loop {coins::*}:
+                if loop-value is more than {_c1st.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_c8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to {_c7th}
+                    set {_c8th.point} to {_c7th.point}
+                    set {_c7th} to {_c6th}
+                    set {_c7th.point} to {_c6th.point}
+                    set {_c6th} to {_c5th}
+                    set {_c6th.point} to {_c5th.point}
+                    set {_c5th} to {_c4th}
+                    set {_c5th.point} to {_c4th.point}
+                    set {_c4th} to {_c3rd}
+                    set {_c4th.point} to {_c3rd.point}
+                    set {_c3rd} to {_c2nd}
+                    set {_c3rd.point} to {_c2nd.point}
+                    set {_c2nd} to {_c1st}
+                    set {_c2nd.point} to {_c1st.point}
+                    set {_c1st} to loop-index
+                    set {_c1st.point} to loop-value
+                else if loop-value is more than {_c2nd.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_c8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to {_c7th}
+                    set {_c8th.point} to {_c7th.point}
+                    set {_c7th} to {_c6th}
+                    set {_c7th.point} to {_c6th.point}
+                    set {_c6th} to {_c5th}
+                    set {_c6th.point} to {_c5th.point}
+                    set {_c5th} to {_c4th}
+                    set {_c5th.point} to {_c4th.point}
+                    set {_c4th} to {_c3rd}
+                    set {_c4th.point} to {_c3rd.point}
+                    set {_c3rd} to {_c2nd}
+                    set {_c3rd.point} to {_c2nd.point}
+                    set {_c2nd} to loop-index
+                    set {_c2nd.point} to loop-value
+                else if loop-value is more than {_c3rd.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_c8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to {_c7th}
+                    set {_c8th.point} to {_c7th.point}
+                    set {_c7th} to {_c6th}
+                    set {_c7th.point} to {_c6th.point}
+                    set {_c6th} to {_c5th}
+                    set {_c6th.point} to {_c5th.point}
+                    set {_c5th} to {_c4th}
+                    set {_c5th.point} to {_c4th.point}
+                    set {_c4th} to {_c3rd}
+                    set {_c4th.point} to {_c3rd.point}
+                    set {_c3rd} to loop-index
+                    set {_c3rd.point} to loop-value
+                else if loop-value is more than {_c4th.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_c8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to {_c7th}
+                    set {_c8th.point} to {_c7th.point}
+                    set {_c7th} to {_c6th}
+                    set {_c7th.point} to {_c6th.point}
+                    set {_c6th} to {_c5th}
+                    set {_c6th.point} to {_c5th.point}
+                    set {_c5th} to {_c4th}
+                    set {_c5th.point} to {_c4th.point}
+                    set {_c4th} to loop-index
+                    set {_c4th.point} to loop-value
+                else if loop-value is more than {_c5th.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_c8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to {_c7th}
+                    set {_c8th.point} to {_c7th.point}
+                    set {_c7th} to {_c6th}
+                    set {_c7th.point} to {_c6th.point}
+                    set {_c6th} to {_c5th}
+                    set {_c6th.point} to {_c5th.point}
+                    set {_c5th} to loop-index
+                    set {_c5th.point} to loop-value
+                else if loop-value is more than {_c6th.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_c8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to {_c7th}
+                    set {_c8th.point} to {_c7th.point}
+                    set {_c7th} to {_c6th}
+                    set {_c7th.point} to {_c6th.point}
+                    set {_c6th} to loop-index
+                    set {_c6th.point} to loop-value
+                else if loop-value is more than {_c7th.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to {_7th}
+                    set {_c8th.point} to {_c7th.point}
+                    set {_c7th} to loop-index
+                    set {_c7th.point} to loop-value
+                else if loop-value is more than {_c8th.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to {_c8th}
+                    set {_c9th.point} to {_c8th.point}
+                    set {_c8th} to loop-index
+                    set {_c8th.point} to loop-value
+                else if loop-value is more than {_c9th.point}:
+                    set {_c10th} to {_c9th}
+                    set {_c10th.point} to {_c9th.point}
+                    set {_c9th} to loop-index
+                    set {_c9th.point} to loop-value
+            
+            #
+
+            loop {season%{event::season}%-coins::*}:
+                add loop-value to {_sc-all}
+            loop {coins::*}:
+                add loop-value to {_c-all}
+
+            #
+
+            if {_c1st} is not set:
+                set {_c1st} to "Nikdo"
+            if {_c2nd} is not set:
+                set {_c2nd} to "Nikdo"
+            if {_c3rd} is not set:
+                set {_c3rd} to "Nikdo"
+            if {_c4th} is not set:
+                set {_c4th} to "Nikdo"
+            if {_c5th} is not set:
+                set {_c5th} to "Nikdo"
+            if {_c6th} is not set:
+                set {_c6th} to "Nikdo"
+            if {_c7th} is not set:
+                set {_c7th} to "Nikdo"
+            if {_c8th} is not set:
+                set {_c8th} to "Nikdo"
+            if {_c9th} is not set:
+                set {_c9th} to "Nikdo"
+            if {_c10th} is not set:
+                set {_c10th} to "Nikdo"
+            
+            #
+
+            if {_sc1st} is not set:
+                set {_sc1st} to "Nikdo"
+            if {_sc2nd} is not set:
+                set {_sc2nd} to "Nikdo"
+            if {_sc3rd} is not set:
+                set {_sc3rd} to "Nikdo"
+            if {_sc4th} is not set:
+                set {_sc4th} to "Nikdo"
+            if {_sc5th} is not set:
+                set {_sc5th} to "Nikdo"
+            if {_sc6th} is not set:
+                set {_sc6th} to "Nikdo"
+            if {_sc7th} is not set:
+                set {_sc7th} to "Nikdo"
+            if {_sc8th} is not set:
+                set {_sc8th} to "Nikdo"
+            if {_sc9th} is not set:
+                set {_sc9th} to "Nikdo"
+            if {_sc10th} is not set:
+                set {_sc10th} to "Nikdo"
+
+            #
+
+            send "" to player
+            send "&7[DEV] &6Leaderboard sent to &7813066323861045258 &8(? ︳ hodnoceni-log)" to player
+            send "" to player
+            
+            #
+
+            set {_hodnoceni1} to {hodnoceni.1} / {hodnoceni.3}
+            set {_hodnoceni2} to {hodnoceni.2} / {hodnoceni.3}
+            
+            make embed:
+                set the title of embed to title with text ":bar_chart:   Výsledky Eventu"
+                set color of the embed to color from rgb 75, 0, 130
+                add field named "__Přehled__" with value "**Event:** %{event.name}%%nl%**Celkové hodnocení:** %{_hodnoceni1}%/%{_hodnoceni2}%%nl%**Season Coinů Celkem:** %{_sc-all}%⛁%nl%**Coinů Celkem:** %{_c-all}%⛁" to embed
+                add field named "__Season Coins Leaderboard__" with value "**1.** `%{_sc1st}%:` **%{_sc1st.point}%**⛁%nl%**2.** `%{_sc2nd}%:` **%{_sc2nd.point}%**⛁%nl%**3.** `%{_sc3rd}%:` **%{_sc3rd.point}%**⛁%nl%**4.** `%{_sc4th}%:` **%{_sc4th.point}%**⛁%nl%**5.** `%{_sc5th}%:` **%{_sc5th.point}%**⛁%nl%**6.** `%{_sc6th}%:` **%{_sc6th.point}%⛁**%nl%**7.** `%{_sc7th}%:` **%{_sc7th.point}%⛁**%nl%**8.** `%{_sc8th}%:` **%{_sc8th.point}%⛁**%nl%**9.** `%{_sc9th}%:` **%{_sc9th.point}%⛁**%nl%**10.** `%{_sc10th}%:` **%{_sc10th.point}%⛁**" to embed
+                add field named "__Coins Leaderboard__" with value "**1.** `%{_c1st}%:` **%{_c1st.point}%**⛁%nl%**2.** `%{_c2nd}%:` **%{_c2nd.point}%**⛁%nl%**3.** `%{_c3rd}%:` **%{_c3rd.point}%**⛁%nl%**4.** `%{_c4th}%:` **%{_c4th.point}%**⛁%nl%**5.** `%{_c5th}%:` **%{_c5th.point}%**⛁%nl%**6.** `%{_c6th}%:` **%{_c6th.point}%⛁**%nl%**7.** `%{_c7th}%:` **%{_c7th.point}%⛁**%nl%**8.** `%{_c8th}%:` **%{_c8th.point}%⛁**%nl%**9.** `%{_c9th}%:` **%{_c9th.point}%⛁**%nl%**10.** `%{_c10th}%:` **%{_c10th.point}%⛁**" to embed
+                set the footer of embed to footer with text "EventVerse" and icon "https://cdn.discordapp.com/attachments/805909093901795340/806111946138714132/EV_Logo.png"
+                set the timestamp of embed to now
+            send last created embed to channel with id "813066323861045258" with "EventVerse" and store it in {_embed}
+
+            #
+
+        else:
+            onlyAdmin(player)
